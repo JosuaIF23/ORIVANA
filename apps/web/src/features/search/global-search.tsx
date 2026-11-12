@@ -40,7 +40,7 @@ export default function GlobalSearch({ open, onOpenChange }: { open: boolean; on
         <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-app/80" />
         <DialogPrimitive.Content aria-describedby={undefined} className="fixed top-[10vh] left-1/2 z-50 flex max-h-[76vh] w-[calc(100vw-32px)] max-w-3xl -translate-x-1/2 flex-col overflow-hidden rounded-card border border-control bg-elevated">
           <DialogPrimitive.Title className="sr-only">Search</DialogPrimitive.Title>
-          <div className="flex items-center gap-3 border-b border-subtle px-5 py-4">
+          <div className="flex items-center gap-3 border-b border-subtle px-5 py-4 focus-within:shadow-[inset_0_-2px_0_var(--accent-primary)]">
             <Search aria-hidden="true" className="size-5 text-fg-secondary" />
             <input
               autoFocus

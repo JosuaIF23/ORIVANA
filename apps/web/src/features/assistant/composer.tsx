@@ -44,7 +44,7 @@ export function Composer({ conversation, streamingId }: { conversation: Conversa
 
   return (
     <div className="border-t border-subtle px-4 py-4 md:px-8">
-      <div className="mx-auto max-w-[860px] rounded-card border border-control bg-surface focus-within:border-accent">
+      <div className="mx-auto max-w-[860px] rounded-card border border-control bg-surface focus-within:border-accent focus-within:ring-2 focus-within:ring-accent/70">
         <label htmlFor="composer" className="sr-only">
           Ask a follow-up
         </label>

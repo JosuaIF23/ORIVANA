@@ -153,11 +153,17 @@ function resetAssistantFields(m: Message) {
   Object.assign(m, { answer_kind: null, sources_used: null, sources_searched: null, limitations: null, positions: null, inference: null, suggestion: null, related_entities: [], citations: [], proposal_id: null, error: null, cancelled_at: null });
 }
 
-/** Internal: used by the SSE simulator in stream.ts. */
-export function takePendingStream(messageId: string): PendingStream | undefined {
-  const pending = pendingStreams.get(messageId);
+/**
+ * Internal: used by the SSE simulator in stream.ts. Like a real SSE endpoint,
+ * the stream can be (re)opened until it finishes; reconnecting replays it.
+ */
+export function getPendingStream(messageId: string): PendingStream | undefined {
+  return pendingStreams.get(messageId);
+}
+
+/** Internal: the stream finished (done, error, or cancelled). */
+export function finishPendingStream(messageId: string) {
   pendingStreams.delete(messageId);
-  return pending;
 }
 
 /** Internal: persists the final assistant message (done, cancelled, or error). */

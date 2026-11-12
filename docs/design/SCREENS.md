@@ -77,3 +77,9 @@ Sumber kebenaran: gambar = layout, susunan, teks, komponen · `UI.md` §2 = warn
 | 10 | Mobile bottom nav: Projects, Assistant, Upload, Approvals, Activity; UI.md §7 juga menyebut Search. | Ikuti gambar; Search tersedia lewat ikon di header mobile (sesuai gambar). |
 | 11 | Design system terpotong di 4000 px. | Komponen yang tidak terlihat mengikuti UI.md §5 dan pola dari screen lain. |
 | 12 | Beberapa data di gambar tidak punya endpoint di PRD §14: suggested next steps (Home), preferensi memory (Settings, Onboarding 2), sesi aktif (Settings), deletion preview + hapus data workspace (dialog), ekspor log Activity (CSV), daftar repo + label GitHub (Edit proposal), reconnect connection. | Diusulkan sebagai tambahan di `docs/API-CONTRACT.md` dan ditandai "extension"; butuh persetujuan (lihat rencana Fase 0). |
+| 13 | Document viewer shows Okafor → BEIR as **Candidate**, but Home, Graph, and mobile all say there are **5** candidates in RAG Comparison. | Kept 5 candidates everywhere (Okafor → BEIR is confirmed). |
+| 14 | Activity "Yesterday 09:12 Uploaded Hybrid Retrieval Under Distribution Shift" conflicts with that paper being added on 3 Nov. | Yesterday's upload event is Dense-Only Baselines (10 Nov). Older ingestion events are "Re-indexed … with the updated embedding model" so all 46 events fit "Last 7 days". |
+| 15 | Approvals lists "12 min" for a proposal created at 14:34; the mock clock is 15:10. | Ages are computed from the clock ("36 min"). |
+| 16 | Sign in, Check your email, and Reset password show "Prototype: …" links in the design. | Kept, plus "Prototype: fill the demo account" on Sign in and "Prototype: use the sample paper" in onboarding; demo accounts live in `fixtures/auth/_test-accounts.json`. |
+| 17 | The design has no Projects list screen or proposal-inline-in-chat screen. | Built from existing components (ProjectCard; Approvals controls inside the answer). |
+

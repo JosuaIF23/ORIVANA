@@ -77,7 +77,7 @@ Each row lists the request and the fixture holding the response example. Request
 | `POST /auth/reset-password` | `{ "token": "rst_…", "new_password": "…" }` | 200 → `auth/reset-password.200.json` (signs out other sessions) | 410 `auth/reset-password.410-expired.json` |
 | `GET /me` | — | 200 → `me/get.200.json` (new user: `me/get.new-user.200.json`) | 401 `me/get.401-unauthenticated.json` |
 | `DELETE /me` | `{ "confirm_email": "josua@example.edu" }` | 200 → `me/delete.200.json` | 422 |
-| `GET /me/preferences` · `PATCH /me/preferences` **extension** | Partial `Preferences` | 200 → `me/preferences.200.json` | 422 |
+| `GET /me/preferences` · `PATCH /me/preferences` **extension** | Partial `Preferences`; also accepts `"onboarding_completed": true` (sets `MeResponse.onboarding_completed`) | 200 → `me/preferences.200.json` | 422 |
 | `GET /me/sessions` **extension** | — | 200 → `me/sessions.200.json` | — |
 | `POST /me/sessions/revoke-others` **extension** | — | 200 → `me/sessions.revoke-others.200.json` | — |
 | `POST /exports` | `{ "format": "zip_json" }` | 202 → `exports/create.202.json` | 429 |
@@ -210,7 +210,8 @@ Flow (PRD §9.5):
 1. `POST /conversations/{id}/messages` stores the user message and returns `{ "user_message": {…}, "message_id": "msg_…" }`.
 2. The client opens `new EventSource('/api/v1/conversations/{id}/messages/{message_id}/stream')`. Cookies are sent automatically.
 3. The server emits the events below and closes the stream after `done` or `error`.
-4. `POST …/cancel` stops generation. The server then emits `done` with `message.status = "cancelled"` and the partial content (`cancelled_at` set).
+4. The stream may be reopened (EventSource reconnect, or a remounted client) until it finishes; the server replays it from the start or resumes with `Last-Event-ID`.
+5. `POST …/cancel` stops generation. The server then emits `done` with `message.status = "cancelled"` and the partial content (`cancelled_at` set).
 
 Wire format:
 

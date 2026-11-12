@@ -144,6 +144,17 @@ describe('assistant streaming', () => {
     expect(conv.messages.at(-1)?.id).toBe(message_id);
   });
 
+  it('a stream can be reopened (StrictMode remount / EventSource reconnect)', async () => {
+    const { message_id, conversation_id } = await sendMessage(null, { content: 'Which papers report that hybrid retrieval beats dense-only?', project_id: 'prj_rag' });
+    const first = openMessageStream(conversation_id, message_id, () => undefined);
+    first.close();
+    const events: StreamEvent['event'][] = [];
+    openMessageStream(conversation_id, message_id, (e) => events.push(e.event));
+    await flush(200);
+    expect(events).not.toContain('error');
+    expect(events.at(-1)).toBe('done');
+  });
+
   it('issue requests link the existing pending proposal (idempotent)', async () => {
     const { message_id, conversation_id } = await sendMessage('conv_hybrid', { content: 'Create a GitHub issue for this', project_id: 'prj_rag' });
     let proposalId: string | null = null;

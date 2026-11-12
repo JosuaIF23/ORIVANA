@@ -37,7 +37,7 @@ export function GitHubCard({ connection: c }: { connection: ToolConnection }) {
     <Card className="p-6 md:p-8">
       <div className="flex flex-wrap items-start gap-4">
         <span aria-hidden="true" className="flex size-14 items-center justify-center rounded-card bg-elevated text-xl font-semibold text-fg">G</span>
-        <div className="min-w-0 flex-1">
+        <div className="min-w-60 flex-1">
           <div className="flex flex-wrap items-center gap-3">
             <h2 className="text-xl font-semibold text-fg">GitHub</h2>
             <StatusBadge status={c.status} size="md" />
@@ -46,7 +46,7 @@ export function GitHubCard({ connection: c }: { connection: ToolConnection }) {
             Account <span className="font-mono text-sm">{c.account_label}</span> · connected {formatDate(c.connected_at)} · last sync {formatAgo(c.last_sync_at)} · health check {c.health}
           </p>
         </div>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex w-full flex-wrap gap-2 xl:w-auto">
           <span className="inline-flex h-8 items-center gap-1.5 rounded-badge border border-control px-2.5 text-sm text-fg-secondary"><Eye aria-hidden="true" className="size-4" />Read</span>
           <span className="inline-flex h-8 items-center gap-1.5 rounded-badge border border-warning/60 px-2.5 text-sm text-warning"><Pencil aria-hidden="true" className="size-4" />Create issue · approval required</span>
         </div>

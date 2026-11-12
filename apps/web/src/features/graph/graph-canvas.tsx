@@ -107,7 +107,7 @@ function Canvas({ nodes, edges, selected, find, onSelect, onExpand }: Props) {
       fitViewOptions={{ padding: 0.12 }}
       minZoom={0.3}
       maxZoom={2}
-      proOptions={{ hideAttribution: true }}
+      attributionPosition="top-right"
       colorMode="dark"
       className="orivana-flow"
       ariaLabelConfig={{ 'node.a11yDescription.default': 'Press Enter to inspect. Double-click to expand one hop.' }}

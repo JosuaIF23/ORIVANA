@@ -8,7 +8,7 @@ import { nowIso } from '@/lib/clock';
 import { loadStream } from './core/fixtures';
 import { delay, nextRequestId, simulate } from './core/http';
 import { requireDb } from './core/session';
-import { storeAssistantMessage, takePendingStream } from './conversations';
+import { finishPendingStream, getPendingStream, storeAssistantMessage } from './conversations';
 import { ensureProposalFromChat } from './proposals';
 
 export interface StreamHandle {
@@ -31,7 +31,7 @@ export function openMessageStream(conversationId: string, messageId: string, onE
   const emit = (event: StreamEvent) => {
     if (!closed) onEvent(event);
   };
-  const pending = takePendingStream(messageId);
+  const pending = getPendingStream(messageId);
   const controller: Controller = { cancelled: false, finish: () => undefined };
   live.set(messageId, controller);
 
@@ -69,6 +69,7 @@ export function openMessageStream(conversationId: string, messageId: string, onE
         error: null,
       };
       storeAssistantMessage(conversationId, cancelled);
+      finishPendingStream(messageId);
       emit({ event: 'done', data: { message: cancelled } });
     };
 
@@ -104,6 +105,7 @@ export function openMessageStream(conversationId: string, messageId: string, onE
           };
           if (message.proposal_id) message.proposal_id = ensureProposalFromChat(db, conversationId, pending.question);
           storeAssistantMessage(conversationId, message);
+          finishPendingStream(messageId);
           emit({ event: 'done', data: { message: structuredClone(message) } });
           break;
         }
@@ -129,6 +131,7 @@ export function openMessageStream(conversationId: string, messageId: string, onE
             cancelled_at: null,
           };
           storeAssistantMessage(conversationId, failed);
+          finishPendingStream(messageId);
           emit({ event: 'error', data: { ...event.data, request_id: nextRequestId() } });
           break;
         }

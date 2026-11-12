@@ -35,6 +35,9 @@ export default function OnboardingPage() {
 
   return (
     <div className="min-h-dvh bg-app">
+      <a href="#main" className="sr-only z-50 rounded-control bg-accent px-4 py-2 text-on-accent focus:not-sr-only focus:fixed focus:top-2 focus:left-2">
+        Skip to content
+      </a>
       <OnboardingHeader current={current} onSkip={finish} skipping={update.isPending} />
       <main id="main" className="mx-auto w-full max-w-[880px] px-4 py-10 md:py-12">
         {current === 'welcome' ? <StepWelcome firstName={me.user.name?.split(' ')[0] ?? null} /> : null}

@@ -32,7 +32,7 @@ export default function IntegrationsPage() {
             {later.map((c) => (
               <Card key={c.provider} className="p-6">
                 <div className="flex items-start gap-4">
-                  <span aria-hidden="true" className="flex size-12 shrink-0 items-center justify-center rounded-control border border-subtle text-lg font-semibold text-fg">{c.name[0]}</span>
+                  <span aria-hidden="true" className="flex size-12 shrink-0 items-center justify-center rounded-control border border-subtle text-lg font-semibold text-fg">{c.provider.split('_').at(-1)?.[0]?.toUpperCase()}</span>
                   <div className="min-w-0 flex-1">
                     <h2 className="text-lg font-semibold text-fg">{c.name}</h2>
                     <p className="text-base text-fg-secondary">{c.tagline}</p>

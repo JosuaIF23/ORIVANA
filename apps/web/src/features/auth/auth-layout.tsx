@@ -7,6 +7,9 @@ import { Logo } from '@/components/common/logo';
 export function AuthLayout({ children, footer = true, width = 'max-w-[480px]' }: { children: ReactNode; footer?: boolean; width?: string }) {
   return (
     <div className="flex min-h-dvh flex-col bg-app">
+      <a href="#main" className="sr-only z-50 rounded-control bg-accent px-4 py-2 text-on-accent focus:not-sr-only focus:fixed focus:top-2 focus:left-2">
+        Skip to content
+      </a>
       <header className="px-6 py-6 md:px-8">
         <Link to="/sign-in" aria-label="ORIVANA sign in" className="inline-flex rounded-control">
           <Logo />
