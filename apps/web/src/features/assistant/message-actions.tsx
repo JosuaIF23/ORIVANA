@@ -32,7 +32,7 @@ export function MessageActions({ message }: { message: Message }) {
         <FileText aria-hidden="true" />
         Open source
       </Button>
-      <Button variant="ghost" size="sm" disabled={!entity} onClick={() => entity && navigate(`/knowledge/graph?focus=${entity.id}&candidates=1`)}>
+      <Button variant="ghost" size="sm" disabled={!entity} onClick={() => entity && navigate(`/knowledge/map?focus=${entity.id}&candidates=1`)}>
         <Waypoints aria-hidden="true" />
         Explore relationship
       </Button>

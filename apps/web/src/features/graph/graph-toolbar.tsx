@@ -13,7 +13,7 @@ interface Props {
   edgeCount: number;
 }
 
-/** Find, Focus on, depth (1/2 hops), counts, Graph/List toggle. */
+/** Find, Focus on, depth (1/2 hops), counts, Map/List toggle. */
 export function GraphToolbar({ state, set, focusName, projectName, nodeCount, edgeCount }: Props) {
   const [find, setFind] = useState(state.find);
   useEffect(() => {
@@ -45,7 +45,7 @@ export function GraphToolbar({ state, set, focusName, projectName, nodeCount, ed
             Focus on: {focusName ?? projectName ?? 'Project'}
             {focusName ? <X aria-hidden="true" className="size-4 text-fg-secondary" /> : null}
           </button>
-          <div role="group" aria-label="Graph depth" className="flex h-10 rounded-control border border-control p-0.5">
+          <div role="group" aria-label="Map depth" className="flex h-10 rounded-control border border-control p-0.5">
             <button type="button" aria-pressed={state.depth === 1} onClick={() => set({ depth: '1' })} className={seg(state.depth === 1)}>
               1 hop
             </button>
@@ -64,7 +64,7 @@ export function GraphToolbar({ state, set, focusName, projectName, nodeCount, ed
       )}
       <div role="group" aria-label="View" className="ml-auto flex h-10 rounded-control border border-control p-0.5">
         <button type="button" aria-pressed={state.view === 'graph'} onClick={() => set({ view: null, page: null })} className={seg(state.view === 'graph')}>
-          Graph
+          Map
         </button>
         <button type="button" aria-pressed={state.view === 'list'} onClick={() => set({ view: 'list' })} className={seg(state.view === 'list')}>
           List view

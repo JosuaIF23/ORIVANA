@@ -52,7 +52,7 @@ export function RelatedEntities({ entities }: { entities: Message['related_entit
     <section aria-label="Related entities" className="flex flex-wrap items-center gap-2">
       <h3 className="mr-1 text-sm font-medium text-fg-secondary">Related</h3>
       {entities.map((e) => (
-        <Link key={e.id} to={`/knowledge/graph?focus=${e.id}`} className="inline-flex h-8 items-center gap-2 rounded-full border border-control px-3 text-sm text-fg hover:border-fg-muted">
+        <Link key={e.id} to={`/knowledge/map?focus=${e.id}`} className="inline-flex h-8 items-center gap-2 rounded-full border border-control px-3 text-sm text-fg hover:border-fg-muted">
           <EntityTypeIcon type={e.entity_type} className="size-3.5" />
           {e.name}
         </Link>

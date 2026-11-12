@@ -38,7 +38,7 @@ export function GraphFilters({ state, counts, set, className }: Props) {
   const { data: projects = [] } = useProjectsList();
   const { data: sources } = useSources({ project_id: state.project || undefined, limit: 50 });
   return (
-    <aside aria-label="Graph filters" className={cn('flex flex-col gap-7 border-r border-subtle px-6 py-6', className)}>
+    <aside aria-label="Map filters" className={cn('flex flex-col gap-7 border-r border-subtle px-6 py-6', className)}>
       <div className="flex items-center justify-between">
         <h2 className="text-lg font-semibold text-fg">Filters</h2>
         <button type="button" onClick={() => set({ types: null, rel: null, candidates: null, confirmed: null, source: null, since: null, project: null })} className="rounded-control text-sm text-fg-secondary hover:text-fg">

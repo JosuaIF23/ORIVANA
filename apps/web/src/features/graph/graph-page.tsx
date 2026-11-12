@@ -16,7 +16,7 @@ import { GraphMobile } from './graph-mobile';
 import { RelationshipInspector } from './relationship-inspector';
 import { EntityInspector } from './entity-inspector';
 
-/** Knowledge → Graph (UI.md §4.6): filters · canvas or list · inspector. */
+/** Knowledge → Map (UI.md v2 §4.9, formerly Graph): filters · canvas or list · inspector. */
 export default function GraphPage() {
   const { state, set } = useGraphState();
   const { data: projects = [] } = useProjectsList();
@@ -53,11 +53,11 @@ export default function GraphPage() {
     <div className="flex h-[calc(100dvh-var(--topbar-height)-80px)] flex-col md:h-[calc(100dvh-var(--topbar-height))]">
       <KnowledgeHeader />
       {graph.isPending ? (
-        <LoadingSkeleton className="p-8" rows={6} label="Loading graph…" />
+        <LoadingSkeleton className="p-8" rows={6} label="Loading map…" />
       ) : graph.error ? (
         <ErrorState className="m-8" error={graph.error} onRetry={() => graph.refetch()} />
       ) : graph.data.nodes.length === 0 ? (
-        <EmptyState icon={<Waypoints />} title="Your graph builds as you add papers" description="Methods, datasets, and claims appear here once a source finishes indexing." action={<ButtonLink to="/knowledge/sources">Go to Sources</ButtonLink>} />
+        <EmptyState icon={<Waypoints />} title="Your map builds as you add papers" description="Methods, datasets, and claims appear here once a source finishes indexing." action={<ButtonLink to="/knowledge/sources">Go to Sources</ButtonLink>} />
       ) : (
         <>
           <div className="md:hidden">
@@ -65,7 +65,7 @@ export default function GraphPage() {
           </div>
           <div className="hidden min-h-0 flex-1 md:grid md:grid-cols-[minmax(0,1fr)_360px] xl:grid-cols-[300px_minmax(0,1fr)_400px]">
             <GraphFilters state={state} counts={graph.data.counts} set={set} className="hidden overflow-y-auto xl:flex" />
-            <section aria-label={state.view === 'graph' ? 'Graph canvas' : 'Relationship list'} className="flex min-h-0 min-w-0 flex-col">
+            <section aria-label={state.view === 'graph' ? 'Map canvas' : 'Relationship list'} className="flex min-h-0 min-w-0 flex-col">
               <GraphToolbar state={state} set={set} focusName={graph.data.focus?.canonical_name ?? null} projectName={project?.name ?? null} nodeCount={view!.nodes.length} edgeCount={view!.edges.length} />
               <div className="min-h-0 flex-1">
                 {state.view === 'graph' ? (

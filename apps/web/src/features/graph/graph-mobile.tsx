@@ -8,7 +8,7 @@ export function GraphMobile({ edges, entities, projectName, onSelect }: { edges:
   const toReview = edges.filter((e) => e.status === 'candidate').length;
   return (
     <div className="px-4 py-5">
-      <p className="text-base text-fg-secondary">On phones the graph opens as a relationship list. The interactive canvas is available on tablet and desktop.</p>
+      <p className="text-base text-fg-secondary">On phones the map opens as a relationship list. The interactive canvas is available on tablet and desktop.</p>
       <h2 className="mt-5 text-base font-semibold text-fg">
         {projectName} · {toReview} to review
       </h2>

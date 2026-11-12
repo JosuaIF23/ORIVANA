@@ -8,6 +8,7 @@ import { PageView } from './page-view';
 import { SourcePanel } from './source-panel';
 import { CitationBanner } from './citation-banner';
 import { useSource, useSourcePage } from './use-sources';
+import { parseEvidenceParams } from '@/lib/evidence-link';
 
 /**
  * Source detail / document viewer (UI.md §4.7). `?page=6&from=<conv>:<msg>:<n>`
@@ -23,6 +24,7 @@ export default function DocumentViewerPage() {
   const conversation = useConversation(convId || undefined);
   const message = conversation.data?.messages.find((m) => m.id === msgId);
   const citation = message?.citations.find((c) => c.ordinal === Number(ordinal)) ?? null;
+  const evidence = parseEvidenceParams(params);
   const pageCount = source.data?.page_count ?? pageQuery.data?.page_count ?? 1;
 
   function goTo(next: number) {
@@ -66,6 +68,17 @@ export default function DocumentViewerPage() {
         <main className="min-w-0 px-4 py-6 md:px-8">
           <div className="mx-auto flex max-w-[760px] flex-col gap-6">
             {citation ? <CitationBanner citation={citation} conversationId={convId} conversationTitle={conversation.data?.title ?? ''} messageId={msgId} /> : null}
+            {!citation && evidence.back ? (
+              <div role="status" className="flex flex-wrap items-center gap-4 rounded-card border border-accent/50 bg-accent/5 px-5 py-4 text-base text-fg-secondary">
+                <p className="min-w-0 flex-1">
+                  Opened from <span className="text-fg">{evidence.back.label}</span>
+                  {evidence.highlight ? ' · the passage is highlighted below.' : '.'}
+                </p>
+                <Link to={evidence.back.href} className="rounded-control text-base font-medium text-fg hover:underline hover:underline-offset-4">
+                  Back
+                </Link>
+              </div>
+            ) : null}
             {processing ? (
               <InlineAlert tone="warning" title="This source is still being processed" live>
                 {isApiError(pageQuery.error) ? pageQuery.error.error.message : ''} The status updates on its own.
@@ -75,7 +88,7 @@ export default function DocumentViewerPage() {
             ) : pageQuery.error ? (
               <ErrorState error={pageQuery.error} onRetry={() => pageQuery.refetch()} />
             ) : pageQuery.data ? (
-              <PageView page={pageQuery.data} highlight={citation && citation.page === page ? citation : null} />
+              <PageView page={pageQuery.data} highlight={citation && citation.page === page ? citation : evidence.highlight} />
             ) : (
               <InlineAlert tone="info" title="Preview not available">A page preview isn’t available for this file in the prototype. Metadata and ingestion history are on the right.</InlineAlert>
             )}

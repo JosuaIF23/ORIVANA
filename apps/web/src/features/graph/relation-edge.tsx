@@ -5,6 +5,12 @@ import { cn } from '@/lib/cn';
 import { RELATION_LABEL } from '@/lib/relations';
 
 export type RelationEdgeData = { relationship: Relationship };
+
+/** UI.md §2.3: Supports ✓ (knowledge), Contradicts ✕ (danger), Mentions (secondary). Always labelled. */
+const STANCE: Partial<Record<Relationship['relation_type'], { stroke: string; text: string; glyph: string }>> = {
+  supports: { stroke: 'var(--accent-knowledge)', text: 'text-knowledge', glyph: '✓' },
+  contradicts: { stroke: 'var(--status-danger)', text: 'text-danger', glyph: '✕' },
+};
 export type RelationFlowEdge = Edge<RelationEdgeData, 'relation'>;
 
 /**
@@ -16,15 +22,16 @@ export const RelationEdge = memo(function RelationEdge({ id, sourceX, sourceY, t
   const [path, labelX, labelY] = getStraightPath({ sourceX, sourceY, targetX, targetY });
   const rel = data!.relationship;
   const candidate = rel.status === 'candidate';
-  const stroke = selected ? 'var(--accent-primary)' : candidate ? 'var(--status-warning)' : 'var(--border-control)';
-  const showType = selected || hover;
+  const stance = STANCE[rel.relation_type];
+  const stroke = selected ? 'var(--accent-primary)' : stance ? stance.stroke : candidate ? 'var(--status-warning)' : 'var(--border-control)';
+  const showType = selected || hover || Boolean(stance);
   return (
     <>
       <BaseEdge
         id={id}
         path={path}
         interactionWidth={18}
-        style={{ stroke, strokeWidth: selected ? 2.5 : candidate ? 1.5 : 1.25, strokeDasharray: candidate || selected ? '6 5' : undefined }}
+        style={{ stroke, strokeWidth: selected ? 2.5 : stance ? 1.75 : candidate ? 1.5 : 1.25, strokeDasharray: candidate || selected ? '6 5' : rel.relation_type === 'mentions' ? '1 3' : undefined }}
       />
       <path d={path} fill="none" stroke="transparent" strokeWidth={18} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} />
       {candidate || showType ? (
@@ -34,8 +41,10 @@ export const RelationEdge = memo(function RelationEdge({ id, sourceX, sourceY, t
             className={cn(
               'pointer-events-none absolute rounded-badge border bg-app px-2 py-0.5 text-xs font-medium',
               selected ? 'border-accent text-fg' : candidate ? 'border-dashed border-warning/70 text-warning' : 'border-control text-fg-secondary',
+              stance && !selected && stance.text,
             )}
           >
+            {stance ? <span aria-hidden="true">{stance.glyph} </span> : null}
             {showType ? RELATION_LABEL[rel.relation_type] : null}
             {showType && candidate ? <span className="text-warning"> · </span> : null}
             {candidate ? <span className="text-warning">Candidate</span> : null}

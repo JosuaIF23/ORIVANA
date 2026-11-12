@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { Check, X } from 'lucide-react';
 import { Panel, ReactFlow, ReactFlowProvider, useReactFlow, type NodeMouseHandler, type EdgeMouseHandler } from '@xyflow/react';
 import '@xyflow/react/dist/base.css';
 import { Maximize, Minus, Plus } from 'lucide-react';
@@ -41,7 +42,10 @@ function Controls() {
 
 function Legend() {
   return (
-    <Panel position="bottom-left" className="!m-4 flex flex-wrap items-center gap-x-5 gap-y-1 rounded-control border border-subtle bg-surface px-4 py-2 text-xs text-fg-secondary">
+    <Panel position="bottom-left" aria-label="Map legend" className="!m-4 flex max-w-[calc(100%-120px)] flex-wrap items-center gap-x-5 gap-y-1 rounded-control border border-subtle bg-surface px-4 py-2 text-xs text-fg-secondary">
+      <span className="flex items-center gap-2"><svg width="28" height="6" aria-hidden="true"><line x1="0" y1="3" x2="28" y2="3" stroke="var(--accent-knowledge)" strokeWidth="1.75" /></svg><Check aria-hidden="true" className="size-3.5 text-knowledge" />Supports</span>
+      <span className="flex items-center gap-2"><svg width="28" height="6" aria-hidden="true"><line x1="0" y1="3" x2="28" y2="3" stroke="var(--status-danger)" strokeWidth="1.75" /></svg><X aria-hidden="true" className="size-3.5 text-danger" />Contradicts</span>
+      <span className="flex items-center gap-2"><svg width="28" height="6" aria-hidden="true"><line x1="0" y1="3" x2="28" y2="3" stroke="var(--text-secondary)" strokeWidth="1.25" strokeDasharray="1 3" /></svg>Mentions</span>
       <span className="flex items-center gap-2"><svg width="28" height="6" aria-hidden="true"><line x1="0" y1="3" x2="28" y2="3" stroke="var(--border-control)" strokeWidth="1.5" /></svg>Confirmed</span>
       <span className="flex items-center gap-2"><svg width="28" height="6" aria-hidden="true"><line x1="0" y1="3" x2="28" y2="3" stroke="var(--status-warning)" strokeWidth="1.5" strokeDasharray="5 4" /></svg>Candidate (dashed)</span>
       <span className="flex items-center gap-2"><svg width="28" height="6" aria-hidden="true"><line x1="0" y1="3" x2="28" y2="3" stroke="var(--accent-primary)" strokeWidth="2.5" strokeDasharray="5 4" /></svg>Selected</span>

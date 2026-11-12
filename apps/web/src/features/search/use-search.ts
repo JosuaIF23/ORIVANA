@@ -15,7 +15,7 @@ export function resultHref(r: SearchResult): string {
     case 'source':
       return `/knowledge/sources/${r.id}${r.page ? `?page=${r.page}` : ''}`;
     case 'entity':
-      return `/knowledge/graph?focus=${r.id}&depth=1&sel=${r.id}&candidates=1`;
+      return `/knowledge/map?focus=${r.id}&depth=1&sel=${r.id}&candidates=1`;
     case 'conversation':
       return `/assistant/${r.id}`;
     case 'action':

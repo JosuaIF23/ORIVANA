@@ -1,6 +1,7 @@
 import { createBrowserRouter, Navigate, Outlet, ScrollRestoration } from 'react-router';
 import { AppShell, type RouteHandle } from '@/components/shell/app-shell';
 import { RouteError } from './route-error';
+import { RedirectKeepingQuery } from './redirect';
 
 type Loader = () => Promise<{ default: React.ComponentType }>;
 
@@ -41,7 +42,10 @@ export const router = createBrowserRouter([
           { path: '/knowledge', element: <Navigate to="/knowledge/sources" replace /> },
           { path: '/knowledge/sources', lazy: page(() => import('@/features/sources/sources-page')), handle: bleed },
           { path: '/knowledge/sources/:sourceId', lazy: page(() => import('@/features/sources/document-viewer-page')), handle: rail },
-          { path: '/knowledge/graph', lazy: page(() => import('@/features/graph/graph-page')), handle: rail },
+          { path: '/knowledge/matrix', lazy: page(() => import('@/features/matrix/matrix-page')), handle: rail },
+          { path: '/knowledge/claims', lazy: page(() => import('@/features/claims/claims-page')), handle: rail },
+          { path: '/knowledge/map', lazy: page(() => import('@/features/graph/graph-page')), handle: rail },
+          { path: '/knowledge/graph', element: <RedirectKeepingQuery to="/knowledge/map" /> },
           { path: '/knowledge/memory', lazy: page(() => import('@/features/memory/memory-page')), handle: bleed },
           { path: '/projects', lazy: page(() => import('@/features/projects/projects-page')) },
           { path: '/projects/:projectId/:tab?', lazy: page(() => import('@/features/projects/project-page')) },

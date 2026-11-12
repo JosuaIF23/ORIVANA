@@ -6,7 +6,7 @@ import { Card } from '@/components/ui/primitives';
 import { LoadingSkeleton } from '@/components/common/states';
 
 function hrefFor(s: Suggestion): string {
-  if (s.target.kind === 'graph_candidates') return '/knowledge/graph?view=list&candidates=1';
+  if (s.target.kind === 'graph_candidates') return '/knowledge/map?view=list&candidates=1';
   if (s.target.kind === 'memory_review') return '/knowledge/memory';
   return '/knowledge/sources?status=failed';
 }

@@ -73,9 +73,11 @@ export function reviewRelationship(id: string, status: 'confirmed' | 'rejected')
     if (!rel) failWith('NOT_FOUND', 'Relationship not found.');
     if (rel.status !== 'candidate') fail(fixtures.graph.conflict, { details: { status: rel.status } });
     rel.status = status;
+    // Keep the Matrix in step with the Map (same relationship, PRD §8.4).
+    for (const cell of db.matrixCells) for (const p of cell.papers) for (const r of p.relationships) if (r.id === id) r.status = status;
     recordAudit(db, {
       actor_type: 'user',
-      category: 'memory',
+      category: 'extraction',
       event_type: `relationship.${status}`,
       target_type: 'relationship',
       target_id: id,

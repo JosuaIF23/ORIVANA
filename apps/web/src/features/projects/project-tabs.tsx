@@ -23,8 +23,8 @@ export function ProjectTabContent({ tab, project }: { tab: string; project: Proj
         <Card className="flex flex-wrap items-center justify-between gap-4 p-6">
           <p className="text-base text-fg-secondary">Explore the papers, methods, datasets, and decisions in {project.name}, with candidate relationships to review.</p>
           <div className="flex gap-3">
-            <ButtonLink to={`/knowledge/graph?project=${project.id}&candidates=1`} variant="primary">Open graph</ButtonLink>
-            <ButtonLink to={`/knowledge/graph?project=${project.id}&view=list&candidates=1`}>List view</ButtonLink>
+            <ButtonLink to={`/knowledge/map?project=${project.id}&candidates=1`} variant="primary">Open map</ButtonLink>
+            <ButtonLink to={`/knowledge/map?project=${project.id}&view=list&candidates=1`}>List view</ButtonLink>
           </div>
         </Card>
       );

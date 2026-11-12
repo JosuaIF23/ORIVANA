@@ -44,7 +44,7 @@ export function SourcePanel({ source: s, className }: { source: SourceDetail; cl
           <ul className="mt-3 flex flex-wrap gap-2">
             {shown.map((e) => (
               <li key={e.id}>
-                <Link to={`/knowledge/graph?focus=${e.id}&candidates=1`} className="inline-flex h-9 items-center gap-2 rounded-full border border-control px-3 text-sm text-fg hover:border-fg-muted">
+                <Link to={`/knowledge/map?focus=${e.id}&candidates=1`} className="inline-flex h-9 items-center gap-2 rounded-full border border-control px-3 text-sm text-fg hover:border-fg-muted">
                   <EntityTypeIcon type={e.entity_type} className="size-3.5" />
                   {e.name}
                 </Link>
@@ -70,7 +70,7 @@ export function SourcePanel({ source: s, className }: { source: SourceDetail; cl
             ))}
           </ul>
         ) : null}
-        <Link to={`/knowledge/graph?view=list&source=${s.id}&candidates=1`} className="mt-3 inline-block text-sm text-accent underline underline-offset-4 hover:text-fg">
+        <Link to={`/knowledge/map?view=list&source=${s.id}&candidates=1`} className="mt-3 inline-block text-sm text-accent underline underline-offset-4 hover:text-fg">
           See all in graph list
         </Link>
       </section>

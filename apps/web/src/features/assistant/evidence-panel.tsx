@@ -91,7 +91,7 @@ export function EvidencePanel({ message, ordinal, conversationId, onSelect }: Pr
           </section>
         ) : null}
         <p className="text-xs text-fg-muted">
-          Open the <Link to={`/knowledge/graph?focus=${message.related_entities[0]?.id ?? ''}&candidates=1`} className="underline underline-offset-4 hover:text-fg">graph</Link> to see how these sources relate.
+          Open the <Link to={`/knowledge/map?focus=${message.related_entities[0]?.id ?? ''}&candidates=1`} className="underline underline-offset-4 hover:text-fg">map</Link> to see how these sources relate.
         </p>
       </div>
     </div>

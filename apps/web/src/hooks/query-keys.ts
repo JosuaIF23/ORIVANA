@@ -29,4 +29,18 @@ export const qk = {
   suggestions: ['home', 'suggestions'] as const,
   exports: ['exports'] as const,
   deletionPreview: ['workspace', 'deletion-preview'] as const,
+  /* v2 */
+  matrix: (query: object) => ['matrix', query] as const,
+  matrixAll: ['matrix'] as const,
+  matrixCell: (methodId: string, datasetId: string) => ['matrix', 'cell', methodId, datasetId] as const,
+  claims: (query: object) => ['claims', 'list', query] as const,
+  claimsAll: ['claims'] as const,
+  claim: (id: string) => ['claims', 'detail', id] as const,
+  alerts: (query: object) => ['decision-alerts', query] as const,
+  alertsAll: ['decision-alerts'] as const,
+  alert: (id: string) => ['decision-alerts', 'detail', id] as const,
+  memory: (id: string) => ['memories', 'detail', id] as const,
+  models: ['models'] as const,
+  zoteroCollections: ['connections', 'zotero', 'collections'] as const,
+  zoteroSync: (id: string) => ['connections', 'zotero', 'sync', id] as const,
 };
