@@ -1,0 +1,492 @@
+{
+  "message_id": "msg_stream_answer",
+  "events": [
+    {
+      "delay_ms": 300,
+      "event": "status",
+      "data": {
+        "phase": "retrieving",
+        "steps": [
+          {
+            "label": "Scope resolved — Project RAG Comparison · 14 sources",
+            "state": "done"
+          },
+          {
+            "label": "Searching keyword + vector index, expanding 1 graph hop",
+            "state": "active"
+          },
+          {
+            "label": "Generating answer from the evidence packet",
+            "state": "pending"
+          }
+        ],
+        "passages_found": 3,
+        "sources_found": 2,
+        "sources": [
+          {
+            "label": "Okafor et al. 2025",
+            "passages": 4
+          },
+          {
+            "label": "Santos & Lee 2025",
+            "passages": 3
+          }
+        ]
+      }
+    },
+    {
+      "delay_ms": 700,
+      "event": "status",
+      "data": {
+        "phase": "retrieving",
+        "steps": [
+          {
+            "label": "Scope resolved — Project RAG Comparison · 14 sources",
+            "state": "done"
+          },
+          {
+            "label": "Searching keyword + vector index, expanding 1 graph hop",
+            "state": "active"
+          },
+          {
+            "label": "Generating answer from the evidence packet",
+            "state": "pending"
+          }
+        ],
+        "passages_found": 12,
+        "sources_found": 5,
+        "sources": [
+          {
+            "label": "Okafor et al. 2025",
+            "passages": 4
+          },
+          {
+            "label": "Santos & Lee 2025",
+            "passages": 3
+          },
+          {
+            "label": "Varga & Chen 2024",
+            "passages": 2
+          },
+          {
+            "label": "Daly 2025",
+            "passages": 2
+          },
+          {
+            "label": "Kowalski 2024",
+            "passages": 1
+          }
+        ]
+      }
+    },
+    {
+      "delay_ms": 900,
+      "event": "status",
+      "data": {
+        "phase": "retrieving",
+        "steps": [
+          {
+            "label": "Scope resolved — Project RAG Comparison · 14 sources",
+            "state": "done"
+          },
+          {
+            "label": "Searching keyword + vector index, expanding 1 graph hop",
+            "state": "done"
+          },
+          {
+            "label": "Generating answer from the evidence packet",
+            "state": "pending"
+          }
+        ],
+        "passages_found": 12,
+        "sources_found": 5,
+        "sources": [
+          {
+            "label": "Okafor et al. 2025",
+            "passages": 4
+          },
+          {
+            "label": "Santos & Lee 2025",
+            "passages": 3
+          },
+          {
+            "label": "Varga & Chen 2024",
+            "passages": 2
+          },
+          {
+            "label": "Daly 2025",
+            "passages": 2
+          },
+          {
+            "label": "Kowalski 2024",
+            "passages": 1
+          }
+        ]
+      }
+    },
+    {
+      "delay_ms": 300,
+      "event": "status",
+      "data": {
+        "phase": "generating",
+        "steps": [
+          {
+            "label": "Scope resolved — Project RAG Comparison · 14 sources",
+            "state": "done"
+          },
+          {
+            "label": "Searching keyword + vector index, expanding 1 graph hop",
+            "state": "done"
+          },
+          {
+            "label": "Generating answer from the evidence packet",
+            "state": "active"
+          }
+        ],
+        "passages_found": 12,
+        "sources_found": 5,
+        "sources": [
+          {
+            "label": "Okafor et al. 2025",
+            "passages": 4
+          },
+          {
+            "label": "Santos & Lee 2025",
+            "passages": 3
+          },
+          {
+            "label": "Varga & Chen 2024",
+            "passages": 2
+          },
+          {
+            "label": "Daly 2025",
+            "passages": 2
+          },
+          {
+            "label": "Kowalski 2024",
+            "passages": 1
+          }
+        ]
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "Two sources report "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "that hybrid retrieval "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "(BM25 + dense) "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "beats dense-only retrieval:\n\n"
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "- **Santos & "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "Lee (2025)** — "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "hybrid improves top-20 "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "accuracy on **Natural "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "Questions** by 4.1 "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "points [1]\n- "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "**Okafor et al. "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "(2025)** — gains "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "on **Natural Questions** "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "(+3.6) and **TriviaQA** "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "(+2.9), largest on "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "the shifted BEIR "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "subsets [2]\n\nOne "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "source points the "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "other way for "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "multi-hop questions: on "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "**HotpotQA**, a tuned "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "dense-only retriever matches "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "hybrid within 0.5 "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "points [3]."
+      }
+    },
+    {
+      "delay_ms": 40,
+      "event": "citation",
+      "data": {
+        "id": "cit_stream_answer_1",
+        "message_id": "msg_stream_answer",
+        "chunk_id": "chk_santos_0401",
+        "ordinal": 1,
+        "source_id": "src_santos2025",
+        "source_title": "Fusion Retrieval Revisited: BM25 + Dense on Open-Domain QA",
+        "source_label": "Santos & Lee 2025",
+        "source_meta": "Santos & Lee, 2025",
+        "page": 4,
+        "section": "3.1 Main results",
+        "passage": "Table 2 reports the main results. Across both datasets, the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5, a gain of 4.1 points, and improves TriviaQA by 2.2 points with reciprocal rank fusion (k = 60).",
+        "quote": "the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5",
+        "char_start": 56,
+        "char_end": 126
+      }
+    },
+    {
+      "delay_ms": 40,
+      "event": "citation",
+      "data": {
+        "id": "cit_stream_answer_2",
+        "message_id": "msg_stream_answer",
+        "chunk_id": "chk_okafor_0601",
+        "ordinal": 2,
+        "source_id": "src_okafor2025",
+        "source_title": "Hybrid Retrieval Under Distribution Shift",
+        "source_label": "Okafor et al. 2025",
+        "source_meta": "Okafor, Brandt & Ruiz · 2025",
+        "page": 6,
+        "section": "4.2 Results",
+        "passage": "Table 3 summarises retrieval accuracy on in-domain and shifted test sets. Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets. We attribute most of this gain to lexical matching of rare entity names that the dense encoder under-represents.",
+        "quote": "Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets.",
+        "char_start": 74,
+        "char_end": 273
+      }
+    },
+    {
+      "delay_ms": 40,
+      "event": "citation",
+      "data": {
+        "id": "cit_stream_answer_3",
+        "message_id": "msg_stream_answer",
+        "chunk_id": "chk_varga_0901",
+        "ordinal": 3,
+        "source_id": "src_varga2024",
+        "source_title": "Dense-Only Baselines for Multi-hop QA",
+        "source_label": "Varga & Chen 2024",
+        "source_meta": "Varga & Chen · 2024",
+        "page": 9,
+        "section": "5 Discussion",
+        "passage": "The hybrid configuration from Section 2.2 does not improve over our tuned dense retriever on HotpotQA, suggesting lexical signals matter less for multi-hop questions. Overall, on HotpotQA our tuned dense retriever is within 0.5 points of the hybrid configuration across all retrieval budgets.",
+        "quote": "on HotpotQA our tuned dense retriever is within 0.5 points of the hybrid configuration",
+        "char_start": 176,
+        "char_end": 262
+      }
+    },
+    {
+      "delay_ms": 100,
+      "event": "done",
+      "data": {
+        "message": {
+          "id": "msg_stream_answer",
+          "conversation_id": "conv_hybrid",
+          "role": "assistant",
+          "content": "Two sources report that hybrid retrieval (BM25 + dense) beats dense-only retrieval:\n\n- **Santos & Lee (2025)** — hybrid improves top-20 accuracy on **Natural Questions** by 4.1 points [1]\n- **Okafor et al. (2025)** — gains on **Natural Questions** (+3.6) and **TriviaQA** (+2.9), largest on the shifted BEIR subsets [2]\n\nOne source points the other way for multi-hop questions: on **HotpotQA**, a tuned dense-only retriever matches hybrid within 0.5 points [3].",
+          "status": "complete",
+          "created_at": "2026-11-11T08:10:00Z",
+          "answer_kind": "answer",
+          "sources_used": 3,
+          "sources_searched": 14,
+          "limitations": "only 3 of 14 sources compare hybrid and dense-only directly, and they report different metrics (top-20 accuracy vs. nDCG@10), so the gains are not directly comparable.",
+          "positions": null,
+          "inference": null,
+          "suggestion": null,
+          "related_entities": [
+            {
+              "id": "ent_m_hybrid",
+              "name": "Hybrid retrieval",
+              "entity_type": "method"
+            },
+            {
+              "id": "ent_m_bm25",
+              "name": "BM25",
+              "entity_type": "method"
+            },
+            {
+              "id": "ent_d_nq",
+              "name": "Natural Questions",
+              "entity_type": "dataset"
+            }
+          ],
+          "citations": [
+            {
+              "id": "cit_stream_answer_1",
+              "message_id": "msg_stream_answer",
+              "chunk_id": "chk_santos_0401",
+              "ordinal": 1,
+              "source_id": "src_santos2025",
+              "source_title": "Fusion Retrieval Revisited: BM25 + Dense on Open-Domain QA",
+              "source_label": "Santos & Lee 2025",
+              "source_meta": "Santos & Lee, 2025",
+              "page": 4,
+              "section": "3.1 Main results",
+              "passage": "Table 2 reports the main results. Across both datasets, the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5, a gain of 4.1 points, and improves TriviaQA by 2.2 points with reciprocal rank fusion (k = 60).",
+              "quote": "the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5",
+              "char_start": 56,
+              "char_end": 126
+            },
+            {
+              "id": "cit_stream_answer_2",
+              "message_id": "msg_stream_answer",
+              "chunk_id": "chk_okafor_0601",
+              "ordinal": 2,
+              "source_id": "src_okafor2025",
+              "source_title": "Hybrid Retrieval Under Distribution Shift",
+              "source_label": "Okafor et al. 2025",
+              "source_meta": "Okafor, Brandt & Ruiz · 2025",
+              "page": 6,
+              "section": "4.2 Results",
+              "passage": "Table 3 summarises retrieval accuracy on in-domain and shifted test sets. Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets. We attribute most of this gain to lexical matching of rare entity names that the dense encoder under-represents.",
+              "quote": "Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets.",
+              "char_start": 74,
+              "char_end": 273
+            },
+            {
+              "id": "cit_stream_answer_3",
+              "message_id": "msg_stream_answer",
+              "chunk_id": "chk_varga_0901",
+              "ordinal": 3,
+              "source_id": "src_varga2024",
+              "source_title": "Dense-Only Baselines for Multi-hop QA",
+              "source_label": "Varga & Chen 2024",
+              "source_meta": "Varga & Chen · 2024",
+              "page": 9,
+              "section": "5 Discussion",
+              "passage": "The hybrid configuration from Section 2.2 does not improve over our tuned dense retriever on HotpotQA, suggesting lexical signals matter less for multi-hop questions. Overall, on HotpotQA our tuned dense retriever is within 0.5 points of the hybrid configuration across all retrieval budgets.",
+              "quote": "on HotpotQA our tuned dense retriever is within 0.5 points of the hybrid configuration",
+              "char_start": 176,
+              "char_end": 262
+            }
+          ],
+          "proposal_id": null,
+          "error": null,
+          "cancelled_at": null
+        }
+      }
+    }
+  ]
+}

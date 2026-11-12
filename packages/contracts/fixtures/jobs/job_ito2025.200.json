@@ -1,0 +1,16 @@
+{
+  "id": "job_ito2025",
+  "workspace_id": "ws_personal",
+  "source_id": "src_ito2025",
+  "kind": "ingest",
+  "attempts": 1,
+  "max_attempts": 3,
+  "progress": null,
+  "eta_seconds": null,
+  "error_code": null,
+  "error_message": null,
+  "started_at": null,
+  "finished_at": null,
+  "status": "queued",
+  "stage": "queued"
+}

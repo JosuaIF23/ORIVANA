@@ -1,0 +1,242 @@
+{
+  "_note": "GET /api/v1/memories?decisions_only=true",
+  "items": [
+    {
+      "id": "dec_rag_05",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "confidence": 0.7,
+      "supersedes_id": null,
+      "superseded_by_id": null,
+      "valid_from": "2026-11-11T02:40:00Z",
+      "valid_to": null,
+      "updated_at": "2026-11-11T02:40:00Z",
+      "decision": {
+        "code": "D-05",
+        "title": "Add the HotpotQA multi-hop split to the evaluation",
+        "rationale": "one source finds the hybrid advantage disappears on multi-hop questions; our set has none.",
+        "evidence": [
+          {
+            "source_id": "src_varga2024",
+            "label": "Varga & Chen 2024",
+            "page": 9
+          }
+        ]
+      },
+      "memory_type": "project",
+      "content": "Add the HotpotQA multi-hop split to the evaluation",
+      "origin": "model_proposed",
+      "status": "candidate",
+      "created_at": "2026-11-11T02:40:00Z",
+      "rationale": "one source finds the hybrid advantage disappears on multi-hop questions; our set has none.",
+      "evidence": {
+        "kind": "source",
+        "label": "Varga & Chen 2024 · p. 9",
+        "conversation_id": null,
+        "source_id": "src_varga2024",
+        "page": 9
+      }
+    },
+    {
+      "id": "dec_rag_04",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "confidence": null,
+      "supersedes_id": "dec_rag_02",
+      "superseded_by_id": null,
+      "valid_from": "2026-11-06T03:00:00Z",
+      "valid_to": null,
+      "updated_at": "2026-11-06T03:00:00Z",
+      "decision": {
+        "code": "D-04",
+        "title": "Use hybrid retrieval (BM25 + dense, RRF k = 60) as the default retriever",
+        "rationale": "two papers report consistent gains over dense-only on NQ and TriviaQA, largest under distribution shift.",
+        "evidence": [
+          {
+            "source_id": "src_okafor2025",
+            "label": "Okafor et al. 2025",
+            "page": 6
+          },
+          {
+            "source_id": "src_santos2025",
+            "label": "Santos & Lee 2025",
+            "page": 4
+          }
+        ]
+      },
+      "memory_type": "project",
+      "content": "Use hybrid retrieval (BM25 + dense, RRF k = 60) as the default retriever",
+      "origin": "user",
+      "status": "confirmed",
+      "created_at": "2026-11-06T03:00:00Z",
+      "rationale": "two papers report consistent gains over dense-only on NQ and TriviaQA, largest under distribution shift.",
+      "evidence": {
+        "kind": "source",
+        "label": "Okafor et al. 2025 · p. 6",
+        "conversation_id": null,
+        "source_id": "src_okafor2025",
+        "page": 6
+      }
+    },
+    {
+      "id": "dec_rag_03",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "confidence": null,
+      "supersedes_id": null,
+      "superseded_by_id": null,
+      "valid_from": "2026-10-28T07:00:00Z",
+      "valid_to": null,
+      "updated_at": "2026-10-28T07:00:00Z",
+      "decision": {
+        "code": "D-03",
+        "title": "Evaluate every run with top-20 accuracy and nDCG@10",
+        "rationale": null,
+        "evidence": []
+      },
+      "memory_type": "project",
+      "content": "Evaluate every run with top-20 accuracy and nDCG@10",
+      "origin": "user",
+      "status": "confirmed",
+      "created_at": "2026-10-28T07:00:00Z",
+      "evidence": {
+        "kind": "user",
+        "label": "Added by you",
+        "conversation_id": null,
+        "source_id": null,
+        "page": null
+      }
+    },
+    {
+      "id": "dec_rag_02",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "confidence": null,
+      "supersedes_id": null,
+      "superseded_by_id": "dec_rag_04",
+      "valid_from": "2026-10-14T03:00:00Z",
+      "valid_to": "2026-11-06T03:00:00Z",
+      "updated_at": "2026-10-14T03:00:00Z",
+      "decision": {
+        "code": "D-02",
+        "title": "Use dense-only retrieval as the default retriever",
+        "rationale": null,
+        "evidence": []
+      },
+      "memory_type": "project",
+      "content": "Use dense-only retrieval as the default retriever",
+      "origin": "user",
+      "status": "superseded",
+      "created_at": "2026-10-14T03:00:00Z",
+      "evidence": {
+        "kind": "user",
+        "label": "Added by you",
+        "conversation_id": null,
+        "source_id": null,
+        "page": null
+      }
+    },
+    {
+      "id": "dec_rag_01",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "confidence": null,
+      "supersedes_id": null,
+      "superseded_by_id": null,
+      "valid_from": "2026-10-02T02:00:00Z",
+      "valid_to": null,
+      "updated_at": "2026-10-02T02:00:00Z",
+      "decision": {
+        "code": "D-01",
+        "title": "Limit the corpus to papers from 2023 onwards",
+        "rationale": null,
+        "evidence": []
+      },
+      "memory_type": "project",
+      "content": "Limit the corpus to papers from 2023 onwards",
+      "origin": "user",
+      "status": "confirmed",
+      "created_at": "2026-10-02T02:00:00Z",
+      "evidence": {
+        "kind": "user",
+        "label": "Added by you",
+        "conversation_id": null,
+        "source_id": null,
+        "page": null
+      }
+    },
+    {
+      "id": "dec_thesis_02",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_thesis",
+      "project_name": "Thesis Proposal",
+      "confidence": null,
+      "supersedes_id": null,
+      "superseded_by_id": null,
+      "valid_from": "2026-11-08T12:52:00Z",
+      "valid_to": null,
+      "updated_at": "2026-11-08T12:52:00Z",
+      "decision": {
+        "code": "D-02",
+        "title": "Use the RAG Comparison results as the Chapter 4 baseline",
+        "rationale": null,
+        "evidence": []
+      },
+      "memory_type": "project",
+      "content": "Use the RAG Comparison results as the Chapter 4 baseline",
+      "origin": "user",
+      "status": "confirmed",
+      "created_at": "2026-11-08T12:52:00Z",
+      "evidence": {
+        "kind": "user",
+        "label": "Added by you",
+        "conversation_id": null,
+        "source_id": null,
+        "page": null
+      }
+    },
+    {
+      "id": "dec_thesis_01",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_thesis",
+      "project_name": "Thesis Proposal",
+      "confidence": null,
+      "supersedes_id": null,
+      "superseded_by_id": null,
+      "valid_from": "2026-11-04T07:30:00Z",
+      "valid_to": null,
+      "updated_at": "2026-11-04T07:30:00Z",
+      "decision": {
+        "code": "D-01",
+        "title": "Focus the thesis on graph-aware retrieval (Q1)",
+        "rationale": null,
+        "evidence": []
+      },
+      "memory_type": "project",
+      "content": "Focus the thesis on graph-aware retrieval (Q1)",
+      "origin": "user",
+      "status": "confirmed",
+      "created_at": "2026-11-04T07:30:00Z",
+      "evidence": {
+        "kind": "user",
+        "label": "Added by you",
+        "conversation_id": null,
+        "source_id": null,
+        "page": null
+      }
+    }
+  ],
+  "next_cursor": null,
+  "total": 7,
+  "counts": {
+    "candidate": 1,
+    "confirmed": 5,
+    "superseded": 1,
+    "rejected": 0
+  }
+}

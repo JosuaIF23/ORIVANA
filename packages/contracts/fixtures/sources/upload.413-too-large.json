@@ -1,0 +1,11 @@
+{
+  "error": {
+    "code": "VALIDATION_FAILED",
+    "message": "Files can be up to 50 MB.",
+    "details": {
+      "field": "file",
+      "max_bytes": 52428800
+    },
+    "request_id": "req_77ab02e9"
+  }
+}

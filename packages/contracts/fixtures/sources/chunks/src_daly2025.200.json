@@ -1,0 +1,614 @@
+{
+  "_note": "GET /api/v1/sources/src_daly2025/chunks?page=N — one entry per page.",
+  "pages": [
+    {
+      "source_id": "src_daly2025",
+      "page": 1,
+      "page_count": 18,
+      "running_header": "Daly · Chunking Strategies for Dense Retrieval",
+      "section_id": "sec_daly2025_1",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "1 Introduction",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_daly2025_0101",
+          "text": "Retrieval quality bounds the quality of retrieval-augmented answers: if the relevant passage is not retrieved, the generator cannot cite it. This section motivates the comparison and states the research questions."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_daly2025_0101",
+          "document_id": "doc_daly2025",
+          "ordinal": 1,
+          "text": "Retrieval quality bounds the quality of retrieval-augmented answers: if the relevant passage is not retrieved, the generator cannot cite it. This section motivates the comparison and states the research questions.",
+          "token_count": 39,
+          "page_start": 1,
+          "page_end": 1,
+          "section_path": [
+            "1 Introduction"
+          ],
+          "char_start": 1200,
+          "char_end": 1413
+        }
+      ]
+    },
+    {
+      "source_id": "src_daly2025",
+      "page": 2,
+      "page_count": 18,
+      "running_header": "Daly · Chunking Strategies for Dense Retrieval",
+      "section_id": "sec_daly2025_2",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "2 Background",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_daly2025_0201",
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_daly2025_0201",
+          "document_id": "doc_daly2025",
+          "ordinal": 2,
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type.",
+          "token_count": 27,
+          "page_start": 2,
+          "page_end": 2,
+          "section_path": [
+            "2 Background"
+          ],
+          "char_start": 2400,
+          "char_end": 2527
+        }
+      ]
+    },
+    {
+      "source_id": "src_daly2025",
+      "page": 3,
+      "page_count": 18,
+      "running_header": "Daly · Chunking Strategies for Dense Retrieval",
+      "section_id": "sec_daly2025_3",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "3 Method",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_daly2025_0301",
+          "text": "We describe the retrievers, the indexing settings, and how passages are scored and merged before they are passed to the reader."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_daly2025_0301",
+          "document_id": "doc_daly2025",
+          "ordinal": 3,
+          "text": "We describe the retrievers, the indexing settings, and how passages are scored and merged before they are passed to the reader.",
+          "token_count": 27,
+          "page_start": 3,
+          "page_end": 3,
+          "section_path": [
+            "3 Method"
+          ],
+          "char_start": 3600,
+          "char_end": 3727
+        }
+      ]
+    },
+    {
+      "source_id": "src_daly2025",
+      "page": 4,
+      "page_count": 18,
+      "running_header": "Daly · Chunking Strategies for Dense Retrieval",
+      "section_id": "sec_daly2025_3",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_daly2025_0400",
+          "text": "We describe the retrievers, the indexing settings, and how passages are scored and merged before they are passed to the reader."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_daly2025_0400",
+          "document_id": "doc_daly2025",
+          "ordinal": 4,
+          "text": "We describe the retrievers, the indexing settings, and how passages are scored and merged before they are passed to the reader.",
+          "token_count": 27,
+          "page_start": 4,
+          "page_end": 4,
+          "section_path": [
+            "3 Method"
+          ],
+          "char_start": 4800,
+          "char_end": 4927
+        }
+      ]
+    },
+    {
+      "source_id": "src_daly2025",
+      "page": 5,
+      "page_count": 18,
+      "running_header": "Daly · Chunking Strategies for Dense Retrieval",
+      "section_id": "sec_daly2025_5",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "4 Experiments",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_daly2025_0501",
+          "text": "All experiments use the same reader model and the same passage budget so that differences can be attributed to retrieval."
+        },
+        {
+          "type": "heading",
+          "text": "4.1 Setup",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_daly2025_0503",
+          "text": "Hyperparameters are selected on the development split and frozen before evaluating on the test sets."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_daly2025_0501",
+          "document_id": "doc_daly2025",
+          "ordinal": 5,
+          "text": "All experiments use the same reader model and the same passage budget so that differences can be attributed to retrieval.",
+          "token_count": 26,
+          "page_start": 5,
+          "page_end": 5,
+          "section_path": [
+            "4 Experiments"
+          ],
+          "char_start": 6000,
+          "char_end": 6121
+        },
+        {
+          "id": "chk_daly2025_0503",
+          "document_id": "doc_daly2025",
+          "ordinal": 6,
+          "text": "Hyperparameters are selected on the development split and frozen before evaluating on the test sets.",
+          "token_count": 20,
+          "page_start": 5,
+          "page_end": 5,
+          "section_path": [
+            "4.1 Setup"
+          ],
+          "char_start": 7200,
+          "char_end": 7300
+        }
+      ]
+    },
+    {
+      "source_id": "src_daly2025",
+      "page": 6,
+      "page_count": 18,
+      "running_header": "Daly · Chunking Strategies for Dense Retrieval",
+      "section_id": "sec_daly2025_6",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "4.2 Overlap",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_daly2025_0601",
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_daly2025_0601",
+          "document_id": "doc_daly2025",
+          "ordinal": 7,
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type.",
+          "token_count": 27,
+          "page_start": 6,
+          "page_end": 6,
+          "section_path": [
+            "4.2 Overlap"
+          ],
+          "char_start": 8400,
+          "char_end": 8527
+        }
+      ]
+    },
+    {
+      "source_id": "src_daly2025",
+      "page": 7,
+      "page_count": 18,
+      "running_header": "Daly · Chunking Strategies for Dense Retrieval",
+      "section_id": "sec_daly2025_7",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "4.3 Chunk length",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_daly_0701",
+          "text": "Recall@20 drops from 71.2 to 64.8 when chunks grow from 384 to 1,024 tokens on Natural Questions, while a 64-token overlap recovers about one point at every length."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_daly_0701",
+          "document_id": "doc_daly2025",
+          "ordinal": 8,
+          "text": "Recall@20 drops from 71.2 to 64.8 when chunks grow from 384 to 1,024 tokens on Natural Questions, while a 64-token overlap recovers about one point at every length.",
+          "token_count": 36,
+          "page_start": 7,
+          "page_end": 7,
+          "section_path": [
+            "4.3 Chunk length"
+          ],
+          "char_start": 9600,
+          "char_end": 9764
+        }
+      ]
+    },
+    {
+      "source_id": "src_daly2025",
+      "page": 8,
+      "page_count": 18,
+      "running_header": "Daly · Chunking Strategies for Dense Retrieval",
+      "section_id": "sec_daly2025_7",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_daly2025_0800",
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_daly2025_0800",
+          "document_id": "doc_daly2025",
+          "ordinal": 9,
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type.",
+          "token_count": 27,
+          "page_start": 8,
+          "page_end": 8,
+          "section_path": [
+            "4.3 Chunk length"
+          ],
+          "char_start": 10800,
+          "char_end": 10927
+        }
+      ]
+    },
+    {
+      "source_id": "src_daly2025",
+      "page": 9,
+      "page_count": 18,
+      "running_header": "Daly · Chunking Strategies for Dense Retrieval",
+      "section_id": "sec_daly2025_7",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_daly2025_0900",
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_daly2025_0900",
+          "document_id": "doc_daly2025",
+          "ordinal": 10,
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type.",
+          "token_count": 27,
+          "page_start": 9,
+          "page_end": 9,
+          "section_path": [
+            "4.3 Chunk length"
+          ],
+          "char_start": 12000,
+          "char_end": 12127
+        }
+      ]
+    },
+    {
+      "source_id": "src_daly2025",
+      "page": 10,
+      "page_count": 18,
+      "running_header": "Daly · Chunking Strategies for Dense Retrieval",
+      "section_id": "sec_daly2025_7",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_daly2025_1000",
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_daly2025_1000",
+          "document_id": "doc_daly2025",
+          "ordinal": 11,
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type.",
+          "token_count": 27,
+          "page_start": 10,
+          "page_end": 10,
+          "section_path": [
+            "4.3 Chunk length"
+          ],
+          "char_start": 13200,
+          "char_end": 13327
+        }
+      ]
+    },
+    {
+      "source_id": "src_daly2025",
+      "page": 11,
+      "page_count": 18,
+      "running_header": "Daly · Chunking Strategies for Dense Retrieval",
+      "section_id": "sec_daly2025_7",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_daly2025_1100",
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_daly2025_1100",
+          "document_id": "doc_daly2025",
+          "ordinal": 12,
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type.",
+          "token_count": 27,
+          "page_start": 11,
+          "page_end": 11,
+          "section_path": [
+            "4.3 Chunk length"
+          ],
+          "char_start": 14400,
+          "char_end": 14527
+        }
+      ]
+    },
+    {
+      "source_id": "src_daly2025",
+      "page": 12,
+      "page_count": 18,
+      "running_header": "Daly · Chunking Strategies for Dense Retrieval",
+      "section_id": "sec_daly2025_8",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "5 Discussion",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_daly2025_1201",
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_daly2025_1201",
+          "document_id": "doc_daly2025",
+          "ordinal": 13,
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type.",
+          "token_count": 27,
+          "page_start": 12,
+          "page_end": 12,
+          "section_path": [
+            "5 Discussion"
+          ],
+          "char_start": 15600,
+          "char_end": 15727
+        }
+      ]
+    },
+    {
+      "source_id": "src_daly2025",
+      "page": 13,
+      "page_count": 18,
+      "running_header": "Daly · Chunking Strategies for Dense Retrieval",
+      "section_id": "sec_daly2025_8",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_daly2025_1300",
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_daly2025_1300",
+          "document_id": "doc_daly2025",
+          "ordinal": 14,
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type.",
+          "token_count": 27,
+          "page_start": 13,
+          "page_end": 13,
+          "section_path": [
+            "5 Discussion"
+          ],
+          "char_start": 16800,
+          "char_end": 16927
+        }
+      ]
+    },
+    {
+      "source_id": "src_daly2025",
+      "page": 14,
+      "page_count": 18,
+      "running_header": "Daly · Chunking Strategies for Dense Retrieval",
+      "section_id": "sec_daly2025_8",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_daly2025_1400",
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_daly2025_1400",
+          "document_id": "doc_daly2025",
+          "ordinal": 15,
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type.",
+          "token_count": 27,
+          "page_start": 14,
+          "page_end": 14,
+          "section_path": [
+            "5 Discussion"
+          ],
+          "char_start": 18000,
+          "char_end": 18127
+        }
+      ]
+    },
+    {
+      "source_id": "src_daly2025",
+      "page": 15,
+      "page_count": 18,
+      "running_header": "Daly · Chunking Strategies for Dense Retrieval",
+      "section_id": "sec_daly2025_9",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "6 Conclusion",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_daly2025_1501",
+          "text": "We summarise the findings and list the limitations of the evaluation, including the small number of multi-hop datasets."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_daly2025_1501",
+          "document_id": "doc_daly2025",
+          "ordinal": 16,
+          "text": "We summarise the findings and list the limitations of the evaluation, including the small number of multi-hop datasets.",
+          "token_count": 23,
+          "page_start": 15,
+          "page_end": 15,
+          "section_path": [
+            "6 Conclusion"
+          ],
+          "char_start": 19200,
+          "char_end": 19319
+        }
+      ]
+    },
+    {
+      "source_id": "src_daly2025",
+      "page": 16,
+      "page_count": 18,
+      "running_header": "Daly · Chunking Strategies for Dense Retrieval",
+      "section_id": "sec_daly2025_10",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "References",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_daly2025_1601",
+          "text": "[1] Robertson, S. and Zaragoza, H. The probabilistic relevance framework. [2] Karpukhin, V. et al. Dense passage retrieval for open-domain question answering."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_daly2025_1601",
+          "document_id": "doc_daly2025",
+          "ordinal": 17,
+          "text": "[1] Robertson, S. and Zaragoza, H. The probabilistic relevance framework. [2] Karpukhin, V. et al. Dense passage retrieval for open-domain question answering.",
+          "token_count": 29,
+          "page_start": 16,
+          "page_end": 16,
+          "section_path": [
+            "References"
+          ],
+          "char_start": 20400,
+          "char_end": 20558
+        }
+      ]
+    },
+    {
+      "source_id": "src_daly2025",
+      "page": 17,
+      "page_count": 18,
+      "running_header": "Daly · Chunking Strategies for Dense Retrieval",
+      "section_id": "sec_daly2025_10",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_daly2025_1700",
+          "text": "[1] Robertson, S. and Zaragoza, H. The probabilistic relevance framework. [2] Karpukhin, V. et al. Dense passage retrieval for open-domain question answering."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_daly2025_1700",
+          "document_id": "doc_daly2025",
+          "ordinal": 18,
+          "text": "[1] Robertson, S. and Zaragoza, H. The probabilistic relevance framework. [2] Karpukhin, V. et al. Dense passage retrieval for open-domain question answering.",
+          "token_count": 29,
+          "page_start": 17,
+          "page_end": 17,
+          "section_path": [
+            "References"
+          ],
+          "char_start": 21600,
+          "char_end": 21758
+        }
+      ]
+    },
+    {
+      "source_id": "src_daly2025",
+      "page": 18,
+      "page_count": 18,
+      "running_header": "Daly · Chunking Strategies for Dense Retrieval",
+      "section_id": "sec_daly2025_10",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_daly2025_1800",
+          "text": "[1] Robertson, S. and Zaragoza, H. The probabilistic relevance framework. [2] Karpukhin, V. et al. Dense passage retrieval for open-domain question answering."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_daly2025_1800",
+          "document_id": "doc_daly2025",
+          "ordinal": 19,
+          "text": "[1] Robertson, S. and Zaragoza, H. The probabilistic relevance framework. [2] Karpukhin, V. et al. Dense passage retrieval for open-domain question answering.",
+          "token_count": 29,
+          "page_start": 18,
+          "page_end": 18,
+          "section_path": [
+            "References"
+          ],
+          "char_start": 22800,
+          "char_end": 22958
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "error": {
+    "code": "TOKEN_EXPIRED",
+    "message": "This verification link has expired.",
+    "details": {
+      "purpose": "verify_email"
+    },
+    "request_id": "req_6f02b1aa"
+  }
+}

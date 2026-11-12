@@ -1,0 +1,10 @@
+{
+  "error": {
+    "code": "CONFLICT",
+    "message": "This proposal changed since you opened it. Reload to see the latest version.",
+    "details": {
+      "revision": 3
+    },
+    "request_id": "req_0b1c2d3e"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "job_01JCA2UP",
+  "workspace_id": "ws_new",
+  "source_id": "src_new_hybrid",
+  "kind": "ingest",
+  "status": "queued",
+  "stage": "queued",
+  "attempts": 1,
+  "max_attempts": 3,
+  "progress": null,
+  "eta_seconds": null,
+  "error_code": null,
+  "error_message": null,
+  "started_at": null,
+  "finished_at": null
+}

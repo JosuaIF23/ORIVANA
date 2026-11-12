@@ -1,0 +1,28 @@
+{
+  "user": {
+    "id": "usr_new",
+    "email": "new@example.edu",
+    "name": "Josua Silalahi",
+    "email_verified_at": "2026-11-11T08:10:00Z",
+    "status": "active",
+    "initials": "JS",
+    "time_zone": "Asia/Jakarta",
+    "created_at": "2026-11-11T08:10:00Z"
+  },
+  "workspace": {
+    "id": "ws_new",
+    "owner_user_id": "usr_new",
+    "name": "Personal workspace",
+    "plan": "personal",
+    "created_at": "2026-11-11T08:10:00Z"
+  },
+  "role": "owner",
+  "onboarding_completed": false,
+  "counts": {
+    "sources": 0,
+    "projects": 0,
+    "pending_approvals": 0,
+    "memories_needing_review": 0,
+    "unread_notifications": 0
+  }
+}

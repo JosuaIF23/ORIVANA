@@ -1,0 +1,20 @@
+{
+  "id": "job_meyer202",
+  "workspace_id": "ws_personal",
+  "source_id": "src_meyer2024",
+  "kind": "ingest",
+  "attempts": 1,
+  "max_attempts": 3,
+  "progress": {
+    "current": 9,
+    "total": 22,
+    "unit": "pages"
+  },
+  "eta_seconds": 60,
+  "error_code": null,
+  "error_message": null,
+  "started_at": "2026-11-11T06:57:00Z",
+  "finished_at": null,
+  "status": "running",
+  "stage": "parsing"
+}

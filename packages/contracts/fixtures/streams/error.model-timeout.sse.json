@@ -1,0 +1,187 @@
+{
+  "message_id": "msg_stream_error",
+  "events": [
+    {
+      "delay_ms": 300,
+      "event": "status",
+      "data": {
+        "phase": "retrieving",
+        "steps": [
+          {
+            "label": "Scope resolved — Project RAG Comparison · 14 sources",
+            "state": "done"
+          },
+          {
+            "label": "Searching keyword + vector index, expanding 1 graph hop",
+            "state": "active"
+          },
+          {
+            "label": "Generating answer from the evidence packet",
+            "state": "pending"
+          }
+        ],
+        "passages_found": 3,
+        "sources_found": 2,
+        "sources": [
+          {
+            "label": "Okafor et al. 2025",
+            "passages": 4
+          },
+          {
+            "label": "Santos & Lee 2025",
+            "passages": 3
+          }
+        ]
+      }
+    },
+    {
+      "delay_ms": 700,
+      "event": "status",
+      "data": {
+        "phase": "retrieving",
+        "steps": [
+          {
+            "label": "Scope resolved — Project RAG Comparison · 14 sources",
+            "state": "done"
+          },
+          {
+            "label": "Searching keyword + vector index, expanding 1 graph hop",
+            "state": "active"
+          },
+          {
+            "label": "Generating answer from the evidence packet",
+            "state": "pending"
+          }
+        ],
+        "passages_found": 12,
+        "sources_found": 5,
+        "sources": [
+          {
+            "label": "Okafor et al. 2025",
+            "passages": 4
+          },
+          {
+            "label": "Santos & Lee 2025",
+            "passages": 3
+          },
+          {
+            "label": "Varga & Chen 2024",
+            "passages": 2
+          },
+          {
+            "label": "Daly 2025",
+            "passages": 2
+          },
+          {
+            "label": "Kowalski 2024",
+            "passages": 1
+          }
+        ]
+      }
+    },
+    {
+      "delay_ms": 900,
+      "event": "status",
+      "data": {
+        "phase": "retrieving",
+        "steps": [
+          {
+            "label": "Scope resolved — Project RAG Comparison · 14 sources",
+            "state": "done"
+          },
+          {
+            "label": "Searching keyword + vector index, expanding 1 graph hop",
+            "state": "done"
+          },
+          {
+            "label": "Generating answer from the evidence packet",
+            "state": "pending"
+          }
+        ],
+        "passages_found": 12,
+        "sources_found": 5,
+        "sources": [
+          {
+            "label": "Okafor et al. 2025",
+            "passages": 4
+          },
+          {
+            "label": "Santos & Lee 2025",
+            "passages": 3
+          },
+          {
+            "label": "Varga & Chen 2024",
+            "passages": 2
+          },
+          {
+            "label": "Daly 2025",
+            "passages": 2
+          },
+          {
+            "label": "Kowalski 2024",
+            "passages": 1
+          }
+        ]
+      }
+    },
+    {
+      "delay_ms": 300,
+      "event": "status",
+      "data": {
+        "phase": "generating",
+        "steps": [
+          {
+            "label": "Scope resolved — Project RAG Comparison · 14 sources",
+            "state": "done"
+          },
+          {
+            "label": "Searching keyword + vector index, expanding 1 graph hop",
+            "state": "done"
+          },
+          {
+            "label": "Generating answer from the evidence packet",
+            "state": "active"
+          }
+        ],
+        "passages_found": 12,
+        "sources_found": 5,
+        "sources": [
+          {
+            "label": "Okafor et al. 2025",
+            "passages": 4
+          },
+          {
+            "label": "Santos & Lee 2025",
+            "passages": 3
+          },
+          {
+            "label": "Varga & Chen 2024",
+            "passages": 2
+          },
+          {
+            "label": "Daly 2025",
+            "passages": 2
+          },
+          {
+            "label": "Kowalski 2024",
+            "passages": 1
+          }
+        ]
+      }
+    },
+    {
+      "delay_ms": 2500,
+      "event": "error",
+      "data": {
+        "code": "MODEL_TIMEOUT",
+        "message": "The model didn’t respond in time",
+        "details": {
+          "passages_retrieved": 12,
+          "memory_written": false
+        },
+        "request_id": "req_7d2e9f10",
+        "retryable": true
+      }
+    }
+  ]
+}

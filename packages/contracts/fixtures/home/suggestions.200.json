@@ -1,0 +1,21 @@
+{
+  "basis": "Based on what you added and asked this week.",
+  "items": [
+    {
+      "id": "sug_1",
+      "text": "Review 5 candidate relationships in RAG Comparison",
+      "target": {
+        "kind": "graph_candidates",
+        "project_id": "prj_rag"
+      }
+    },
+    {
+      "id": "sug_2",
+      "text": "Confirm 3 candidate memories from today’s conversation",
+      "target": {
+        "kind": "memory_review",
+        "project_id": "prj_rag"
+      }
+    }
+  ]
+}

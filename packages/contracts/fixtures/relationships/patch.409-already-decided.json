@@ -1,0 +1,10 @@
+{
+  "error": {
+    "code": "CONFLICT",
+    "message": "This relationship was already reviewed.",
+    "details": {
+      "status": "confirmed"
+    },
+    "request_id": "req_5e6f7a80"
+  }
+}

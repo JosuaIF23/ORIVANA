@@ -1,0 +1,16 @@
+{
+  "id": "job_01JC8ZP3",
+  "workspace_id": "ws_personal",
+  "source_id": "src_survey2019",
+  "kind": "ingest",
+  "attempts": 2,
+  "max_attempts": 3,
+  "progress": null,
+  "eta_seconds": null,
+  "error_code": "PDF_ENCRYPTED",
+  "error_message": "Parsing failed: the PDF is password-protected. Remove the password and re-upload, or retry if you already did.",
+  "started_at": "2026-11-11T01:30:00Z",
+  "finished_at": "2026-11-11T04:12:00Z",
+  "status": "failed",
+  "stage": "failed"
+}

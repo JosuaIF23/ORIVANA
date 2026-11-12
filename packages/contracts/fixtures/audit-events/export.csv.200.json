@@ -1,0 +1,5 @@
+{
+  "_note": "GET /api/v1/audit-events/export returns text/csv; this fixture shows the header and first row.",
+  "content_type": "text/csv",
+  "body": "id,created_at,actor_type,category,event_type,target_type,target_id,result,request_id\nevt_7f3a01,2026-11-11T07:34:00Z,agent,approvals,action_proposal.created,repository,lab/rag-experiments,awaiting_approval,req_…\n"
+}

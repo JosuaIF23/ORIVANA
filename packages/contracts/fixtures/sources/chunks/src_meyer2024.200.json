@@ -1,0 +1,729 @@
+{
+  "_note": "GET /api/v1/sources/src_meyer2024/chunks?page=N — one entry per page.",
+  "pages": [
+    {
+      "source_id": "src_meyer2024",
+      "page": 1,
+      "page_count": 22,
+      "running_header": "Meyer · Late Interaction Retrieval at Scale",
+      "section_id": "sec_meyer2024_1",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "1 Introduction",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_meyer2024_0101",
+          "text": "Retrieval quality bounds the quality of retrieval-augmented answers: if the relevant passage is not retrieved, the generator cannot cite it. This section motivates the comparison and states the research questions."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_meyer2024_0101",
+          "document_id": "doc_meyer2024",
+          "ordinal": 1,
+          "text": "Retrieval quality bounds the quality of retrieval-augmented answers: if the relevant passage is not retrieved, the generator cannot cite it. This section motivates the comparison and states the research questions.",
+          "token_count": 39,
+          "page_start": 1,
+          "page_end": 1,
+          "section_path": [
+            "1 Introduction"
+          ],
+          "char_start": 1200,
+          "char_end": 1413
+        }
+      ]
+    },
+    {
+      "source_id": "src_meyer2024",
+      "page": 2,
+      "page_count": 22,
+      "running_header": "Meyer · Late Interaction Retrieval at Scale",
+      "section_id": "sec_meyer2024_2",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "2 Related work",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_meyer2024_0201",
+          "text": "Prior work compares sparse and dense retrievers on open-domain question answering, but few studies hold the reader model fixed while varying only the retriever."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_meyer2024_0201",
+          "document_id": "doc_meyer2024",
+          "ordinal": 2,
+          "text": "Prior work compares sparse and dense retrievers on open-domain question answering, but few studies hold the reader model fixed while varying only the retriever.",
+          "token_count": 31,
+          "page_start": 2,
+          "page_end": 2,
+          "section_path": [
+            "2 Related work"
+          ],
+          "char_start": 2400,
+          "char_end": 2560
+        }
+      ]
+    },
+    {
+      "source_id": "src_meyer2024",
+      "page": 3,
+      "page_count": 22,
+      "running_header": "Meyer · Late Interaction Retrieval at Scale",
+      "section_id": "sec_meyer2024_2",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_meyer2024_0300",
+          "text": "Prior work compares sparse and dense retrievers on open-domain question answering, but few studies hold the reader model fixed while varying only the retriever."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_meyer2024_0300",
+          "document_id": "doc_meyer2024",
+          "ordinal": 3,
+          "text": "Prior work compares sparse and dense retrievers on open-domain question answering, but few studies hold the reader model fixed while varying only the retriever.",
+          "token_count": 31,
+          "page_start": 3,
+          "page_end": 3,
+          "section_path": [
+            "2 Related work"
+          ],
+          "char_start": 3600,
+          "char_end": 3760
+        }
+      ]
+    },
+    {
+      "source_id": "src_meyer2024",
+      "page": 4,
+      "page_count": 22,
+      "running_header": "Meyer · Late Interaction Retrieval at Scale",
+      "section_id": "sec_meyer2024_3",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "3 System design",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_meyer2024_0401",
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_meyer2024_0401",
+          "document_id": "doc_meyer2024",
+          "ordinal": 4,
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type.",
+          "token_count": 27,
+          "page_start": 4,
+          "page_end": 4,
+          "section_path": [
+            "3 System design"
+          ],
+          "char_start": 4800,
+          "char_end": 4927
+        }
+      ]
+    },
+    {
+      "source_id": "src_meyer2024",
+      "page": 5,
+      "page_count": 22,
+      "running_header": "Meyer · Late Interaction Retrieval at Scale",
+      "section_id": "sec_meyer2024_3",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_meyer2024_0500",
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_meyer2024_0500",
+          "document_id": "doc_meyer2024",
+          "ordinal": 5,
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type.",
+          "token_count": 27,
+          "page_start": 5,
+          "page_end": 5,
+          "section_path": [
+            "3 System design"
+          ],
+          "char_start": 6000,
+          "char_end": 6127
+        }
+      ]
+    },
+    {
+      "source_id": "src_meyer2024",
+      "page": 6,
+      "page_count": 22,
+      "running_header": "Meyer · Late Interaction Retrieval at Scale",
+      "section_id": "sec_meyer2024_3",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_meyer2024_0600",
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_meyer2024_0600",
+          "document_id": "doc_meyer2024",
+          "ordinal": 6,
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type.",
+          "token_count": 27,
+          "page_start": 6,
+          "page_end": 6,
+          "section_path": [
+            "3 System design"
+          ],
+          "char_start": 7200,
+          "char_end": 7327
+        }
+      ]
+    },
+    {
+      "source_id": "src_meyer2024",
+      "page": 7,
+      "page_count": 22,
+      "running_header": "Meyer · Late Interaction Retrieval at Scale",
+      "section_id": "sec_meyer2024_4",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "4 Experiments",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_meyer2024_0701",
+          "text": "All experiments use the same reader model and the same passage budget so that differences can be attributed to retrieval."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_meyer2024_0701",
+          "document_id": "doc_meyer2024",
+          "ordinal": 7,
+          "text": "All experiments use the same reader model and the same passage budget so that differences can be attributed to retrieval.",
+          "token_count": 26,
+          "page_start": 7,
+          "page_end": 7,
+          "section_path": [
+            "4 Experiments"
+          ],
+          "char_start": 8400,
+          "char_end": 8521
+        }
+      ]
+    },
+    {
+      "source_id": "src_meyer2024",
+      "page": 8,
+      "page_count": 22,
+      "running_header": "Meyer · Late Interaction Retrieval at Scale",
+      "section_id": "sec_meyer2024_4",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_meyer2024_0800",
+          "text": "All experiments use the same reader model and the same passage budget so that differences can be attributed to retrieval."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_meyer2024_0800",
+          "document_id": "doc_meyer2024",
+          "ordinal": 8,
+          "text": "All experiments use the same reader model and the same passage budget so that differences can be attributed to retrieval.",
+          "token_count": 26,
+          "page_start": 8,
+          "page_end": 8,
+          "section_path": [
+            "4 Experiments"
+          ],
+          "char_start": 9600,
+          "char_end": 9721
+        }
+      ]
+    },
+    {
+      "source_id": "src_meyer2024",
+      "page": 9,
+      "page_count": 22,
+      "running_header": "Meyer · Late Interaction Retrieval at Scale",
+      "section_id": "sec_meyer2024_5",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "5 Results",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_meyer2024_0901",
+          "text": "We report top-20 accuracy and nDCG@10 for every configuration; confidence intervals come from 1,000 bootstrap samples."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_meyer2024_0901",
+          "document_id": "doc_meyer2024",
+          "ordinal": 9,
+          "text": "We report top-20 accuracy and nDCG@10 for every configuration; confidence intervals come from 1,000 bootstrap samples.",
+          "token_count": 21,
+          "page_start": 9,
+          "page_end": 9,
+          "section_path": [
+            "5 Results"
+          ],
+          "char_start": 10800,
+          "char_end": 10918
+        }
+      ]
+    },
+    {
+      "source_id": "src_meyer2024",
+      "page": 10,
+      "page_count": 22,
+      "running_header": "Meyer · Late Interaction Retrieval at Scale",
+      "section_id": "sec_meyer2024_5",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_meyer2024_1000",
+          "text": "We report top-20 accuracy and nDCG@10 for every configuration; confidence intervals come from 1,000 bootstrap samples."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_meyer2024_1000",
+          "document_id": "doc_meyer2024",
+          "ordinal": 10,
+          "text": "We report top-20 accuracy and nDCG@10 for every configuration; confidence intervals come from 1,000 bootstrap samples.",
+          "token_count": 21,
+          "page_start": 10,
+          "page_end": 10,
+          "section_path": [
+            "5 Results"
+          ],
+          "char_start": 12000,
+          "char_end": 12118
+        }
+      ]
+    },
+    {
+      "source_id": "src_meyer2024",
+      "page": 11,
+      "page_count": 22,
+      "running_header": "Meyer · Late Interaction Retrieval at Scale",
+      "section_id": "sec_meyer2024_7",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "6 Analysis",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_meyer2024_1101",
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type."
+        },
+        {
+          "type": "heading",
+          "text": "6.1 Chunk length",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_meyer_1101",
+          "text": "Chunk length between 256 and 1,024 tokens had no significant effect on nDCG@10 for the late-interaction retriever, because token-level matching already localises the relevant span."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_meyer2024_1101",
+          "document_id": "doc_meyer2024",
+          "ordinal": 11,
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type.",
+          "token_count": 27,
+          "page_start": 11,
+          "page_end": 11,
+          "section_path": [
+            "6 Analysis"
+          ],
+          "char_start": 13200,
+          "char_end": 13327
+        },
+        {
+          "id": "chk_meyer_1101",
+          "document_id": "doc_meyer2024",
+          "ordinal": 12,
+          "text": "Chunk length between 256 and 1,024 tokens had no significant effect on nDCG@10 for the late-interaction retriever, because token-level matching already localises the relevant span.",
+          "token_count": 33,
+          "page_start": 11,
+          "page_end": 11,
+          "section_path": [
+            "6.1 Chunk length"
+          ],
+          "char_start": 14400,
+          "char_end": 14580
+        }
+      ]
+    },
+    {
+      "source_id": "src_meyer2024",
+      "page": 12,
+      "page_count": 22,
+      "running_header": "Meyer · Late Interaction Retrieval at Scale",
+      "section_id": "sec_meyer2024_7",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_meyer2024_1200",
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_meyer2024_1200",
+          "document_id": "doc_meyer2024",
+          "ordinal": 13,
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type.",
+          "token_count": 27,
+          "page_start": 12,
+          "page_end": 12,
+          "section_path": [
+            "6.1 Chunk length"
+          ],
+          "char_start": 15600,
+          "char_end": 15727
+        }
+      ]
+    },
+    {
+      "source_id": "src_meyer2024",
+      "page": 13,
+      "page_count": 22,
+      "running_header": "Meyer · Late Interaction Retrieval at Scale",
+      "section_id": "sec_meyer2024_7",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_meyer2024_1300",
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_meyer2024_1300",
+          "document_id": "doc_meyer2024",
+          "ordinal": 14,
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type.",
+          "token_count": 27,
+          "page_start": 13,
+          "page_end": 13,
+          "section_path": [
+            "6.1 Chunk length"
+          ],
+          "char_start": 16800,
+          "char_end": 16927
+        }
+      ]
+    },
+    {
+      "source_id": "src_meyer2024",
+      "page": 14,
+      "page_count": 22,
+      "running_header": "Meyer · Late Interaction Retrieval at Scale",
+      "section_id": "sec_meyer2024_7",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_meyer2024_1400",
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_meyer2024_1400",
+          "document_id": "doc_meyer2024",
+          "ordinal": 15,
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type.",
+          "token_count": 27,
+          "page_start": 14,
+          "page_end": 14,
+          "section_path": [
+            "6.1 Chunk length"
+          ],
+          "char_start": 18000,
+          "char_end": 18127
+        }
+      ]
+    },
+    {
+      "source_id": "src_meyer2024",
+      "page": 15,
+      "page_count": 22,
+      "running_header": "Meyer · Late Interaction Retrieval at Scale",
+      "section_id": "sec_meyer2024_7",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_meyer2024_1500",
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_meyer2024_1500",
+          "document_id": "doc_meyer2024",
+          "ordinal": 16,
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type.",
+          "token_count": 27,
+          "page_start": 15,
+          "page_end": 15,
+          "section_path": [
+            "6.1 Chunk length"
+          ],
+          "char_start": 19200,
+          "char_end": 19327
+        }
+      ]
+    },
+    {
+      "source_id": "src_meyer2024",
+      "page": 16,
+      "page_count": 22,
+      "running_header": "Meyer · Late Interaction Retrieval at Scale",
+      "section_id": "sec_meyer2024_7",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_meyer2024_1600",
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_meyer2024_1600",
+          "document_id": "doc_meyer2024",
+          "ordinal": 17,
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type.",
+          "token_count": 27,
+          "page_start": 16,
+          "page_end": 16,
+          "section_path": [
+            "6.1 Chunk length"
+          ],
+          "char_start": 20400,
+          "char_end": 20527
+        }
+      ]
+    },
+    {
+      "source_id": "src_meyer2024",
+      "page": 17,
+      "page_count": 22,
+      "running_header": "Meyer · Late Interaction Retrieval at Scale",
+      "section_id": "sec_meyer2024_7",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_meyer2024_1700",
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_meyer2024_1700",
+          "document_id": "doc_meyer2024",
+          "ordinal": 18,
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type.",
+          "token_count": 27,
+          "page_start": 17,
+          "page_end": 17,
+          "section_path": [
+            "6.1 Chunk length"
+          ],
+          "char_start": 21600,
+          "char_end": 21727
+        }
+      ]
+    },
+    {
+      "source_id": "src_meyer2024",
+      "page": 18,
+      "page_count": 22,
+      "running_header": "Meyer · Late Interaction Retrieval at Scale",
+      "section_id": "sec_meyer2024_8",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "7 Conclusion",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_meyer2024_1801",
+          "text": "We summarise the findings and list the limitations of the evaluation, including the small number of multi-hop datasets."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_meyer2024_1801",
+          "document_id": "doc_meyer2024",
+          "ordinal": 19,
+          "text": "We summarise the findings and list the limitations of the evaluation, including the small number of multi-hop datasets.",
+          "token_count": 23,
+          "page_start": 18,
+          "page_end": 18,
+          "section_path": [
+            "7 Conclusion"
+          ],
+          "char_start": 22800,
+          "char_end": 22919
+        }
+      ]
+    },
+    {
+      "source_id": "src_meyer2024",
+      "page": 19,
+      "page_count": 22,
+      "running_header": "Meyer · Late Interaction Retrieval at Scale",
+      "section_id": "sec_meyer2024_8",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_meyer2024_1900",
+          "text": "We summarise the findings and list the limitations of the evaluation, including the small number of multi-hop datasets."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_meyer2024_1900",
+          "document_id": "doc_meyer2024",
+          "ordinal": 20,
+          "text": "We summarise the findings and list the limitations of the evaluation, including the small number of multi-hop datasets.",
+          "token_count": 23,
+          "page_start": 19,
+          "page_end": 19,
+          "section_path": [
+            "7 Conclusion"
+          ],
+          "char_start": 24000,
+          "char_end": 24119
+        }
+      ]
+    },
+    {
+      "source_id": "src_meyer2024",
+      "page": 20,
+      "page_count": 22,
+      "running_header": "Meyer · Late Interaction Retrieval at Scale",
+      "section_id": "sec_meyer2024_9",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "References",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_meyer2024_2001",
+          "text": "[1] Robertson, S. and Zaragoza, H. The probabilistic relevance framework. [2] Karpukhin, V. et al. Dense passage retrieval for open-domain question answering."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_meyer2024_2001",
+          "document_id": "doc_meyer2024",
+          "ordinal": 21,
+          "text": "[1] Robertson, S. and Zaragoza, H. The probabilistic relevance framework. [2] Karpukhin, V. et al. Dense passage retrieval for open-domain question answering.",
+          "token_count": 29,
+          "page_start": 20,
+          "page_end": 20,
+          "section_path": [
+            "References"
+          ],
+          "char_start": 25200,
+          "char_end": 25358
+        }
+      ]
+    },
+    {
+      "source_id": "src_meyer2024",
+      "page": 21,
+      "page_count": 22,
+      "running_header": "Meyer · Late Interaction Retrieval at Scale",
+      "section_id": "sec_meyer2024_9",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_meyer2024_2100",
+          "text": "[1] Robertson, S. and Zaragoza, H. The probabilistic relevance framework. [2] Karpukhin, V. et al. Dense passage retrieval for open-domain question answering."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_meyer2024_2100",
+          "document_id": "doc_meyer2024",
+          "ordinal": 22,
+          "text": "[1] Robertson, S. and Zaragoza, H. The probabilistic relevance framework. [2] Karpukhin, V. et al. Dense passage retrieval for open-domain question answering.",
+          "token_count": 29,
+          "page_start": 21,
+          "page_end": 21,
+          "section_path": [
+            "References"
+          ],
+          "char_start": 26400,
+          "char_end": 26558
+        }
+      ]
+    },
+    {
+      "source_id": "src_meyer2024",
+      "page": 22,
+      "page_count": 22,
+      "running_header": "Meyer · Late Interaction Retrieval at Scale",
+      "section_id": "sec_meyer2024_9",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_meyer2024_2200",
+          "text": "[1] Robertson, S. and Zaragoza, H. The probabilistic relevance framework. [2] Karpukhin, V. et al. Dense passage retrieval for open-domain question answering."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_meyer2024_2200",
+          "document_id": "doc_meyer2024",
+          "ordinal": 23,
+          "text": "[1] Robertson, S. and Zaragoza, H. The probabilistic relevance framework. [2] Karpukhin, V. et al. Dense passage retrieval for open-domain question answering.",
+          "token_count": 29,
+          "page_start": 22,
+          "page_end": 22,
+          "section_path": [
+            "References"
+          ],
+          "char_start": 27600,
+          "char_end": 27758
+        }
+      ]
+    }
+  ]
+}

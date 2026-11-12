@@ -1,0 +1,66 @@
+{
+  "items": [
+    {
+      "id": "conv_hybrid",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "user_id": "usr_josua",
+      "title": "Hybrid vs dense-only results",
+      "created_at": "2026-11-11T07:20:00Z",
+      "last_message_at": "2026-11-11T07:20:40Z"
+    },
+    {
+      "id": "conv_datasets",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "user_id": "usr_josua",
+      "title": "Datasets used across papers",
+      "created_at": "2026-11-11T04:05:00Z",
+      "last_message_at": "2026-11-11T04:05:30Z"
+    },
+    {
+      "id": "conv_graphrag",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "user_id": "usr_josua",
+      "title": "GraphRAG community summaries",
+      "created_at": "2026-11-09T07:40:00Z",
+      "last_message_at": "2026-11-09T08:02:20Z"
+    },
+    {
+      "id": "conv_evalplan",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "user_id": "usr_josua",
+      "title": "Eval plan for chunk sizes",
+      "created_at": "2026-11-09T03:30:00Z",
+      "last_message_at": "2026-11-09T08:10:30Z"
+    },
+    {
+      "id": "conv_thesisoutline",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_thesis",
+      "project_name": "Thesis Proposal",
+      "user_id": "usr_josua",
+      "title": "Thesis proposal outline",
+      "created_at": "2026-11-08T12:50:00Z",
+      "last_message_at": "2026-11-08T12:52:00Z"
+    },
+    {
+      "id": "conv_readinglist",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_thesis",
+      "project_name": "Thesis Proposal",
+      "user_id": "usr_josua",
+      "title": "Reading list for retrieval eval",
+      "created_at": "2026-11-02T09:00:00Z",
+      "last_message_at": "2026-11-02T09:03:00Z"
+    }
+  ],
+  "next_cursor": null,
+  "total": 6
+}

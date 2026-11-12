@@ -1,0 +1,8 @@
+{
+  "use_case": "research",
+  "suggest_memories_from_conversations": true,
+  "suggest_memories_from_sources": true,
+  "use_unconfirmed_candidates_in_answers": false,
+  "discard_unreviewed_candidates_after_days": 30,
+  "default_project_id": "prj_rag"
+}

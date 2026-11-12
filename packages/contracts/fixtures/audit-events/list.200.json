@@ -1,0 +1,954 @@
+{
+  "_note": "Mock store seed: all events in the last 7 days. The real API returns 10 per page with next_cursor.",
+  "items": [
+    {
+      "id": "evt_7f3a01",
+      "workspace_id": "ws_personal",
+      "actor_type": "agent",
+      "actor_id": "agent_orivana",
+      "event_type": "action_proposal.created",
+      "category": "approvals",
+      "target_type": "repository",
+      "target_id": "lab/rag-experiments",
+      "summary": "Proposed creating an issue in {link}",
+      "link": {
+        "label": "lab/rag-experiments",
+        "target_type": "repository",
+        "target_id": "lab/rag-experiments"
+      },
+      "result": "awaiting_approval",
+      "request_id": "req_5b9201b3",
+      "created_at": "2026-11-11T07:34:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6b7",
+      "workspace_id": "ws_personal",
+      "actor_type": "system",
+      "actor_id": "system",
+      "event_type": "retrieval.completed",
+      "category": "retrieval",
+      "target_type": "conversation",
+      "target_id": "conv_hybrid",
+      "summary": "Retrieved 5 passages; 2 cited in {link}",
+      "link": {
+        "label": "Hybrid vs dense-only results",
+        "target_type": "conversation",
+        "target_id": "conv_hybrid"
+      },
+      "result": "succeeded",
+      "request_id": "req_5b9582c6",
+      "created_at": "2026-11-11T07:33:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_7f3a02",
+      "workspace_id": "ws_personal",
+      "actor_type": "agent",
+      "actor_id": "agent_orivana",
+      "event_type": "memory.suggested",
+      "category": "memory",
+      "target_type": "conversation",
+      "target_id": "conv_hybrid",
+      "summary": "Suggested 2 memories from {link}",
+      "link": {
+        "label": "Hybrid vs dense-only results",
+        "target_type": "conversation",
+        "target_id": "conv_hybrid"
+      },
+      "result": "candidate",
+      "request_id": "req_5b9220a2",
+      "created_at": "2026-11-11T07:22:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_7f3a03",
+      "workspace_id": "ws_personal",
+      "actor_type": "system",
+      "actor_id": "system",
+      "event_type": "retrieval.completed",
+      "category": "retrieval",
+      "target_type": "conversation",
+      "target_id": "conv_hybrid",
+      "summary": "Retrieved 12 passages from 5 sources; 3 cited in {link}",
+      "link": {
+        "label": "Hybrid vs dense-only results",
+        "target_type": "conversation",
+        "target_id": "conv_hybrid"
+      },
+      "result": "succeeded",
+      "request_id": "req_5b923f91",
+      "created_at": "2026-11-11T07:20:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_7f3a04",
+      "workspace_id": "ws_personal",
+      "actor_type": "agent",
+      "actor_id": "agent_orivana",
+      "event_type": "tool.github.list_issues",
+      "category": "tool_calls",
+      "target_type": "repository",
+      "target_id": "lab/rag-experiments",
+      "summary": "Read 23 open issues (github.list_issues) in {link}",
+      "link": {
+        "label": "lab/rag-experiments",
+        "target_type": "repository",
+        "target_id": "lab/rag-experiments"
+      },
+      "result": "succeeded",
+      "request_id": "req_5b925e80",
+      "created_at": "2026-11-11T07:05:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_7f3a05",
+      "workspace_id": "ws_personal",
+      "actor_type": "system",
+      "actor_id": "system",
+      "event_type": "ingestion.indexing_started",
+      "category": "ingestion",
+      "target_type": "source",
+      "target_id": "src_daly2025",
+      "summary": "Started indexing {link}",
+      "link": {
+        "label": "Chunking Strategies for Dense Retrieval",
+        "target_type": "source",
+        "target_id": "src_daly2025"
+      },
+      "result": "in_progress",
+      "request_id": "req_5b927d6f",
+      "created_at": "2026-11-11T06:58:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_7f3a06",
+      "workspace_id": "ws_personal",
+      "actor_type": "system",
+      "actor_id": "system",
+      "event_type": "ingestion.failed",
+      "category": "errors",
+      "target_type": "source",
+      "target_id": "src_survey2019",
+      "summary": "Parsing failed for {link}",
+      "link": {
+        "label": "survey-scan-2019.pdf",
+        "target_type": "source",
+        "target_id": "src_survey2019"
+      },
+      "result": "failed",
+      "request_id": "req_5b91e2c4",
+      "created_at": "2026-11-11T04:12:00Z",
+      "metadata": {
+        "error_code": "PDF_ENCRYPTED",
+        "error_message": "The PDF is password-protected, so text and page numbers can’t be extracted.",
+        "job": "job_01JC8ZP3 · parse · attempt 2 of 3",
+        "related": {
+          "label": "Source · survey-scan-2019.pdf",
+          "target_type": "source",
+          "target_id": "src_survey2019",
+          "project_name": "Thesis Proposal"
+        }
+      }
+    },
+    {
+      "id": "evt_6b0",
+      "workspace_id": "ws_personal",
+      "actor_type": "system",
+      "actor_id": "system",
+      "event_type": "retrieval.completed",
+      "category": "retrieval",
+      "target_type": "conversation",
+      "target_id": "conv_datasets",
+      "summary": "Retrieved 9 passages; 3 cited in {link}",
+      "link": {
+        "label": "Datasets used across papers",
+        "target_type": "conversation",
+        "target_id": "conv_datasets"
+      },
+      "result": "succeeded",
+      "request_id": "req_5b94aa3d",
+      "created_at": "2026-11-11T04:05:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6b8",
+      "workspace_id": "ws_personal",
+      "actor_type": "system",
+      "actor_id": "system",
+      "event_type": "retrieval.completed",
+      "category": "retrieval",
+      "target_type": "conversation",
+      "target_id": "conv_datasets",
+      "summary": "Retrieved 10 passages; 3 cited in {link}",
+      "link": {
+        "label": "Datasets used across papers",
+        "target_type": "conversation",
+        "target_id": "conv_datasets"
+      },
+      "result": "succeeded",
+      "request_id": "req_5b95a1b5",
+      "created_at": "2026-11-11T03:58:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_7f3a07",
+      "workspace_id": "ws_personal",
+      "actor_type": "user",
+      "actor_id": "usr_josua",
+      "event_type": "action_proposal.rejected",
+      "category": "approvals",
+      "target_type": "repository",
+      "target_id": "lab/rag-experiments",
+      "summary": "Rejected proposal “Update README eval table” for {link}",
+      "link": {
+        "label": "lab/rag-experiments",
+        "target_type": "repository",
+        "target_id": "lab/rag-experiments"
+      },
+      "result": "rejected",
+      "request_id": "req_5b92bb4d",
+      "created_at": "2026-11-11T02:40:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_7f3a08",
+      "workspace_id": "ws_personal",
+      "actor_type": "user",
+      "actor_id": "usr_josua",
+      "event_type": "memory.confirmed",
+      "category": "memory",
+      "target_type": "memory",
+      "target_id": "mem_chunking_384",
+      "summary": "Confirmed memory {link}",
+      "link": {
+        "label": "Default chunking: 384 tokens",
+        "target_type": "memory",
+        "target_id": "mem_chunking_384"
+      },
+      "result": "confirmed",
+      "request_id": "req_5b92da3c",
+      "created_at": "2026-11-10T10:02:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_7f3a09",
+      "workspace_id": "ws_personal",
+      "actor_type": "user",
+      "actor_id": "usr_josua",
+      "event_type": "source.uploaded",
+      "category": "ingestion",
+      "target_type": "source",
+      "target_id": "src_varga2024",
+      "summary": "Uploaded {link}",
+      "link": {
+        "label": "Dense-Only Baselines for Multi-hop QA",
+        "target_type": "source",
+        "target_id": "src_varga2024"
+      },
+      "result": "ready",
+      "request_id": "req_5b92f92b",
+      "created_at": "2026-11-10T09:40:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_7f3a10",
+      "workspace_id": "ws_personal",
+      "actor_type": "system",
+      "actor_id": "system",
+      "event_type": "external_action.succeeded",
+      "category": "external_actions",
+      "target_type": "issue",
+      "target_id": "lab/rag-experiments#41",
+      "summary": "Created and verified issue {link}",
+      "link": {
+        "label": "lab/rag-experiments#41",
+        "target_type": "issue",
+        "target_id": "lab/rag-experiments#41"
+      },
+      "result": "verified",
+      "request_id": "req_5b93181a",
+      "created_at": "2026-11-10T09:10:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6e0",
+      "workspace_id": "ws_personal",
+      "actor_type": "user",
+      "actor_id": "usr_josua",
+      "event_type": "action_proposal.approved",
+      "category": "approvals",
+      "target_type": "repository",
+      "target_id": "lab/rag-experiments",
+      "summary": "Approved proposal “Log chunk-size results” for {link}",
+      "link": {
+        "label": "lab/rag-experiments",
+        "target_type": "repository",
+        "target_id": "lab/rag-experiments"
+      },
+      "result": "succeeded",
+      "request_id": "req_5b96d70b",
+      "created_at": "2026-11-10T09:09:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6d0",
+      "workspace_id": "ws_personal",
+      "actor_type": "agent",
+      "actor_id": "agent_orivana",
+      "event_type": "tool.github.get_issue",
+      "category": "tool_calls",
+      "target_type": "issue",
+      "target_id": "lab/rag-experiments#41",
+      "summary": "Verified issue {link} (github.get_issue)",
+      "link": {
+        "label": "lab/rag-experiments#41",
+        "target_type": "issue",
+        "target_id": "lab/rag-experiments#41"
+      },
+      "result": "succeeded",
+      "request_id": "req_5b965b4f",
+      "created_at": "2026-11-10T09:05:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6a00",
+      "workspace_id": "ws_personal",
+      "actor_type": "user",
+      "actor_id": "usr_josua",
+      "event_type": "source.uploaded",
+      "category": "ingestion",
+      "target_type": "source",
+      "target_id": "src_labnotes",
+      "summary": "Uploaded {link}",
+      "link": {
+        "label": "lab-notes-november.md",
+        "target_type": "source",
+        "target_id": "src_labnotes"
+      },
+      "result": "ready",
+      "request_id": "req_5b933709",
+      "created_at": "2026-11-10T03:05:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6b1",
+      "workspace_id": "ws_personal",
+      "actor_type": "system",
+      "actor_id": "system",
+      "event_type": "retrieval.completed",
+      "category": "retrieval",
+      "target_type": "conversation",
+      "target_id": "conv_evalplan",
+      "summary": "Retrieved 6 passages; 2 cited in {link}",
+      "link": {
+        "label": "Eval plan for chunk sizes",
+        "target_type": "conversation",
+        "target_id": "conv_evalplan"
+      },
+      "result": "succeeded",
+      "request_id": "req_5b94c92c",
+      "created_at": "2026-11-09T08:10:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6b2",
+      "workspace_id": "ws_personal",
+      "actor_type": "system",
+      "actor_id": "system",
+      "event_type": "retrieval.completed",
+      "category": "retrieval",
+      "target_type": "conversation",
+      "target_id": "conv_graphrag",
+      "summary": "Retrieved 2 passages; 0 cited in {link}",
+      "link": {
+        "label": "GraphRAG community summaries",
+        "target_type": "conversation",
+        "target_id": "conv_graphrag"
+      },
+      "result": "succeeded",
+      "request_id": "req_5b94e81b",
+      "created_at": "2026-11-09T08:02:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6c0",
+      "workspace_id": "ws_personal",
+      "actor_type": "user",
+      "actor_id": "usr_josua",
+      "event_type": "memory.rejected",
+      "category": "memory",
+      "target_type": "memory",
+      "target_id": "mem_dense_always",
+      "summary": "Rejected memory {link}",
+      "link": {
+        "label": "Dense retrieval always outperforms BM25.",
+        "target_type": "memory",
+        "target_id": "mem_dense_always"
+      },
+      "result": "rejected",
+      "request_id": "req_5b95df93",
+      "created_at": "2026-11-09T07:46:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6b3",
+      "workspace_id": "ws_personal",
+      "actor_type": "system",
+      "actor_id": "system",
+      "event_type": "retrieval.completed",
+      "category": "retrieval",
+      "target_type": "conversation",
+      "target_id": "conv_graphrag",
+      "summary": "Retrieved 5 passages; 1 cited in {link}",
+      "link": {
+        "label": "GraphRAG community summaries",
+        "target_type": "conversation",
+        "target_id": "conv_graphrag"
+      },
+      "result": "succeeded",
+      "request_id": "req_5b95070a",
+      "created_at": "2026-11-09T07:40:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6f0",
+      "workspace_id": "ws_personal",
+      "actor_type": "system",
+      "actor_id": "system",
+      "event_type": "external_action.succeeded",
+      "category": "external_actions",
+      "target_type": "issue",
+      "target_id": "lab/rag-experiments#40",
+      "summary": "Created and verified issue {link}",
+      "link": {
+        "label": "lab/rag-experiments#40",
+        "target_type": "issue",
+        "target_id": "lab/rag-experiments#40"
+      },
+      "result": "verified",
+      "request_id": "req_5b9714e9",
+      "created_at": "2026-11-09T04:20:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6e1",
+      "workspace_id": "ws_personal",
+      "actor_type": "user",
+      "actor_id": "usr_josua",
+      "event_type": "action_proposal.approved",
+      "category": "approvals",
+      "target_type": "repository",
+      "target_id": "lab/rag-experiments",
+      "summary": "Approved proposal “Fix random seed in eval script” for {link}",
+      "link": {
+        "label": "lab/rag-experiments",
+        "target_type": "repository",
+        "target_id": "lab/rag-experiments"
+      },
+      "result": "succeeded",
+      "request_id": "req_5b96f5fa",
+      "created_at": "2026-11-09T04:19:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6d1",
+      "workspace_id": "ws_personal",
+      "actor_type": "agent",
+      "actor_id": "agent_orivana",
+      "event_type": "tool.github.list_labels",
+      "category": "tool_calls",
+      "target_type": "repository",
+      "target_id": "lab/rag-experiments",
+      "summary": "Read labels (github.list_labels) in {link}",
+      "link": {
+        "label": "lab/rag-experiments",
+        "target_type": "repository",
+        "target_id": "lab/rag-experiments"
+      },
+      "result": "succeeded",
+      "request_id": "req_5b967a3e",
+      "created_at": "2026-11-09T04:15:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6g0",
+      "workspace_id": "ws_personal",
+      "actor_type": "system",
+      "actor_id": "system",
+      "event_type": "tool.rate_limited",
+      "category": "errors",
+      "target_type": "repository",
+      "target_id": "lab/rag-experiments",
+      "summary": "GitHub rate limit while reading {link}; retried after 30 s",
+      "link": {
+        "label": "lab/rag-experiments",
+        "target_type": "repository",
+        "target_id": "lab/rag-experiments"
+      },
+      "result": "failed",
+      "request_id": "req_5b9752c7",
+      "created_at": "2026-11-09T04:12:00Z",
+      "metadata": {
+        "error_code": "RATE_LIMITED",
+        "error_message": "GitHub returned 403 secondary rate limit. The call was retried once and succeeded.",
+        "job": "tool_call · github.list_issues · attempt 1 of 2"
+      }
+    },
+    {
+      "id": "evt_6d2",
+      "workspace_id": "ws_personal",
+      "actor_type": "agent",
+      "actor_id": "agent_orivana",
+      "event_type": "tool.github.list_issues",
+      "category": "tool_calls",
+      "target_type": "repository",
+      "target_id": "lab/rag-experiments",
+      "summary": "Read 21 open issues (github.list_issues) in {link}",
+      "link": {
+        "label": "lab/rag-experiments",
+        "target_type": "repository",
+        "target_id": "lab/rag-experiments"
+      },
+      "result": "succeeded",
+      "request_id": "req_5b96992d",
+      "created_at": "2026-11-09T04:10:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6c1",
+      "workspace_id": "ws_personal",
+      "actor_type": "agent",
+      "actor_id": "agent_orivana",
+      "event_type": "memory.suggested",
+      "category": "memory",
+      "target_type": "conversation",
+      "target_id": "conv_evalplan",
+      "summary": "Suggested 1 memory from {link}",
+      "link": {
+        "label": "Eval plan for chunk sizes",
+        "target_type": "conversation",
+        "target_id": "conv_evalplan"
+      },
+      "result": "candidate",
+      "request_id": "req_5b95fe82",
+      "created_at": "2026-11-09T03:42:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6b4",
+      "workspace_id": "ws_personal",
+      "actor_type": "system",
+      "actor_id": "system",
+      "event_type": "retrieval.completed",
+      "category": "retrieval",
+      "target_type": "conversation",
+      "target_id": "conv_evalplan",
+      "summary": "Retrieved 4 passages; 1 cited in {link}",
+      "link": {
+        "label": "Eval plan for chunk sizes",
+        "target_type": "conversation",
+        "target_id": "conv_evalplan"
+      },
+      "result": "succeeded",
+      "request_id": "req_5b9525f9",
+      "created_at": "2026-11-09T03:30:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6b9",
+      "workspace_id": "ws_personal",
+      "actor_type": "system",
+      "actor_id": "system",
+      "event_type": "retrieval.completed",
+      "category": "retrieval",
+      "target_type": "conversation",
+      "target_id": "conv_evalplan",
+      "summary": "Retrieved 6 passages; 2 cited in {link}",
+      "link": {
+        "label": "Eval plan for chunk sizes",
+        "target_type": "conversation",
+        "target_id": "conv_evalplan"
+      },
+      "result": "succeeded",
+      "request_id": "req_5b95c0a4",
+      "created_at": "2026-11-09T03:20:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6a01",
+      "workspace_id": "ws_personal",
+      "actor_type": "user",
+      "actor_id": "usr_josua",
+      "event_type": "source.uploaded",
+      "category": "ingestion",
+      "target_type": "source",
+      "target_id": "src_rao2025",
+      "summary": "Uploaded {link}",
+      "link": {
+        "label": "Graph-Aware Retrieval for Scientific Literature",
+        "target_type": "source",
+        "target_id": "src_rao2025"
+      },
+      "result": "ready",
+      "request_id": "req_5b9355f8",
+      "created_at": "2026-11-08T13:15:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6b5",
+      "workspace_id": "ws_personal",
+      "actor_type": "system",
+      "actor_id": "system",
+      "event_type": "retrieval.completed",
+      "category": "retrieval",
+      "target_type": "conversation",
+      "target_id": "conv_thesisoutline",
+      "summary": "Retrieved 7 passages; 1 cited in {link}",
+      "link": {
+        "label": "Thesis proposal outline",
+        "target_type": "conversation",
+        "target_id": "conv_thesisoutline"
+      },
+      "result": "succeeded",
+      "request_id": "req_5b9544e8",
+      "created_at": "2026-11-08T12:50:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6a02",
+      "workspace_id": "ws_personal",
+      "actor_type": "user",
+      "actor_id": "usr_josua",
+      "event_type": "source.uploaded",
+      "category": "ingestion",
+      "target_type": "source",
+      "target_id": "src_thesisoutline",
+      "summary": "Uploaded {link}",
+      "link": {
+        "label": "thesis-outline-v2.md",
+        "target_type": "source",
+        "target_id": "src_thesisoutline"
+      },
+      "result": "ready",
+      "request_id": "req_5b9374e7",
+      "created_at": "2026-11-08T12:40:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6a03",
+      "workspace_id": "ws_personal",
+      "actor_type": "user",
+      "actor_id": "usr_josua",
+      "event_type": "source.uploaded",
+      "category": "ingestion",
+      "target_type": "source",
+      "target_id": "src_weber2024",
+      "summary": "Uploaded {link}",
+      "link": {
+        "label": "Knowledge Graphs Meet Dense Retrieval",
+        "target_type": "source",
+        "target_id": "src_weber2024"
+      },
+      "result": "ready",
+      "request_id": "req_5b9393d6",
+      "created_at": "2026-11-06T04:00:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6f1",
+      "workspace_id": "ws_personal",
+      "actor_type": "system",
+      "actor_id": "system",
+      "event_type": "external_action.succeeded",
+      "category": "external_actions",
+      "target_type": "issue",
+      "target_id": "lab/rag-experiments#38",
+      "summary": "Created and verified issue {link}",
+      "link": {
+        "label": "lab/rag-experiments#38",
+        "target_type": "issue",
+        "target_id": "lab/rag-experiments#38"
+      },
+      "result": "verified",
+      "request_id": "req_5b9733d8",
+      "created_at": "2026-11-06T03:05:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6d3",
+      "workspace_id": "ws_personal",
+      "actor_type": "agent",
+      "actor_id": "agent_orivana",
+      "event_type": "tool.github.list_issues",
+      "category": "tool_calls",
+      "target_type": "repository",
+      "target_id": "lab/rag-experiments",
+      "summary": "Read 19 open issues (github.list_issues) in {link}",
+      "link": {
+        "label": "lab/rag-experiments",
+        "target_type": "repository",
+        "target_id": "lab/rag-experiments"
+      },
+      "result": "succeeded",
+      "request_id": "req_5b96b81c",
+      "created_at": "2026-11-06T03:01:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6c2",
+      "workspace_id": "ws_personal",
+      "actor_type": "user",
+      "actor_id": "usr_josua",
+      "event_type": "memory.superseded",
+      "category": "memory",
+      "target_type": "memory",
+      "target_id": "dec_rag_02",
+      "summary": "Marked {link} superseded by D-04",
+      "link": {
+        "label": "D-02 Dense-only default",
+        "target_type": "memory",
+        "target_id": "dec_rag_02"
+      },
+      "result": "confirmed",
+      "request_id": "req_5b961d71",
+      "created_at": "2026-11-06T03:00:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6a04",
+      "workspace_id": "ws_personal",
+      "actor_type": "user",
+      "actor_id": "usr_josua",
+      "event_type": "source.uploaded",
+      "category": "ingestion",
+      "target_type": "source",
+      "target_id": "src_alvarez2025",
+      "summary": "Uploaded {link}",
+      "link": {
+        "label": "Temporal Knowledge in RAG Systems",
+        "target_type": "source",
+        "target_id": "src_alvarez2025"
+      },
+      "result": "ready",
+      "request_id": "req_5b93b2c5",
+      "created_at": "2026-11-05T02:20:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6c3",
+      "workspace_id": "ws_personal",
+      "actor_type": "user",
+      "actor_id": "usr_josua",
+      "event_type": "memory.created",
+      "category": "memory",
+      "target_type": "memory",
+      "target_id": "mem_supervisor_q1",
+      "summary": "Added memory {link}",
+      "link": {
+        "label": "Supervisor meeting: focus the thesis on graph-aware retrieval",
+        "target_type": "memory",
+        "target_id": "mem_supervisor_q1"
+      },
+      "result": "confirmed",
+      "request_id": "req_5b963c60",
+      "created_at": "2026-11-04T07:30:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6a05",
+      "workspace_id": "ws_personal",
+      "actor_type": "user",
+      "actor_id": "usr_josua",
+      "event_type": "source.uploaded",
+      "category": "ingestion",
+      "target_type": "source",
+      "target_id": "src_supervisornotes",
+      "summary": "Uploaded {link}",
+      "link": {
+        "label": "supervisor-notes-oct.md",
+        "target_type": "source",
+        "target_id": "src_supervisornotes"
+      },
+      "result": "ready",
+      "request_id": "req_5b93d1b4",
+      "created_at": "2026-11-04T07:10:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6g1",
+      "workspace_id": "ws_personal",
+      "actor_type": "system",
+      "actor_id": "system",
+      "event_type": "ingestion.extraction_timeout",
+      "category": "errors",
+      "target_type": "source",
+      "target_id": "src_okafor2025",
+      "summary": "Entity extraction timed out for {link}",
+      "link": {
+        "label": "Hybrid Retrieval Under Distribution Shift",
+        "target_type": "source",
+        "target_id": "src_okafor2025"
+      },
+      "result": "failed",
+      "request_id": "req_5b9771b6",
+      "created_at": "2026-11-03T02:14:00Z",
+      "metadata": {
+        "error_code": "MODEL_TIMEOUT",
+        "error_message": "The model gateway did not respond within 60 s. Attempt 2 succeeded at 09:15.",
+        "job": "job_okafor20 · extract · attempt 1 of 3"
+      }
+    },
+    {
+      "id": "evt_6a06",
+      "workspace_id": "ws_personal",
+      "actor_type": "user",
+      "actor_id": "usr_josua",
+      "event_type": "source.uploaded",
+      "category": "ingestion",
+      "target_type": "source",
+      "target_id": "src_okafor2025",
+      "summary": "Uploaded {link}",
+      "link": {
+        "label": "Hybrid Retrieval Under Distribution Shift",
+        "target_type": "source",
+        "target_id": "src_okafor2025"
+      },
+      "result": "ready",
+      "request_id": "req_5b93f0a3",
+      "created_at": "2026-11-03T02:12:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6b6",
+      "workspace_id": "ws_personal",
+      "actor_type": "system",
+      "actor_id": "system",
+      "event_type": "retrieval.completed",
+      "category": "retrieval",
+      "target_type": "conversation",
+      "target_id": "conv_readinglist",
+      "summary": "Retrieved 8 passages; 2 cited in {link}",
+      "link": {
+        "label": "Reading list for retrieval eval",
+        "target_type": "conversation",
+        "target_id": "conv_readinglist"
+      },
+      "result": "succeeded",
+      "request_id": "req_5b9563d7",
+      "created_at": "2026-11-02T09:00:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6a07",
+      "workspace_id": "ws_personal",
+      "actor_type": "user",
+      "actor_id": "usr_josua",
+      "event_type": "source.uploaded",
+      "category": "ingestion",
+      "target_type": "source",
+      "target_id": "src_santos2025",
+      "summary": "Uploaded {link}",
+      "link": {
+        "label": "Fusion Retrieval Revisited: BM25 + Dense on Open-Domain QA",
+        "target_type": "source",
+        "target_id": "src_santos2025"
+      },
+      "result": "ready",
+      "request_id": "req_5b940f92",
+      "created_at": "2026-11-01T08:30:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6a08",
+      "workspace_id": "ws_personal",
+      "actor_type": "user",
+      "actor_id": "usr_josua",
+      "event_type": "source.uploaded",
+      "category": "ingestion",
+      "target_type": "source",
+      "target_id": "src_kowalski2024",
+      "summary": "Uploaded {link}",
+      "link": {
+        "label": "Reciprocal Rank Fusion for Neural Retrievers",
+        "target_type": "source",
+        "target_id": "src_kowalski2024"
+      },
+      "result": "ready",
+      "request_id": "req_5b942e81",
+      "created_at": "2026-10-30T03:00:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6a09",
+      "workspace_id": "ws_personal",
+      "actor_type": "user",
+      "actor_id": "usr_josua",
+      "event_type": "source.uploaded",
+      "category": "ingestion",
+      "target_type": "source",
+      "target_id": "src_lindqvist2024",
+      "summary": "Uploaded {link}",
+      "link": {
+        "label": "BEIR Revisited: Zero-Shot Retrieval Benchmarks",
+        "target_type": "source",
+        "target_id": "src_lindqvist2024"
+      },
+      "result": "ready",
+      "request_id": "req_5b944d70",
+      "created_at": "2026-10-28T09:20:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6a10",
+      "workspace_id": "ws_personal",
+      "actor_type": "user",
+      "actor_id": "usr_josua",
+      "event_type": "source.uploaded",
+      "category": "ingestion",
+      "target_type": "source",
+      "target_id": "src_haddad2025",
+      "summary": "Uploaded {link}",
+      "link": {
+        "label": "ColBERT-Style Late Interaction for Scientific QA",
+        "target_type": "source",
+        "target_id": "src_haddad2025"
+      },
+      "result": "ready",
+      "request_id": "req_5b946c5f",
+      "created_at": "2026-10-27T06:45:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6a11",
+      "workspace_id": "ws_personal",
+      "actor_type": "user",
+      "actor_id": "usr_josua",
+      "event_type": "source.uploaded",
+      "category": "ingestion",
+      "target_type": "source",
+      "target_id": "src_nakamura2025",
+      "summary": "Uploaded {link}",
+      "link": {
+        "label": "Sparse–Dense Hybrids in Low-Resource Domains",
+        "target_type": "source",
+        "target_id": "src_nakamura2025"
+      },
+      "result": "ready",
+      "request_id": "req_5b948b4e",
+      "created_at": "2026-10-25T02:10:00Z",
+      "metadata": {}
+    }
+  ],
+  "next_cursor": null,
+  "total": 46,
+  "counts": {
+    "ingestion": 14,
+    "retrieval": 11,
+    "memory": 6,
+    "tool_calls": 5,
+    "approvals": 4,
+    "external_actions": 3,
+    "errors": 3
+  }
+}

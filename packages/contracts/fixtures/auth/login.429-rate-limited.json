@@ -1,0 +1,10 @@
+{
+  "error": {
+    "code": "RATE_LIMITED",
+    "message": "Too many sign-in attempts. Try again in 10 minutes.",
+    "details": {
+      "retry_after_seconds": 600
+    },
+    "request_id": "req_0d77e5b3"
+  }
+}

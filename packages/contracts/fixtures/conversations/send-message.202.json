@@ -1,0 +1,23 @@
+{
+  "user_message": {
+    "id": "msg_new_u1",
+    "conversation_id": "conv_hybrid",
+    "role": "user",
+    "content": "Create a GitHub issue in lab/rag-experiments to re-run our eval with hybrid retrieval, based on this finding.",
+    "status": "complete",
+    "created_at": "2026-11-11T07:33:00Z",
+    "answer_kind": null,
+    "sources_used": null,
+    "sources_searched": null,
+    "limitations": null,
+    "positions": null,
+    "inference": null,
+    "suggestion": null,
+    "related_entities": [],
+    "citations": [],
+    "proposal_id": null,
+    "error": null,
+    "cancelled_at": null
+  },
+  "message_id": "msg_new_a1"
+}

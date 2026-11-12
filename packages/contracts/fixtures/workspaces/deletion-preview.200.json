@@ -1,0 +1,46 @@
+{
+  "workspace_id": "ws_personal",
+  "workspace_name": "Personal workspace",
+  "items": [
+    {
+      "key": "sources",
+      "label": "Sources and their original files",
+      "value": "31"
+    },
+    {
+      "key": "chunks",
+      "label": "Extracted text, chunks, and embeddings",
+      "value": "2,140 chunks"
+    },
+    {
+      "key": "graph",
+      "label": "Graph entities, relationships, and evidence links",
+      "value": "186 · 412"
+    },
+    {
+      "key": "memories",
+      "label": "Memories and decision records",
+      "value": "11 · 6"
+    },
+    {
+      "key": "conversations",
+      "label": "Conversations and their citations",
+      "value": "23"
+    },
+    {
+      "key": "proposals",
+      "label": "Pending action proposals (cancelled first)",
+      "value": "2"
+    },
+    {
+      "key": "connection",
+      "label": "GitHub connection and its stored tokens",
+      "value": "Revoked"
+    }
+  ],
+  "not_affected": [
+    "Issues already created on GitHub stay there.",
+    "Audit events are kept, stripped of content, as a record that deletion happened.",
+    "Your account and sign-in stay active."
+  ]
+}

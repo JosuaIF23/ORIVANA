@@ -1,0 +1,9 @@
+{
+  "provider": "github",
+  "authorize_url": "https://github.com/login/oauth/authorize?client_id=orivana-demo&scope=repo%3Aissues",
+  "requested_scopes": [
+    "contents:read",
+    "issues:read",
+    "issues:write"
+  ]
+}

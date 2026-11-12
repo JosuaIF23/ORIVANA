@@ -1,0 +1,10 @@
+{
+  "error": {
+    "code": "VALIDATION_FAILED",
+    "message": "Type the workspace name exactly to confirm.",
+    "details": {
+      "field": "confirm_name"
+    },
+    "request_id": "req_e1e2e3e4"
+  }
+}

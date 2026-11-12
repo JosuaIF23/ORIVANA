@@ -1,0 +1,7 @@
+{
+  "error": {
+    "code": "UNAUTHENTICATED",
+    "message": "Your session has expired. Sign in again.",
+    "request_id": "req_4e81c0d2"
+  }
+}

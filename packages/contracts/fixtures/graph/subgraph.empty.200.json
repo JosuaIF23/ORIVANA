@@ -1,0 +1,28 @@
+{
+  "focus": null,
+  "depth": 2,
+  "nodes": [],
+  "edges": [],
+  "counts": {
+    "by_type": {
+      "paper": 0,
+      "method": 0,
+      "dataset": 0,
+      "claim": 0,
+      "concept": 0,
+      "project": 0,
+      "decision": 0
+    },
+    "by_relation": {
+      "uses_method": 0,
+      "evaluates_on": 0,
+      "supports": 0,
+      "contradicts": 0,
+      "supersedes": 0,
+      "derived_from": 0,
+      "contains": 0
+    },
+    "confirmed": 0,
+    "candidate": 0
+  }
+}

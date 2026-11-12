@@ -1,0 +1,16 @@
+{
+  "id": "prj_rag",
+  "workspace_id": "ws_personal",
+  "name": "RAG Comparison",
+  "description": "Comparing GraphRAG, dense, and hybrid retrieval for the thesis evaluation.",
+  "status": "active",
+  "created_at": "2026-11-02T02:00:00Z",
+  "updated_at": "2026-11-11T08:10:00Z",
+  "summary": "Latest decision: use hybrid retrieval (BM25 + dense, RRF) as the default retriever.",
+  "counts": {
+    "sources": 14,
+    "decisions": 4,
+    "conversations": 5,
+    "pending_actions": 2
+  }
+}

@@ -1,0 +1,3706 @@
+{
+  "_note": "GET /api/v1/sources/{id} keyed by id.",
+  "items": {
+    "src_daly2025": {
+      "id": "src_daly2025",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "type": "pdf",
+      "title": "Chunking Strategies for Dense Retrieval",
+      "file_name": "Chunking Strategies for Dense Retrieval.pdf",
+      "authors": "Daly",
+      "short_label": "Daly 2025",
+      "year": 2025,
+      "status": "indexing",
+      "checksum": "sha256:daly9c41a7e2…e07b",
+      "size_bytes": 3565158,
+      "page_count": 18,
+      "section_count": 9,
+      "chunk_count": 340,
+      "created_at": "2026-11-11T06:58:00Z",
+      "updated_at": "2026-11-11T06:58:00Z",
+      "job": {
+        "id": "job_daly2025",
+        "workspace_id": "ws_personal",
+        "source_id": "src_daly2025",
+        "kind": "ingest",
+        "attempts": 1,
+        "max_attempts": 3,
+        "progress": {
+          "current": 212,
+          "total": 340,
+          "unit": "chunks"
+        },
+        "eta_seconds": 90,
+        "error_code": null,
+        "error_message": null,
+        "started_at": "2026-11-11T06:58:00Z",
+        "finished_at": null,
+        "status": "running",
+        "stage": "indexing"
+      },
+      "sections": [
+        {
+          "id": "sec_daly2025_1",
+          "number": "1",
+          "title": "Introduction",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_daly2025_2",
+          "number": "2",
+          "title": "Background",
+          "page": 2,
+          "level": 1
+        },
+        {
+          "id": "sec_daly2025_3",
+          "number": "3",
+          "title": "Method",
+          "page": 3,
+          "level": 1
+        },
+        {
+          "id": "sec_daly2025_4",
+          "number": "4",
+          "title": "Experiments",
+          "page": 5,
+          "level": 1
+        },
+        {
+          "id": "sec_daly2025_5",
+          "number": "4.1",
+          "title": "Setup",
+          "page": 5,
+          "level": 2
+        },
+        {
+          "id": "sec_daly2025_6",
+          "number": "4.2",
+          "title": "Overlap",
+          "page": 6,
+          "level": 2
+        },
+        {
+          "id": "sec_daly2025_7",
+          "number": "4.3",
+          "title": "Chunk length",
+          "page": 7,
+          "level": 2
+        },
+        {
+          "id": "sec_daly2025_8",
+          "number": "5",
+          "title": "Discussion",
+          "page": 12,
+          "level": 1
+        },
+        {
+          "id": "sec_daly2025_9",
+          "number": "6",
+          "title": "Conclusion",
+          "page": 15,
+          "level": 1
+        },
+        {
+          "id": "sec_daly2025_10",
+          "number": null,
+          "title": "References",
+          "page": 16,
+          "level": 1
+        }
+      ],
+      "entities": [],
+      "entity_count": 0,
+      "relationships": [],
+      "relationship_count": 0,
+      "ingestion_history": [
+        {
+          "label": "Uploaded & checksum verified",
+          "status": "done",
+          "at": "2026-11-11T06:58:00Z"
+        },
+        {
+          "label": "Parsed · 18 pages",
+          "status": "done",
+          "at": "2026-11-11T06:58:00Z"
+        }
+      ]
+    },
+    "src_meyer2024": {
+      "id": "src_meyer2024",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "type": "pdf",
+      "title": "Late Interaction Retrieval at Scale",
+      "file_name": "Late Interaction Retrieval at Scale.pdf",
+      "authors": "Meyer",
+      "short_label": "Meyer 2024",
+      "year": 2024,
+      "status": "parsing",
+      "checksum": "sha256:meye9c41a7e2…e07b",
+      "size_bytes": 4299162,
+      "page_count": 22,
+      "section_count": null,
+      "chunk_count": null,
+      "created_at": "2026-11-11T06:57:00Z",
+      "updated_at": "2026-11-11T06:57:00Z",
+      "job": {
+        "id": "job_meyer202",
+        "workspace_id": "ws_personal",
+        "source_id": "src_meyer2024",
+        "kind": "ingest",
+        "attempts": 1,
+        "max_attempts": 3,
+        "progress": {
+          "current": 9,
+          "total": 22,
+          "unit": "pages"
+        },
+        "eta_seconds": 60,
+        "error_code": null,
+        "error_message": null,
+        "started_at": "2026-11-11T06:57:00Z",
+        "finished_at": null,
+        "status": "running",
+        "stage": "parsing"
+      },
+      "sections": [
+        {
+          "id": "sec_meyer2024_1",
+          "number": "1",
+          "title": "Introduction",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_meyer2024_2",
+          "number": "2",
+          "title": "Related work",
+          "page": 2,
+          "level": 1
+        },
+        {
+          "id": "sec_meyer2024_3",
+          "number": "3",
+          "title": "System design",
+          "page": 4,
+          "level": 1
+        },
+        {
+          "id": "sec_meyer2024_4",
+          "number": "4",
+          "title": "Experiments",
+          "page": 7,
+          "level": 1
+        },
+        {
+          "id": "sec_meyer2024_5",
+          "number": "5",
+          "title": "Results",
+          "page": 9,
+          "level": 1
+        },
+        {
+          "id": "sec_meyer2024_6",
+          "number": "6",
+          "title": "Analysis",
+          "page": 11,
+          "level": 1
+        },
+        {
+          "id": "sec_meyer2024_7",
+          "number": "6.1",
+          "title": "Chunk length",
+          "page": 11,
+          "level": 2
+        },
+        {
+          "id": "sec_meyer2024_8",
+          "number": "7",
+          "title": "Conclusion",
+          "page": 18,
+          "level": 1
+        },
+        {
+          "id": "sec_meyer2024_9",
+          "number": null,
+          "title": "References",
+          "page": 20,
+          "level": 1
+        }
+      ],
+      "entities": [],
+      "entity_count": 0,
+      "relationships": [],
+      "relationship_count": 0,
+      "ingestion_history": [
+        {
+          "label": "Uploaded & checksum verified",
+          "status": "done",
+          "at": "2026-11-11T06:57:00Z"
+        },
+        {
+          "label": "Parsed · 22 pages",
+          "status": "done",
+          "at": "2026-11-11T06:57:00Z"
+        }
+      ]
+    },
+    "src_ito2025": {
+      "id": "src_ito2025",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "type": "pdf",
+      "title": "GraphRAG: Community Summaries for Global Questions",
+      "file_name": "GraphRAG: Community Summaries for Global Questions.pdf",
+      "authors": "Ito",
+      "short_label": "Ito 2025",
+      "year": 2025,
+      "status": "queued",
+      "checksum": "sha256:ito29c41a7e2…e07b",
+      "size_bytes": 2831155,
+      "page_count": null,
+      "section_count": null,
+      "chunk_count": null,
+      "created_at": "2026-11-11T06:57:30Z",
+      "updated_at": "2026-11-11T06:57:30Z",
+      "job": {
+        "id": "job_ito2025",
+        "workspace_id": "ws_personal",
+        "source_id": "src_ito2025",
+        "kind": "ingest",
+        "attempts": 1,
+        "max_attempts": 3,
+        "progress": null,
+        "eta_seconds": null,
+        "error_code": null,
+        "error_message": null,
+        "started_at": null,
+        "finished_at": null,
+        "status": "queued",
+        "stage": "queued"
+      },
+      "sections": [
+        {
+          "id": "sec_ito2025_1",
+          "number": "1",
+          "title": "Introduction",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_ito2025_2",
+          "number": "2",
+          "title": "Related work",
+          "page": 2,
+          "level": 1
+        },
+        {
+          "id": "sec_ito2025_3",
+          "number": "3",
+          "title": "Method",
+          "page": 3,
+          "level": 1
+        },
+        {
+          "id": "sec_ito2025_4",
+          "number": "4",
+          "title": "Experiments",
+          "page": 4,
+          "level": 1
+        },
+        {
+          "id": "sec_ito2025_5",
+          "number": "5",
+          "title": "Results",
+          "page": 5,
+          "level": 1
+        },
+        {
+          "id": "sec_ito2025_6",
+          "number": "6",
+          "title": "Discussion",
+          "page": 6,
+          "level": 1
+        },
+        {
+          "id": "sec_ito2025_7",
+          "number": "7",
+          "title": "Conclusion",
+          "page": 7,
+          "level": 1
+        },
+        {
+          "id": "sec_ito2025_8",
+          "number": null,
+          "title": "References",
+          "page": 8,
+          "level": 1
+        }
+      ],
+      "entities": [],
+      "entity_count": 0,
+      "relationships": [],
+      "relationship_count": 0,
+      "ingestion_history": [
+        {
+          "label": "Uploaded & checksum verified",
+          "status": "done",
+          "at": "2026-11-11T06:57:30Z"
+        }
+      ]
+    },
+    "src_survey2019": {
+      "id": "src_survey2019",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_thesis",
+      "project_name": "Thesis Proposal",
+      "type": "pdf",
+      "title": "survey-scan-2019.pdf",
+      "file_name": "survey-scan-2019.pdf",
+      "authors": null,
+      "short_label": "survey-scan-2019.pdf",
+      "year": 2019,
+      "status": "failed",
+      "checksum": "sha256:surv9c41a7e2…e07b",
+      "size_bytes": 9332326,
+      "page_count": null,
+      "section_count": null,
+      "chunk_count": null,
+      "created_at": "2026-11-11T01:30:00Z",
+      "updated_at": "2026-11-11T04:12:00Z",
+      "job": {
+        "id": "job_01JC8ZP3",
+        "workspace_id": "ws_personal",
+        "source_id": "src_survey2019",
+        "kind": "ingest",
+        "attempts": 2,
+        "max_attempts": 3,
+        "progress": null,
+        "eta_seconds": null,
+        "error_code": "PDF_ENCRYPTED",
+        "error_message": "Parsing failed: the PDF is password-protected. Remove the password and re-upload, or retry if you already did.",
+        "started_at": "2026-11-11T01:30:00Z",
+        "finished_at": "2026-11-11T04:12:00Z",
+        "status": "failed",
+        "stage": "failed"
+      },
+      "sections": [],
+      "entities": [],
+      "entity_count": 0,
+      "relationships": [],
+      "relationship_count": 0,
+      "ingestion_history": [
+        {
+          "label": "Uploaded & checksum verified",
+          "status": "done",
+          "at": "2026-11-11T01:30:00Z"
+        },
+        {
+          "label": "Attempt 1 failed · password-protected PDF",
+          "status": "failed",
+          "at": "2026-11-11T01:31:00Z"
+        },
+        {
+          "label": "Attempt 2 failed · password-protected PDF",
+          "status": "failed",
+          "at": "2026-11-11T04:12:00Z"
+        }
+      ]
+    },
+    "src_varga2024": {
+      "id": "src_varga2024",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "type": "pdf",
+      "title": "Dense-Only Baselines for Multi-hop QA",
+      "file_name": "Dense-Only Baselines for Multi-hop QA.pdf",
+      "authors": "Varga & Chen",
+      "short_label": "Varga & Chen 2024",
+      "year": 2024,
+      "status": "ready",
+      "checksum": "sha256:varg9c41a7e2…e07b",
+      "size_bytes": 2306867,
+      "page_count": 16,
+      "section_count": 8,
+      "chunk_count": 99,
+      "created_at": "2026-11-10T09:40:00Z",
+      "updated_at": "2026-11-10T09:40:00Z",
+      "job": {
+        "id": "job_varga202",
+        "workspace_id": "ws_personal",
+        "source_id": "src_varga2024",
+        "kind": "ingest",
+        "attempts": 1,
+        "max_attempts": 3,
+        "progress": {
+          "current": 16,
+          "total": 16,
+          "unit": "pages"
+        },
+        "eta_seconds": null,
+        "error_code": null,
+        "error_message": null,
+        "started_at": "2026-11-10T09:40:00Z",
+        "finished_at": "2026-11-10T09:40:00Z",
+        "status": "succeeded",
+        "stage": "ready"
+      },
+      "sections": [
+        {
+          "id": "sec_varga2024_1",
+          "number": "1",
+          "title": "Introduction",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_varga2024_2",
+          "number": "2",
+          "title": "Method",
+          "page": 2,
+          "level": 1
+        },
+        {
+          "id": "sec_varga2024_3",
+          "number": "2.1",
+          "title": "Retrievers",
+          "page": 2,
+          "level": 2
+        },
+        {
+          "id": "sec_varga2024_4",
+          "number": "2.2",
+          "title": "Experimental setup",
+          "page": 3,
+          "level": 2
+        },
+        {
+          "id": "sec_varga2024_5",
+          "number": "3",
+          "title": "Results",
+          "page": 5,
+          "level": 1
+        },
+        {
+          "id": "sec_varga2024_6",
+          "number": "4",
+          "title": "Error analysis",
+          "page": 7,
+          "level": 1
+        },
+        {
+          "id": "sec_varga2024_7",
+          "number": "5",
+          "title": "Discussion",
+          "page": 9,
+          "level": 1
+        },
+        {
+          "id": "sec_varga2024_8",
+          "number": "6",
+          "title": "Conclusion",
+          "page": 13,
+          "level": 1
+        },
+        {
+          "id": "sec_varga2024_9",
+          "number": null,
+          "title": "References",
+          "page": 14,
+          "level": 1
+        }
+      ],
+      "entities": [],
+      "entity_count": 4,
+      "relationships": [],
+      "relationship_count": 0,
+      "ingestion_history": [
+        {
+          "label": "Uploaded & checksum verified",
+          "status": "done",
+          "at": "2026-11-10T09:40:00Z"
+        },
+        {
+          "label": "Parsed · 16 pages",
+          "status": "done",
+          "at": "2026-11-10T09:40:00Z"
+        },
+        {
+          "label": "Chunked & embedded · 99 chunks",
+          "status": "done",
+          "at": "2026-11-10T09:40:00Z"
+        },
+        {
+          "label": "Entities extracted",
+          "status": "done",
+          "at": "2026-11-10T09:40:00Z"
+        }
+      ]
+    },
+    "src_labnotes": {
+      "id": "src_labnotes",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "type": "markdown",
+      "title": "lab-notes-november.md",
+      "file_name": "lab-notes-november.md",
+      "authors": null,
+      "short_label": "lab-notes-november.md",
+      "year": null,
+      "status": "ready",
+      "checksum": "sha256:labn9c41a7e2…e07b",
+      "size_bytes": 20972,
+      "page_count": null,
+      "section_count": 6,
+      "chunk_count": 12,
+      "created_at": "2026-11-10T03:05:00Z",
+      "updated_at": "2026-11-10T03:05:00Z",
+      "job": {
+        "id": "job_labnotes",
+        "workspace_id": "ws_personal",
+        "source_id": "src_labnotes",
+        "kind": "ingest",
+        "attempts": 1,
+        "max_attempts": 3,
+        "progress": null,
+        "eta_seconds": null,
+        "error_code": null,
+        "error_message": null,
+        "started_at": "2026-11-10T03:05:00Z",
+        "finished_at": "2026-11-10T03:05:00Z",
+        "status": "succeeded",
+        "stage": "ready"
+      },
+      "sections": [
+        {
+          "id": "sec_labnotes_1",
+          "number": null,
+          "title": "Summary",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_labnotes_2",
+          "number": null,
+          "title": "Experiments this week",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_labnotes_3",
+          "number": null,
+          "title": "Open questions",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_labnotes_4",
+          "number": null,
+          "title": "Decisions",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_labnotes_5",
+          "number": null,
+          "title": "Next steps",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_labnotes_6",
+          "number": null,
+          "title": "Links",
+          "page": 1,
+          "level": 1
+        }
+      ],
+      "entities": [],
+      "entity_count": 4,
+      "relationships": [],
+      "relationship_count": 0,
+      "ingestion_history": [
+        {
+          "label": "Uploaded & checksum verified",
+          "status": "done",
+          "at": "2026-11-10T03:05:00Z"
+        },
+        {
+          "label": "Chunked & embedded · 12 chunks",
+          "status": "done",
+          "at": "2026-11-10T03:05:00Z"
+        },
+        {
+          "label": "Entities extracted",
+          "status": "done",
+          "at": "2026-11-10T03:05:00Z"
+        }
+      ]
+    },
+    "src_rao2025": {
+      "id": "src_rao2025",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_thesis",
+      "project_name": "Thesis Proposal",
+      "type": "pdf",
+      "title": "Graph-Aware Retrieval for Scientific Literature",
+      "file_name": "Graph-Aware Retrieval for Scientific Literature.pdf",
+      "authors": "Rao & Lindgren",
+      "short_label": "Rao & Lindgren 2025",
+      "year": 2025,
+      "status": "ready",
+      "checksum": "sha256:rao29c41a7e2…e07b",
+      "size_bytes": 3145728,
+      "page_count": 19,
+      "section_count": 10,
+      "chunk_count": 118,
+      "created_at": "2026-11-08T13:15:00Z",
+      "updated_at": "2026-11-08T13:15:00Z",
+      "job": {
+        "id": "job_rao2025",
+        "workspace_id": "ws_personal",
+        "source_id": "src_rao2025",
+        "kind": "ingest",
+        "attempts": 1,
+        "max_attempts": 3,
+        "progress": {
+          "current": 19,
+          "total": 19,
+          "unit": "pages"
+        },
+        "eta_seconds": null,
+        "error_code": null,
+        "error_message": null,
+        "started_at": "2026-11-08T13:15:00Z",
+        "finished_at": "2026-11-08T13:15:00Z",
+        "status": "succeeded",
+        "stage": "ready"
+      },
+      "sections": [
+        {
+          "id": "sec_rao2025_1",
+          "number": "1",
+          "title": "Introduction",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_rao2025_2",
+          "number": "2",
+          "title": "Related work",
+          "page": 3,
+          "level": 1
+        },
+        {
+          "id": "sec_rao2025_3",
+          "number": "3",
+          "title": "Method",
+          "page": 5,
+          "level": 1
+        },
+        {
+          "id": "sec_rao2025_4",
+          "number": "4",
+          "title": "Experiments",
+          "page": 7,
+          "level": 1
+        },
+        {
+          "id": "sec_rao2025_5",
+          "number": "5",
+          "title": "Results",
+          "page": 9,
+          "level": 1
+        },
+        {
+          "id": "sec_rao2025_6",
+          "number": "6",
+          "title": "Discussion",
+          "page": 11,
+          "level": 1
+        },
+        {
+          "id": "sec_rao2025_7",
+          "number": "7",
+          "title": "Conclusion",
+          "page": 13,
+          "level": 1
+        },
+        {
+          "id": "sec_rao2025_8",
+          "number": null,
+          "title": "References",
+          "page": 15,
+          "level": 1
+        }
+      ],
+      "entities": [],
+      "entity_count": 4,
+      "relationships": [],
+      "relationship_count": 0,
+      "ingestion_history": [
+        {
+          "label": "Uploaded & checksum verified",
+          "status": "done",
+          "at": "2026-11-08T13:15:00Z"
+        },
+        {
+          "label": "Parsed · 19 pages",
+          "status": "done",
+          "at": "2026-11-08T13:15:00Z"
+        },
+        {
+          "label": "Chunked & embedded · 118 chunks",
+          "status": "done",
+          "at": "2026-11-08T13:15:00Z"
+        },
+        {
+          "label": "Entities extracted",
+          "status": "done",
+          "at": "2026-11-08T13:15:00Z"
+        }
+      ]
+    },
+    "src_thesisoutline": {
+      "id": "src_thesisoutline",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_thesis",
+      "project_name": "Thesis Proposal",
+      "type": "markdown",
+      "title": "thesis-outline-v2.md",
+      "file_name": "thesis-outline-v2.md",
+      "authors": null,
+      "short_label": "thesis-outline-v2.md",
+      "year": null,
+      "status": "ready",
+      "checksum": "sha256:thes9c41a7e2…e07b",
+      "size_bytes": 10486,
+      "page_count": null,
+      "section_count": 5,
+      "chunk_count": 12,
+      "created_at": "2026-11-08T12:40:00Z",
+      "updated_at": "2026-11-08T12:40:00Z",
+      "job": {
+        "id": "job_thesisou",
+        "workspace_id": "ws_personal",
+        "source_id": "src_thesisoutline",
+        "kind": "ingest",
+        "attempts": 1,
+        "max_attempts": 3,
+        "progress": null,
+        "eta_seconds": null,
+        "error_code": null,
+        "error_message": null,
+        "started_at": "2026-11-08T12:40:00Z",
+        "finished_at": "2026-11-08T12:40:00Z",
+        "status": "succeeded",
+        "stage": "ready"
+      },
+      "sections": [
+        {
+          "id": "sec_thesisoutline_1",
+          "number": null,
+          "title": "Summary",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_thesisoutline_2",
+          "number": null,
+          "title": "Experiments this week",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_thesisoutline_3",
+          "number": null,
+          "title": "Open questions",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_thesisoutline_4",
+          "number": null,
+          "title": "Decisions",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_thesisoutline_5",
+          "number": null,
+          "title": "Next steps",
+          "page": 1,
+          "level": 1
+        }
+      ],
+      "entities": [],
+      "entity_count": 4,
+      "relationships": [],
+      "relationship_count": 0,
+      "ingestion_history": [
+        {
+          "label": "Uploaded & checksum verified",
+          "status": "done",
+          "at": "2026-11-08T12:40:00Z"
+        },
+        {
+          "label": "Chunked & embedded · 12 chunks",
+          "status": "done",
+          "at": "2026-11-08T12:40:00Z"
+        },
+        {
+          "label": "Entities extracted",
+          "status": "done",
+          "at": "2026-11-08T12:40:00Z"
+        }
+      ]
+    },
+    "src_weber2024": {
+      "id": "src_weber2024",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_thesis",
+      "project_name": "Thesis Proposal",
+      "type": "pdf",
+      "title": "Knowledge Graphs Meet Dense Retrieval",
+      "file_name": "Knowledge Graphs Meet Dense Retrieval.pdf",
+      "authors": "Weber",
+      "short_label": "Weber 2024",
+      "year": 2024,
+      "status": "ready",
+      "checksum": "sha256:webe9c41a7e2…e07b",
+      "size_bytes": 2621440,
+      "page_count": 14,
+      "section_count": 7,
+      "chunk_count": 87,
+      "created_at": "2026-11-06T04:00:00Z",
+      "updated_at": "2026-11-06T04:00:00Z",
+      "job": {
+        "id": "job_weber202",
+        "workspace_id": "ws_personal",
+        "source_id": "src_weber2024",
+        "kind": "ingest",
+        "attempts": 1,
+        "max_attempts": 3,
+        "progress": {
+          "current": 14,
+          "total": 14,
+          "unit": "pages"
+        },
+        "eta_seconds": null,
+        "error_code": null,
+        "error_message": null,
+        "started_at": "2026-11-06T04:00:00Z",
+        "finished_at": "2026-11-06T04:00:00Z",
+        "status": "succeeded",
+        "stage": "ready"
+      },
+      "sections": [
+        {
+          "id": "sec_weber2024_1",
+          "number": "1",
+          "title": "Introduction",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_weber2024_2",
+          "number": "2",
+          "title": "Related work",
+          "page": 2,
+          "level": 1
+        },
+        {
+          "id": "sec_weber2024_3",
+          "number": "3",
+          "title": "Method",
+          "page": 3,
+          "level": 1
+        },
+        {
+          "id": "sec_weber2024_4",
+          "number": "4",
+          "title": "Experiments",
+          "page": 4,
+          "level": 1
+        },
+        {
+          "id": "sec_weber2024_5",
+          "number": "5",
+          "title": "Results",
+          "page": 5,
+          "level": 1
+        },
+        {
+          "id": "sec_weber2024_6",
+          "number": "6",
+          "title": "Discussion",
+          "page": 6,
+          "level": 1
+        },
+        {
+          "id": "sec_weber2024_7",
+          "number": "7",
+          "title": "Conclusion",
+          "page": 7,
+          "level": 1
+        },
+        {
+          "id": "sec_weber2024_8",
+          "number": null,
+          "title": "References",
+          "page": 8,
+          "level": 1
+        }
+      ],
+      "entities": [],
+      "entity_count": 4,
+      "relationships": [],
+      "relationship_count": 0,
+      "ingestion_history": [
+        {
+          "label": "Uploaded & checksum verified",
+          "status": "done",
+          "at": "2026-11-06T04:00:00Z"
+        },
+        {
+          "label": "Parsed · 14 pages",
+          "status": "done",
+          "at": "2026-11-06T04:00:00Z"
+        },
+        {
+          "label": "Chunked & embedded · 87 chunks",
+          "status": "done",
+          "at": "2026-11-06T04:00:00Z"
+        },
+        {
+          "label": "Entities extracted",
+          "status": "done",
+          "at": "2026-11-06T04:00:00Z"
+        }
+      ]
+    },
+    "src_alvarez2025": {
+      "id": "src_alvarez2025",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_thesis",
+      "project_name": "Thesis Proposal",
+      "type": "pdf",
+      "title": "Temporal Knowledge in RAG Systems",
+      "file_name": "Temporal Knowledge in RAG Systems.pdf",
+      "authors": "Alvarez et al.",
+      "short_label": "Alvarez et al. 2025",
+      "year": 2025,
+      "status": "ready",
+      "checksum": "sha256:alva9c41a7e2…e07b",
+      "size_bytes": 3040870,
+      "page_count": 17,
+      "section_count": 9,
+      "chunk_count": 105,
+      "created_at": "2026-11-05T02:20:00Z",
+      "updated_at": "2026-11-05T02:20:00Z",
+      "job": {
+        "id": "job_alvarez2",
+        "workspace_id": "ws_personal",
+        "source_id": "src_alvarez2025",
+        "kind": "ingest",
+        "attempts": 1,
+        "max_attempts": 3,
+        "progress": {
+          "current": 17,
+          "total": 17,
+          "unit": "pages"
+        },
+        "eta_seconds": null,
+        "error_code": null,
+        "error_message": null,
+        "started_at": "2026-11-05T02:20:00Z",
+        "finished_at": "2026-11-05T02:20:00Z",
+        "status": "succeeded",
+        "stage": "ready"
+      },
+      "sections": [
+        {
+          "id": "sec_alvarez2025_1",
+          "number": "1",
+          "title": "Introduction",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_alvarez2025_2",
+          "number": "2",
+          "title": "Related work",
+          "page": 3,
+          "level": 1
+        },
+        {
+          "id": "sec_alvarez2025_3",
+          "number": "3",
+          "title": "Method",
+          "page": 5,
+          "level": 1
+        },
+        {
+          "id": "sec_alvarez2025_4",
+          "number": "4",
+          "title": "Experiments",
+          "page": 7,
+          "level": 1
+        },
+        {
+          "id": "sec_alvarez2025_5",
+          "number": "5",
+          "title": "Results",
+          "page": 9,
+          "level": 1
+        },
+        {
+          "id": "sec_alvarez2025_6",
+          "number": "6",
+          "title": "Discussion",
+          "page": 11,
+          "level": 1
+        },
+        {
+          "id": "sec_alvarez2025_7",
+          "number": "7",
+          "title": "Conclusion",
+          "page": 13,
+          "level": 1
+        },
+        {
+          "id": "sec_alvarez2025_8",
+          "number": null,
+          "title": "References",
+          "page": 15,
+          "level": 1
+        }
+      ],
+      "entities": [],
+      "entity_count": 4,
+      "relationships": [],
+      "relationship_count": 0,
+      "ingestion_history": [
+        {
+          "label": "Uploaded & checksum verified",
+          "status": "done",
+          "at": "2026-11-05T02:20:00Z"
+        },
+        {
+          "label": "Parsed · 17 pages",
+          "status": "done",
+          "at": "2026-11-05T02:20:00Z"
+        },
+        {
+          "label": "Chunked & embedded · 105 chunks",
+          "status": "done",
+          "at": "2026-11-05T02:20:00Z"
+        },
+        {
+          "label": "Entities extracted",
+          "status": "done",
+          "at": "2026-11-05T02:20:00Z"
+        }
+      ]
+    },
+    "src_supervisornotes": {
+      "id": "src_supervisornotes",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_thesis",
+      "project_name": "Thesis Proposal",
+      "type": "markdown",
+      "title": "supervisor-notes-oct.md",
+      "file_name": "supervisor-notes-oct.md",
+      "authors": null,
+      "short_label": "supervisor-notes-oct.md",
+      "year": null,
+      "status": "ready",
+      "checksum": "sha256:supe9c41a7e2…e07b",
+      "size_bytes": 10486,
+      "page_count": null,
+      "section_count": 3,
+      "chunk_count": 12,
+      "created_at": "2026-11-04T07:10:00Z",
+      "updated_at": "2026-11-04T07:10:00Z",
+      "job": {
+        "id": "job_supervis",
+        "workspace_id": "ws_personal",
+        "source_id": "src_supervisornotes",
+        "kind": "ingest",
+        "attempts": 1,
+        "max_attempts": 3,
+        "progress": null,
+        "eta_seconds": null,
+        "error_code": null,
+        "error_message": null,
+        "started_at": "2026-11-04T07:10:00Z",
+        "finished_at": "2026-11-04T07:10:00Z",
+        "status": "succeeded",
+        "stage": "ready"
+      },
+      "sections": [
+        {
+          "id": "sec_supervisornotes_1",
+          "number": null,
+          "title": "Summary",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_supervisornotes_2",
+          "number": null,
+          "title": "Experiments this week",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_supervisornotes_3",
+          "number": null,
+          "title": "Open questions",
+          "page": 1,
+          "level": 1
+        }
+      ],
+      "entities": [],
+      "entity_count": 4,
+      "relationships": [],
+      "relationship_count": 0,
+      "ingestion_history": [
+        {
+          "label": "Uploaded & checksum verified",
+          "status": "done",
+          "at": "2026-11-04T07:10:00Z"
+        },
+        {
+          "label": "Chunked & embedded · 12 chunks",
+          "status": "done",
+          "at": "2026-11-04T07:10:00Z"
+        },
+        {
+          "label": "Entities extracted",
+          "status": "done",
+          "at": "2026-11-04T07:10:00Z"
+        }
+      ]
+    },
+    "src_okafor2025": {
+      "id": "src_okafor2025",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "type": "pdf",
+      "title": "Hybrid Retrieval Under Distribution Shift",
+      "file_name": "Hybrid Retrieval Under Distribution Shift.pdf",
+      "authors": "Okafor, Brandt & Ruiz",
+      "short_label": "Okafor et al. 2025",
+      "year": 2025,
+      "status": "ready",
+      "checksum": "sha256:9c41…e07b",
+      "size_bytes": 2202010,
+      "page_count": 14,
+      "section_count": 10,
+      "chunk_count": 86,
+      "created_at": "2026-11-03T02:12:00Z",
+      "updated_at": "2026-11-03T02:12:00Z",
+      "job": {
+        "id": "job_okafor20",
+        "workspace_id": "ws_personal",
+        "source_id": "src_okafor2025",
+        "kind": "ingest",
+        "attempts": 1,
+        "max_attempts": 3,
+        "progress": {
+          "current": 14,
+          "total": 14,
+          "unit": "pages"
+        },
+        "eta_seconds": null,
+        "error_code": null,
+        "error_message": null,
+        "started_at": "2026-11-03T02:12:00Z",
+        "finished_at": "2026-11-03T02:12:00Z",
+        "status": "succeeded",
+        "stage": "ready"
+      },
+      "sections": [
+        {
+          "id": "sec_okafor2025_1",
+          "number": "1",
+          "title": "Introduction",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_okafor2025_2",
+          "number": "2",
+          "title": "Related work",
+          "page": 2,
+          "level": 1
+        },
+        {
+          "id": "sec_okafor2025_3",
+          "number": "3",
+          "title": "Method",
+          "page": 3,
+          "level": 1
+        },
+        {
+          "id": "sec_okafor2025_4",
+          "number": "4",
+          "title": "Experiments",
+          "page": 5,
+          "level": 1
+        },
+        {
+          "id": "sec_okafor2025_5",
+          "number": "4.1",
+          "title": "Setup",
+          "page": 5,
+          "level": 2
+        },
+        {
+          "id": "sec_okafor2025_6",
+          "number": "4.2",
+          "title": "Results",
+          "page": 6,
+          "level": 2
+        },
+        {
+          "id": "sec_okafor2025_7",
+          "number": "4.3",
+          "title": "Ablations",
+          "page": 8,
+          "level": 2
+        },
+        {
+          "id": "sec_okafor2025_8",
+          "number": "5",
+          "title": "Discussion",
+          "page": 10,
+          "level": 1
+        },
+        {
+          "id": "sec_okafor2025_9",
+          "number": "6",
+          "title": "Conclusion",
+          "page": 12,
+          "level": 1
+        },
+        {
+          "id": "sec_okafor2025_10",
+          "number": null,
+          "title": "References",
+          "page": 13,
+          "level": 1
+        }
+      ],
+      "entities": [
+        {
+          "id": "ent_m_hybrid",
+          "name": "Hybrid retrieval",
+          "entity_type": "method"
+        },
+        {
+          "id": "ent_m_rrf",
+          "name": "RRF",
+          "entity_type": "method"
+        },
+        {
+          "id": "ent_d_nq",
+          "name": "Natural Questions",
+          "entity_type": "dataset"
+        },
+        {
+          "id": "ent_d_triviaqa",
+          "name": "TriviaQA",
+          "entity_type": "dataset"
+        },
+        {
+          "id": "ent_d_beir",
+          "name": "BEIR",
+          "entity_type": "dataset"
+        },
+        {
+          "id": "ent_c_hybridbeats",
+          "name": "Hybrid beats dense-only",
+          "entity_type": "claim"
+        },
+        {
+          "id": "ent_c_lexicalaids",
+          "name": "Lexical aids rare names",
+          "entity_type": "claim"
+        },
+        {
+          "id": "ent_k_lexical",
+          "name": "Lexical matching",
+          "entity_type": "concept"
+        },
+        {
+          "id": "ent_k_shift",
+          "name": "Distribution shift",
+          "entity_type": "concept"
+        },
+        {
+          "id": "ent_m_bm25",
+          "name": "BM25",
+          "entity_type": "method"
+        },
+        {
+          "id": "ent_m_dense",
+          "name": "Dense retrieval",
+          "entity_type": "method"
+        }
+      ],
+      "entity_count": 11,
+      "relationships": [
+        {
+          "id": "rel_okafor_hybrid",
+          "relation_type": "uses_method",
+          "target_name": "Hybrid retrieval",
+          "status": "confirmed"
+        },
+        {
+          "id": "rel_okafor_triviaqa",
+          "relation_type": "evaluates_on",
+          "target_name": "TriviaQA",
+          "status": "confirmed"
+        },
+        {
+          "id": "rel_okafor_lexical",
+          "relation_type": "supports",
+          "target_name": "Lexical aids rare names",
+          "status": "confirmed"
+        },
+        {
+          "id": "rel_okafor_beir",
+          "relation_type": "evaluates_on",
+          "target_name": "BEIR",
+          "status": "confirmed"
+        },
+        {
+          "id": "rel_okafor_hybridbeats",
+          "relation_type": "supports",
+          "target_name": "Hybrid beats dense-only",
+          "status": "confirmed"
+        },
+        {
+          "id": "rel_okafor_rrf",
+          "relation_type": "uses_method",
+          "target_name": "RRF",
+          "status": "confirmed"
+        }
+      ],
+      "relationship_count": 6,
+      "ingestion_history": [
+        {
+          "label": "Uploaded & checksum verified",
+          "status": "done",
+          "at": "2026-11-03T02:12:00Z"
+        },
+        {
+          "label": "Parsed · 14 pages, 10 sections",
+          "status": "done",
+          "at": "2026-11-03T02:12:40Z"
+        },
+        {
+          "label": "Chunked & embedded · 86 chunks",
+          "status": "done",
+          "at": "2026-11-03T02:13:00Z"
+        },
+        {
+          "label": "Entities extracted · attempt 2",
+          "status": "done",
+          "at": "2026-11-03T02:15:00Z"
+        },
+        {
+          "label": "Attempt 1 timed out (model gateway)",
+          "status": "failed",
+          "at": "2026-11-03T02:14:00Z"
+        }
+      ]
+    },
+    "src_santos2025": {
+      "id": "src_santos2025",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "type": "pdf",
+      "title": "Fusion Retrieval Revisited: BM25 + Dense on Open-Domain QA",
+      "file_name": "Fusion Retrieval Revisited: BM25 + Dense on Open-Domain QA.pdf",
+      "authors": "Santos & Lee",
+      "short_label": "Santos & Lee 2025",
+      "year": 2025,
+      "status": "ready",
+      "checksum": "sha256:sant9c41a7e2…e07b",
+      "size_bytes": 1887437,
+      "page_count": 11,
+      "section_count": 6,
+      "chunk_count": 68,
+      "created_at": "2026-11-01T08:30:00Z",
+      "updated_at": "2026-11-01T08:30:00Z",
+      "job": {
+        "id": "job_santos20",
+        "workspace_id": "ws_personal",
+        "source_id": "src_santos2025",
+        "kind": "ingest",
+        "attempts": 1,
+        "max_attempts": 3,
+        "progress": {
+          "current": 11,
+          "total": 11,
+          "unit": "pages"
+        },
+        "eta_seconds": null,
+        "error_code": null,
+        "error_message": null,
+        "started_at": "2026-11-01T08:30:00Z",
+        "finished_at": "2026-11-01T08:30:00Z",
+        "status": "succeeded",
+        "stage": "ready"
+      },
+      "sections": [
+        {
+          "id": "sec_santos2025_1",
+          "number": "1",
+          "title": "Introduction",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_santos2025_2",
+          "number": "2",
+          "title": "Setup",
+          "page": 2,
+          "level": 1
+        },
+        {
+          "id": "sec_santos2025_3",
+          "number": "3",
+          "title": "Results",
+          "page": 4,
+          "level": 1
+        },
+        {
+          "id": "sec_santos2025_4",
+          "number": "3.1",
+          "title": "Main results",
+          "page": 4,
+          "level": 2
+        },
+        {
+          "id": "sec_santos2025_5",
+          "number": "3.2",
+          "title": "Fusion parameters",
+          "page": 6,
+          "level": 2
+        },
+        {
+          "id": "sec_santos2025_6",
+          "number": "4",
+          "title": "Analysis",
+          "page": 7,
+          "level": 1
+        },
+        {
+          "id": "sec_santos2025_7",
+          "number": "5",
+          "title": "Conclusion",
+          "page": 9,
+          "level": 1
+        },
+        {
+          "id": "sec_santos2025_8",
+          "number": null,
+          "title": "References",
+          "page": 10,
+          "level": 1
+        }
+      ],
+      "entities": [],
+      "entity_count": 4,
+      "relationships": [],
+      "relationship_count": 0,
+      "ingestion_history": [
+        {
+          "label": "Uploaded & checksum verified",
+          "status": "done",
+          "at": "2026-11-01T08:30:00Z"
+        },
+        {
+          "label": "Parsed · 11 pages",
+          "status": "done",
+          "at": "2026-11-01T08:30:00Z"
+        },
+        {
+          "label": "Chunked & embedded · 68 chunks",
+          "status": "done",
+          "at": "2026-11-01T08:30:00Z"
+        },
+        {
+          "label": "Entities extracted",
+          "status": "done",
+          "at": "2026-11-01T08:30:00Z"
+        }
+      ]
+    },
+    "src_kowalski2024": {
+      "id": "src_kowalski2024",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "type": "pdf",
+      "title": "Reciprocal Rank Fusion for Neural Retrievers",
+      "file_name": "Reciprocal Rank Fusion for Neural Retrievers.pdf",
+      "authors": "Kowalski",
+      "short_label": "Kowalski 2024",
+      "year": 2024,
+      "status": "ready",
+      "checksum": "sha256:kowa9c41a7e2…e07b",
+      "size_bytes": 1258291,
+      "page_count": 9,
+      "section_count": 6,
+      "chunk_count": 56,
+      "created_at": "2026-10-30T03:00:00Z",
+      "updated_at": "2026-10-30T03:00:00Z",
+      "job": {
+        "id": "job_kowalski",
+        "workspace_id": "ws_personal",
+        "source_id": "src_kowalski2024",
+        "kind": "ingest",
+        "attempts": 1,
+        "max_attempts": 3,
+        "progress": {
+          "current": 9,
+          "total": 9,
+          "unit": "pages"
+        },
+        "eta_seconds": null,
+        "error_code": null,
+        "error_message": null,
+        "started_at": "2026-10-30T03:00:00Z",
+        "finished_at": "2026-10-30T03:00:00Z",
+        "status": "succeeded",
+        "stage": "ready"
+      },
+      "sections": [
+        {
+          "id": "sec_kowalski2024_1",
+          "number": "1",
+          "title": "Introduction",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_kowalski2024_2",
+          "number": "2",
+          "title": "Related work",
+          "page": 2,
+          "level": 1
+        },
+        {
+          "id": "sec_kowalski2024_3",
+          "number": "3",
+          "title": "Method",
+          "page": 3,
+          "level": 1
+        },
+        {
+          "id": "sec_kowalski2024_4",
+          "number": "4",
+          "title": "Experiments",
+          "page": 4,
+          "level": 1
+        },
+        {
+          "id": "sec_kowalski2024_5",
+          "number": "5",
+          "title": "Results",
+          "page": 5,
+          "level": 1
+        },
+        {
+          "id": "sec_kowalski2024_6",
+          "number": "6",
+          "title": "Discussion",
+          "page": 6,
+          "level": 1
+        },
+        {
+          "id": "sec_kowalski2024_7",
+          "number": "7",
+          "title": "Conclusion",
+          "page": 7,
+          "level": 1
+        },
+        {
+          "id": "sec_kowalski2024_8",
+          "number": null,
+          "title": "References",
+          "page": 8,
+          "level": 1
+        }
+      ],
+      "entities": [],
+      "entity_count": 4,
+      "relationships": [],
+      "relationship_count": 0,
+      "ingestion_history": [
+        {
+          "label": "Uploaded & checksum verified",
+          "status": "done",
+          "at": "2026-10-30T03:00:00Z"
+        },
+        {
+          "label": "Parsed · 9 pages",
+          "status": "done",
+          "at": "2026-10-30T03:00:00Z"
+        },
+        {
+          "label": "Chunked & embedded · 56 chunks",
+          "status": "done",
+          "at": "2026-10-30T03:00:00Z"
+        },
+        {
+          "label": "Entities extracted",
+          "status": "done",
+          "at": "2026-10-30T03:00:00Z"
+        }
+      ]
+    },
+    "src_lindqvist2024": {
+      "id": "src_lindqvist2024",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "type": "pdf",
+      "title": "BEIR Revisited: Zero-Shot Retrieval Benchmarks",
+      "file_name": "BEIR Revisited: Zero-Shot Retrieval Benchmarks.pdf",
+      "authors": "Lindqvist & Moreau",
+      "short_label": "Lindqvist & Moreau 2024",
+      "year": 2024,
+      "status": "ready",
+      "checksum": "sha256:lind9c41a7e2…e07b",
+      "size_bytes": 3774874,
+      "page_count": 20,
+      "section_count": 10,
+      "chunk_count": 124,
+      "created_at": "2026-10-28T09:20:00Z",
+      "updated_at": "2026-10-28T09:20:00Z",
+      "job": {
+        "id": "job_lindqvis",
+        "workspace_id": "ws_personal",
+        "source_id": "src_lindqvist2024",
+        "kind": "ingest",
+        "attempts": 1,
+        "max_attempts": 3,
+        "progress": {
+          "current": 20,
+          "total": 20,
+          "unit": "pages"
+        },
+        "eta_seconds": null,
+        "error_code": null,
+        "error_message": null,
+        "started_at": "2026-10-28T09:20:00Z",
+        "finished_at": "2026-10-28T09:20:00Z",
+        "status": "succeeded",
+        "stage": "ready"
+      },
+      "sections": [
+        {
+          "id": "sec_lindqvist2024_1",
+          "number": "1",
+          "title": "Introduction",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_lindqvist2024_2",
+          "number": "2",
+          "title": "Related work",
+          "page": 3,
+          "level": 1
+        },
+        {
+          "id": "sec_lindqvist2024_3",
+          "number": "3",
+          "title": "Method",
+          "page": 5,
+          "level": 1
+        },
+        {
+          "id": "sec_lindqvist2024_4",
+          "number": "4",
+          "title": "Experiments",
+          "page": 7,
+          "level": 1
+        },
+        {
+          "id": "sec_lindqvist2024_5",
+          "number": "5",
+          "title": "Results",
+          "page": 9,
+          "level": 1
+        },
+        {
+          "id": "sec_lindqvist2024_6",
+          "number": "6",
+          "title": "Discussion",
+          "page": 11,
+          "level": 1
+        },
+        {
+          "id": "sec_lindqvist2024_7",
+          "number": "7",
+          "title": "Conclusion",
+          "page": 13,
+          "level": 1
+        },
+        {
+          "id": "sec_lindqvist2024_8",
+          "number": null,
+          "title": "References",
+          "page": 15,
+          "level": 1
+        }
+      ],
+      "entities": [],
+      "entity_count": 4,
+      "relationships": [],
+      "relationship_count": 0,
+      "ingestion_history": [
+        {
+          "label": "Uploaded & checksum verified",
+          "status": "done",
+          "at": "2026-10-28T09:20:00Z"
+        },
+        {
+          "label": "Parsed · 20 pages",
+          "status": "done",
+          "at": "2026-10-28T09:20:00Z"
+        },
+        {
+          "label": "Chunked & embedded · 124 chunks",
+          "status": "done",
+          "at": "2026-10-28T09:20:00Z"
+        },
+        {
+          "label": "Entities extracted",
+          "status": "done",
+          "at": "2026-10-28T09:20:00Z"
+        }
+      ]
+    },
+    "src_haddad2025": {
+      "id": "src_haddad2025",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "type": "pdf",
+      "title": "ColBERT-Style Late Interaction for Scientific QA",
+      "file_name": "ColBERT-Style Late Interaction for Scientific QA.pdf",
+      "authors": "Haddad",
+      "short_label": "Haddad 2025",
+      "year": 2025,
+      "status": "ready",
+      "checksum": "sha256:hadd9c41a7e2…e07b",
+      "size_bytes": 2516582,
+      "page_count": 15,
+      "section_count": 8,
+      "chunk_count": 93,
+      "created_at": "2026-10-27T06:45:00Z",
+      "updated_at": "2026-10-27T06:45:00Z",
+      "job": {
+        "id": "job_haddad20",
+        "workspace_id": "ws_personal",
+        "source_id": "src_haddad2025",
+        "kind": "ingest",
+        "attempts": 1,
+        "max_attempts": 3,
+        "progress": {
+          "current": 15,
+          "total": 15,
+          "unit": "pages"
+        },
+        "eta_seconds": null,
+        "error_code": null,
+        "error_message": null,
+        "started_at": "2026-10-27T06:45:00Z",
+        "finished_at": "2026-10-27T06:45:00Z",
+        "status": "succeeded",
+        "stage": "ready"
+      },
+      "sections": [
+        {
+          "id": "sec_haddad2025_1",
+          "number": "1",
+          "title": "Introduction",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_haddad2025_2",
+          "number": "2",
+          "title": "Related work",
+          "page": 2,
+          "level": 1
+        },
+        {
+          "id": "sec_haddad2025_3",
+          "number": "3",
+          "title": "Method",
+          "page": 3,
+          "level": 1
+        },
+        {
+          "id": "sec_haddad2025_4",
+          "number": "4",
+          "title": "Experiments",
+          "page": 4,
+          "level": 1
+        },
+        {
+          "id": "sec_haddad2025_5",
+          "number": "5",
+          "title": "Results",
+          "page": 5,
+          "level": 1
+        },
+        {
+          "id": "sec_haddad2025_6",
+          "number": "6",
+          "title": "Discussion",
+          "page": 6,
+          "level": 1
+        },
+        {
+          "id": "sec_haddad2025_7",
+          "number": "7",
+          "title": "Conclusion",
+          "page": 7,
+          "level": 1
+        },
+        {
+          "id": "sec_haddad2025_8",
+          "number": null,
+          "title": "References",
+          "page": 8,
+          "level": 1
+        }
+      ],
+      "entities": [],
+      "entity_count": 4,
+      "relationships": [],
+      "relationship_count": 0,
+      "ingestion_history": [
+        {
+          "label": "Uploaded & checksum verified",
+          "status": "done",
+          "at": "2026-10-27T06:45:00Z"
+        },
+        {
+          "label": "Parsed · 15 pages",
+          "status": "done",
+          "at": "2026-10-27T06:45:00Z"
+        },
+        {
+          "label": "Chunked & embedded · 93 chunks",
+          "status": "done",
+          "at": "2026-10-27T06:45:00Z"
+        },
+        {
+          "label": "Entities extracted",
+          "status": "done",
+          "at": "2026-10-27T06:45:00Z"
+        }
+      ]
+    },
+    "src_nakamura2025": {
+      "id": "src_nakamura2025",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "type": "pdf",
+      "title": "Sparse–Dense Hybrids in Low-Resource Domains",
+      "file_name": "Sparse–Dense Hybrids in Low-Resource Domains.pdf",
+      "authors": "Nakamura",
+      "short_label": "Nakamura 2025",
+      "year": 2025,
+      "status": "ready",
+      "checksum": "sha256:naka9c41a7e2…e07b",
+      "size_bytes": 1992294,
+      "page_count": 12,
+      "section_count": 6,
+      "chunk_count": 74,
+      "created_at": "2026-10-25T02:10:00Z",
+      "updated_at": "2026-10-25T02:10:00Z",
+      "job": {
+        "id": "job_nakamura",
+        "workspace_id": "ws_personal",
+        "source_id": "src_nakamura2025",
+        "kind": "ingest",
+        "attempts": 1,
+        "max_attempts": 3,
+        "progress": {
+          "current": 12,
+          "total": 12,
+          "unit": "pages"
+        },
+        "eta_seconds": null,
+        "error_code": null,
+        "error_message": null,
+        "started_at": "2026-10-25T02:10:00Z",
+        "finished_at": "2026-10-25T02:10:00Z",
+        "status": "succeeded",
+        "stage": "ready"
+      },
+      "sections": [
+        {
+          "id": "sec_nakamura2025_1",
+          "number": "1",
+          "title": "Introduction",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_nakamura2025_2",
+          "number": "2",
+          "title": "Related work",
+          "page": 2,
+          "level": 1
+        },
+        {
+          "id": "sec_nakamura2025_3",
+          "number": "3",
+          "title": "Method",
+          "page": 3,
+          "level": 1
+        },
+        {
+          "id": "sec_nakamura2025_4",
+          "number": "4",
+          "title": "Experiments",
+          "page": 4,
+          "level": 1
+        },
+        {
+          "id": "sec_nakamura2025_5",
+          "number": "5",
+          "title": "Results",
+          "page": 5,
+          "level": 1
+        },
+        {
+          "id": "sec_nakamura2025_6",
+          "number": "6",
+          "title": "Discussion",
+          "page": 6,
+          "level": 1
+        },
+        {
+          "id": "sec_nakamura2025_7",
+          "number": "7",
+          "title": "Conclusion",
+          "page": 7,
+          "level": 1
+        },
+        {
+          "id": "sec_nakamura2025_8",
+          "number": null,
+          "title": "References",
+          "page": 8,
+          "level": 1
+        }
+      ],
+      "entities": [],
+      "entity_count": 4,
+      "relationships": [],
+      "relationship_count": 0,
+      "ingestion_history": [
+        {
+          "label": "Uploaded & checksum verified",
+          "status": "done",
+          "at": "2026-10-25T02:10:00Z"
+        },
+        {
+          "label": "Parsed · 12 pages",
+          "status": "done",
+          "at": "2026-10-25T02:10:00Z"
+        },
+        {
+          "label": "Chunked & embedded · 74 chunks",
+          "status": "done",
+          "at": "2026-10-25T02:10:00Z"
+        },
+        {
+          "label": "Entities extracted",
+          "status": "done",
+          "at": "2026-10-25T02:10:00Z"
+        }
+      ]
+    },
+    "src_brennan2024": {
+      "id": "src_brennan2024",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "type": "pdf",
+      "title": "Evaluating Retrieval-Augmented Generation: A Survey",
+      "file_name": "Evaluating Retrieval-Augmented Generation: A Survey.pdf",
+      "authors": "Brennan et al.",
+      "short_label": "Brennan et al. 2024",
+      "year": 2024,
+      "status": "ready",
+      "checksum": "sha256:bren9c41a7e2…e07b",
+      "size_bytes": 5452595,
+      "page_count": 34,
+      "section_count": 10,
+      "chunk_count": 211,
+      "created_at": "2026-10-22T08:00:00Z",
+      "updated_at": "2026-10-22T08:00:00Z",
+      "job": {
+        "id": "job_brennan2",
+        "workspace_id": "ws_personal",
+        "source_id": "src_brennan2024",
+        "kind": "ingest",
+        "attempts": 1,
+        "max_attempts": 3,
+        "progress": {
+          "current": 34,
+          "total": 34,
+          "unit": "pages"
+        },
+        "eta_seconds": null,
+        "error_code": null,
+        "error_message": null,
+        "started_at": "2026-10-22T08:00:00Z",
+        "finished_at": "2026-10-22T08:00:00Z",
+        "status": "succeeded",
+        "stage": "ready"
+      },
+      "sections": [
+        {
+          "id": "sec_brennan2024_1",
+          "number": "1",
+          "title": "Introduction",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_brennan2024_2",
+          "number": "2",
+          "title": "Related work",
+          "page": 5,
+          "level": 1
+        },
+        {
+          "id": "sec_brennan2024_3",
+          "number": "3",
+          "title": "Method",
+          "page": 9,
+          "level": 1
+        },
+        {
+          "id": "sec_brennan2024_4",
+          "number": "4",
+          "title": "Experiments",
+          "page": 13,
+          "level": 1
+        },
+        {
+          "id": "sec_brennan2024_5",
+          "number": "5",
+          "title": "Results",
+          "page": 17,
+          "level": 1
+        },
+        {
+          "id": "sec_brennan2024_6",
+          "number": "6",
+          "title": "Discussion",
+          "page": 21,
+          "level": 1
+        },
+        {
+          "id": "sec_brennan2024_7",
+          "number": "7",
+          "title": "Conclusion",
+          "page": 25,
+          "level": 1
+        },
+        {
+          "id": "sec_brennan2024_8",
+          "number": null,
+          "title": "References",
+          "page": 29,
+          "level": 1
+        }
+      ],
+      "entities": [],
+      "entity_count": 4,
+      "relationships": [],
+      "relationship_count": 0,
+      "ingestion_history": [
+        {
+          "label": "Uploaded & checksum verified",
+          "status": "done",
+          "at": "2026-10-22T08:00:00Z"
+        },
+        {
+          "label": "Parsed · 34 pages",
+          "status": "done",
+          "at": "2026-10-22T08:00:00Z"
+        },
+        {
+          "label": "Chunked & embedded · 211 chunks",
+          "status": "done",
+          "at": "2026-10-22T08:00:00Z"
+        },
+        {
+          "label": "Entities extracted",
+          "status": "done",
+          "at": "2026-10-22T08:00:00Z"
+        }
+      ]
+    },
+    "src_osei2025": {
+      "id": "src_osei2025",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "type": "pdf",
+      "title": "Entity-Aware Retrieval for Long-Tail Questions",
+      "file_name": "Entity-Aware Retrieval for Long-Tail Questions.pdf",
+      "authors": "Osei & Park",
+      "short_label": "Osei & Park 2025",
+      "year": 2025,
+      "status": "ready",
+      "checksum": "sha256:osei9c41a7e2…e07b",
+      "size_bytes": 2097152,
+      "page_count": 13,
+      "section_count": 7,
+      "chunk_count": 81,
+      "created_at": "2026-10-20T04:30:00Z",
+      "updated_at": "2026-10-20T04:30:00Z",
+      "job": {
+        "id": "job_osei2025",
+        "workspace_id": "ws_personal",
+        "source_id": "src_osei2025",
+        "kind": "ingest",
+        "attempts": 1,
+        "max_attempts": 3,
+        "progress": {
+          "current": 13,
+          "total": 13,
+          "unit": "pages"
+        },
+        "eta_seconds": null,
+        "error_code": null,
+        "error_message": null,
+        "started_at": "2026-10-20T04:30:00Z",
+        "finished_at": "2026-10-20T04:30:00Z",
+        "status": "succeeded",
+        "stage": "ready"
+      },
+      "sections": [
+        {
+          "id": "sec_osei2025_1",
+          "number": "1",
+          "title": "Introduction",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_osei2025_2",
+          "number": "2",
+          "title": "Related work",
+          "page": 2,
+          "level": 1
+        },
+        {
+          "id": "sec_osei2025_3",
+          "number": "3",
+          "title": "Method",
+          "page": 3,
+          "level": 1
+        },
+        {
+          "id": "sec_osei2025_4",
+          "number": "4",
+          "title": "Experiments",
+          "page": 4,
+          "level": 1
+        },
+        {
+          "id": "sec_osei2025_5",
+          "number": "5",
+          "title": "Results",
+          "page": 5,
+          "level": 1
+        },
+        {
+          "id": "sec_osei2025_6",
+          "number": "6",
+          "title": "Discussion",
+          "page": 6,
+          "level": 1
+        },
+        {
+          "id": "sec_osei2025_7",
+          "number": "7",
+          "title": "Conclusion",
+          "page": 7,
+          "level": 1
+        },
+        {
+          "id": "sec_osei2025_8",
+          "number": null,
+          "title": "References",
+          "page": 8,
+          "level": 1
+        }
+      ],
+      "entities": [],
+      "entity_count": 4,
+      "relationships": [],
+      "relationship_count": 0,
+      "ingestion_history": [
+        {
+          "label": "Uploaded & checksum verified",
+          "status": "done",
+          "at": "2026-10-20T04:30:00Z"
+        },
+        {
+          "label": "Parsed · 13 pages",
+          "status": "done",
+          "at": "2026-10-20T04:30:00Z"
+        },
+        {
+          "label": "Chunked & embedded · 81 chunks",
+          "status": "done",
+          "at": "2026-10-20T04:30:00Z"
+        },
+        {
+          "label": "Entities extracted",
+          "status": "done",
+          "at": "2026-10-20T04:30:00Z"
+        }
+      ]
+    },
+    "src_fischer2024": {
+      "id": "src_fischer2024",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "type": "pdf",
+      "title": "Query Rewriting for Multi-hop Retrieval",
+      "file_name": "Query Rewriting for Multi-hop Retrieval.pdf",
+      "authors": "Fischer",
+      "short_label": "Fischer 2024",
+      "year": 2024,
+      "status": "ready",
+      "checksum": "sha256:fisc9c41a7e2…e07b",
+      "size_bytes": 1468006,
+      "page_count": 10,
+      "section_count": 6,
+      "chunk_count": 62,
+      "created_at": "2026-10-18T03:15:00Z",
+      "updated_at": "2026-10-18T03:15:00Z",
+      "job": {
+        "id": "job_fischer2",
+        "workspace_id": "ws_personal",
+        "source_id": "src_fischer2024",
+        "kind": "ingest",
+        "attempts": 1,
+        "max_attempts": 3,
+        "progress": {
+          "current": 10,
+          "total": 10,
+          "unit": "pages"
+        },
+        "eta_seconds": null,
+        "error_code": null,
+        "error_message": null,
+        "started_at": "2026-10-18T03:15:00Z",
+        "finished_at": "2026-10-18T03:15:00Z",
+        "status": "succeeded",
+        "stage": "ready"
+      },
+      "sections": [
+        {
+          "id": "sec_fischer2024_1",
+          "number": "1",
+          "title": "Introduction",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_fischer2024_2",
+          "number": "2",
+          "title": "Related work",
+          "page": 2,
+          "level": 1
+        },
+        {
+          "id": "sec_fischer2024_3",
+          "number": "3",
+          "title": "Method",
+          "page": 3,
+          "level": 1
+        },
+        {
+          "id": "sec_fischer2024_4",
+          "number": "4",
+          "title": "Experiments",
+          "page": 4,
+          "level": 1
+        },
+        {
+          "id": "sec_fischer2024_5",
+          "number": "5",
+          "title": "Results",
+          "page": 5,
+          "level": 1
+        },
+        {
+          "id": "sec_fischer2024_6",
+          "number": "6",
+          "title": "Discussion",
+          "page": 6,
+          "level": 1
+        },
+        {
+          "id": "sec_fischer2024_7",
+          "number": "7",
+          "title": "Conclusion",
+          "page": 7,
+          "level": 1
+        },
+        {
+          "id": "sec_fischer2024_8",
+          "number": null,
+          "title": "References",
+          "page": 8,
+          "level": 1
+        }
+      ],
+      "entities": [],
+      "entity_count": 4,
+      "relationships": [],
+      "relationship_count": 0,
+      "ingestion_history": [
+        {
+          "label": "Uploaded & checksum verified",
+          "status": "done",
+          "at": "2026-10-18T03:15:00Z"
+        },
+        {
+          "label": "Parsed · 10 pages",
+          "status": "done",
+          "at": "2026-10-18T03:15:00Z"
+        },
+        {
+          "label": "Chunked & embedded · 62 chunks",
+          "status": "done",
+          "at": "2026-10-18T03:15:00Z"
+        },
+        {
+          "label": "Entities extracted",
+          "status": "done",
+          "at": "2026-10-18T03:15:00Z"
+        }
+      ]
+    },
+    "src_kim2025": {
+      "id": "src_kim2025",
+      "workspace_id": "ws_personal",
+      "project_id": null,
+      "project_name": null,
+      "type": "pdf",
+      "title": "Prompt Injection Risks in Retrieval Pipelines",
+      "file_name": "Prompt Injection Risks in Retrieval Pipelines.pdf",
+      "authors": "Kim",
+      "short_label": "Kim 2025",
+      "year": 2025,
+      "status": "ready",
+      "checksum": "sha256:kim29c41a7e2…e07b",
+      "size_bytes": 1782579,
+      "page_count": 12,
+      "section_count": 6,
+      "chunk_count": 74,
+      "created_at": "2026-10-16T07:00:00Z",
+      "updated_at": "2026-10-16T07:00:00Z",
+      "job": {
+        "id": "job_kim2025",
+        "workspace_id": "ws_personal",
+        "source_id": "src_kim2025",
+        "kind": "ingest",
+        "attempts": 1,
+        "max_attempts": 3,
+        "progress": {
+          "current": 12,
+          "total": 12,
+          "unit": "pages"
+        },
+        "eta_seconds": null,
+        "error_code": null,
+        "error_message": null,
+        "started_at": "2026-10-16T07:00:00Z",
+        "finished_at": "2026-10-16T07:00:00Z",
+        "status": "succeeded",
+        "stage": "ready"
+      },
+      "sections": [
+        {
+          "id": "sec_kim2025_1",
+          "number": "1",
+          "title": "Introduction",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_kim2025_2",
+          "number": "2",
+          "title": "Related work",
+          "page": 2,
+          "level": 1
+        },
+        {
+          "id": "sec_kim2025_3",
+          "number": "3",
+          "title": "Method",
+          "page": 3,
+          "level": 1
+        },
+        {
+          "id": "sec_kim2025_4",
+          "number": "4",
+          "title": "Experiments",
+          "page": 4,
+          "level": 1
+        },
+        {
+          "id": "sec_kim2025_5",
+          "number": "5",
+          "title": "Results",
+          "page": 5,
+          "level": 1
+        },
+        {
+          "id": "sec_kim2025_6",
+          "number": "6",
+          "title": "Discussion",
+          "page": 6,
+          "level": 1
+        },
+        {
+          "id": "sec_kim2025_7",
+          "number": "7",
+          "title": "Conclusion",
+          "page": 7,
+          "level": 1
+        },
+        {
+          "id": "sec_kim2025_8",
+          "number": null,
+          "title": "References",
+          "page": 8,
+          "level": 1
+        }
+      ],
+      "entities": [],
+      "entity_count": 4,
+      "relationships": [],
+      "relationship_count": 0,
+      "ingestion_history": [
+        {
+          "label": "Uploaded & checksum verified",
+          "status": "done",
+          "at": "2026-10-16T07:00:00Z"
+        },
+        {
+          "label": "Parsed · 12 pages",
+          "status": "done",
+          "at": "2026-10-16T07:00:00Z"
+        },
+        {
+          "label": "Chunked & embedded · 74 chunks",
+          "status": "done",
+          "at": "2026-10-16T07:00:00Z"
+        },
+        {
+          "label": "Entities extracted",
+          "status": "done",
+          "at": "2026-10-16T07:00:00Z"
+        }
+      ]
+    },
+    "src_patel2025": {
+      "id": "src_patel2025",
+      "workspace_id": "ws_personal",
+      "project_id": null,
+      "project_name": null,
+      "type": "pdf",
+      "title": "Embedding Model Benchmarks 2025",
+      "file_name": "Embedding Model Benchmarks 2025.pdf",
+      "authors": "Patel",
+      "short_label": "Patel 2025",
+      "year": 2025,
+      "status": "ready",
+      "checksum": "sha256:pate9c41a7e2…e07b",
+      "size_bytes": 3460301,
+      "page_count": 21,
+      "section_count": 10,
+      "chunk_count": 130,
+      "created_at": "2026-10-15T02:45:00Z",
+      "updated_at": "2026-10-15T02:45:00Z",
+      "job": {
+        "id": "job_patel202",
+        "workspace_id": "ws_personal",
+        "source_id": "src_patel2025",
+        "kind": "ingest",
+        "attempts": 1,
+        "max_attempts": 3,
+        "progress": {
+          "current": 21,
+          "total": 21,
+          "unit": "pages"
+        },
+        "eta_seconds": null,
+        "error_code": null,
+        "error_message": null,
+        "started_at": "2026-10-15T02:45:00Z",
+        "finished_at": "2026-10-15T02:45:00Z",
+        "status": "succeeded",
+        "stage": "ready"
+      },
+      "sections": [
+        {
+          "id": "sec_patel2025_1",
+          "number": "1",
+          "title": "Introduction",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_patel2025_2",
+          "number": "2",
+          "title": "Related work",
+          "page": 3,
+          "level": 1
+        },
+        {
+          "id": "sec_patel2025_3",
+          "number": "3",
+          "title": "Method",
+          "page": 5,
+          "level": 1
+        },
+        {
+          "id": "sec_patel2025_4",
+          "number": "4",
+          "title": "Experiments",
+          "page": 7,
+          "level": 1
+        },
+        {
+          "id": "sec_patel2025_5",
+          "number": "5",
+          "title": "Results",
+          "page": 9,
+          "level": 1
+        },
+        {
+          "id": "sec_patel2025_6",
+          "number": "6",
+          "title": "Discussion",
+          "page": 11,
+          "level": 1
+        },
+        {
+          "id": "sec_patel2025_7",
+          "number": "7",
+          "title": "Conclusion",
+          "page": 13,
+          "level": 1
+        },
+        {
+          "id": "sec_patel2025_8",
+          "number": null,
+          "title": "References",
+          "page": 15,
+          "level": 1
+        }
+      ],
+      "entities": [],
+      "entity_count": 4,
+      "relationships": [],
+      "relationship_count": 0,
+      "ingestion_history": [
+        {
+          "label": "Uploaded & checksum verified",
+          "status": "done",
+          "at": "2026-10-15T02:45:00Z"
+        },
+        {
+          "label": "Parsed · 21 pages",
+          "status": "done",
+          "at": "2026-10-15T02:45:00Z"
+        },
+        {
+          "label": "Chunked & embedded · 130 chunks",
+          "status": "done",
+          "at": "2026-10-15T02:45:00Z"
+        },
+        {
+          "label": "Entities extracted",
+          "status": "done",
+          "at": "2026-10-15T02:45:00Z"
+        }
+      ]
+    },
+    "src_novak2024": {
+      "id": "src_novak2024",
+      "workspace_id": "ws_personal",
+      "project_id": null,
+      "project_name": null,
+      "type": "pdf",
+      "title": "Vector Databases in Practice",
+      "file_name": "Vector Databases in Practice.pdf",
+      "authors": "Novak",
+      "short_label": "Novak 2024",
+      "year": 2024,
+      "status": "ready",
+      "checksum": "sha256:nova9c41a7e2…e07b",
+      "size_bytes": 2936013,
+      "page_count": 18,
+      "section_count": 9,
+      "chunk_count": 112,
+      "created_at": "2026-10-14T09:10:00Z",
+      "updated_at": "2026-10-14T09:10:00Z",
+      "job": {
+        "id": "job_novak202",
+        "workspace_id": "ws_personal",
+        "source_id": "src_novak2024",
+        "kind": "ingest",
+        "attempts": 1,
+        "max_attempts": 3,
+        "progress": {
+          "current": 18,
+          "total": 18,
+          "unit": "pages"
+        },
+        "eta_seconds": null,
+        "error_code": null,
+        "error_message": null,
+        "started_at": "2026-10-14T09:10:00Z",
+        "finished_at": "2026-10-14T09:10:00Z",
+        "status": "succeeded",
+        "stage": "ready"
+      },
+      "sections": [
+        {
+          "id": "sec_novak2024_1",
+          "number": "1",
+          "title": "Introduction",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_novak2024_2",
+          "number": "2",
+          "title": "Related work",
+          "page": 3,
+          "level": 1
+        },
+        {
+          "id": "sec_novak2024_3",
+          "number": "3",
+          "title": "Method",
+          "page": 5,
+          "level": 1
+        },
+        {
+          "id": "sec_novak2024_4",
+          "number": "4",
+          "title": "Experiments",
+          "page": 7,
+          "level": 1
+        },
+        {
+          "id": "sec_novak2024_5",
+          "number": "5",
+          "title": "Results",
+          "page": 9,
+          "level": 1
+        },
+        {
+          "id": "sec_novak2024_6",
+          "number": "6",
+          "title": "Discussion",
+          "page": 11,
+          "level": 1
+        },
+        {
+          "id": "sec_novak2024_7",
+          "number": "7",
+          "title": "Conclusion",
+          "page": 13,
+          "level": 1
+        },
+        {
+          "id": "sec_novak2024_8",
+          "number": null,
+          "title": "References",
+          "page": 15,
+          "level": 1
+        }
+      ],
+      "entities": [],
+      "entity_count": 4,
+      "relationships": [],
+      "relationship_count": 0,
+      "ingestion_history": [
+        {
+          "label": "Uploaded & checksum verified",
+          "status": "done",
+          "at": "2026-10-14T09:10:00Z"
+        },
+        {
+          "label": "Parsed · 18 pages",
+          "status": "done",
+          "at": "2026-10-14T09:10:00Z"
+        },
+        {
+          "label": "Chunked & embedded · 112 chunks",
+          "status": "done",
+          "at": "2026-10-14T09:10:00Z"
+        },
+        {
+          "label": "Entities extracted",
+          "status": "done",
+          "at": "2026-10-14T09:10:00Z"
+        }
+      ]
+    },
+    "src_readinglist": {
+      "id": "src_readinglist",
+      "workspace_id": "ws_personal",
+      "project_id": null,
+      "project_name": null,
+      "type": "markdown",
+      "title": "reading-list.md",
+      "file_name": "reading-list.md",
+      "authors": null,
+      "short_label": "reading-list.md",
+      "year": null,
+      "status": "ready",
+      "checksum": "sha256:read9c41a7e2…e07b",
+      "size_bytes": 10486,
+      "page_count": null,
+      "section_count": 4,
+      "chunk_count": 12,
+      "created_at": "2026-10-13T13:30:00Z",
+      "updated_at": "2026-10-13T13:30:00Z",
+      "job": {
+        "id": "job_readingl",
+        "workspace_id": "ws_personal",
+        "source_id": "src_readinglist",
+        "kind": "ingest",
+        "attempts": 1,
+        "max_attempts": 3,
+        "progress": null,
+        "eta_seconds": null,
+        "error_code": null,
+        "error_message": null,
+        "started_at": "2026-10-13T13:30:00Z",
+        "finished_at": "2026-10-13T13:30:00Z",
+        "status": "succeeded",
+        "stage": "ready"
+      },
+      "sections": [
+        {
+          "id": "sec_readinglist_1",
+          "number": null,
+          "title": "Summary",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_readinglist_2",
+          "number": null,
+          "title": "Experiments this week",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_readinglist_3",
+          "number": null,
+          "title": "Open questions",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_readinglist_4",
+          "number": null,
+          "title": "Decisions",
+          "page": 1,
+          "level": 1
+        }
+      ],
+      "entities": [],
+      "entity_count": 4,
+      "relationships": [],
+      "relationship_count": 0,
+      "ingestion_history": [
+        {
+          "label": "Uploaded & checksum verified",
+          "status": "done",
+          "at": "2026-10-13T13:30:00Z"
+        },
+        {
+          "label": "Chunked & embedded · 12 chunks",
+          "status": "done",
+          "at": "2026-10-13T13:30:00Z"
+        },
+        {
+          "label": "Entities extracted",
+          "status": "done",
+          "at": "2026-10-13T13:30:00Z"
+        }
+      ]
+    },
+    "src_duarte2025": {
+      "id": "src_duarte2025",
+      "workspace_id": "ws_personal",
+      "project_id": null,
+      "project_name": null,
+      "type": "pdf",
+      "title": "Citation Accuracy in LLM Answers",
+      "file_name": "Citation Accuracy in LLM Answers.pdf",
+      "authors": "Duarte",
+      "short_label": "Duarte 2025",
+      "year": 2025,
+      "status": "ready",
+      "checksum": "sha256:duar9c41a7e2…e07b",
+      "size_bytes": 1572864,
+      "page_count": 11,
+      "section_count": 6,
+      "chunk_count": 68,
+      "created_at": "2026-10-12T06:20:00Z",
+      "updated_at": "2026-10-12T06:20:00Z",
+      "job": {
+        "id": "job_duarte20",
+        "workspace_id": "ws_personal",
+        "source_id": "src_duarte2025",
+        "kind": "ingest",
+        "attempts": 1,
+        "max_attempts": 3,
+        "progress": {
+          "current": 11,
+          "total": 11,
+          "unit": "pages"
+        },
+        "eta_seconds": null,
+        "error_code": null,
+        "error_message": null,
+        "started_at": "2026-10-12T06:20:00Z",
+        "finished_at": "2026-10-12T06:20:00Z",
+        "status": "succeeded",
+        "stage": "ready"
+      },
+      "sections": [
+        {
+          "id": "sec_duarte2025_1",
+          "number": "1",
+          "title": "Introduction",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_duarte2025_2",
+          "number": "2",
+          "title": "Related work",
+          "page": 2,
+          "level": 1
+        },
+        {
+          "id": "sec_duarte2025_3",
+          "number": "3",
+          "title": "Method",
+          "page": 3,
+          "level": 1
+        },
+        {
+          "id": "sec_duarte2025_4",
+          "number": "4",
+          "title": "Experiments",
+          "page": 4,
+          "level": 1
+        },
+        {
+          "id": "sec_duarte2025_5",
+          "number": "5",
+          "title": "Results",
+          "page": 5,
+          "level": 1
+        },
+        {
+          "id": "sec_duarte2025_6",
+          "number": "6",
+          "title": "Discussion",
+          "page": 6,
+          "level": 1
+        },
+        {
+          "id": "sec_duarte2025_7",
+          "number": "7",
+          "title": "Conclusion",
+          "page": 7,
+          "level": 1
+        },
+        {
+          "id": "sec_duarte2025_8",
+          "number": null,
+          "title": "References",
+          "page": 8,
+          "level": 1
+        }
+      ],
+      "entities": [],
+      "entity_count": 4,
+      "relationships": [],
+      "relationship_count": 0,
+      "ingestion_history": [
+        {
+          "label": "Uploaded & checksum verified",
+          "status": "done",
+          "at": "2026-10-12T06:20:00Z"
+        },
+        {
+          "label": "Parsed · 11 pages",
+          "status": "done",
+          "at": "2026-10-12T06:20:00Z"
+        },
+        {
+          "label": "Chunked & embedded · 68 chunks",
+          "status": "done",
+          "at": "2026-10-12T06:20:00Z"
+        },
+        {
+          "label": "Entities extracted",
+          "status": "done",
+          "at": "2026-10-12T06:20:00Z"
+        }
+      ]
+    },
+    "src_sato2025": {
+      "id": "src_sato2025",
+      "workspace_id": "ws_personal",
+      "project_id": null,
+      "project_name": null,
+      "type": "pdf",
+      "title": "Hallucination Detection via Evidence Alignment",
+      "file_name": "Hallucination Detection via Evidence Alignment.pdf",
+      "authors": "Sato",
+      "short_label": "Sato 2025",
+      "year": 2025,
+      "status": "ready",
+      "checksum": "sha256:sato9c41a7e2…e07b",
+      "size_bytes": 2097152,
+      "page_count": 13,
+      "section_count": 7,
+      "chunk_count": 81,
+      "created_at": "2026-10-10T03:40:00Z",
+      "updated_at": "2026-10-10T03:40:00Z",
+      "job": {
+        "id": "job_sato2025",
+        "workspace_id": "ws_personal",
+        "source_id": "src_sato2025",
+        "kind": "ingest",
+        "attempts": 1,
+        "max_attempts": 3,
+        "progress": {
+          "current": 13,
+          "total": 13,
+          "unit": "pages"
+        },
+        "eta_seconds": null,
+        "error_code": null,
+        "error_message": null,
+        "started_at": "2026-10-10T03:40:00Z",
+        "finished_at": "2026-10-10T03:40:00Z",
+        "status": "succeeded",
+        "stage": "ready"
+      },
+      "sections": [
+        {
+          "id": "sec_sato2025_1",
+          "number": "1",
+          "title": "Introduction",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_sato2025_2",
+          "number": "2",
+          "title": "Related work",
+          "page": 2,
+          "level": 1
+        },
+        {
+          "id": "sec_sato2025_3",
+          "number": "3",
+          "title": "Method",
+          "page": 3,
+          "level": 1
+        },
+        {
+          "id": "sec_sato2025_4",
+          "number": "4",
+          "title": "Experiments",
+          "page": 4,
+          "level": 1
+        },
+        {
+          "id": "sec_sato2025_5",
+          "number": "5",
+          "title": "Results",
+          "page": 5,
+          "level": 1
+        },
+        {
+          "id": "sec_sato2025_6",
+          "number": "6",
+          "title": "Discussion",
+          "page": 6,
+          "level": 1
+        },
+        {
+          "id": "sec_sato2025_7",
+          "number": "7",
+          "title": "Conclusion",
+          "page": 7,
+          "level": 1
+        },
+        {
+          "id": "sec_sato2025_8",
+          "number": null,
+          "title": "References",
+          "page": 8,
+          "level": 1
+        }
+      ],
+      "entities": [],
+      "entity_count": 4,
+      "relationships": [],
+      "relationship_count": 0,
+      "ingestion_history": [
+        {
+          "label": "Uploaded & checksum verified",
+          "status": "done",
+          "at": "2026-10-10T03:40:00Z"
+        },
+        {
+          "label": "Parsed · 13 pages",
+          "status": "done",
+          "at": "2026-10-10T03:40:00Z"
+        },
+        {
+          "label": "Chunked & embedded · 81 chunks",
+          "status": "done",
+          "at": "2026-10-10T03:40:00Z"
+        },
+        {
+          "label": "Entities extracted",
+          "status": "done",
+          "at": "2026-10-10T03:40:00Z"
+        }
+      ]
+    },
+    "src_mbeki2024": {
+      "id": "src_mbeki2024",
+      "workspace_id": "ws_personal",
+      "project_id": null,
+      "project_name": null,
+      "type": "pdf",
+      "title": "Re-ranking with Cross-Encoders",
+      "file_name": "Re-ranking with Cross-Encoders.pdf",
+      "authors": "Mbeki",
+      "short_label": "Mbeki 2024",
+      "year": 2024,
+      "status": "ready",
+      "checksum": "sha256:mbek9c41a7e2…e07b",
+      "size_bytes": 1363149,
+      "page_count": 10,
+      "section_count": 6,
+      "chunk_count": 62,
+      "created_at": "2026-10-09T08:25:00Z",
+      "updated_at": "2026-10-09T08:25:00Z",
+      "job": {
+        "id": "job_mbeki202",
+        "workspace_id": "ws_personal",
+        "source_id": "src_mbeki2024",
+        "kind": "ingest",
+        "attempts": 1,
+        "max_attempts": 3,
+        "progress": {
+          "current": 10,
+          "total": 10,
+          "unit": "pages"
+        },
+        "eta_seconds": null,
+        "error_code": null,
+        "error_message": null,
+        "started_at": "2026-10-09T08:25:00Z",
+        "finished_at": "2026-10-09T08:25:00Z",
+        "status": "succeeded",
+        "stage": "ready"
+      },
+      "sections": [
+        {
+          "id": "sec_mbeki2024_1",
+          "number": "1",
+          "title": "Introduction",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_mbeki2024_2",
+          "number": "2",
+          "title": "Related work",
+          "page": 2,
+          "level": 1
+        },
+        {
+          "id": "sec_mbeki2024_3",
+          "number": "3",
+          "title": "Method",
+          "page": 3,
+          "level": 1
+        },
+        {
+          "id": "sec_mbeki2024_4",
+          "number": "4",
+          "title": "Experiments",
+          "page": 4,
+          "level": 1
+        },
+        {
+          "id": "sec_mbeki2024_5",
+          "number": "5",
+          "title": "Results",
+          "page": 5,
+          "level": 1
+        },
+        {
+          "id": "sec_mbeki2024_6",
+          "number": "6",
+          "title": "Discussion",
+          "page": 6,
+          "level": 1
+        },
+        {
+          "id": "sec_mbeki2024_7",
+          "number": "7",
+          "title": "Conclusion",
+          "page": 7,
+          "level": 1
+        },
+        {
+          "id": "sec_mbeki2024_8",
+          "number": null,
+          "title": "References",
+          "page": 8,
+          "level": 1
+        }
+      ],
+      "entities": [],
+      "entity_count": 4,
+      "relationships": [],
+      "relationship_count": 0,
+      "ingestion_history": [
+        {
+          "label": "Uploaded & checksum verified",
+          "status": "done",
+          "at": "2026-10-09T08:25:00Z"
+        },
+        {
+          "label": "Parsed · 10 pages",
+          "status": "done",
+          "at": "2026-10-09T08:25:00Z"
+        },
+        {
+          "label": "Chunked & embedded · 62 chunks",
+          "status": "done",
+          "at": "2026-10-09T08:25:00Z"
+        },
+        {
+          "label": "Entities extracted",
+          "status": "done",
+          "at": "2026-10-09T08:25:00Z"
+        }
+      ]
+    },
+    "src_ivanova2025": {
+      "id": "src_ivanova2025",
+      "workspace_id": "ws_personal",
+      "project_id": null,
+      "project_name": null,
+      "type": "pdf",
+      "title": "Document Parsing for Scientific PDFs",
+      "file_name": "Document Parsing for Scientific PDFs.pdf",
+      "authors": "Ivanova",
+      "short_label": "Ivanova 2025",
+      "year": 2025,
+      "status": "ready",
+      "checksum": "sha256:ivan9c41a7e2…e07b",
+      "size_bytes": 2726298,
+      "page_count": 16,
+      "section_count": 8,
+      "chunk_count": 99,
+      "created_at": "2026-10-08T04:50:00Z",
+      "updated_at": "2026-10-08T04:50:00Z",
+      "job": {
+        "id": "job_ivanova2",
+        "workspace_id": "ws_personal",
+        "source_id": "src_ivanova2025",
+        "kind": "ingest",
+        "attempts": 1,
+        "max_attempts": 3,
+        "progress": {
+          "current": 16,
+          "total": 16,
+          "unit": "pages"
+        },
+        "eta_seconds": null,
+        "error_code": null,
+        "error_message": null,
+        "started_at": "2026-10-08T04:50:00Z",
+        "finished_at": "2026-10-08T04:50:00Z",
+        "status": "succeeded",
+        "stage": "ready"
+      },
+      "sections": [
+        {
+          "id": "sec_ivanova2025_1",
+          "number": "1",
+          "title": "Introduction",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_ivanova2025_2",
+          "number": "2",
+          "title": "Related work",
+          "page": 3,
+          "level": 1
+        },
+        {
+          "id": "sec_ivanova2025_3",
+          "number": "3",
+          "title": "Method",
+          "page": 5,
+          "level": 1
+        },
+        {
+          "id": "sec_ivanova2025_4",
+          "number": "4",
+          "title": "Experiments",
+          "page": 7,
+          "level": 1
+        },
+        {
+          "id": "sec_ivanova2025_5",
+          "number": "5",
+          "title": "Results",
+          "page": 9,
+          "level": 1
+        },
+        {
+          "id": "sec_ivanova2025_6",
+          "number": "6",
+          "title": "Discussion",
+          "page": 11,
+          "level": 1
+        },
+        {
+          "id": "sec_ivanova2025_7",
+          "number": "7",
+          "title": "Conclusion",
+          "page": 13,
+          "level": 1
+        },
+        {
+          "id": "sec_ivanova2025_8",
+          "number": null,
+          "title": "References",
+          "page": 15,
+          "level": 1
+        }
+      ],
+      "entities": [],
+      "entity_count": 4,
+      "relationships": [],
+      "relationship_count": 0,
+      "ingestion_history": [
+        {
+          "label": "Uploaded & checksum verified",
+          "status": "done",
+          "at": "2026-10-08T04:50:00Z"
+        },
+        {
+          "label": "Parsed · 16 pages",
+          "status": "done",
+          "at": "2026-10-08T04:50:00Z"
+        },
+        {
+          "label": "Chunked & embedded · 99 chunks",
+          "status": "done",
+          "at": "2026-10-08T04:50:00Z"
+        },
+        {
+          "label": "Entities extracted",
+          "status": "done",
+          "at": "2026-10-08T04:50:00Z"
+        }
+      ]
+    },
+    "src_seminarnotes": {
+      "id": "src_seminarnotes",
+      "workspace_id": "ws_personal",
+      "project_id": null,
+      "project_name": null,
+      "type": "txt",
+      "title": "seminar-notes.txt",
+      "file_name": "seminar-notes.txt",
+      "authors": null,
+      "short_label": "seminar-notes.txt",
+      "year": null,
+      "status": "ready",
+      "checksum": "sha256:semi9c41a7e2…e07b",
+      "size_bytes": 10486,
+      "page_count": null,
+      "section_count": null,
+      "chunk_count": 12,
+      "created_at": "2026-10-07T10:05:00Z",
+      "updated_at": "2026-10-07T10:05:00Z",
+      "job": {
+        "id": "job_seminarn",
+        "workspace_id": "ws_personal",
+        "source_id": "src_seminarnotes",
+        "kind": "ingest",
+        "attempts": 1,
+        "max_attempts": 3,
+        "progress": null,
+        "eta_seconds": null,
+        "error_code": null,
+        "error_message": null,
+        "started_at": "2026-10-07T10:05:00Z",
+        "finished_at": "2026-10-07T10:05:00Z",
+        "status": "succeeded",
+        "stage": "ready"
+      },
+      "sections": [
+        {
+          "id": "sec_seminarnotes_1",
+          "number": null,
+          "title": "Summary",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_seminarnotes_2",
+          "number": null,
+          "title": "Experiments this week",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_seminarnotes_3",
+          "number": null,
+          "title": "Open questions",
+          "page": 1,
+          "level": 1
+        }
+      ],
+      "entities": [],
+      "entity_count": 4,
+      "relationships": [],
+      "relationship_count": 0,
+      "ingestion_history": [
+        {
+          "label": "Uploaded & checksum verified",
+          "status": "done",
+          "at": "2026-10-07T10:05:00Z"
+        },
+        {
+          "label": "Chunked & embedded · 12 chunks",
+          "status": "done",
+          "at": "2026-10-07T10:05:00Z"
+        },
+        {
+          "label": "Entities extracted",
+          "status": "done",
+          "at": "2026-10-07T10:05:00Z"
+        }
+      ]
+    },
+    "src_grant2025": {
+      "id": "src_grant2025",
+      "workspace_id": "ws_personal",
+      "project_id": null,
+      "project_name": null,
+      "type": "pdf",
+      "title": "Long-Context Models versus Retrieval",
+      "file_name": "Long-Context Models versus Retrieval.pdf",
+      "authors": "Grant",
+      "short_label": "Grant 2025",
+      "year": 2025,
+      "status": "ready",
+      "checksum": "sha256:gran9c41a7e2…e07b",
+      "size_bytes": 2306867,
+      "page_count": 14,
+      "section_count": 7,
+      "chunk_count": 87,
+      "created_at": "2026-10-06T02:30:00Z",
+      "updated_at": "2026-10-06T02:30:00Z",
+      "job": {
+        "id": "job_grant202",
+        "workspace_id": "ws_personal",
+        "source_id": "src_grant2025",
+        "kind": "ingest",
+        "attempts": 1,
+        "max_attempts": 3,
+        "progress": {
+          "current": 14,
+          "total": 14,
+          "unit": "pages"
+        },
+        "eta_seconds": null,
+        "error_code": null,
+        "error_message": null,
+        "started_at": "2026-10-06T02:30:00Z",
+        "finished_at": "2026-10-06T02:30:00Z",
+        "status": "succeeded",
+        "stage": "ready"
+      },
+      "sections": [
+        {
+          "id": "sec_grant2025_1",
+          "number": "1",
+          "title": "Introduction",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_grant2025_2",
+          "number": "2",
+          "title": "Related work",
+          "page": 2,
+          "level": 1
+        },
+        {
+          "id": "sec_grant2025_3",
+          "number": "3",
+          "title": "Method",
+          "page": 3,
+          "level": 1
+        },
+        {
+          "id": "sec_grant2025_4",
+          "number": "4",
+          "title": "Experiments",
+          "page": 4,
+          "level": 1
+        },
+        {
+          "id": "sec_grant2025_5",
+          "number": "5",
+          "title": "Results",
+          "page": 5,
+          "level": 1
+        },
+        {
+          "id": "sec_grant2025_6",
+          "number": "6",
+          "title": "Discussion",
+          "page": 6,
+          "level": 1
+        },
+        {
+          "id": "sec_grant2025_7",
+          "number": "7",
+          "title": "Conclusion",
+          "page": 7,
+          "level": 1
+        },
+        {
+          "id": "sec_grant2025_8",
+          "number": null,
+          "title": "References",
+          "page": 8,
+          "level": 1
+        }
+      ],
+      "entities": [],
+      "entity_count": 4,
+      "relationships": [],
+      "relationship_count": 0,
+      "ingestion_history": [
+        {
+          "label": "Uploaded & checksum verified",
+          "status": "done",
+          "at": "2026-10-06T02:30:00Z"
+        },
+        {
+          "label": "Parsed · 14 pages",
+          "status": "done",
+          "at": "2026-10-06T02:30:00Z"
+        },
+        {
+          "label": "Chunked & embedded · 87 chunks",
+          "status": "done",
+          "at": "2026-10-06T02:30:00Z"
+        },
+        {
+          "label": "Entities extracted",
+          "status": "done",
+          "at": "2026-10-06T02:30:00Z"
+        }
+      ]
+    },
+    "src_costa2024": {
+      "id": "src_costa2024",
+      "workspace_id": "ws_personal",
+      "project_id": null,
+      "project_name": null,
+      "type": "pdf",
+      "title": "Benchmarking Hybrid Search Engines",
+      "file_name": "Benchmarking Hybrid Search Engines.pdf",
+      "authors": "Costa",
+      "short_label": "Costa 2024",
+      "year": 2024,
+      "status": "ready",
+      "checksum": "sha256:cost9c41a7e2…e07b",
+      "size_bytes": 2831155,
+      "page_count": 17,
+      "section_count": 9,
+      "chunk_count": 105,
+      "created_at": "2026-10-05T07:45:00Z",
+      "updated_at": "2026-10-05T07:45:00Z",
+      "job": {
+        "id": "job_costa202",
+        "workspace_id": "ws_personal",
+        "source_id": "src_costa2024",
+        "kind": "ingest",
+        "attempts": 1,
+        "max_attempts": 3,
+        "progress": {
+          "current": 17,
+          "total": 17,
+          "unit": "pages"
+        },
+        "eta_seconds": null,
+        "error_code": null,
+        "error_message": null,
+        "started_at": "2026-10-05T07:45:00Z",
+        "finished_at": "2026-10-05T07:45:00Z",
+        "status": "succeeded",
+        "stage": "ready"
+      },
+      "sections": [
+        {
+          "id": "sec_costa2024_1",
+          "number": "1",
+          "title": "Introduction",
+          "page": 1,
+          "level": 1
+        },
+        {
+          "id": "sec_costa2024_2",
+          "number": "2",
+          "title": "Related work",
+          "page": 3,
+          "level": 1
+        },
+        {
+          "id": "sec_costa2024_3",
+          "number": "3",
+          "title": "Method",
+          "page": 5,
+          "level": 1
+        },
+        {
+          "id": "sec_costa2024_4",
+          "number": "4",
+          "title": "Experiments",
+          "page": 7,
+          "level": 1
+        },
+        {
+          "id": "sec_costa2024_5",
+          "number": "5",
+          "title": "Results",
+          "page": 9,
+          "level": 1
+        },
+        {
+          "id": "sec_costa2024_6",
+          "number": "6",
+          "title": "Discussion",
+          "page": 11,
+          "level": 1
+        },
+        {
+          "id": "sec_costa2024_7",
+          "number": "7",
+          "title": "Conclusion",
+          "page": 13,
+          "level": 1
+        },
+        {
+          "id": "sec_costa2024_8",
+          "number": null,
+          "title": "References",
+          "page": 15,
+          "level": 1
+        }
+      ],
+      "entities": [],
+      "entity_count": 4,
+      "relationships": [],
+      "relationship_count": 0,
+      "ingestion_history": [
+        {
+          "label": "Uploaded & checksum verified",
+          "status": "done",
+          "at": "2026-10-05T07:45:00Z"
+        },
+        {
+          "label": "Parsed · 17 pages",
+          "status": "done",
+          "at": "2026-10-05T07:45:00Z"
+        },
+        {
+          "label": "Chunked & embedded · 105 chunks",
+          "status": "done",
+          "at": "2026-10-05T07:45:00Z"
+        },
+        {
+          "label": "Entities extracted",
+          "status": "done",
+          "at": "2026-10-05T07:45:00Z"
+        }
+      ]
+    }
+  }
+}

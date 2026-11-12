@@ -1,0 +1,20 @@
+{
+  "id": "job_daly2025",
+  "workspace_id": "ws_personal",
+  "source_id": "src_daly2025",
+  "kind": "ingest",
+  "attempts": 1,
+  "max_attempts": 3,
+  "progress": {
+    "current": 212,
+    "total": 340,
+    "unit": "chunks"
+  },
+  "eta_seconds": 90,
+  "error_code": null,
+  "error_message": null,
+  "started_at": "2026-11-11T06:58:00Z",
+  "finished_at": null,
+  "status": "running",
+  "stage": "indexing"
+}

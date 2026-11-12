@@ -1,0 +1,10 @@
+{
+  "error": {
+    "code": "VALIDATION_FAILED",
+    "message": "Choose a confirmed memory to supersede this one.",
+    "details": {
+      "field": "superseded_by_id"
+    },
+    "request_id": "req_6a7b8c9d"
+  }
+}

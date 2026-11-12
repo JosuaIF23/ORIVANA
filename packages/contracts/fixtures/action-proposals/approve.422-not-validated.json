@@ -1,0 +1,10 @@
+{
+  "error": {
+    "code": "VALIDATION_FAILED",
+    "message": "Approve unlocks after validation passes.",
+    "details": {
+      "status": "draft"
+    },
+    "request_id": "req_4c5d6e7f"
+  }
+}

@@ -1,0 +1,345 @@
+{
+  "_note": "GET /api/v1/sources/src_fischer2024/chunks?page=N — one entry per page.",
+  "pages": [
+    {
+      "source_id": "src_fischer2024",
+      "page": 1,
+      "page_count": 10,
+      "running_header": "Fischer · Query Rewriting for Multi-hop Retrieval",
+      "section_id": "sec_fischer2024_1",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "1 Introduction",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_fischer2024_0101",
+          "text": "Retrieval quality bounds the quality of retrieval-augmented answers: if the relevant passage is not retrieved, the generator cannot cite it. This section motivates the comparison and states the research questions."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_fischer2024_0101",
+          "document_id": "doc_fischer2024",
+          "ordinal": 1,
+          "text": "Retrieval quality bounds the quality of retrieval-augmented answers: if the relevant passage is not retrieved, the generator cannot cite it. This section motivates the comparison and states the research questions.",
+          "token_count": 39,
+          "page_start": 1,
+          "page_end": 1,
+          "section_path": [
+            "1 Introduction"
+          ],
+          "char_start": 1200,
+          "char_end": 1413
+        }
+      ]
+    },
+    {
+      "source_id": "src_fischer2024",
+      "page": 2,
+      "page_count": 10,
+      "running_header": "Fischer · Query Rewriting for Multi-hop Retrieval",
+      "section_id": "sec_fischer2024_2",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "2 Related work",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_fischer2024_0201",
+          "text": "Prior work compares sparse and dense retrievers on open-domain question answering, but few studies hold the reader model fixed while varying only the retriever."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_fischer2024_0201",
+          "document_id": "doc_fischer2024",
+          "ordinal": 2,
+          "text": "Prior work compares sparse and dense retrievers on open-domain question answering, but few studies hold the reader model fixed while varying only the retriever.",
+          "token_count": 31,
+          "page_start": 2,
+          "page_end": 2,
+          "section_path": [
+            "2 Related work"
+          ],
+          "char_start": 2400,
+          "char_end": 2560
+        }
+      ]
+    },
+    {
+      "source_id": "src_fischer2024",
+      "page": 3,
+      "page_count": 10,
+      "running_header": "Fischer · Query Rewriting for Multi-hop Retrieval",
+      "section_id": "sec_fischer2024_3",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "3 Method",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_fischer2024_0301",
+          "text": "We describe the retrievers, the indexing settings, and how passages are scored and merged before they are passed to the reader."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_fischer2024_0301",
+          "document_id": "doc_fischer2024",
+          "ordinal": 3,
+          "text": "We describe the retrievers, the indexing settings, and how passages are scored and merged before they are passed to the reader.",
+          "token_count": 27,
+          "page_start": 3,
+          "page_end": 3,
+          "section_path": [
+            "3 Method"
+          ],
+          "char_start": 3600,
+          "char_end": 3727
+        }
+      ]
+    },
+    {
+      "source_id": "src_fischer2024",
+      "page": 4,
+      "page_count": 10,
+      "running_header": "Fischer · Query Rewriting for Multi-hop Retrieval",
+      "section_id": "sec_fischer2024_4",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "4 Experiments",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_fischer2024_0401",
+          "text": "All experiments use the same reader model and the same passage budget so that differences can be attributed to retrieval."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_fischer2024_0401",
+          "document_id": "doc_fischer2024",
+          "ordinal": 4,
+          "text": "All experiments use the same reader model and the same passage budget so that differences can be attributed to retrieval.",
+          "token_count": 26,
+          "page_start": 4,
+          "page_end": 4,
+          "section_path": [
+            "4 Experiments"
+          ],
+          "char_start": 4800,
+          "char_end": 4921
+        }
+      ]
+    },
+    {
+      "source_id": "src_fischer2024",
+      "page": 5,
+      "page_count": 10,
+      "running_header": "Fischer · Query Rewriting for Multi-hop Retrieval",
+      "section_id": "sec_fischer2024_5",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "5 Results",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_fischer2024_0501",
+          "text": "We report top-20 accuracy and nDCG@10 for every configuration; confidence intervals come from 1,000 bootstrap samples."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_fischer2024_0501",
+          "document_id": "doc_fischer2024",
+          "ordinal": 5,
+          "text": "We report top-20 accuracy and nDCG@10 for every configuration; confidence intervals come from 1,000 bootstrap samples.",
+          "token_count": 21,
+          "page_start": 5,
+          "page_end": 5,
+          "section_path": [
+            "5 Results"
+          ],
+          "char_start": 6000,
+          "char_end": 6118
+        }
+      ]
+    },
+    {
+      "source_id": "src_fischer2024",
+      "page": 6,
+      "page_count": 10,
+      "running_header": "Fischer · Query Rewriting for Multi-hop Retrieval",
+      "section_id": "sec_fischer2024_6",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "6 Discussion",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_fischer2024_0601",
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_fischer2024_0601",
+          "document_id": "doc_fischer2024",
+          "ordinal": 6,
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type.",
+          "token_count": 27,
+          "page_start": 6,
+          "page_end": 6,
+          "section_path": [
+            "6 Discussion"
+          ],
+          "char_start": 7200,
+          "char_end": 7327
+        }
+      ]
+    },
+    {
+      "source_id": "src_fischer2024",
+      "page": 7,
+      "page_count": 10,
+      "running_header": "Fischer · Query Rewriting for Multi-hop Retrieval",
+      "section_id": "sec_fischer2024_7",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "7 Conclusion",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_fischer2024_0701",
+          "text": "We summarise the findings and list the limitations of the evaluation, including the small number of multi-hop datasets."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_fischer2024_0701",
+          "document_id": "doc_fischer2024",
+          "ordinal": 7,
+          "text": "We summarise the findings and list the limitations of the evaluation, including the small number of multi-hop datasets.",
+          "token_count": 23,
+          "page_start": 7,
+          "page_end": 7,
+          "section_path": [
+            "7 Conclusion"
+          ],
+          "char_start": 8400,
+          "char_end": 8519
+        }
+      ]
+    },
+    {
+      "source_id": "src_fischer2024",
+      "page": 8,
+      "page_count": 10,
+      "running_header": "Fischer · Query Rewriting for Multi-hop Retrieval",
+      "section_id": "sec_fischer2024_8",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "References",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_fischer2024_0801",
+          "text": "[1] Robertson, S. and Zaragoza, H. The probabilistic relevance framework. [2] Karpukhin, V. et al. Dense passage retrieval for open-domain question answering."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_fischer2024_0801",
+          "document_id": "doc_fischer2024",
+          "ordinal": 8,
+          "text": "[1] Robertson, S. and Zaragoza, H. The probabilistic relevance framework. [2] Karpukhin, V. et al. Dense passage retrieval for open-domain question answering.",
+          "token_count": 29,
+          "page_start": 8,
+          "page_end": 8,
+          "section_path": [
+            "References"
+          ],
+          "char_start": 9600,
+          "char_end": 9758
+        }
+      ]
+    },
+    {
+      "source_id": "src_fischer2024",
+      "page": 9,
+      "page_count": 10,
+      "running_header": "Fischer · Query Rewriting for Multi-hop Retrieval",
+      "section_id": "sec_fischer2024_8",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_fischer2024_0900",
+          "text": "[1] Robertson, S. and Zaragoza, H. The probabilistic relevance framework. [2] Karpukhin, V. et al. Dense passage retrieval for open-domain question answering."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_fischer2024_0900",
+          "document_id": "doc_fischer2024",
+          "ordinal": 9,
+          "text": "[1] Robertson, S. and Zaragoza, H. The probabilistic relevance framework. [2] Karpukhin, V. et al. Dense passage retrieval for open-domain question answering.",
+          "token_count": 29,
+          "page_start": 9,
+          "page_end": 9,
+          "section_path": [
+            "References"
+          ],
+          "char_start": 10800,
+          "char_end": 10958
+        }
+      ]
+    },
+    {
+      "source_id": "src_fischer2024",
+      "page": 10,
+      "page_count": 10,
+      "running_header": "Fischer · Query Rewriting for Multi-hop Retrieval",
+      "section_id": "sec_fischer2024_8",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_fischer2024_1000",
+          "text": "[1] Robertson, S. and Zaragoza, H. The probabilistic relevance framework. [2] Karpukhin, V. et al. Dense passage retrieval for open-domain question answering."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_fischer2024_1000",
+          "document_id": "doc_fischer2024",
+          "ordinal": 10,
+          "text": "[1] Robertson, S. and Zaragoza, H. The probabilistic relevance framework. [2] Karpukhin, V. et al. Dense passage retrieval for open-domain question answering.",
+          "token_count": 29,
+          "page_start": 10,
+          "page_end": 10,
+          "section_path": [
+            "References"
+          ],
+          "char_start": 12000,
+          "char_end": 12158
+        }
+      ]
+    }
+  ]
+}

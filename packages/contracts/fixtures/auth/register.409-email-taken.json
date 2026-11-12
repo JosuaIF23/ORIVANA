@@ -1,0 +1,10 @@
+{
+  "error": {
+    "code": "CONFLICT",
+    "message": "An account with this email already exists.",
+    "details": {
+      "field": "email"
+    },
+    "request_id": "req_3c1f0a77"
+  }
+}

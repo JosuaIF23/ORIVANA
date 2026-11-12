@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "full_name": "lab/rag-experiments",
+      "visibility": "public",
+      "labels": [
+        "evaluation",
+        "retrieval",
+        "bug",
+        "documentation"
+      ]
+    },
+    {
+      "full_name": "lab/thesis-notes",
+      "visibility": "private",
+      "labels": [
+        "writing",
+        "todo"
+      ]
+    }
+  ]
+}

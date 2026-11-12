@@ -1,0 +1,25 @@
+{
+  "id": "mem_chunking_384",
+  "workspace_id": "ws_personal",
+  "project_id": "prj_rag",
+  "project_name": "RAG Comparison",
+  "confidence": 0.86,
+  "supersedes_id": "mem_chunking_512",
+  "superseded_by_id": "mem_new_01",
+  "valid_from": "2026-10-30T04:00:00Z",
+  "valid_to": "2026-11-11T08:10:00Z",
+  "updated_at": "2026-11-11T08:10:00Z",
+  "decision": null,
+  "memory_type": "procedural",
+  "content": "Default chunking: 384 tokens with a 64-token overlap.",
+  "origin": "model_proposed",
+  "status": "superseded",
+  "evidence": {
+    "kind": "conversation",
+    "label": "Conversation · Eval plan for chunk sizes",
+    "conversation_id": "conv_evalplan",
+    "source_id": null,
+    "page": null
+  },
+  "created_at": "2026-10-30T04:00:00Z"
+}

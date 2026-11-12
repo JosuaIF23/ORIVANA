@@ -1,0 +1,25 @@
+{
+  "_note": "Prototype-only test accounts used by the mock services. Not real credentials.",
+  "accounts": [
+    {
+      "email": "josua@example.edu",
+      "password": "correct horse battery",
+      "scenario": "returning_user"
+    },
+    {
+      "email": "new@example.edu",
+      "password": "correct horse battery",
+      "scenario": "new_user"
+    },
+    {
+      "email": "unverified@example.edu",
+      "password": "correct horse battery",
+      "scenario": "email_not_verified"
+    }
+  ],
+  "tokens": {
+    "verify_valid": "vfy_demo",
+    "reset_valid": "rst_demo",
+    "reset_expired": "rst_expired"
+  }
+}

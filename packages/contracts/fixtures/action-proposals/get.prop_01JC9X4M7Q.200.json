@@ -1,0 +1,83 @@
+{
+  "id": "prop_01JC9X4M7Q",
+  "task_id": "task_01JC9X",
+  "connection_id": "conn_github",
+  "tool": "github.create_issue",
+  "risk_level": "low_write",
+  "idempotency_key": "prop_01JC9X4M7Q",
+  "revision": 1,
+  "project_id": "prj_rag",
+  "project_name": "RAG Comparison",
+  "conversation_id": "conv_hybrid",
+  "conversation_title": "Hybrid vs dense-only results",
+  "proposed_by": "agent",
+  "decided_by": null,
+  "decided_at": null,
+  "reject_reason": null,
+  "target": {
+    "provider": "github",
+    "account": "@jsilalahi",
+    "repository": "lab/rag-experiments",
+    "visibility": "public"
+  },
+  "action_label": "Create 1 issue",
+  "required_permission": {
+    "label": "Issues: read & write",
+    "granted_at": "2026-11-02T02:00:00Z"
+  },
+  "citations": [
+    {
+      "ordinal": 1,
+      "source_id": "src_santos2025",
+      "source_title": "Fusion Retrieval Revisited: BM25 + Dense on Open-Domain QA",
+      "page": 4,
+      "section": "3.1"
+    },
+    {
+      "ordinal": 2,
+      "source_id": "src_okafor2025",
+      "source_title": "Hybrid Retrieval Under Distribution Shift",
+      "page": 6,
+      "section": "4.2"
+    }
+  ],
+  "side_effects": [
+    {
+      "kind": "creates",
+      "text": "Creates 1 public issue in lab/rag-experiments."
+    },
+    {
+      "kind": "notifies",
+      "text": "GitHub may notify people watching the repository."
+    },
+    {
+      "kind": "unchanged",
+      "text": "Nothing else changes: no comments, no new labels, no other repositories."
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "issues": []
+  },
+  "changes_since_proposal": [],
+  "latest_run": null,
+  "audit_event_id": null,
+  "title": "Create issue: Re-run eval with hybrid retrieval",
+  "status": "awaiting_approval",
+  "created_at": "2026-11-11T07:34:00Z",
+  "expires_at": "2026-11-18T07:34:00Z",
+  "original_request": {
+    "text": "Create a GitHub issue in lab/rag-experiments to re-run our eval with hybrid retrieval, based on this finding.",
+    "at": "2026-11-11T07:33:00Z"
+  },
+  "arguments": {
+    "repository": "lab/rag-experiments",
+    "title": "Re-run eval with hybrid retrieval (BM25 + dense)",
+    "body": "## Finding\nTwo papers report that hybrid retrieval beats dense-only:\n- Santos & Lee 2025 — +4.1 top-20 accuracy on NQ (p. 4)\n- Okafor et al. 2025 — +3.6 on NQ, +2.9 on TriviaQA (p. 6)\n\n## Task\n- [ ] Add a BM25 + dense retriever config (RRF, k = 60)\n- [ ] Re-run the eval on the NQ and TriviaQA splits\n- [ ] Report top-20 accuracy and nDCG@10",
+    "labels": [
+      "evaluation",
+      "retrieval"
+    ],
+    "assignees": []
+  }
+}

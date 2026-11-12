@@ -1,0 +1,752 @@
+{
+  "_note": "GET /api/v1/conversations/{id} keyed by id.",
+  "items": {
+    "conv_hybrid": {
+      "id": "conv_hybrid",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "user_id": "usr_josua",
+      "title": "Hybrid vs dense-only results",
+      "created_at": "2026-11-11T07:20:00Z",
+      "last_message_at": "2026-11-11T07:20:40Z",
+      "messages": [
+        {
+          "id": "msg_hybrid_u1",
+          "conversation_id": "conv_hybrid",
+          "role": "user",
+          "content": "Which papers report that hybrid retrieval beats dense-only, and on which datasets?",
+          "status": "complete",
+          "created_at": "2026-11-11T07:20:00Z",
+          "answer_kind": null,
+          "sources_used": null,
+          "sources_searched": null,
+          "limitations": null,
+          "positions": null,
+          "inference": null,
+          "suggestion": null,
+          "related_entities": [],
+          "citations": [],
+          "proposal_id": null,
+          "error": null,
+          "cancelled_at": null
+        },
+        {
+          "id": "msg_hybrid_a1",
+          "conversation_id": "conv_hybrid",
+          "role": "assistant",
+          "content": "Two sources report that hybrid retrieval (BM25 + dense) beats dense-only retrieval:\n\n- **Santos & Lee (2025)** — hybrid improves top-20 accuracy on **Natural Questions** by 4.1 points [1]\n- **Okafor et al. (2025)** — gains on **Natural Questions** (+3.6) and **TriviaQA** (+2.9), largest on the shifted BEIR subsets [2]\n\nOne source points the other way for multi-hop questions: on **HotpotQA**, a tuned dense-only retriever matches hybrid within 0.5 points [3].",
+          "status": "complete",
+          "created_at": "2026-11-11T07:20:40Z",
+          "answer_kind": "answer",
+          "sources_used": 3,
+          "sources_searched": 14,
+          "limitations": "only 3 of 14 sources compare hybrid and dense-only directly, and they report different metrics (top-20 accuracy vs. nDCG@10), so the gains are not directly comparable.",
+          "positions": null,
+          "inference": null,
+          "suggestion": null,
+          "related_entities": [
+            {
+              "id": "ent_m_hybrid",
+              "name": "Hybrid retrieval",
+              "entity_type": "method"
+            },
+            {
+              "id": "ent_m_bm25",
+              "name": "BM25",
+              "entity_type": "method"
+            },
+            {
+              "id": "ent_d_nq",
+              "name": "Natural Questions",
+              "entity_type": "dataset"
+            }
+          ],
+          "citations": [
+            {
+              "id": "cit_hybrid_a1_1",
+              "message_id": "msg_hybrid_a1",
+              "chunk_id": "chk_santos_0401",
+              "ordinal": 1,
+              "source_id": "src_santos2025",
+              "source_title": "Fusion Retrieval Revisited: BM25 + Dense on Open-Domain QA",
+              "source_label": "Santos & Lee 2025",
+              "source_meta": "Santos & Lee, 2025",
+              "page": 4,
+              "section": "3.1 Main results",
+              "passage": "Table 2 reports the main results. Across both datasets, the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5, a gain of 4.1 points, and improves TriviaQA by 2.2 points with reciprocal rank fusion (k = 60).",
+              "quote": "the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5",
+              "char_start": 56,
+              "char_end": 126
+            },
+            {
+              "id": "cit_hybrid_a1_2",
+              "message_id": "msg_hybrid_a1",
+              "chunk_id": "chk_okafor_0601",
+              "ordinal": 2,
+              "source_id": "src_okafor2025",
+              "source_title": "Hybrid Retrieval Under Distribution Shift",
+              "source_label": "Okafor et al. 2025",
+              "source_meta": "Okafor, Brandt & Ruiz · 2025",
+              "page": 6,
+              "section": "4.2 Results",
+              "passage": "Table 3 summarises retrieval accuracy on in-domain and shifted test sets. Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets. We attribute most of this gain to lexical matching of rare entity names that the dense encoder under-represents.",
+              "quote": "Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets.",
+              "char_start": 74,
+              "char_end": 273
+            },
+            {
+              "id": "cit_hybrid_a1_3",
+              "message_id": "msg_hybrid_a1",
+              "chunk_id": "chk_varga_0901",
+              "ordinal": 3,
+              "source_id": "src_varga2024",
+              "source_title": "Dense-Only Baselines for Multi-hop QA",
+              "source_label": "Varga & Chen 2024",
+              "source_meta": "Varga & Chen · 2024",
+              "page": 9,
+              "section": "5 Discussion",
+              "passage": "The hybrid configuration from Section 2.2 does not improve over our tuned dense retriever on HotpotQA, suggesting lexical signals matter less for multi-hop questions. Overall, on HotpotQA our tuned dense retriever is within 0.5 points of the hybrid configuration across all retrieval budgets.",
+              "quote": "on HotpotQA our tuned dense retriever is within 0.5 points of the hybrid configuration",
+              "char_start": 176,
+              "char_end": 262
+            }
+          ],
+          "proposal_id": null,
+          "error": null,
+          "cancelled_at": null
+        }
+      ],
+      "scope": {
+        "project_id": "prj_rag",
+        "label": "Project RAG Comparison",
+        "source_count": 14
+      }
+    },
+    "conv_datasets": {
+      "id": "conv_datasets",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "user_id": "usr_josua",
+      "title": "Datasets used across papers",
+      "created_at": "2026-11-11T04:05:00Z",
+      "last_message_at": "2026-11-11T04:05:30Z",
+      "messages": [
+        {
+          "id": "msg_datasets_u1",
+          "conversation_id": "conv_datasets",
+          "role": "user",
+          "content": "Which datasets do my RAG papers share?",
+          "status": "complete",
+          "created_at": "2026-11-11T04:05:00Z",
+          "answer_kind": null,
+          "sources_used": null,
+          "sources_searched": null,
+          "limitations": null,
+          "positions": null,
+          "inference": null,
+          "suggestion": null,
+          "related_entities": [],
+          "citations": [],
+          "proposal_id": null,
+          "error": null,
+          "cancelled_at": null
+        },
+        {
+          "id": "msg_datasets_a1",
+          "conversation_id": "conv_datasets",
+          "role": "assistant",
+          "content": "Three datasets appear in more than one paper:\n\n- **Natural Questions** — Santos & Lee (2025) and Okafor et al. (2025) [1] [2]\n- **TriviaQA** — Okafor et al. (2025) [2]\n- **HotpotQA** — Varga & Chen (2024) use it to test multi-hop retrieval [3]",
+          "status": "complete",
+          "created_at": "2026-11-11T04:05:30Z",
+          "answer_kind": "answer",
+          "sources_used": 3,
+          "sources_searched": 14,
+          "limitations": null,
+          "positions": null,
+          "inference": null,
+          "suggestion": null,
+          "related_entities": [
+            {
+              "id": "ent_d_nq",
+              "name": "Natural Questions",
+              "entity_type": "dataset"
+            },
+            {
+              "id": "ent_d_triviaqa",
+              "name": "TriviaQA",
+              "entity_type": "dataset"
+            },
+            {
+              "id": "ent_d_hotpotqa",
+              "name": "HotpotQA",
+              "entity_type": "dataset"
+            }
+          ],
+          "citations": [
+            {
+              "id": "cit_datasets_a1_1",
+              "message_id": "msg_datasets_a1",
+              "chunk_id": "chk_santos_0401",
+              "ordinal": 1,
+              "source_id": "src_santos2025",
+              "source_title": "Fusion Retrieval Revisited: BM25 + Dense on Open-Domain QA",
+              "source_label": "Santos & Lee 2025",
+              "source_meta": "Santos & Lee, 2025",
+              "page": 4,
+              "section": "3.1 Main results",
+              "passage": "Table 2 reports the main results. Across both datasets, the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5, a gain of 4.1 points, and improves TriviaQA by 2.2 points with reciprocal rank fusion (k = 60).",
+              "quote": "the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5",
+              "char_start": 56,
+              "char_end": 126
+            },
+            {
+              "id": "cit_datasets_a1_2",
+              "message_id": "msg_datasets_a1",
+              "chunk_id": "chk_okafor_0502",
+              "ordinal": 2,
+              "source_id": "src_okafor2025",
+              "source_title": "Hybrid Retrieval Under Distribution Shift",
+              "source_label": "Okafor et al. 2025",
+              "source_meta": "Okafor, Brandt & Ruiz · 2025",
+              "page": 5,
+              "section": "4.1 Setup",
+              "passage": "We evaluate distribution shift on six BEIR subsets whose vocabulary differs from the training data, and report in-domain results on Natural Questions and TriviaQA for reference.",
+              "quote": "We evaluate distribution shift on six BEIR subsets",
+              "char_start": 0,
+              "char_end": 50
+            },
+            {
+              "id": "cit_datasets_a1_3",
+              "message_id": "msg_datasets_a1",
+              "chunk_id": "chk_varga_0901",
+              "ordinal": 3,
+              "source_id": "src_varga2024",
+              "source_title": "Dense-Only Baselines for Multi-hop QA",
+              "source_label": "Varga & Chen 2024",
+              "source_meta": "Varga & Chen · 2024",
+              "page": 9,
+              "section": "5 Discussion",
+              "passage": "The hybrid configuration from Section 2.2 does not improve over our tuned dense retriever on HotpotQA, suggesting lexical signals matter less for multi-hop questions. Overall, on HotpotQA our tuned dense retriever is within 0.5 points of the hybrid configuration across all retrieval budgets.",
+              "quote": "on HotpotQA our tuned dense retriever is within 0.5 points of the hybrid configuration",
+              "char_start": 176,
+              "char_end": 262
+            }
+          ],
+          "proposal_id": null,
+          "error": null,
+          "cancelled_at": null
+        }
+      ],
+      "scope": {
+        "project_id": "prj_rag",
+        "label": "Project RAG Comparison",
+        "source_count": 14
+      }
+    },
+    "conv_graphrag": {
+      "id": "conv_graphrag",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "user_id": "usr_josua",
+      "title": "GraphRAG community summaries",
+      "created_at": "2026-11-09T07:40:00Z",
+      "last_message_at": "2026-11-09T08:02:20Z",
+      "messages": [
+        {
+          "id": "msg_graphrag_u1",
+          "conversation_id": "conv_graphrag",
+          "role": "user",
+          "content": "How does GraphRAG build its community summaries?",
+          "status": "complete",
+          "created_at": "2026-11-09T07:40:00Z",
+          "answer_kind": null,
+          "sources_used": null,
+          "sources_searched": null,
+          "limitations": null,
+          "positions": null,
+          "inference": null,
+          "suggestion": null,
+          "related_entities": [],
+          "citations": [],
+          "proposal_id": null,
+          "error": null,
+          "cancelled_at": null
+        },
+        {
+          "id": "msg_graphrag_a1",
+          "conversation_id": "conv_graphrag",
+          "role": "assistant",
+          "content": "GraphRAG extracts entities and relations from each text unit, groups them into communities with the Leiden algorithm, and writes a summary for every community ahead of time [1].",
+          "status": "complete",
+          "created_at": "2026-11-09T07:40:25Z",
+          "answer_kind": "answer",
+          "sources_used": 1,
+          "sources_searched": 14,
+          "limitations": null,
+          "positions": null,
+          "inference": null,
+          "suggestion": null,
+          "related_entities": [
+            {
+              "id": "ent_m_graphrag",
+              "name": "GraphRAG",
+              "entity_type": "method"
+            }
+          ],
+          "citations": [
+            {
+              "id": "cit_graphrag_a1_1",
+              "message_id": "msg_graphrag_a1",
+              "chunk_id": "chk_ito_0501",
+              "ordinal": 1,
+              "source_id": "src_ito2025",
+              "source_title": "GraphRAG: Community Summaries for Global Questions",
+              "source_label": "Ito 2025",
+              "source_meta": "Ito · 2025",
+              "page": 5,
+              "section": "3 Method",
+              "passage": "The indexing pipeline extracts entities and relations from each text unit, clusters them into communities with the Leiden algorithm, and pre-generates a summary for every community. We do not tune retrieval hyperparameters for this study.",
+              "quote": "clusters them into communities with the Leiden algorithm, and pre-generates a summary for every community",
+              "char_start": 75,
+              "char_end": 180
+            }
+          ],
+          "proposal_id": null,
+          "error": null,
+          "cancelled_at": null
+        },
+        {
+          "id": "msg_graphrag_u2",
+          "conversation_id": "conv_graphrag",
+          "role": "user",
+          "content": "What learning rate did the GraphRAG paper use for fine-tuning?",
+          "status": "complete",
+          "created_at": "2026-11-09T08:02:00Z",
+          "answer_kind": null,
+          "sources_used": null,
+          "sources_searched": null,
+          "limitations": null,
+          "positions": null,
+          "inference": null,
+          "suggestion": null,
+          "related_entities": [],
+          "citations": [],
+          "proposal_id": null,
+          "error": null,
+          "cancelled_at": null
+        },
+        {
+          "id": "msg_graphrag_a2",
+          "conversation_id": "conv_graphrag",
+          "role": "assistant",
+          "content": "I couldn’t find a fine-tuning learning rate for GraphRAG in the 14 sources of RAG Comparison, so I’m not going to guess one.",
+          "status": "complete",
+          "created_at": "2026-11-09T08:02:20Z",
+          "answer_kind": "no_evidence",
+          "sources_used": 0,
+          "sources_searched": 14,
+          "limitations": "Closest passage: Ito (2025) describes GraphRAG’s indexing pipeline but does not report training hyperparameters [1]",
+          "positions": null,
+          "inference": null,
+          "suggestion": "Tip: the GraphRAG appendix or code repository usually lists training settings.",
+          "related_entities": [
+            {
+              "id": "ent_m_graphrag",
+              "name": "GraphRAG",
+              "entity_type": "method"
+            }
+          ],
+          "citations": [
+            {
+              "id": "cit_graphrag_a2_1",
+              "message_id": "msg_graphrag_a2",
+              "chunk_id": "chk_ito_0501",
+              "ordinal": 1,
+              "source_id": "src_ito2025",
+              "source_title": "GraphRAG: Community Summaries for Global Questions",
+              "source_label": "Ito 2025",
+              "source_meta": "Ito · 2025",
+              "page": 5,
+              "section": "3 Method",
+              "passage": "The indexing pipeline extracts entities and relations from each text unit, clusters them into communities with the Leiden algorithm, and pre-generates a summary for every community. We do not tune retrieval hyperparameters for this study.",
+              "quote": "clusters them into communities with the Leiden algorithm, and pre-generates a summary for every community",
+              "char_start": 75,
+              "char_end": 180
+            }
+          ],
+          "proposal_id": null,
+          "error": null,
+          "cancelled_at": null
+        }
+      ],
+      "scope": {
+        "project_id": "prj_rag",
+        "label": "Project RAG Comparison",
+        "source_count": 14
+      }
+    },
+    "conv_evalplan": {
+      "id": "conv_evalplan",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "user_id": "usr_josua",
+      "title": "Eval plan for chunk sizes",
+      "created_at": "2026-11-09T03:30:00Z",
+      "last_message_at": "2026-11-09T08:10:30Z",
+      "messages": [
+        {
+          "id": "msg_evalplan_u1",
+          "conversation_id": "conv_evalplan",
+          "role": "user",
+          "content": "What chunk size did Daly use as the default?",
+          "status": "complete",
+          "created_at": "2026-11-09T03:30:00Z",
+          "answer_kind": null,
+          "sources_used": null,
+          "sources_searched": null,
+          "limitations": null,
+          "positions": null,
+          "inference": null,
+          "suggestion": null,
+          "related_entities": [],
+          "citations": [],
+          "proposal_id": null,
+          "error": null,
+          "cancelled_at": null
+        },
+        {
+          "id": "msg_evalplan_a1",
+          "conversation_id": "conv_evalplan",
+          "role": "assistant",
+          "content": "Daly (2025) reports the best Recall@20 with 384-token chunks, and a 64-token overlap adds about one point at every length [1].",
+          "status": "complete",
+          "created_at": "2026-11-09T03:30:20Z",
+          "answer_kind": "answer",
+          "sources_used": 1,
+          "sources_searched": 14,
+          "limitations": null,
+          "positions": null,
+          "inference": null,
+          "suggestion": null,
+          "related_entities": [
+            {
+              "id": "ent_c_longchunks",
+              "name": "Long chunks hurt recall",
+              "entity_type": "claim"
+            }
+          ],
+          "citations": [
+            {
+              "id": "cit_evalplan_a1_1",
+              "message_id": "msg_evalplan_a1",
+              "chunk_id": "chk_daly_0701",
+              "ordinal": 1,
+              "source_id": "src_daly2025",
+              "source_title": "Chunking Strategies for Dense Retrieval",
+              "source_label": "Daly 2025",
+              "source_meta": "Daly · 2025",
+              "page": 7,
+              "section": "4.3 Chunk length",
+              "passage": "Recall@20 drops from 71.2 to 64.8 when chunks grow from 384 to 1,024 tokens on Natural Questions, while a 64-token overlap recovers about one point at every length.",
+              "quote": "Recall@20 drops from 71.2 to 64.8 when chunks grow from 384 to 1,024 tokens",
+              "char_start": 0,
+              "char_end": 75
+            }
+          ],
+          "proposal_id": null,
+          "error": null,
+          "cancelled_at": null
+        },
+        {
+          "id": "msg_evalplan_u2",
+          "conversation_id": "conv_evalplan",
+          "role": "user",
+          "content": "Does a chunk size above 512 tokens hurt retrieval quality?",
+          "status": "complete",
+          "created_at": "2026-11-09T08:10:00Z",
+          "answer_kind": null,
+          "sources_used": null,
+          "sources_searched": null,
+          "limitations": null,
+          "positions": null,
+          "inference": null,
+          "suggestion": null,
+          "related_entities": [],
+          "citations": [],
+          "proposal_id": null,
+          "error": null,
+          "cancelled_at": null
+        },
+        {
+          "id": "msg_evalplan_a2",
+          "conversation_id": "conv_evalplan",
+          "role": "assistant",
+          "content": "Your sources reach different conclusions, so here are both sides.",
+          "status": "complete",
+          "created_at": "2026-11-09T08:10:30Z",
+          "answer_kind": "conflicting",
+          "sources_used": 2,
+          "sources_searched": 14,
+          "limitations": null,
+          "positions": [
+            {
+              "label": "Position A",
+              "title": "Longer chunks lower recall",
+              "quote": "Recall@20 drops from 71.2 to 64.8 when chunks grow from 384 to 1,024 tokens",
+              "context": " on Natural Questions.",
+              "citation_ordinal": 1
+            },
+            {
+              "label": "Position B",
+              "title": "No significant effect",
+              "quote": "Chunk length between 256 and 1,024 tokens had no significant effect on nDCG@10",
+              "context": " for the late-interaction retriever.",
+              "citation_ordinal": 2
+            }
+          ],
+          "inference": "The studies differ in dataset (Natural Questions vs. BEIR-SciFact), retriever (dense vs. late interaction), and metric (Recall@20 vs. nDCG@10). Both results can hold at once; neither tests your exact setup.",
+          "suggestion": null,
+          "related_entities": [
+            {
+              "id": "ent_c_longchunks",
+              "name": "Long chunks hurt recall",
+              "entity_type": "claim"
+            },
+            {
+              "id": "ent_d_nq",
+              "name": "Natural Questions",
+              "entity_type": "dataset"
+            }
+          ],
+          "citations": [
+            {
+              "id": "cit_evalplan_a2_1",
+              "message_id": "msg_evalplan_a2",
+              "chunk_id": "chk_daly_0701",
+              "ordinal": 1,
+              "source_id": "src_daly2025",
+              "source_title": "Chunking Strategies for Dense Retrieval",
+              "source_label": "Daly 2025",
+              "source_meta": "Daly · 2025",
+              "page": 7,
+              "section": "4.3 Chunk length",
+              "passage": "Recall@20 drops from 71.2 to 64.8 when chunks grow from 384 to 1,024 tokens on Natural Questions, while a 64-token overlap recovers about one point at every length.",
+              "quote": "Recall@20 drops from 71.2 to 64.8 when chunks grow from 384 to 1,024 tokens",
+              "char_start": 0,
+              "char_end": 75
+            },
+            {
+              "id": "cit_evalplan_a2_2",
+              "message_id": "msg_evalplan_a2",
+              "chunk_id": "chk_meyer_1101",
+              "ordinal": 2,
+              "source_id": "src_meyer2024",
+              "source_title": "Late Interaction Retrieval at Scale",
+              "source_label": "Meyer 2024",
+              "source_meta": "Meyer · 2024",
+              "page": 11,
+              "section": "6.1 Chunk length",
+              "passage": "Chunk length between 256 and 1,024 tokens had no significant effect on nDCG@10 for the late-interaction retriever, because token-level matching already localises the relevant span.",
+              "quote": "Chunk length between 256 and 1,024 tokens had no significant effect on nDCG@10",
+              "char_start": 0,
+              "char_end": 78
+            }
+          ],
+          "proposal_id": null,
+          "error": null,
+          "cancelled_at": null
+        }
+      ],
+      "scope": {
+        "project_id": "prj_rag",
+        "label": "Project RAG Comparison",
+        "source_count": 14
+      }
+    },
+    "conv_thesisoutline": {
+      "id": "conv_thesisoutline",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_thesis",
+      "project_name": "Thesis Proposal",
+      "user_id": "usr_josua",
+      "title": "Thesis proposal outline",
+      "created_at": "2026-11-08T12:50:00Z",
+      "last_message_at": "2026-11-08T12:52:00Z",
+      "messages": [
+        {
+          "id": "msg_thesis_u1",
+          "conversation_id": "conv_thesisoutline",
+          "role": "user",
+          "content": "Which finding should anchor the motivation chapter?",
+          "status": "complete",
+          "created_at": "2026-11-08T12:50:00Z",
+          "answer_kind": null,
+          "sources_used": null,
+          "sources_searched": null,
+          "limitations": null,
+          "positions": null,
+          "inference": null,
+          "suggestion": null,
+          "related_entities": [],
+          "citations": [],
+          "proposal_id": null,
+          "error": null,
+          "cancelled_at": null
+        },
+        {
+          "id": "msg_thesis_a1",
+          "conversation_id": "conv_thesisoutline",
+          "role": "assistant",
+          "content": "The clearest motivating result is that lexical matching helps most for rare entity names, which dense encoders under-represent [1]. It connects directly to the graph-aware retrieval question.",
+          "status": "complete",
+          "created_at": "2026-11-08T12:52:00Z",
+          "answer_kind": "answer",
+          "sources_used": 1,
+          "sources_searched": 14,
+          "limitations": null,
+          "positions": null,
+          "inference": null,
+          "suggestion": null,
+          "related_entities": [
+            {
+              "id": "ent_m_hybrid",
+              "name": "Hybrid retrieval",
+              "entity_type": "method"
+            }
+          ],
+          "citations": [
+            {
+              "id": "cit_thesis_a1_1",
+              "message_id": "msg_thesis_a1",
+              "chunk_id": "chk_okafor_1001",
+              "ordinal": 1,
+              "source_id": "src_okafor2025",
+              "source_title": "Hybrid Retrieval Under Distribution Shift",
+              "source_label": "Okafor et al. 2025",
+              "source_meta": "Okafor, Brandt & Ruiz · 2025",
+              "page": 10,
+              "section": "5 Discussion",
+              "passage": "Lexical matching helps most when questions mention rare entity names, such as chemical compounds or people who appear only a handful of times in the training corpus.",
+              "quote": "Lexical matching helps most when questions mention rare entity names",
+              "char_start": 0,
+              "char_end": 68
+            }
+          ],
+          "proposal_id": null,
+          "error": null,
+          "cancelled_at": null
+        }
+      ],
+      "scope": {
+        "project_id": "prj_thesis",
+        "label": "Project Thesis Proposal",
+        "source_count": 6
+      }
+    },
+    "conv_readinglist": {
+      "id": "conv_readinglist",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_thesis",
+      "project_name": "Thesis Proposal",
+      "user_id": "usr_josua",
+      "title": "Reading list for retrieval eval",
+      "created_at": "2026-11-02T09:00:00Z",
+      "last_message_at": "2026-11-02T09:03:00Z",
+      "messages": [
+        {
+          "id": "msg_reading_u1",
+          "conversation_id": "conv_readinglist",
+          "role": "user",
+          "content": "Which two papers should I read first for the retrieval evaluation?",
+          "status": "complete",
+          "created_at": "2026-11-02T09:00:00Z",
+          "answer_kind": null,
+          "sources_used": null,
+          "sources_searched": null,
+          "limitations": null,
+          "positions": null,
+          "inference": null,
+          "suggestion": null,
+          "related_entities": [],
+          "citations": [],
+          "proposal_id": null,
+          "error": null,
+          "cancelled_at": null
+        },
+        {
+          "id": "msg_reading_a1",
+          "conversation_id": "conv_readinglist",
+          "role": "assistant",
+          "content": "Start with Santos & Lee (2025) for the fusion baseline [1], then Varga & Chen (2024) for the multi-hop counterpoint [2].",
+          "status": "complete",
+          "created_at": "2026-11-02T09:03:00Z",
+          "answer_kind": "answer",
+          "sources_used": 2,
+          "sources_searched": 14,
+          "limitations": null,
+          "positions": null,
+          "inference": null,
+          "suggestion": null,
+          "related_entities": [
+            {
+              "id": "ent_m_hybrid",
+              "name": "Hybrid retrieval",
+              "entity_type": "method"
+            },
+            {
+              "id": "ent_d_hotpotqa",
+              "name": "HotpotQA",
+              "entity_type": "dataset"
+            }
+          ],
+          "citations": [
+            {
+              "id": "cit_reading_a1_1",
+              "message_id": "msg_reading_a1",
+              "chunk_id": "chk_santos_0401",
+              "ordinal": 1,
+              "source_id": "src_santos2025",
+              "source_title": "Fusion Retrieval Revisited: BM25 + Dense on Open-Domain QA",
+              "source_label": "Santos & Lee 2025",
+              "source_meta": "Santos & Lee, 2025",
+              "page": 4,
+              "section": "3.1 Main results",
+              "passage": "Table 2 reports the main results. Across both datasets, the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5, a gain of 4.1 points, and improves TriviaQA by 2.2 points with reciprocal rank fusion (k = 60).",
+              "quote": "the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5",
+              "char_start": 56,
+              "char_end": 126
+            },
+            {
+              "id": "cit_reading_a1_2",
+              "message_id": "msg_reading_a1",
+              "chunk_id": "chk_varga_0901",
+              "ordinal": 2,
+              "source_id": "src_varga2024",
+              "source_title": "Dense-Only Baselines for Multi-hop QA",
+              "source_label": "Varga & Chen 2024",
+              "source_meta": "Varga & Chen · 2024",
+              "page": 9,
+              "section": "5 Discussion",
+              "passage": "The hybrid configuration from Section 2.2 does not improve over our tuned dense retriever on HotpotQA, suggesting lexical signals matter less for multi-hop questions. Overall, on HotpotQA our tuned dense retriever is within 0.5 points of the hybrid configuration across all retrieval budgets.",
+              "quote": "on HotpotQA our tuned dense retriever is within 0.5 points of the hybrid configuration",
+              "char_start": 176,
+              "char_end": 262
+            }
+          ],
+          "proposal_id": null,
+          "error": null,
+          "cancelled_at": null
+        }
+      ],
+      "scope": {
+        "project_id": "prj_thesis",
+        "label": "Project Thesis Proposal",
+        "source_count": 6
+      }
+    }
+  }
+}

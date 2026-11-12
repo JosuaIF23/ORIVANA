@@ -1,0 +1,56 @@
+{
+  "id": "rel_varga_hybrid",
+  "workspace_id": "ws_personal",
+  "from_entity_id": "ent_p_varga",
+  "to_entity_id": "ent_m_hybrid",
+  "relation_type": "uses_method",
+  "confidence": 0.72,
+  "status": "confirmed",
+  "origin": "model_proposed",
+  "extraction_method": "model_section",
+  "extracted_at": "2026-11-05T03:00:00Z",
+  "valid_from": null,
+  "valid_to": null,
+  "evidence_count": 2,
+  "source_count": 1,
+  "from": {
+    "id": "ent_p_varga",
+    "canonical_name": "Varga & Chen 2024",
+    "entity_type": "paper"
+  },
+  "to": {
+    "id": "ent_m_hybrid",
+    "canonical_name": "Hybrid retrieval",
+    "entity_type": "method"
+  },
+  "evidence": [
+    {
+      "id": "ev_varga_hybrid_1",
+      "relationship_id": "rel_varga_hybrid",
+      "memory_id": null,
+      "chunk_id": "chk_varga_0302",
+      "source_id": "src_varga2024",
+      "source_label": "Varga & Chen 2024",
+      "page": 3,
+      "section": "2.2 Experimental setup",
+      "passage": "We additionally report a hybrid configuration that interpolates BM25 and dense scores with α = 0.3 as a reference point.",
+      "quote": "interpolates BM25 and dense scores with α = 0.3",
+      "char_start": 51,
+      "char_end": 98
+    },
+    {
+      "id": "ev_varga_hybrid_2",
+      "relationship_id": "rel_varga_hybrid",
+      "memory_id": null,
+      "chunk_id": "chk_varga_0901",
+      "source_id": "src_varga2024",
+      "source_label": "Varga & Chen 2024",
+      "page": 9,
+      "section": "5 Discussion",
+      "passage": "The hybrid configuration from Section 2.2 does not improve over our tuned dense retriever on HotpotQA, suggesting lexical signals matter less for multi-hop questions. Overall, on HotpotQA our tuned dense retriever is within 0.5 points of the hybrid configuration across all retrieval budgets.",
+      "quote": "The hybrid configuration from Section 2.2 does not improve over our tuned dense retriever on HotpotQA",
+      "char_start": 0,
+      "char_end": 101
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "mem_rerun_eval",
+  "workspace_id": "ws_personal",
+  "project_id": "prj_rag",
+  "project_name": "RAG Comparison",
+  "confidence": 0.81,
+  "supersedes_id": null,
+  "superseded_by_id": null,
+  "valid_from": "2026-11-11T07:22:00Z",
+  "valid_to": null,
+  "updated_at": "2026-11-11T08:10:00Z",
+  "decision": null,
+  "memory_type": "project",
+  "content": "Re-run the eval with hybrid retrieval before the 20 Nov supervisor meeting, including the HotpotQA split.",
+  "origin": "user",
+  "status": "candidate",
+  "evidence": {
+    "kind": "conversation",
+    "label": "Conversation · Hybrid vs dense-only results",
+    "conversation_id": "conv_hybrid",
+    "source_id": null,
+    "page": null
+  },
+  "created_at": "2026-11-11T07:22:00Z"
+}

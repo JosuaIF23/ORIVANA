@@ -1,0 +1,160 @@
+{
+  "_note": "GET /api/v1/sources/src_labnotes/chunks?page=N — one entry per page.",
+  "pages": [
+    {
+      "source_id": "src_labnotes",
+      "page": 1,
+      "page_count": 1,
+      "running_header": "lab-notes-november.md",
+      "section_id": "sec_labnotes_6",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Summary",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_labnotes_0101",
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type."
+        },
+        {
+          "type": "heading",
+          "text": "Experiments this week",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_labnotes_0103",
+          "text": "All experiments use the same reader model and the same passage budget so that differences can be attributed to retrieval."
+        },
+        {
+          "type": "heading",
+          "text": "Open questions",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_labnotes_0105",
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type."
+        },
+        {
+          "type": "heading",
+          "text": "Decisions",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_labnotes_0107",
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type."
+        },
+        {
+          "type": "heading",
+          "text": "Next steps",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_labnotes_0109",
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type."
+        },
+        {
+          "type": "heading",
+          "text": "Links",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_labnotes_0111",
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_labnotes_0101",
+          "document_id": "doc_labnotes",
+          "ordinal": 1,
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type.",
+          "token_count": 27,
+          "page_start": 1,
+          "page_end": 1,
+          "section_path": [
+            "Summary"
+          ],
+          "char_start": 1200,
+          "char_end": 1327
+        },
+        {
+          "id": "chk_labnotes_0103",
+          "document_id": "doc_labnotes",
+          "ordinal": 2,
+          "text": "All experiments use the same reader model and the same passage budget so that differences can be attributed to retrieval.",
+          "token_count": 26,
+          "page_start": 1,
+          "page_end": 1,
+          "section_path": [
+            "Experiments this week"
+          ],
+          "char_start": 2400,
+          "char_end": 2521
+        },
+        {
+          "id": "chk_labnotes_0105",
+          "document_id": "doc_labnotes",
+          "ordinal": 3,
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type.",
+          "token_count": 27,
+          "page_start": 1,
+          "page_end": 1,
+          "section_path": [
+            "Open questions"
+          ],
+          "char_start": 3600,
+          "char_end": 3727
+        },
+        {
+          "id": "chk_labnotes_0107",
+          "document_id": "doc_labnotes",
+          "ordinal": 4,
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type.",
+          "token_count": 27,
+          "page_start": 1,
+          "page_end": 1,
+          "section_path": [
+            "Decisions"
+          ],
+          "char_start": 4800,
+          "char_end": 4927
+        },
+        {
+          "id": "chk_labnotes_0109",
+          "document_id": "doc_labnotes",
+          "ordinal": 5,
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type.",
+          "token_count": 27,
+          "page_start": 1,
+          "page_end": 1,
+          "section_path": [
+            "Next steps"
+          ],
+          "char_start": 6000,
+          "char_end": 6127
+        },
+        {
+          "id": "chk_labnotes_0111",
+          "document_id": "doc_labnotes",
+          "ordinal": 6,
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type.",
+          "token_count": 27,
+          "page_start": 1,
+          "page_end": 1,
+          "section_path": [
+            "Links"
+          ],
+          "char_start": 7200,
+          "char_end": 7327
+        }
+      ]
+    }
+  ]
+}

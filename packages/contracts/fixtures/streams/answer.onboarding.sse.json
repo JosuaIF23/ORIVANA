@@ -1,0 +1,362 @@
+{
+  "message_id": "msg_stream_onboarding",
+  "events": [
+    {
+      "delay_ms": 300,
+      "event": "status",
+      "data": {
+        "phase": "retrieving",
+        "steps": [
+          {
+            "label": "Scope resolved — Project RAG Comparison · 14 sources",
+            "state": "done"
+          },
+          {
+            "label": "Searching keyword + vector index, expanding 1 graph hop",
+            "state": "active"
+          },
+          {
+            "label": "Generating answer from the evidence packet",
+            "state": "pending"
+          }
+        ],
+        "passages_found": 3,
+        "sources_found": 2,
+        "sources": [
+          {
+            "label": "Okafor et al. 2025",
+            "passages": 4
+          }
+        ]
+      }
+    },
+    {
+      "delay_ms": 700,
+      "event": "status",
+      "data": {
+        "phase": "retrieving",
+        "steps": [
+          {
+            "label": "Scope resolved — Project RAG Comparison · 14 sources",
+            "state": "done"
+          },
+          {
+            "label": "Searching keyword + vector index, expanding 1 graph hop",
+            "state": "active"
+          },
+          {
+            "label": "Generating answer from the evidence packet",
+            "state": "pending"
+          }
+        ],
+        "passages_found": 4,
+        "sources_found": 1,
+        "sources": [
+          {
+            "label": "Okafor et al. 2025",
+            "passages": 4
+          }
+        ]
+      }
+    },
+    {
+      "delay_ms": 900,
+      "event": "status",
+      "data": {
+        "phase": "retrieving",
+        "steps": [
+          {
+            "label": "Scope resolved — Project RAG Comparison · 14 sources",
+            "state": "done"
+          },
+          {
+            "label": "Searching keyword + vector index, expanding 1 graph hop",
+            "state": "done"
+          },
+          {
+            "label": "Generating answer from the evidence packet",
+            "state": "pending"
+          }
+        ],
+        "passages_found": 4,
+        "sources_found": 1,
+        "sources": [
+          {
+            "label": "Okafor et al. 2025",
+            "passages": 4
+          }
+        ]
+      }
+    },
+    {
+      "delay_ms": 300,
+      "event": "status",
+      "data": {
+        "phase": "generating",
+        "steps": [
+          {
+            "label": "Scope resolved — Project RAG Comparison · 14 sources",
+            "state": "done"
+          },
+          {
+            "label": "Searching keyword + vector index, expanding 1 graph hop",
+            "state": "done"
+          },
+          {
+            "label": "Generating answer from the evidence packet",
+            "state": "active"
+          }
+        ],
+        "passages_found": 4,
+        "sources_found": 1,
+        "sources": [
+          {
+            "label": "Okafor et al. 2025",
+            "passages": 4
+          }
+        ]
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "In **Hybrid Retrieval "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "Under Distribution Shift**, "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "combining BM25 with "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "the dense retriever "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "improves top-20 accuracy "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "over dense-only on "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "both datasets the "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "paper tests:\n\n- "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "**Natural Questions** — "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "+3.6 points [1]\n"
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "- **TriviaQA** — "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "+2.9 points [1]\n\n"
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "The largest gains "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "are on the "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "shifted **BEIR** subsets, "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "which the authors "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "use to test "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "distribution shift [2]."
+      }
+    },
+    {
+      "delay_ms": 40,
+      "event": "citation",
+      "data": {
+        "id": "cit_stream_onboarding_1",
+        "message_id": "msg_stream_onboarding",
+        "chunk_id": "chk_okafor_0601",
+        "ordinal": 1,
+        "source_id": "src_okafor2025",
+        "source_title": "Hybrid Retrieval Under Distribution Shift",
+        "source_label": "Okafor et al. 2025",
+        "source_meta": "Okafor, Brandt & Ruiz · 2025",
+        "page": 6,
+        "section": "4.2 Results",
+        "passage": "Table 3 summarises retrieval accuracy on in-domain and shifted test sets. Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets. We attribute most of this gain to lexical matching of rare entity names that the dense encoder under-represents.",
+        "quote": "Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets.",
+        "char_start": 74,
+        "char_end": 273
+      }
+    },
+    {
+      "delay_ms": 40,
+      "event": "citation",
+      "data": {
+        "id": "cit_stream_onboarding_2",
+        "message_id": "msg_stream_onboarding",
+        "chunk_id": "chk_okafor_0502",
+        "ordinal": 2,
+        "source_id": "src_okafor2025",
+        "source_title": "Hybrid Retrieval Under Distribution Shift",
+        "source_label": "Okafor et al. 2025",
+        "source_meta": "Okafor, Brandt & Ruiz · 2025",
+        "page": 5,
+        "section": "4.1 Setup",
+        "passage": "We evaluate distribution shift on six BEIR subsets whose vocabulary differs from the training data, and report in-domain results on Natural Questions and TriviaQA for reference.",
+        "quote": "We evaluate distribution shift on six BEIR subsets",
+        "char_start": 0,
+        "char_end": 50
+      }
+    },
+    {
+      "delay_ms": 100,
+      "event": "done",
+      "data": {
+        "message": {
+          "id": "msg_stream_onboarding",
+          "conversation_id": "conv_new",
+          "role": "assistant",
+          "content": "In **Hybrid Retrieval Under Distribution Shift**, combining BM25 with the dense retriever improves top-20 accuracy over dense-only on both datasets the paper tests:\n\n- **Natural Questions** — +3.6 points [1]\n- **TriviaQA** — +2.9 points [1]\n\nThe largest gains are on the shifted **BEIR** subsets, which the authors use to test distribution shift [2].",
+          "status": "complete",
+          "created_at": "2026-11-11T08:10:00Z",
+          "answer_kind": "answer",
+          "sources_used": 1,
+          "sources_searched": 1,
+          "limitations": "this answer comes from one paper. Add more sources to compare its results with other studies.",
+          "positions": null,
+          "inference": null,
+          "suggestion": null,
+          "related_entities": [
+            {
+              "id": "ent_m_hybrid",
+              "name": "Hybrid retrieval",
+              "entity_type": "method"
+            },
+            {
+              "id": "ent_d_nq",
+              "name": "Natural Questions",
+              "entity_type": "dataset"
+            },
+            {
+              "id": "ent_d_triviaqa",
+              "name": "TriviaQA",
+              "entity_type": "dataset"
+            }
+          ],
+          "citations": [
+            {
+              "id": "cit_stream_onboarding_1",
+              "message_id": "msg_stream_onboarding",
+              "chunk_id": "chk_okafor_0601",
+              "ordinal": 1,
+              "source_id": "src_okafor2025",
+              "source_title": "Hybrid Retrieval Under Distribution Shift",
+              "source_label": "Okafor et al. 2025",
+              "source_meta": "Okafor, Brandt & Ruiz · 2025",
+              "page": 6,
+              "section": "4.2 Results",
+              "passage": "Table 3 summarises retrieval accuracy on in-domain and shifted test sets. Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets. We attribute most of this gain to lexical matching of rare entity names that the dense encoder under-represents.",
+              "quote": "Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets.",
+              "char_start": 74,
+              "char_end": 273
+            },
+            {
+              "id": "cit_stream_onboarding_2",
+              "message_id": "msg_stream_onboarding",
+              "chunk_id": "chk_okafor_0502",
+              "ordinal": 2,
+              "source_id": "src_okafor2025",
+              "source_title": "Hybrid Retrieval Under Distribution Shift",
+              "source_label": "Okafor et al. 2025",
+              "source_meta": "Okafor, Brandt & Ruiz · 2025",
+              "page": 5,
+              "section": "4.1 Setup",
+              "passage": "We evaluate distribution shift on six BEIR subsets whose vocabulary differs from the training data, and report in-domain results on Natural Questions and TriviaQA for reference.",
+              "quote": "We evaluate distribution shift on six BEIR subsets",
+              "char_start": 0,
+              "char_end": 50
+            }
+          ],
+          "proposal_id": null,
+          "error": null,
+          "cancelled_at": null
+        }
+      }
+    }
+  ]
+}

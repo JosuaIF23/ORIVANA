@@ -1,0 +1,312 @@
+{
+  "message_id": "msg_stream_proposal",
+  "events": [
+    {
+      "delay_ms": 300,
+      "event": "status",
+      "data": {
+        "phase": "retrieving",
+        "steps": [
+          {
+            "label": "Scope resolved — Project RAG Comparison · 14 sources",
+            "state": "done"
+          },
+          {
+            "label": "Searching keyword + vector index, expanding 1 graph hop",
+            "state": "active"
+          },
+          {
+            "label": "Generating answer from the evidence packet",
+            "state": "pending"
+          }
+        ],
+        "passages_found": 3,
+        "sources_found": 2,
+        "sources": [
+          {
+            "label": "Okafor et al. 2025",
+            "passages": 4
+          },
+          {
+            "label": "Santos & Lee 2025",
+            "passages": 3
+          }
+        ]
+      }
+    },
+    {
+      "delay_ms": 700,
+      "event": "status",
+      "data": {
+        "phase": "retrieving",
+        "steps": [
+          {
+            "label": "Scope resolved — Project RAG Comparison · 14 sources",
+            "state": "done"
+          },
+          {
+            "label": "Searching keyword + vector index, expanding 1 graph hop",
+            "state": "active"
+          },
+          {
+            "label": "Generating answer from the evidence packet",
+            "state": "pending"
+          }
+        ],
+        "passages_found": 5,
+        "sources_found": 2,
+        "sources": [
+          {
+            "label": "Okafor et al. 2025",
+            "passages": 4
+          },
+          {
+            "label": "Santos & Lee 2025",
+            "passages": 3
+          }
+        ]
+      }
+    },
+    {
+      "delay_ms": 900,
+      "event": "status",
+      "data": {
+        "phase": "retrieving",
+        "steps": [
+          {
+            "label": "Scope resolved — Project RAG Comparison · 14 sources",
+            "state": "done"
+          },
+          {
+            "label": "Searching keyword + vector index, expanding 1 graph hop",
+            "state": "done"
+          },
+          {
+            "label": "Generating answer from the evidence packet",
+            "state": "pending"
+          }
+        ],
+        "passages_found": 5,
+        "sources_found": 2,
+        "sources": [
+          {
+            "label": "Okafor et al. 2025",
+            "passages": 4
+          },
+          {
+            "label": "Santos & Lee 2025",
+            "passages": 3
+          }
+        ]
+      }
+    },
+    {
+      "delay_ms": 300,
+      "event": "status",
+      "data": {
+        "phase": "generating",
+        "steps": [
+          {
+            "label": "Scope resolved — Project RAG Comparison · 14 sources",
+            "state": "done"
+          },
+          {
+            "label": "Searching keyword + vector index, expanding 1 graph hop",
+            "state": "done"
+          },
+          {
+            "label": "Generating answer from the evidence packet",
+            "state": "active"
+          }
+        ],
+        "passages_found": 5,
+        "sources_found": 2,
+        "sources": [
+          {
+            "label": "Okafor et al. 2025",
+            "passages": 4
+          },
+          {
+            "label": "Santos & Lee 2025",
+            "passages": 3
+          }
+        ]
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "I prepared a "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "GitHub issue in "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "`lab/rag-experiments` from this "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "finding. Nothing is "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "sent to GitHub "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "until you approve "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "it — review "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "the exact content "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "below or in "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "Approvals."
+      }
+    },
+    {
+      "delay_ms": 40,
+      "event": "citation",
+      "data": {
+        "id": "cit_stream_proposal_1",
+        "message_id": "msg_stream_proposal",
+        "chunk_id": "chk_santos_0401",
+        "ordinal": 1,
+        "source_id": "src_santos2025",
+        "source_title": "Fusion Retrieval Revisited: BM25 + Dense on Open-Domain QA",
+        "source_label": "Santos & Lee 2025",
+        "source_meta": "Santos & Lee, 2025",
+        "page": 4,
+        "section": "3.1 Main results",
+        "passage": "Table 2 reports the main results. Across both datasets, the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5, a gain of 4.1 points, and improves TriviaQA by 2.2 points with reciprocal rank fusion (k = 60).",
+        "quote": "the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5",
+        "char_start": 56,
+        "char_end": 126
+      }
+    },
+    {
+      "delay_ms": 40,
+      "event": "citation",
+      "data": {
+        "id": "cit_stream_proposal_2",
+        "message_id": "msg_stream_proposal",
+        "chunk_id": "chk_okafor_0601",
+        "ordinal": 2,
+        "source_id": "src_okafor2025",
+        "source_title": "Hybrid Retrieval Under Distribution Shift",
+        "source_label": "Okafor et al. 2025",
+        "source_meta": "Okafor, Brandt & Ruiz · 2025",
+        "page": 6,
+        "section": "4.2 Results",
+        "passage": "Table 3 summarises retrieval accuracy on in-domain and shifted test sets. Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets. We attribute most of this gain to lexical matching of rare entity names that the dense encoder under-represents.",
+        "quote": "Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets.",
+        "char_start": 74,
+        "char_end": 273
+      }
+    },
+    {
+      "delay_ms": 100,
+      "event": "done",
+      "data": {
+        "message": {
+          "id": "msg_stream_proposal",
+          "conversation_id": "conv_hybrid",
+          "role": "assistant",
+          "content": "I prepared a GitHub issue in `lab/rag-experiments` from this finding. Nothing is sent to GitHub until you approve it — review the exact content below or in Approvals.",
+          "status": "complete",
+          "created_at": "2026-11-11T08:10:00Z",
+          "answer_kind": "answer",
+          "sources_used": 2,
+          "sources_searched": 14,
+          "limitations": null,
+          "positions": null,
+          "inference": null,
+          "suggestion": null,
+          "related_entities": [
+            {
+              "id": "ent_m_hybrid",
+              "name": "Hybrid retrieval",
+              "entity_type": "method"
+            }
+          ],
+          "citations": [
+            {
+              "id": "cit_stream_proposal_1",
+              "message_id": "msg_stream_proposal",
+              "chunk_id": "chk_santos_0401",
+              "ordinal": 1,
+              "source_id": "src_santos2025",
+              "source_title": "Fusion Retrieval Revisited: BM25 + Dense on Open-Domain QA",
+              "source_label": "Santos & Lee 2025",
+              "source_meta": "Santos & Lee, 2025",
+              "page": 4,
+              "section": "3.1 Main results",
+              "passage": "Table 2 reports the main results. Across both datasets, the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5, a gain of 4.1 points, and improves TriviaQA by 2.2 points with reciprocal rank fusion (k = 60).",
+              "quote": "the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5",
+              "char_start": 56,
+              "char_end": 126
+            },
+            {
+              "id": "cit_stream_proposal_2",
+              "message_id": "msg_stream_proposal",
+              "chunk_id": "chk_okafor_0601",
+              "ordinal": 2,
+              "source_id": "src_okafor2025",
+              "source_title": "Hybrid Retrieval Under Distribution Shift",
+              "source_label": "Okafor et al. 2025",
+              "source_meta": "Okafor, Brandt & Ruiz · 2025",
+              "page": 6,
+              "section": "4.2 Results",
+              "passage": "Table 3 summarises retrieval accuracy on in-domain and shifted test sets. Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets. We attribute most of this gain to lexical matching of rare entity names that the dense encoder under-represents.",
+              "quote": "Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets.",
+              "char_start": 74,
+              "char_end": 273
+            }
+          ],
+          "proposal_id": "prop_01JC9X4M7Q",
+          "error": null,
+          "cancelled_at": null
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "connections": [],
+  "catalog": [
+    {
+      "provider": "github",
+      "name": "GitHub",
+      "tagline": "Read repositories and issues; create issues after approval",
+      "availability": "available",
+      "workaround": null
+    },
+    {
+      "provider": "obsidian",
+      "name": "Obsidian sync",
+      "tagline": "Read notes from a local vault",
+      "availability": "coming_later",
+      "workaround": "Until sync ships, upload your Markdown notes — links and headings are kept."
+    },
+    {
+      "provider": "google_drive",
+      "name": "Google Drive",
+      "tagline": "Read PDFs and docs from chosen folders",
+      "availability": "coming_later",
+      "workaround": "Download files from Drive and upload them to Sources for now."
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "_note": "POST /api/v1/search {\"query\":\"hybrid\"}",
+  "query": "hybrid",
+  "scope_label": "Searching all of Personal workspace",
+  "total": 7,
+  "groups": [
+    {
+      "key": "sources",
+      "label": "Sources",
+      "results": [
+        {
+          "id": "src_okafor2025",
+          "type": "source",
+          "type_label": "Source · PDF",
+          "icon": "pdf",
+          "title": "Hybrid Retrieval Under Distribution Shift",
+          "subtitle": "RAG Comparison · p. 6 matches",
+          "updated_at": "2026-11-03T02:12:00Z",
+          "page": 6
+        },
+        {
+          "id": "src_santos2025",
+          "type": "source",
+          "type_label": "Source · PDF",
+          "icon": "pdf",
+          "title": "Fusion Retrieval Revisited: BM25 + Dense",
+          "subtitle": "RAG Comparison · p. 4 matches",
+          "updated_at": "2026-11-01T08:30:00Z",
+          "page": 4
+        }
+      ]
+    },
+    {
+      "key": "entities",
+      "label": "Entities & concepts",
+      "results": [
+        {
+          "id": "ent_m_hybrid",
+          "type": "entity",
+          "type_label": "Method",
+          "icon": "method",
+          "title": "Hybrid retrieval",
+          "subtitle": "Graph · 4 papers · confirmed",
+          "updated_at": "2026-11-06T03:00:00Z",
+          "page": null
+        },
+        {
+          "id": "ent_c_hybridbeats",
+          "type": "entity",
+          "type_label": "Claim",
+          "icon": "claim",
+          "title": "Hybrid beats dense-only",
+          "subtitle": "Graph · 2 supporting, 1 candidate contradiction",
+          "updated_at": "2026-11-10T03:00:00Z",
+          "page": null
+        }
+      ]
+    },
+    {
+      "key": "memories",
+      "label": "Memories & decisions",
+      "results": [
+        {
+          "id": "dec_rag_04",
+          "type": "decision",
+          "type_label": "Decision",
+          "icon": "decision",
+          "title": "D-04 Use hybrid retrieval as the default retriever",
+          "subtitle": "RAG Comparison · confirmed",
+          "updated_at": "2026-11-06T03:00:00Z",
+          "page": null
+        }
+      ]
+    },
+    {
+      "key": "conversations",
+      "label": "Conversations",
+      "results": [
+        {
+          "id": "conv_hybrid",
+          "type": "conversation",
+          "type_label": "Conversation",
+          "icon": "conversation",
+          "title": "Hybrid vs dense-only results",
+          "subtitle": "RAG Comparison",
+          "updated_at": "2026-11-11T07:20:00Z",
+          "page": null
+        }
+      ]
+    },
+    {
+      "key": "actions",
+      "label": "Actions",
+      "results": [
+        {
+          "id": "prop_01JC9X4M7Q",
+          "type": "action",
+          "type_label": "Action",
+          "icon": "action",
+          "title": "Create issue: Re-run eval with hybrid retrieval",
+          "subtitle": "GitHub · awaiting approval",
+          "updated_at": "2026-11-11T07:34:00Z",
+          "page": null
+        }
+      ]
+    }
+  ]
+}

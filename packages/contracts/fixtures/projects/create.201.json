@@ -1,0 +1,16 @@
+{
+  "id": "prj_new_rag",
+  "workspace_id": "ws_new",
+  "name": "RAG Comparison",
+  "description": "Comparing retrieval-augmented generation methods — GraphRAG, dense retrieval, and hybrid BM25 + vector — for the thesis evaluation.",
+  "status": "active",
+  "created_at": "2026-11-11T08:10:00Z",
+  "updated_at": "2026-11-11T08:10:00Z",
+  "summary": "No decisions yet.",
+  "counts": {
+    "sources": 0,
+    "decisions": 0,
+    "conversations": 0,
+    "pending_actions": 0
+  }
+}

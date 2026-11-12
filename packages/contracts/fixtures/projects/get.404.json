@@ -1,0 +1,7 @@
+{
+  "error": {
+    "code": "NOT_FOUND",
+    "message": "Project not found.",
+    "request_id": "req_d00d0001"
+  }
+}

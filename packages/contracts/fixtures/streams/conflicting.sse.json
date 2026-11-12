@@ -1,0 +1,290 @@
+{
+  "message_id": "msg_stream_conflict",
+  "events": [
+    {
+      "delay_ms": 300,
+      "event": "status",
+      "data": {
+        "phase": "retrieving",
+        "steps": [
+          {
+            "label": "Scope resolved — Project RAG Comparison · 14 sources",
+            "state": "done"
+          },
+          {
+            "label": "Searching keyword + vector index, expanding 1 graph hop",
+            "state": "active"
+          },
+          {
+            "label": "Generating answer from the evidence packet",
+            "state": "pending"
+          }
+        ],
+        "passages_found": 3,
+        "sources_found": 2,
+        "sources": [
+          {
+            "label": "Daly 2025",
+            "passages": 4
+          },
+          {
+            "label": "Meyer 2024",
+            "passages": 2
+          }
+        ]
+      }
+    },
+    {
+      "delay_ms": 700,
+      "event": "status",
+      "data": {
+        "phase": "retrieving",
+        "steps": [
+          {
+            "label": "Scope resolved — Project RAG Comparison · 14 sources",
+            "state": "done"
+          },
+          {
+            "label": "Searching keyword + vector index, expanding 1 graph hop",
+            "state": "active"
+          },
+          {
+            "label": "Generating answer from the evidence packet",
+            "state": "pending"
+          }
+        ],
+        "passages_found": 6,
+        "sources_found": 2,
+        "sources": [
+          {
+            "label": "Daly 2025",
+            "passages": 4
+          },
+          {
+            "label": "Meyer 2024",
+            "passages": 2
+          }
+        ]
+      }
+    },
+    {
+      "delay_ms": 900,
+      "event": "status",
+      "data": {
+        "phase": "retrieving",
+        "steps": [
+          {
+            "label": "Scope resolved — Project RAG Comparison · 14 sources",
+            "state": "done"
+          },
+          {
+            "label": "Searching keyword + vector index, expanding 1 graph hop",
+            "state": "done"
+          },
+          {
+            "label": "Generating answer from the evidence packet",
+            "state": "pending"
+          }
+        ],
+        "passages_found": 6,
+        "sources_found": 2,
+        "sources": [
+          {
+            "label": "Daly 2025",
+            "passages": 4
+          },
+          {
+            "label": "Meyer 2024",
+            "passages": 2
+          }
+        ]
+      }
+    },
+    {
+      "delay_ms": 300,
+      "event": "status",
+      "data": {
+        "phase": "generating",
+        "steps": [
+          {
+            "label": "Scope resolved — Project RAG Comparison · 14 sources",
+            "state": "done"
+          },
+          {
+            "label": "Searching keyword + vector index, expanding 1 graph hop",
+            "state": "done"
+          },
+          {
+            "label": "Generating answer from the evidence packet",
+            "state": "active"
+          }
+        ],
+        "passages_found": 6,
+        "sources_found": 2,
+        "sources": [
+          {
+            "label": "Daly 2025",
+            "passages": 4
+          },
+          {
+            "label": "Meyer 2024",
+            "passages": 2
+          }
+        ]
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "Your sources reach "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "different conclusions, so "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "here are both "
+      }
+    },
+    {
+      "delay_ms": 60,
+      "event": "token",
+      "data": {
+        "text": "sides."
+      }
+    },
+    {
+      "delay_ms": 40,
+      "event": "citation",
+      "data": {
+        "id": "cit_stream_conflict_1",
+        "message_id": "msg_stream_conflict",
+        "chunk_id": "chk_daly_0701",
+        "ordinal": 1,
+        "source_id": "src_daly2025",
+        "source_title": "Chunking Strategies for Dense Retrieval",
+        "source_label": "Daly 2025",
+        "source_meta": "Daly · 2025",
+        "page": 7,
+        "section": "4.3 Chunk length",
+        "passage": "Recall@20 drops from 71.2 to 64.8 when chunks grow from 384 to 1,024 tokens on Natural Questions, while a 64-token overlap recovers about one point at every length.",
+        "quote": "Recall@20 drops from 71.2 to 64.8 when chunks grow from 384 to 1,024 tokens",
+        "char_start": 0,
+        "char_end": 75
+      }
+    },
+    {
+      "delay_ms": 40,
+      "event": "citation",
+      "data": {
+        "id": "cit_stream_conflict_2",
+        "message_id": "msg_stream_conflict",
+        "chunk_id": "chk_meyer_1101",
+        "ordinal": 2,
+        "source_id": "src_meyer2024",
+        "source_title": "Late Interaction Retrieval at Scale",
+        "source_label": "Meyer 2024",
+        "source_meta": "Meyer · 2024",
+        "page": 11,
+        "section": "6.1 Chunk length",
+        "passage": "Chunk length between 256 and 1,024 tokens had no significant effect on nDCG@10 for the late-interaction retriever, because token-level matching already localises the relevant span.",
+        "quote": "Chunk length between 256 and 1,024 tokens had no significant effect on nDCG@10",
+        "char_start": 0,
+        "char_end": 78
+      }
+    },
+    {
+      "delay_ms": 100,
+      "event": "done",
+      "data": {
+        "message": {
+          "id": "msg_stream_conflict",
+          "conversation_id": "conv_evalplan",
+          "role": "assistant",
+          "content": "Your sources reach different conclusions, so here are both sides.",
+          "status": "complete",
+          "created_at": "2026-11-11T08:10:00Z",
+          "answer_kind": "conflicting",
+          "sources_used": 2,
+          "sources_searched": 14,
+          "limitations": null,
+          "positions": [
+            {
+              "label": "Position A",
+              "title": "Longer chunks lower recall",
+              "quote": "Recall@20 drops from 71.2 to 64.8 when chunks grow from 384 to 1,024 tokens",
+              "context": " on Natural Questions.",
+              "citation_ordinal": 1
+            },
+            {
+              "label": "Position B",
+              "title": "No significant effect",
+              "quote": "Chunk length between 256 and 1,024 tokens had no significant effect on nDCG@10",
+              "context": " for the late-interaction retriever.",
+              "citation_ordinal": 2
+            }
+          ],
+          "inference": "The studies differ in dataset (Natural Questions vs. BEIR-SciFact), retriever (dense vs. late interaction), and metric (Recall@20 vs. nDCG@10). Both results can hold at once; neither tests your exact setup.",
+          "suggestion": null,
+          "related_entities": [
+            {
+              "id": "ent_c_longchunks",
+              "name": "Long chunks hurt recall",
+              "entity_type": "claim"
+            },
+            {
+              "id": "ent_d_nq",
+              "name": "Natural Questions",
+              "entity_type": "dataset"
+            }
+          ],
+          "citations": [
+            {
+              "id": "cit_stream_conflict_1",
+              "message_id": "msg_stream_conflict",
+              "chunk_id": "chk_daly_0701",
+              "ordinal": 1,
+              "source_id": "src_daly2025",
+              "source_title": "Chunking Strategies for Dense Retrieval",
+              "source_label": "Daly 2025",
+              "source_meta": "Daly · 2025",
+              "page": 7,
+              "section": "4.3 Chunk length",
+              "passage": "Recall@20 drops from 71.2 to 64.8 when chunks grow from 384 to 1,024 tokens on Natural Questions, while a 64-token overlap recovers about one point at every length.",
+              "quote": "Recall@20 drops from 71.2 to 64.8 when chunks grow from 384 to 1,024 tokens",
+              "char_start": 0,
+              "char_end": 75
+            },
+            {
+              "id": "cit_stream_conflict_2",
+              "message_id": "msg_stream_conflict",
+              "chunk_id": "chk_meyer_1101",
+              "ordinal": 2,
+              "source_id": "src_meyer2024",
+              "source_title": "Late Interaction Retrieval at Scale",
+              "source_label": "Meyer 2024",
+              "source_meta": "Meyer · 2024",
+              "page": 11,
+              "section": "6.1 Chunk length",
+              "passage": "Chunk length between 256 and 1,024 tokens had no significant effect on nDCG@10 for the late-interaction retriever, because token-level matching already localises the relevant span.",
+              "quote": "Chunk length between 256 and 1,024 tokens had no significant effect on nDCG@10",
+              "char_start": 0,
+              "char_end": 78
+            }
+          ],
+          "proposal_id": null,
+          "error": null,
+          "cancelled_at": null
+        }
+      }
+    }
+  ]
+}

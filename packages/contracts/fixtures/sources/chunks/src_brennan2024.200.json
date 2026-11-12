@@ -1,0 +1,1065 @@
+{
+  "_note": "GET /api/v1/sources/src_brennan2024/chunks?page=N — one entry per page.",
+  "pages": [
+    {
+      "source_id": "src_brennan2024",
+      "page": 1,
+      "page_count": 34,
+      "running_header": "Brennan et al. · Evaluating Retrieval-Augmented Generation: A Survey",
+      "section_id": "sec_brennan2024_1",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "1 Introduction",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_brennan2024_0101",
+          "text": "Retrieval quality bounds the quality of retrieval-augmented answers: if the relevant passage is not retrieved, the generator cannot cite it. This section motivates the comparison and states the research questions."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_brennan2024_0101",
+          "document_id": "doc_brennan2024",
+          "ordinal": 1,
+          "text": "Retrieval quality bounds the quality of retrieval-augmented answers: if the relevant passage is not retrieved, the generator cannot cite it. This section motivates the comparison and states the research questions.",
+          "token_count": 39,
+          "page_start": 1,
+          "page_end": 1,
+          "section_path": [
+            "1 Introduction"
+          ],
+          "char_start": 1200,
+          "char_end": 1413
+        }
+      ]
+    },
+    {
+      "source_id": "src_brennan2024",
+      "page": 2,
+      "page_count": 34,
+      "running_header": "Brennan et al. · Evaluating Retrieval-Augmented Generation: A Survey",
+      "section_id": "sec_brennan2024_1",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_brennan2024_0200",
+          "text": "Retrieval quality bounds the quality of retrieval-augmented answers: if the relevant passage is not retrieved, the generator cannot cite it. This section motivates the comparison and states the research questions."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_brennan2024_0200",
+          "document_id": "doc_brennan2024",
+          "ordinal": 2,
+          "text": "Retrieval quality bounds the quality of retrieval-augmented answers: if the relevant passage is not retrieved, the generator cannot cite it. This section motivates the comparison and states the research questions.",
+          "token_count": 39,
+          "page_start": 2,
+          "page_end": 2,
+          "section_path": [
+            "1 Introduction"
+          ],
+          "char_start": 2400,
+          "char_end": 2613
+        }
+      ]
+    },
+    {
+      "source_id": "src_brennan2024",
+      "page": 3,
+      "page_count": 34,
+      "running_header": "Brennan et al. · Evaluating Retrieval-Augmented Generation: A Survey",
+      "section_id": "sec_brennan2024_1",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_brennan2024_0300",
+          "text": "Retrieval quality bounds the quality of retrieval-augmented answers: if the relevant passage is not retrieved, the generator cannot cite it. This section motivates the comparison and states the research questions."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_brennan2024_0300",
+          "document_id": "doc_brennan2024",
+          "ordinal": 3,
+          "text": "Retrieval quality bounds the quality of retrieval-augmented answers: if the relevant passage is not retrieved, the generator cannot cite it. This section motivates the comparison and states the research questions.",
+          "token_count": 39,
+          "page_start": 3,
+          "page_end": 3,
+          "section_path": [
+            "1 Introduction"
+          ],
+          "char_start": 3600,
+          "char_end": 3813
+        }
+      ]
+    },
+    {
+      "source_id": "src_brennan2024",
+      "page": 4,
+      "page_count": 34,
+      "running_header": "Brennan et al. · Evaluating Retrieval-Augmented Generation: A Survey",
+      "section_id": "sec_brennan2024_1",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_brennan2024_0400",
+          "text": "Retrieval quality bounds the quality of retrieval-augmented answers: if the relevant passage is not retrieved, the generator cannot cite it. This section motivates the comparison and states the research questions."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_brennan2024_0400",
+          "document_id": "doc_brennan2024",
+          "ordinal": 4,
+          "text": "Retrieval quality bounds the quality of retrieval-augmented answers: if the relevant passage is not retrieved, the generator cannot cite it. This section motivates the comparison and states the research questions.",
+          "token_count": 39,
+          "page_start": 4,
+          "page_end": 4,
+          "section_path": [
+            "1 Introduction"
+          ],
+          "char_start": 4800,
+          "char_end": 5013
+        }
+      ]
+    },
+    {
+      "source_id": "src_brennan2024",
+      "page": 5,
+      "page_count": 34,
+      "running_header": "Brennan et al. · Evaluating Retrieval-Augmented Generation: A Survey",
+      "section_id": "sec_brennan2024_2",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "2 Related work",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_brennan2024_0501",
+          "text": "Prior work compares sparse and dense retrievers on open-domain question answering, but few studies hold the reader model fixed while varying only the retriever."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_brennan2024_0501",
+          "document_id": "doc_brennan2024",
+          "ordinal": 5,
+          "text": "Prior work compares sparse and dense retrievers on open-domain question answering, but few studies hold the reader model fixed while varying only the retriever.",
+          "token_count": 31,
+          "page_start": 5,
+          "page_end": 5,
+          "section_path": [
+            "2 Related work"
+          ],
+          "char_start": 6000,
+          "char_end": 6160
+        }
+      ]
+    },
+    {
+      "source_id": "src_brennan2024",
+      "page": 6,
+      "page_count": 34,
+      "running_header": "Brennan et al. · Evaluating Retrieval-Augmented Generation: A Survey",
+      "section_id": "sec_brennan2024_2",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_brennan2024_0600",
+          "text": "Prior work compares sparse and dense retrievers on open-domain question answering, but few studies hold the reader model fixed while varying only the retriever."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_brennan2024_0600",
+          "document_id": "doc_brennan2024",
+          "ordinal": 6,
+          "text": "Prior work compares sparse and dense retrievers on open-domain question answering, but few studies hold the reader model fixed while varying only the retriever.",
+          "token_count": 31,
+          "page_start": 6,
+          "page_end": 6,
+          "section_path": [
+            "2 Related work"
+          ],
+          "char_start": 7200,
+          "char_end": 7360
+        }
+      ]
+    },
+    {
+      "source_id": "src_brennan2024",
+      "page": 7,
+      "page_count": 34,
+      "running_header": "Brennan et al. · Evaluating Retrieval-Augmented Generation: A Survey",
+      "section_id": "sec_brennan2024_2",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_brennan2024_0700",
+          "text": "Prior work compares sparse and dense retrievers on open-domain question answering, but few studies hold the reader model fixed while varying only the retriever."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_brennan2024_0700",
+          "document_id": "doc_brennan2024",
+          "ordinal": 7,
+          "text": "Prior work compares sparse and dense retrievers on open-domain question answering, but few studies hold the reader model fixed while varying only the retriever.",
+          "token_count": 31,
+          "page_start": 7,
+          "page_end": 7,
+          "section_path": [
+            "2 Related work"
+          ],
+          "char_start": 8400,
+          "char_end": 8560
+        }
+      ]
+    },
+    {
+      "source_id": "src_brennan2024",
+      "page": 8,
+      "page_count": 34,
+      "running_header": "Brennan et al. · Evaluating Retrieval-Augmented Generation: A Survey",
+      "section_id": "sec_brennan2024_2",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_brennan2024_0800",
+          "text": "Prior work compares sparse and dense retrievers on open-domain question answering, but few studies hold the reader model fixed while varying only the retriever."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_brennan2024_0800",
+          "document_id": "doc_brennan2024",
+          "ordinal": 8,
+          "text": "Prior work compares sparse and dense retrievers on open-domain question answering, but few studies hold the reader model fixed while varying only the retriever.",
+          "token_count": 31,
+          "page_start": 8,
+          "page_end": 8,
+          "section_path": [
+            "2 Related work"
+          ],
+          "char_start": 9600,
+          "char_end": 9760
+        }
+      ]
+    },
+    {
+      "source_id": "src_brennan2024",
+      "page": 9,
+      "page_count": 34,
+      "running_header": "Brennan et al. · Evaluating Retrieval-Augmented Generation: A Survey",
+      "section_id": "sec_brennan2024_3",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "3 Method",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_brennan2024_0901",
+          "text": "We describe the retrievers, the indexing settings, and how passages are scored and merged before they are passed to the reader."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_brennan2024_0901",
+          "document_id": "doc_brennan2024",
+          "ordinal": 9,
+          "text": "We describe the retrievers, the indexing settings, and how passages are scored and merged before they are passed to the reader.",
+          "token_count": 27,
+          "page_start": 9,
+          "page_end": 9,
+          "section_path": [
+            "3 Method"
+          ],
+          "char_start": 10800,
+          "char_end": 10927
+        }
+      ]
+    },
+    {
+      "source_id": "src_brennan2024",
+      "page": 10,
+      "page_count": 34,
+      "running_header": "Brennan et al. · Evaluating Retrieval-Augmented Generation: A Survey",
+      "section_id": "sec_brennan2024_3",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_brennan2024_1000",
+          "text": "We describe the retrievers, the indexing settings, and how passages are scored and merged before they are passed to the reader."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_brennan2024_1000",
+          "document_id": "doc_brennan2024",
+          "ordinal": 10,
+          "text": "We describe the retrievers, the indexing settings, and how passages are scored and merged before they are passed to the reader.",
+          "token_count": 27,
+          "page_start": 10,
+          "page_end": 10,
+          "section_path": [
+            "3 Method"
+          ],
+          "char_start": 12000,
+          "char_end": 12127
+        }
+      ]
+    },
+    {
+      "source_id": "src_brennan2024",
+      "page": 11,
+      "page_count": 34,
+      "running_header": "Brennan et al. · Evaluating Retrieval-Augmented Generation: A Survey",
+      "section_id": "sec_brennan2024_3",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_brennan2024_1100",
+          "text": "We describe the retrievers, the indexing settings, and how passages are scored and merged before they are passed to the reader."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_brennan2024_1100",
+          "document_id": "doc_brennan2024",
+          "ordinal": 11,
+          "text": "We describe the retrievers, the indexing settings, and how passages are scored and merged before they are passed to the reader.",
+          "token_count": 27,
+          "page_start": 11,
+          "page_end": 11,
+          "section_path": [
+            "3 Method"
+          ],
+          "char_start": 13200,
+          "char_end": 13327
+        }
+      ]
+    },
+    {
+      "source_id": "src_brennan2024",
+      "page": 12,
+      "page_count": 34,
+      "running_header": "Brennan et al. · Evaluating Retrieval-Augmented Generation: A Survey",
+      "section_id": "sec_brennan2024_3",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_brennan2024_1200",
+          "text": "We describe the retrievers, the indexing settings, and how passages are scored and merged before they are passed to the reader."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_brennan2024_1200",
+          "document_id": "doc_brennan2024",
+          "ordinal": 12,
+          "text": "We describe the retrievers, the indexing settings, and how passages are scored and merged before they are passed to the reader.",
+          "token_count": 27,
+          "page_start": 12,
+          "page_end": 12,
+          "section_path": [
+            "3 Method"
+          ],
+          "char_start": 14400,
+          "char_end": 14527
+        }
+      ]
+    },
+    {
+      "source_id": "src_brennan2024",
+      "page": 13,
+      "page_count": 34,
+      "running_header": "Brennan et al. · Evaluating Retrieval-Augmented Generation: A Survey",
+      "section_id": "sec_brennan2024_4",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "4 Experiments",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_brennan2024_1301",
+          "text": "All experiments use the same reader model and the same passage budget so that differences can be attributed to retrieval."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_brennan2024_1301",
+          "document_id": "doc_brennan2024",
+          "ordinal": 13,
+          "text": "All experiments use the same reader model and the same passage budget so that differences can be attributed to retrieval.",
+          "token_count": 26,
+          "page_start": 13,
+          "page_end": 13,
+          "section_path": [
+            "4 Experiments"
+          ],
+          "char_start": 15600,
+          "char_end": 15721
+        }
+      ]
+    },
+    {
+      "source_id": "src_brennan2024",
+      "page": 14,
+      "page_count": 34,
+      "running_header": "Brennan et al. · Evaluating Retrieval-Augmented Generation: A Survey",
+      "section_id": "sec_brennan2024_4",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_brennan2024_1400",
+          "text": "All experiments use the same reader model and the same passage budget so that differences can be attributed to retrieval."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_brennan2024_1400",
+          "document_id": "doc_brennan2024",
+          "ordinal": 14,
+          "text": "All experiments use the same reader model and the same passage budget so that differences can be attributed to retrieval.",
+          "token_count": 26,
+          "page_start": 14,
+          "page_end": 14,
+          "section_path": [
+            "4 Experiments"
+          ],
+          "char_start": 16800,
+          "char_end": 16921
+        }
+      ]
+    },
+    {
+      "source_id": "src_brennan2024",
+      "page": 15,
+      "page_count": 34,
+      "running_header": "Brennan et al. · Evaluating Retrieval-Augmented Generation: A Survey",
+      "section_id": "sec_brennan2024_4",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_brennan2024_1500",
+          "text": "All experiments use the same reader model and the same passage budget so that differences can be attributed to retrieval."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_brennan2024_1500",
+          "document_id": "doc_brennan2024",
+          "ordinal": 15,
+          "text": "All experiments use the same reader model and the same passage budget so that differences can be attributed to retrieval.",
+          "token_count": 26,
+          "page_start": 15,
+          "page_end": 15,
+          "section_path": [
+            "4 Experiments"
+          ],
+          "char_start": 18000,
+          "char_end": 18121
+        }
+      ]
+    },
+    {
+      "source_id": "src_brennan2024",
+      "page": 16,
+      "page_count": 34,
+      "running_header": "Brennan et al. · Evaluating Retrieval-Augmented Generation: A Survey",
+      "section_id": "sec_brennan2024_4",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_brennan2024_1600",
+          "text": "All experiments use the same reader model and the same passage budget so that differences can be attributed to retrieval."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_brennan2024_1600",
+          "document_id": "doc_brennan2024",
+          "ordinal": 16,
+          "text": "All experiments use the same reader model and the same passage budget so that differences can be attributed to retrieval.",
+          "token_count": 26,
+          "page_start": 16,
+          "page_end": 16,
+          "section_path": [
+            "4 Experiments"
+          ],
+          "char_start": 19200,
+          "char_end": 19321
+        }
+      ]
+    },
+    {
+      "source_id": "src_brennan2024",
+      "page": 17,
+      "page_count": 34,
+      "running_header": "Brennan et al. · Evaluating Retrieval-Augmented Generation: A Survey",
+      "section_id": "sec_brennan2024_5",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "5 Results",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_brennan2024_1701",
+          "text": "We report top-20 accuracy and nDCG@10 for every configuration; confidence intervals come from 1,000 bootstrap samples."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_brennan2024_1701",
+          "document_id": "doc_brennan2024",
+          "ordinal": 17,
+          "text": "We report top-20 accuracy and nDCG@10 for every configuration; confidence intervals come from 1,000 bootstrap samples.",
+          "token_count": 21,
+          "page_start": 17,
+          "page_end": 17,
+          "section_path": [
+            "5 Results"
+          ],
+          "char_start": 20400,
+          "char_end": 20518
+        }
+      ]
+    },
+    {
+      "source_id": "src_brennan2024",
+      "page": 18,
+      "page_count": 34,
+      "running_header": "Brennan et al. · Evaluating Retrieval-Augmented Generation: A Survey",
+      "section_id": "sec_brennan2024_5",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_brennan2024_1800",
+          "text": "We report top-20 accuracy and nDCG@10 for every configuration; confidence intervals come from 1,000 bootstrap samples."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_brennan2024_1800",
+          "document_id": "doc_brennan2024",
+          "ordinal": 18,
+          "text": "We report top-20 accuracy and nDCG@10 for every configuration; confidence intervals come from 1,000 bootstrap samples.",
+          "token_count": 21,
+          "page_start": 18,
+          "page_end": 18,
+          "section_path": [
+            "5 Results"
+          ],
+          "char_start": 21600,
+          "char_end": 21718
+        }
+      ]
+    },
+    {
+      "source_id": "src_brennan2024",
+      "page": 19,
+      "page_count": 34,
+      "running_header": "Brennan et al. · Evaluating Retrieval-Augmented Generation: A Survey",
+      "section_id": "sec_brennan2024_5",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_brennan2024_1900",
+          "text": "We report top-20 accuracy and nDCG@10 for every configuration; confidence intervals come from 1,000 bootstrap samples."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_brennan2024_1900",
+          "document_id": "doc_brennan2024",
+          "ordinal": 19,
+          "text": "We report top-20 accuracy and nDCG@10 for every configuration; confidence intervals come from 1,000 bootstrap samples.",
+          "token_count": 21,
+          "page_start": 19,
+          "page_end": 19,
+          "section_path": [
+            "5 Results"
+          ],
+          "char_start": 22800,
+          "char_end": 22918
+        }
+      ]
+    },
+    {
+      "source_id": "src_brennan2024",
+      "page": 20,
+      "page_count": 34,
+      "running_header": "Brennan et al. · Evaluating Retrieval-Augmented Generation: A Survey",
+      "section_id": "sec_brennan2024_5",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_brennan2024_2000",
+          "text": "We report top-20 accuracy and nDCG@10 for every configuration; confidence intervals come from 1,000 bootstrap samples."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_brennan2024_2000",
+          "document_id": "doc_brennan2024",
+          "ordinal": 20,
+          "text": "We report top-20 accuracy and nDCG@10 for every configuration; confidence intervals come from 1,000 bootstrap samples.",
+          "token_count": 21,
+          "page_start": 20,
+          "page_end": 20,
+          "section_path": [
+            "5 Results"
+          ],
+          "char_start": 24000,
+          "char_end": 24118
+        }
+      ]
+    },
+    {
+      "source_id": "src_brennan2024",
+      "page": 21,
+      "page_count": 34,
+      "running_header": "Brennan et al. · Evaluating Retrieval-Augmented Generation: A Survey",
+      "section_id": "sec_brennan2024_6",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "6 Discussion",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_brennan2024_2101",
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_brennan2024_2101",
+          "document_id": "doc_brennan2024",
+          "ordinal": 21,
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type.",
+          "token_count": 27,
+          "page_start": 21,
+          "page_end": 21,
+          "section_path": [
+            "6 Discussion"
+          ],
+          "char_start": 25200,
+          "char_end": 25327
+        }
+      ]
+    },
+    {
+      "source_id": "src_brennan2024",
+      "page": 22,
+      "page_count": 34,
+      "running_header": "Brennan et al. · Evaluating Retrieval-Augmented Generation: A Survey",
+      "section_id": "sec_brennan2024_6",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_brennan2024_2200",
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_brennan2024_2200",
+          "document_id": "doc_brennan2024",
+          "ordinal": 22,
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type.",
+          "token_count": 27,
+          "page_start": 22,
+          "page_end": 22,
+          "section_path": [
+            "6 Discussion"
+          ],
+          "char_start": 26400,
+          "char_end": 26527
+        }
+      ]
+    },
+    {
+      "source_id": "src_brennan2024",
+      "page": 23,
+      "page_count": 34,
+      "running_header": "Brennan et al. · Evaluating Retrieval-Augmented Generation: A Survey",
+      "section_id": "sec_brennan2024_6",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_brennan2024_2300",
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_brennan2024_2300",
+          "document_id": "doc_brennan2024",
+          "ordinal": 23,
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type.",
+          "token_count": 27,
+          "page_start": 23,
+          "page_end": 23,
+          "section_path": [
+            "6 Discussion"
+          ],
+          "char_start": 27600,
+          "char_end": 27727
+        }
+      ]
+    },
+    {
+      "source_id": "src_brennan2024",
+      "page": 24,
+      "page_count": 34,
+      "running_header": "Brennan et al. · Evaluating Retrieval-Augmented Generation: A Survey",
+      "section_id": "sec_brennan2024_6",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_brennan2024_2400",
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_brennan2024_2400",
+          "document_id": "doc_brennan2024",
+          "ordinal": 24,
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type.",
+          "token_count": 27,
+          "page_start": 24,
+          "page_end": 24,
+          "section_path": [
+            "6 Discussion"
+          ],
+          "char_start": 28800,
+          "char_end": 28927
+        }
+      ]
+    },
+    {
+      "source_id": "src_brennan2024",
+      "page": 25,
+      "page_count": 34,
+      "running_header": "Brennan et al. · Evaluating Retrieval-Augmented Generation: A Survey",
+      "section_id": "sec_brennan2024_7",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "7 Conclusion",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_brennan2024_2501",
+          "text": "We summarise the findings and list the limitations of the evaluation, including the small number of multi-hop datasets."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_brennan2024_2501",
+          "document_id": "doc_brennan2024",
+          "ordinal": 25,
+          "text": "We summarise the findings and list the limitations of the evaluation, including the small number of multi-hop datasets.",
+          "token_count": 23,
+          "page_start": 25,
+          "page_end": 25,
+          "section_path": [
+            "7 Conclusion"
+          ],
+          "char_start": 30000,
+          "char_end": 30119
+        }
+      ]
+    },
+    {
+      "source_id": "src_brennan2024",
+      "page": 26,
+      "page_count": 34,
+      "running_header": "Brennan et al. · Evaluating Retrieval-Augmented Generation: A Survey",
+      "section_id": "sec_brennan2024_7",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_brennan2024_2600",
+          "text": "We summarise the findings and list the limitations of the evaluation, including the small number of multi-hop datasets."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_brennan2024_2600",
+          "document_id": "doc_brennan2024",
+          "ordinal": 26,
+          "text": "We summarise the findings and list the limitations of the evaluation, including the small number of multi-hop datasets.",
+          "token_count": 23,
+          "page_start": 26,
+          "page_end": 26,
+          "section_path": [
+            "7 Conclusion"
+          ],
+          "char_start": 31200,
+          "char_end": 31319
+        }
+      ]
+    },
+    {
+      "source_id": "src_brennan2024",
+      "page": 27,
+      "page_count": 34,
+      "running_header": "Brennan et al. · Evaluating Retrieval-Augmented Generation: A Survey",
+      "section_id": "sec_brennan2024_7",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_brennan2024_2700",
+          "text": "We summarise the findings and list the limitations of the evaluation, including the small number of multi-hop datasets."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_brennan2024_2700",
+          "document_id": "doc_brennan2024",
+          "ordinal": 27,
+          "text": "We summarise the findings and list the limitations of the evaluation, including the small number of multi-hop datasets.",
+          "token_count": 23,
+          "page_start": 27,
+          "page_end": 27,
+          "section_path": [
+            "7 Conclusion"
+          ],
+          "char_start": 32400,
+          "char_end": 32519
+        }
+      ]
+    },
+    {
+      "source_id": "src_brennan2024",
+      "page": 28,
+      "page_count": 34,
+      "running_header": "Brennan et al. · Evaluating Retrieval-Augmented Generation: A Survey",
+      "section_id": "sec_brennan2024_7",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_brennan2024_2800",
+          "text": "We summarise the findings and list the limitations of the evaluation, including the small number of multi-hop datasets."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_brennan2024_2800",
+          "document_id": "doc_brennan2024",
+          "ordinal": 28,
+          "text": "We summarise the findings and list the limitations of the evaluation, including the small number of multi-hop datasets.",
+          "token_count": 23,
+          "page_start": 28,
+          "page_end": 28,
+          "section_path": [
+            "7 Conclusion"
+          ],
+          "char_start": 33600,
+          "char_end": 33719
+        }
+      ]
+    },
+    {
+      "source_id": "src_brennan2024",
+      "page": 29,
+      "page_count": 34,
+      "running_header": "Brennan et al. · Evaluating Retrieval-Augmented Generation: A Survey",
+      "section_id": "sec_brennan2024_8",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "References",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_brennan2024_2901",
+          "text": "[1] Robertson, S. and Zaragoza, H. The probabilistic relevance framework. [2] Karpukhin, V. et al. Dense passage retrieval for open-domain question answering."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_brennan2024_2901",
+          "document_id": "doc_brennan2024",
+          "ordinal": 29,
+          "text": "[1] Robertson, S. and Zaragoza, H. The probabilistic relevance framework. [2] Karpukhin, V. et al. Dense passage retrieval for open-domain question answering.",
+          "token_count": 29,
+          "page_start": 29,
+          "page_end": 29,
+          "section_path": [
+            "References"
+          ],
+          "char_start": 34800,
+          "char_end": 34958
+        }
+      ]
+    },
+    {
+      "source_id": "src_brennan2024",
+      "page": 30,
+      "page_count": 34,
+      "running_header": "Brennan et al. · Evaluating Retrieval-Augmented Generation: A Survey",
+      "section_id": "sec_brennan2024_8",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_brennan2024_3000",
+          "text": "[1] Robertson, S. and Zaragoza, H. The probabilistic relevance framework. [2] Karpukhin, V. et al. Dense passage retrieval for open-domain question answering."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_brennan2024_3000",
+          "document_id": "doc_brennan2024",
+          "ordinal": 30,
+          "text": "[1] Robertson, S. and Zaragoza, H. The probabilistic relevance framework. [2] Karpukhin, V. et al. Dense passage retrieval for open-domain question answering.",
+          "token_count": 29,
+          "page_start": 30,
+          "page_end": 30,
+          "section_path": [
+            "References"
+          ],
+          "char_start": 36000,
+          "char_end": 36158
+        }
+      ]
+    },
+    {
+      "source_id": "src_brennan2024",
+      "page": 31,
+      "page_count": 34,
+      "running_header": "Brennan et al. · Evaluating Retrieval-Augmented Generation: A Survey",
+      "section_id": "sec_brennan2024_8",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_brennan2024_3100",
+          "text": "[1] Robertson, S. and Zaragoza, H. The probabilistic relevance framework. [2] Karpukhin, V. et al. Dense passage retrieval for open-domain question answering."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_brennan2024_3100",
+          "document_id": "doc_brennan2024",
+          "ordinal": 31,
+          "text": "[1] Robertson, S. and Zaragoza, H. The probabilistic relevance framework. [2] Karpukhin, V. et al. Dense passage retrieval for open-domain question answering.",
+          "token_count": 29,
+          "page_start": 31,
+          "page_end": 31,
+          "section_path": [
+            "References"
+          ],
+          "char_start": 37200,
+          "char_end": 37358
+        }
+      ]
+    },
+    {
+      "source_id": "src_brennan2024",
+      "page": 32,
+      "page_count": 34,
+      "running_header": "Brennan et al. · Evaluating Retrieval-Augmented Generation: A Survey",
+      "section_id": "sec_brennan2024_8",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_brennan2024_3200",
+          "text": "[1] Robertson, S. and Zaragoza, H. The probabilistic relevance framework. [2] Karpukhin, V. et al. Dense passage retrieval for open-domain question answering."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_brennan2024_3200",
+          "document_id": "doc_brennan2024",
+          "ordinal": 32,
+          "text": "[1] Robertson, S. and Zaragoza, H. The probabilistic relevance framework. [2] Karpukhin, V. et al. Dense passage retrieval for open-domain question answering.",
+          "token_count": 29,
+          "page_start": 32,
+          "page_end": 32,
+          "section_path": [
+            "References"
+          ],
+          "char_start": 38400,
+          "char_end": 38558
+        }
+      ]
+    },
+    {
+      "source_id": "src_brennan2024",
+      "page": 33,
+      "page_count": 34,
+      "running_header": "Brennan et al. · Evaluating Retrieval-Augmented Generation: A Survey",
+      "section_id": "sec_brennan2024_8",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_brennan2024_3300",
+          "text": "[1] Robertson, S. and Zaragoza, H. The probabilistic relevance framework. [2] Karpukhin, V. et al. Dense passage retrieval for open-domain question answering."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_brennan2024_3300",
+          "document_id": "doc_brennan2024",
+          "ordinal": 33,
+          "text": "[1] Robertson, S. and Zaragoza, H. The probabilistic relevance framework. [2] Karpukhin, V. et al. Dense passage retrieval for open-domain question answering.",
+          "token_count": 29,
+          "page_start": 33,
+          "page_end": 33,
+          "section_path": [
+            "References"
+          ],
+          "char_start": 39600,
+          "char_end": 39758
+        }
+      ]
+    },
+    {
+      "source_id": "src_brennan2024",
+      "page": 34,
+      "page_count": 34,
+      "running_header": "Brennan et al. · Evaluating Retrieval-Augmented Generation: A Survey",
+      "section_id": "sec_brennan2024_8",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_brennan2024_3400",
+          "text": "[1] Robertson, S. and Zaragoza, H. The probabilistic relevance framework. [2] Karpukhin, V. et al. Dense passage retrieval for open-domain question answering."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_brennan2024_3400",
+          "document_id": "doc_brennan2024",
+          "ordinal": 34,
+          "text": "[1] Robertson, S. and Zaragoza, H. The probabilistic relevance framework. [2] Karpukhin, V. et al. Dense passage retrieval for open-domain question answering.",
+          "token_count": 29,
+          "page_start": 34,
+          "page_end": 34,
+          "section_path": [
+            "References"
+          ],
+          "char_start": 40800,
+          "char_end": 40958
+        }
+      ]
+    }
+  ]
+}

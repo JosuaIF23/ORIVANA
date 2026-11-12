@@ -1,0 +1,16 @@
+{
+  "id": "job_01JC8ZP3",
+  "workspace_id": "ws_personal",
+  "source_id": "src_survey2019",
+  "kind": "ingest",
+  "attempts": 3,
+  "max_attempts": 3,
+  "progress": null,
+  "eta_seconds": null,
+  "error_code": null,
+  "error_message": null,
+  "started_at": "2026-11-11T01:30:00Z",
+  "finished_at": null,
+  "status": "queued",
+  "stage": "queued"
+}

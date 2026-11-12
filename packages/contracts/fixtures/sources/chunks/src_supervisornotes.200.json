@@ -1,0 +1,88 @@
+{
+  "_note": "GET /api/v1/sources/src_supervisornotes/chunks?page=N — one entry per page.",
+  "pages": [
+    {
+      "source_id": "src_supervisornotes",
+      "page": 1,
+      "page_count": 1,
+      "running_header": "supervisor-notes-oct.md",
+      "section_id": "sec_supervisornotes_3",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Summary",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_supervisornotes_0101",
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type."
+        },
+        {
+          "type": "heading",
+          "text": "Experiments this week",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_supervisornotes_0103",
+          "text": "All experiments use the same reader model and the same passage budget so that differences can be attributed to retrieval."
+        },
+        {
+          "type": "heading",
+          "text": "Open questions",
+          "level": 1
+        },
+        {
+          "type": "paragraph",
+          "chunk_id": "chk_supervisornotes_0105",
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type."
+        }
+      ],
+      "chunks": [
+        {
+          "id": "chk_supervisornotes_0101",
+          "document_id": "doc_supervisornotes",
+          "ordinal": 1,
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type.",
+          "token_count": 27,
+          "page_start": 1,
+          "page_end": 1,
+          "section_path": [
+            "Summary"
+          ],
+          "char_start": 1200,
+          "char_end": 1327
+        },
+        {
+          "id": "chk_supervisornotes_0103",
+          "document_id": "doc_supervisornotes",
+          "ordinal": 2,
+          "text": "All experiments use the same reader model and the same passage budget so that differences can be attributed to retrieval.",
+          "token_count": 26,
+          "page_start": 1,
+          "page_end": 1,
+          "section_path": [
+            "Experiments this week"
+          ],
+          "char_start": 2400,
+          "char_end": 2521
+        },
+        {
+          "id": "chk_supervisornotes_0105",
+          "document_id": "doc_supervisornotes",
+          "ordinal": 3,
+          "text": "The results suggest that lexical and semantic signals are complementary, but the size of the gain depends on the question type.",
+          "token_count": 27,
+          "page_start": 1,
+          "page_end": 1,
+          "section_path": [
+            "Open questions"
+          ],
+          "char_start": 3600,
+          "char_end": 3727
+        }
+      ]
+    }
+  ]
+}

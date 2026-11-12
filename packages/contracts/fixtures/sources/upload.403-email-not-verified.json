@@ -1,0 +1,7 @@
+{
+  "error": {
+    "code": "EMAIL_NOT_VERIFIED",
+    "message": "Verify your email before uploading sources.",
+    "request_id": "req_1f3d5a90"
+  }
+}
