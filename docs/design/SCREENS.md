@@ -1,7 +1,7 @@
 # ORIVANA — Screen inventory
 
 Peta dari setiap gambar di `docs/design/screens/` ke screen, route, komponen, dan data.
-Sumber kebenaran: gambar = layout, susunan, teks, komponen · `UI.md` §2 = warna, font, ukuran, spacing · `PRD.md` §9.5/§10/§14 = bentuk data.
+Sumber kebenaran: gambar = layout, susunan, teks, komponen · `UI.md` §2 = warna, font, ukuran, spacing · `PRD.md` §12/§17/§11.5 (v2.0) = bentuk data. Screen v2 tanpa artboard mengikuti `UI.md` §4 (lihat §4 di bawah).
 
 - Semua nama file gambar sudah jelas; tidak ada screen yang harus ditebak dari isi. Yang ditandai **(tebakan)** adalah detail yang tidak terlihat utuh di gambar.
 - Route **tidak** didefinisikan di dokumen mana pun; semua route di bawah adalah usulan untuk Fase 0.
@@ -82,4 +82,103 @@ Sumber kebenaran: gambar = layout, susunan, teks, komponen · `UI.md` §2 = warn
 | 15 | Approvals lists "12 min" for a proposal created at 14:34; the mock clock is 15:10. | Ages are computed from the clock ("36 min"). |
 | 16 | Sign in, Check your email, and Reset password show "Prototype: …" links in the design. | Kept, plus "Prototype: fill the demo account" on Sign in and "Prototype: use the sample paper" in onboarding; demo accounts live in `fixtures/auth/_test-accounts.json`. |
 | 17 | The design has no Projects list screen or proposal-inline-in-chat screen. | Built from existing components (ProjectCard; Approvals controls inside the answer). |
+| 18 | v2 Matrix example (UI.md §4.7) shows **Hybrid × HotpotQA** as a gap, but Varga & Chen 2024 has a *candidate* `uses_method → Hybrid` relationship and evaluates on HotpotQA. | Matrix defaults to confirmed relationships only (PRD §8.4 "confirmed only / include candidates"). Hybrid × HotpotQA is a gap by default; with **Include candidates** on it becomes a dashed "Candidate" cell. Same rule for GraphRAG × HotpotQA (Ito's HotpotQA relation is still a candidate), so that cell differs from the UI.md example until candidates are included. |
+| 19 | Matrix citations [1]–[4] (Santos, Okafor, Varga, Ito) need method × dataset pairs the v1 graph (25 nodes · 30 edges) doesn't contain (e.g. Okafor × NQ/BEIR, Santos × BM25/Dense). | Extra relationships live in the relationship store but outside the focused Map subgraph, so Map keeps 25 · 30 and the 5-candidate count stays true. |
+| 20 | v2 memory status `proposed` vs v1 `candidate`. | Additive: `MemoryStatus` gains `proposed`. Decisions use `proposed`; other memory types keep `candidate`. |
+| 21 | v1 `GET /memories?status=needs_review` means "candidates to review"; v2 "Needs review" means `review_state = needs_review` (Decision Impact). | The old query keeps its meaning. New optional query `review_state=needs_review`; the v2 UI uses it. Memory's v1 "Needs review" segment becomes "Proposed". |
+| 22 | D-04 title in v1 is "Use hybrid retrieval (BM25 + dense, RRF k = 60) as the default retriever"; the v2 flagship needs "Use hybrid retrieval for thesis experiments". | D-04 is retitled in fixtures; the RRF detail moves to its statement/rationale. Project timeline and search show the new title. |
+| 23 | Varga & Chen 2024 must be a Zotero import that newly contradicts the claim; v1 shows it as an upload on 10 Nov 16:40 and as evidence for D-02. | Varga becomes `type: zotero`, synced on 10 Nov 16:40 (same time, so v1 conversations that cite it still make sense). Activity: Zotero sync → extraction (the existing 16:42 timeout + retry) → decision alert 16:45. D-02's evidence moves to another paper. |
+| 24 | Mobile bottom nav: v1 artboard Projects · Assistant · Upload · Approvals · Activity; UI.md v2 §7 Home · Assistant · Knowledge · Approvals · More. | Follow the document (replaces #10). Upload stays reachable from Knowledge → Sources; Projects, Activity, Integrations, Settings go under More. |
+| 25 | Activity v1 chips include `tool_calls`; the v2 filter list has Proposals and no Tool calls. | Additive: categories `zotero_sync`, `extraction`, `decision_alerts`, `proposals` are added; `tool_calls` stays and its chip shows only when it has events. |
+
+## 4. Fase 8 — rencana v2.0 (8.0, belum ada kode)
+
+Dasar: UI.md §0, §4, §5, §9.2, §11–§13; PRD §7–§9, §12, §17. Belum ada artboard v2 di `docs/design/screens/`, jadi semua screen v2 diturunkan dari dokumen.
+
+### 4.1 Perbedaan v1.1 → v2.0 yang menyentuh kode
+
+| Area | v1 sekarang | v2.0 |
+|---|---|---|
+| Knowledge tabs | Sources · Graph · Memory | Sources · **Matrix · Claims · Map** · Memory |
+| Home | Ask, projects, sources, approvals, suggestions, activity, connectors | + **Decisions needing review** (urutan UI.md §4.4), badge Home di sidebar, badge PDF/Zotero di sources |
+| Assistant | Jawaban + citations | + "Answered with <model>", **Save as decision**, "Explore in Claims", notice decision needs review |
+| Sources | PDF/MD/TXT, status sampai Ready | + type **Zotero**, status **Extracting**, Import from Zotero, "Removed in Zotero" |
+| Memory | Semua memory per status | **Decisions first**, review state, dependencies, history, detail sheet |
+| Decision Impact | — | Halaman review baru: Keep / Revise / Propose action |
+| Project | 7 tab v1 | Overview · Sources · Matrix · Claims · Decisions · Conversations · Actions · Activity; alert di timeline |
+| Approvals | Origin = conversation | + Origin "From Decision Impact alert", "Linked to decision" |
+| Integrations | GitHub + coming later | Zotero (read-only) · GitHub · MCP "Coming later" · Obsidian/Drive/Notion coming later |
+| Settings | 9 section | + **Model preferences** |
+| Activity | 7 kategori | 10 filter UI.md §4.15 |
+| Onboarding 2 | Upload dulu | **Connect Zotero (recommended)** dulu |
+| Mobile nav | Projects · Assistant · Upload · Approvals · Activity | Home · Assistant · Knowledge · Approvals · More |
+| Global search | 4 grup | + grup Claims (UI.md §3.3) |
+
+### 4.2 Kontrak (8.1) — hanya tambahan
+
+Types baru di `packages/contracts/types/`: `matrix.ts`, `claim.ts`, `decision-alert.ts`, `model.ts`, `zotero.ts`.
+
+| Type | Isi pokok |
+|---|---|
+| `MatrixResponse` | `methods[]`, `datasets[]`, `papers[]` (nomor citation [1]…[n]), `cells[]` {method_id, dataset_id, paper_ids, status confirmed/candidate, metric?}; gap = pasangan tanpa cell |
+| `MatrixCellDetail` | judul sel, papers + passages (page, section, quote, offsets), relationships + status/confidence, `related_claim_ids` |
+| `Claim` / `ClaimDetail` | `statement`, `short_name` (nama entity di Map), status, supports/contradicts/mentions counts, `used_by_decisions[]` {id, title, review_state}; detail: evidence per stance + `context_note` {text, generated_by: model} |
+| `DecisionAlert` | memory_id + title, claim_id + statement, trigger_source_id, trigger_relationship_id, severity weakens/uncertain, reason, confidence, status open/dismissed/resolved, resolution_note, detected_at, `previous_evidence[]`, `new_evidence[]`, proposal_id |
+| `AnswerModel` | id, name, provider, tier fast/strong, description |
+| `ZoteroCollection` + sync | key, name, parent_key, item_count, pdf_count; sync {collection_keys, project_id} → progress per item |
+
+Field opsional baru pada type lama:
+
+| Type | Tambahan |
+|---|---|
+| `Memory` | `kind`, `title`, `rationale`, `review_state`, `dependencies[]`, `decided_at`, `history[]` (objek `decision` lama tetap) |
+| `MemoryStatus` | `proposed` |
+| `MemoryListQuery` | `review_state`, `kind` |
+| `CreateMemoryRequest` | `kind`, `title`, `rationale`, `status`, `dependencies`, `evidence`, `from_message_id`, `supersedes_id` |
+| `Source` | type `zotero`, status `extracting`, `zotero` {collection_name, item_key, last_synced_at, removed_in_zotero} |
+| `Message` | `model`, `model_name` |
+| `Preferences` | `answer_model`, `theme`, `notifications` |
+| `MeResponse.counts` | `decisions_needing_review` |
+| `ActionProposal` | `origin` {type assistant/decision_alert/manual, id, label}, `linked_decision` {id, title} |
+| `ToolConnection` | provider `zotero` (+ collections_synced, last_sync_at) |
+| `AuditCategory` | `zotero_sync`, `extraction`, `decision_alerts`, `proposals` |
+| Search | tipe/grup `claim` |
+| `Project.counts` | `matrix`, `claims`, `decisions`, `activity` |
+
+Endpoint baru (mock + `API-CONTRACT.md`): `GET /models` · `GET /knowledge/matrix` · `GET /knowledge/matrix/cell` · `GET /claims` · `GET/PATCH /claims/{id}` · `PUT /memories/{id}/dependencies` · `GET /decision-alerts` · `PATCH /decision-alerts/{id}` · `POST /decision-alerts/{id}/propose-action` · `GET /connections/zotero/collections` · `POST /connections/zotero/sync`. Extension (tidak ada di PRD, ditandai): `PATCH /sources/{id}` untuk "Keep" pada Removed in Zotero.
+
+Fixtures (lewat generator): `matrix.mjs`, `claims.mjs`, `alerts.mjs`, `models.mjs`, `zotero.mjs`, plus perubahan di `sources`, `memories`, `actions`, `audit`, `conversations`, `misc`.
+
+Cerita flagship di fixtures:
+- Decision **D-04 "Use hybrid retrieval for thesis experiments"** (confirmed, `review_state: needs_review`) bergantung pada claim **"Hybrid retrieval outperforms dense-only retrieval on open-domain QA"**.
+- Supports: Santos & Lee 2025 (p. 4) dan Okafor et al. 2025 (p. 6). Contradicts (baru): **Varga & Chen 2024 (p. 9, §5)**, impor Zotero.
+- Satu alert `open`, severity **Weakens**. "Propose action" membuat proposal GitHub "Re-evaluate retrieval choice for multi-hop questions" dengan origin alert, jadi pending 2 → 3.
+- Matrix: baris BM25 · Dense retrieval · Hybrid · GraphRAG; kolom Natural Questions · TriviaQA · HotpotQA · BEIR; gap Hybrid × HotpotQA (lihat #18).
+- Models: dua per provider (fast/strong); default answer model di preferences.
+
+### 4.3 Services, hooks, routes
+
+| Lapisan | Rencana |
+|---|---|
+| services | `matrix.ts`, `claims.ts`, `decision-alerts.ts`, `models.ts`, `zotero.ts`; perluas `memories`, `sources`, `proposals`, `workspace`, `stream` (message.model), `audit`, `search` |
+| hooks | hook per fitur + query keys baru; mutasi meng-invalidasi badge Home/Approvals |
+| routes | `/knowledge/matrix` (rail), `/knowledge/claims` (rail, `?claim=`), `/knowledge/map` (rail; `/knowledge/graph` → redirect dengan query), `/knowledge/memory?decision=` (sheet), `/decision-alerts/:alertId` (sidebar penuh), `/settings/models`; tab project lama `graph` → `/knowledge/map`, `memories` → `decisions`, `timeline` → `activity` |
+
+### 4.4 Komponen
+
+Baru (UI.md §5): MatrixGrid, MatrixCell, MatrixInspector, MatrixMobileList, ClaimCard, ClaimInspector, EvidenceCompare, ReviewStateBadge, SourceTypeBadge, DecisionAlertCard, DecisionImpactView (+ Keep dialog, Revise sheet), DecisionDetailSheet, SaveAsDecisionSheet, ZoteroImportDialog, ModelLabel, ModelPicker, McpConnectCard, ZoteroCard, MapLegend, mobile More menu.
+
+Diubah: KnowledgeHeader (5 tab), Graph → Map (+ legend), tabel Memory (decisions first), Home, Sidebar/MobileNav, tab + timeline Project, ProposalReview (origin), RunViews (linked decision), tabel/filter Sources, step-source Onboarding, Integrations, nav Settings, chip Activity, hasil GlobalSearch, actions/byline pesan Assistant, StatusBadge (proposed, extracting, needs review).
+
+### 4.5 Urutan sub-fase dan cek
+
+| Sub-fase | Isi | Selesai bila |
+|---|---|---|
+| 8.1 | Types, generator, fixtures, services, tes, `API-CONTRACT.md` | `npm test` lulus (angka tes diperbarui + tes baru alert → proposal), build bersih, screen v1 tetap jalan |
+| 8.2 | Knowledge tabs, Map + legend + redirect, Matrix, Claims | Matrix bisa dinavigasi panah, list mobile, CSV; Claims compare; console bersih |
+| 8.3 | Memory decisions-first, Decision Impact review, Home card + badge, alert/tab Project, label model + Save as decision di Assistant, origin/linked di Approvals | Keep/Revise/Propose jalan lewat mock; tidak ada sukses sebelum konfirmasi |
+| 8.4 | Zotero (Sources, dialog, Removed), Onboarding 2, Integrations, Model preferences, Activity, mobile nav, Claims di search | Zotero tertulis read-only di setiap tempat |
+| 8.5 | web-design-guidelines, checklist UI.md §12 (pass/fail), demo README sesuai UI.md §13 | Alur flagship bisa diklik dari Home sampai Activity |
+
+Risiko yang dipantau: komponen > 200 baris (Assistant, Memory, Approvals sudah besar, jadi dipecah), angka di tes (pending 2 → 3 setelah propose, audit 46 + event v2, hitungan memory), dan konsistensi waktu fixture terhadap jam mock 11 Nov 2026 15:10.
 
