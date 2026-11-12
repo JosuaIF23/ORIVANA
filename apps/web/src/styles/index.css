@@ -146,3 +146,19 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* React Flow theme (graph canvas) */
+.orivana-flow {
+  --xy-background-color: var(--bg-app);
+  --xy-edge-stroke: var(--border-control);
+  background: var(--bg-app);
+}
+.orivana-flow .react-flow__node:focus-visible,
+.orivana-flow .react-flow__edge:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+.orivana-flow .react-flow__node {
+  cursor: pointer;
+}

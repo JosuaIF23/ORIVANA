@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
 import { Check, RotateCw, X } from 'lucide-react';
-import type { RelationType, SourceDetail } from '@contracts/types';
+import type { SourceDetail } from '@contracts/types';
+import { RELATION_LABEL } from '@/lib/relations';
 import { cn } from '@/lib/cn';
 import { formatBytes, formatDate, formatTime } from '@/lib/format';
 import { Button } from '@/components/ui/button';
@@ -10,16 +11,6 @@ import { EntityTypeIcon } from '@/components/common/entity-icon';
 import { StatusBadge } from '@/components/common/status-badge';
 import { DeleteSourceDialog } from './delete-source-dialog';
 import { useReprocessSource } from './use-sources';
-
-export const RELATION_LABEL: Record<RelationType, string> = {
-  uses_method: 'Uses method',
-  evaluates_on: 'Evaluates on',
-  supports: 'Supports',
-  contradicts: 'Contradicts',
-  supersedes: 'Supersedes',
-  derived_from: 'Derived from',
-  contains: 'Contains',
-};
 
 const TYPE = { pdf: 'PDF', markdown: 'Markdown', txt: 'TXT' } as const;
 

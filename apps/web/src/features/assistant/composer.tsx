@@ -1,5 +1,5 @@
 import { useState, type KeyboardEvent } from 'react';
-import { useNavigate } from 'react-router';
+import { useNavigate, useSearchParams } from 'react-router';
 import { ArrowUp, Folder, Paperclip, Square } from 'lucide-react';
 import type { ConversationDetail } from '@contracts/types';
 import { plural } from '@/lib/format';
@@ -15,7 +15,8 @@ export function Composer({ conversation, streamingId }: { conversation: Conversa
   const send = useSendMessage();
   const cancel = useCancelMessage();
   const [text, setText] = useState('');
-  const [projectId, setProjectId] = useState<string | null>(null);
+  const [params] = useSearchParams();
+  const [projectId, setProjectId] = useState<string | null>(() => params.get('project'));
   const scopeId = projectId ?? conversation?.project_id ?? projects[0]?.id ?? '';
   const project = projects.find((p) => p.id === scopeId);
   const scope = project ? `Project ${project.name} · ${plural(project.counts.sources, 'source')}` : 'All of workspace';
