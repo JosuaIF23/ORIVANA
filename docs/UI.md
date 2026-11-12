@@ -2,126 +2,142 @@
 
 > Companion document to `PRD.md`\
 > **Product:** ORIVANA\
-> **Version:** 1.1 (11 November 2026)\
-> **Design direction:** Professional personal intelligence workspace\
-> **Initial theme:** Dark-first, with accessible light-theme support later\
-> **Primary platform:** Desktop web application, responsive tablet/mobile views\
-> **Initial persona:** Researchers and postgraduate students (see PRD §4)
+> **Version:** 2.0 (12 November 2026)\
+> **Design direction:** Professional research decision workspace\
+> **Initial theme:** Dark-first, accessible light theme later\
+> **Primary platform:** Desktop web, responsive tablet/mobile\
+> **Initial persona:** Postgraduate researcher who uses Zotero and GitHub (PRD §4)
+
+---
+
+## 0. What changed in v2.0
+
+| Area | Change |
+|---|---|
+| Positioning | Interface must lead with **decisions and evidence**, not with chat (PRD §1, §3) |
+| Knowledge | Tabs are now **Sources · Matrix · Claims · Map · Memory** (Graph became Map) |
+| New screens | Matrix, Claims, Decision Impact review, Zotero connect/import, Model preferences |
+| Updated screens | Home (decisions needing review), Assistant (save as decision, model label), Sources (Zotero badge/import), Memory (review state), Project (alerts on timeline), Approvals (origin: alert), Integrations (Zotero, MCP card), Activity (new event types), Onboarding (Zotero first) |
+| Unchanged | Tokens, shell, sign in/up, Map (former Graph), Approvals flow, Settings structure |
+
+Existing artboards (35) remain valid. §9.2 lists the new and updated artboards.
 
 ---
 
 ## 1. Design objective
 
-Design ORIVANA as a serious, calm, trustworthy workspace for people who manage complex information and want AI to help them act on it.
+Design ORIVANA as a calm, trustworthy workspace where a researcher can **see their evidence, keep their decisions honest, and act with control**.
 
-The interface must communicate three things immediately:
+Within a few seconds, the interface must communicate:
 
-1. The system understands the user's knowledge and projects.
-2. AI answers can be inspected against original sources.
-3. External actions are visible and controlled by the user.
+1. What the user's papers say, with exact evidence.
+2. What the user has decided, and whether those decisions still hold.
+3. What the system proposes to do next, and that nothing happens without approval.
 
-Do not make the product look like a generic chatbot, crypto dashboard, sci-fi control room, or crowded analytics product.
+Do not make ORIVANA look like a generic chatbot, a crypto dashboard, a sci-fi control room, or a crowded analytics product. Chat is one tool among several, not the center of the product.
 
-### Experience principles
+### 1.1 Experience principles
 
-- Evidence is visible, not hidden behind a "trust me" answer.
-- Graphs are useful exploration tools, not decorative backgrounds.
-- Actions have previews, permissions, and clear outcomes.
-- The user can always inspect, edit, correct, or delete memory.
-- Complex capabilities are progressively disclosed.
-- Empty, loading, error, and permission states are designed as carefully as success states.
+- Evidence is always one click away.
+- Decisions are visible objects with status and history.
+- Changes in evidence surface where decisions live.
+- Actions have previews, permissions, and verified outcomes.
+- The user can inspect, correct, or delete anything the system created.
+- Complex views are progressively disclosed.
+- Empty, loading, error, and permission states are designed with the same care as success states.
 
-### Brand identity
-
-**ORIVANA** is a coined working name. Its identity should feel like a capable personal intelligence environment rather than a generic AI chatbot.
+### 1.2 Brand identity
 
 | Attribute | Value |
 |---|---|
 | Name | ORIVANA |
 | Tagline | Your Knowledge, Connected. Your Intent, in Motion. |
-| Product category | Personal Intelligence & Action Platform |
+| Category | Personal Intelligence & Action Platform |
 | Visual metaphor | Connected knowledge paths converging into purposeful action |
-| Logo direction | A simple custom symbol built from connected paths or layered nodes; avoid literal brain, robot, or generic neural-network imagery |
-| Wordmark | Uppercase ORIVANA with restrained geometric typography |
-| Brand voice | Clear, grounded, thoughtful, and transparent about uncertainty |
+| Logo direction | Simple custom symbol from connected paths or layered nodes; no brain, robot, or generic neural-network imagery |
+| Wordmark | Uppercase ORIVANA, restrained geometric type |
+| Voice | Clear, grounded, transparent about uncertainty |
 
-Use the tagline and category exactly as written. Never describe the product as "autonomous".
-
-The name is a working brand candidate. Do not publish it as legally cleared until trademark, domain, company-name, and social-handle checks are completed.
+Never describe the product as "autonomous". The name is not legally cleared.
 
 ---
 
-## 2. Visual direction
+## 2. Visual system
 
-### Brand personality
+### 2.1 Personality
 
-- Intelligent
-- Calm
-- Precise
-- Trustworthy
-- Technical but approachable
-- Quietly futuristic
+Intelligent · Calm · Precise · Trustworthy · Technical but approachable · Quietly futuristic
 
-### Design tokens (dark theme)
+### 2.2 Design tokens (dark theme)
 
-Contrast ratios below were calculated against the WCAG 2.x formula.
+Contrast ratios calculated with the WCAG 2.x formula.
 
 | Token | Value | Usage | Contrast notes |
 |---|---|---|---|
 | `bg-app` | `#0B0D12` | Main canvas | — |
-| `bg-sidebar` | `#10141C` | Primary navigation | — |
-| `bg-surface` | `#151B26` | Cards and panels | — |
+| `bg-sidebar` | `#10141C` | Navigation, side panels | — |
+| `bg-surface` | `#151B26` | Cards, panels | — |
 | `bg-elevated` | `#1B2432` | Dialogs, popovers, hovered rows | — |
 | `text-primary` | `#F3F6FA` | Main text | 14.4:1 on elevated |
 | `text-secondary` | `#A5B0C0` | Supporting text | 7.1:1 on elevated |
-| `text-muted` | `#8390A3` | Metadata, timestamps | 4.8:1 on elevated (was `#748094`, which failed at 3.9:1) |
-| `accent-primary` | `#8B9CFF` | Primary actions, selected states, focus ring | 6.2:1 as text on elevated |
-| `on-accent` | `#0B0D12` | Text/icons on primary buttons | 7.7:1 on accent (white text fails at 2.3:1) |
-| `accent-knowledge` | `#63D6C3` | Knowledge/graph signals | 8.9:1 on elevated |
-| `status-warning` | `#F2B96B` | Needs review, candidate | 8.9:1 on elevated |
-| `status-danger` | `#F07878` | Destructive, error | 5.7:1 on elevated |
-| `border-subtle` | `#273142` | Dividers and card outlines (decorative only) | 1.3:1 — not for controls |
-| `border-control` | `#64728A` | Input, checkbox, and select borders | 3.2:1 on elevated (meets 3:1 non-text contrast) |
+| `text-muted` | `#8390A3` | Metadata | 4.8:1 on elevated |
+| `accent-primary` | `#8B9CFF` | Primary actions, selection, focus ring | 6.2:1 as text on elevated |
+| `on-accent` | `#0B0D12` | Text on primary buttons | 7.7:1 on accent |
+| `accent-knowledge` | `#63D6C3` | Knowledge signals, supports, confirmed | 8.9:1 on elevated |
+| `status-warning` | `#F2B96B` | Candidate, needs review, low-write risk | 8.9:1 on elevated |
+| `status-danger` | `#F07878` | Contradicts, destructive, error | 5.7:1 on elevated |
+| `border-subtle` | `#273142` | Dividers (decorative only) | 1.3:1 |
+| `border-control` | `#64728A` | Inputs, checkboxes, selects | 3.2:1 on elevated |
+
+### 2.3 Semantic mapping (new in v2)
+
+| Meaning | Color token | Required non-color cue |
+|---|---|---|
+| Supports | `accent-knowledge` | ✓ icon + "Supports" label |
+| Contradicts | `status-danger` | ✕ / opposing-arrows icon + "Contradicts" label |
+| Mentions | `text-secondary` | "Mentions" label |
+| Candidate (unconfirmed) | `status-warning` | Dashed border/line + "Candidate" label |
+| Confirmed | `accent-knowledge` | Solid + "Confirmed" label |
+| Superseded | `text-muted` | Strike-through + "Superseded" label |
+| Needs review (Decision Impact) | `status-warning` | Alert-triangle icon + "Needs review" label |
+| Gap (empty Matrix cell) | `border-subtle` dashed | "No evidence" text on hover/focus and in list view |
 
 Rules:
 
-- Primary buttons: `accent-primary` background with `on-accent` text. Never white text on the accent.
-- Warning and danger badges with filled backgrounds use `#0B0D12` text.
-- Focus ring: 2 px `accent-primary` with 2 px offset.
-- Validate again in the design tool after any token change.
+- Primary buttons: `accent-primary` with `on-accent` text; never white on the accent.
+- Filled warning/danger badges use `#0B0D12` text.
+- Focus ring: 2 px `accent-primary`, 2 px offset.
 
-### Typography
+### 2.4 Typography
 
-- Use Inter, Geist, or a similar modern sans-serif.
-- Type scale: 12, 14, 16, 20, 24, 32 px. Body text in workspaces: 14 px; reading surfaces (document viewer, answers): 16 px.
-- Avoid oversized headings inside dense workspaces.
-- Use monospace only for IDs, code, technical metadata, and logs.
+- Inter (or Geist). Scale 12, 14, 16, 20, 24, 32 px.
+- Body 14 px in workspaces; 16 px on reading surfaces (answers, document viewer).
+- Tabular figures for counts and metrics (`font-variant-numeric: tabular-nums`).
+- Monospace only for IDs, repository names, raw fields, logs.
 
-### Layout
+### 2.5 Layout
 
-- Desktop baseline: 1440 × 900.
-- Sidebar: 240 px, collapsible to a 64 px icon rail.
-- Main content: flexible width with a max width of about 760 px for reading surfaces.
-- Right context panel: 320–380 px when needed.
-- Use 8 px spacing increments.
-- Keep the graph canvas and document viewer spacious.
-- **Column budget rule:** at 1440 px, never show more than three full-width columns at once. Screens that need a fourth column (e.g., Assistant) collapse the app sidebar to the icon rail.
+- Desktop baseline 1440 × 900; 8 px grid.
+- Sidebar 240 px, collapsible to a 64 px icon rail.
+- Reading max width ~760 px.
+- Right inspector 320–380 px.
+- **Column budget:** at 1440 px never more than three full columns; screens needing four (Assistant) collapse the sidebar to the rail.
 
 ---
 
-## 3. Global application shell
+## 3. Application shell
 
-### Desktop structure
+### 3.1 Desktop structure
 
 ```text
 ┌──────────────────────────────────────────────────────────────────────────────┐
-│ ORIVANA     Search anything...                 Help   Notifications Avatar │
+│ ORIVANA     Search anything... ⌘K                Help  Notifications  Avatar │
 ├───────────────┬──────────────────────────────────────┬───────────────────────┤
-│ Workspace ▾   │ Main content                         │ Context / Inspector   │
+│ Workspace ▾   │ Main content                         │ Inspector             │
 │               │                                      │                       │
-│ Home          │                                      │ Evidence              │
-│ Assistant     │                                      │ Source details        │
-│ Knowledge     │                                      │ Entity details        │
+│ Home      (1) │                                      │ Evidence              │
+│ Assistant     │                                      │ Claim / cell details  │
+│ Knowledge     │                                      │ Decision details      │
 │ Projects      │                                      │ Action preview        │
 │ Approvals (2) │                                      │                       │
 │ Activity      │                                      │                       │
@@ -131,699 +147,488 @@ Rules:
 └───────────────┴──────────────────────────────────────┴───────────────────────┘
 ```
 
-### Navigation (MVP)
+`(1)` on Home = number of decisions needing review. `(2)` on Approvals = pending proposals. Both are subtle numeric badges with accessible labels ("1 decision needs review").
+
+### 3.2 Navigation (MVP)
 
 | Item | Contains |
 |---|---|
-| Home | Command center |
-| Assistant | Conversations with evidence |
-| Knowledge | Tabs: **Sources**, **Graph**, **Memory** |
-| Projects | Project list and project workspace |
-| Approvals | Pending action proposals (badge with count) and decision history |
+| Home | Ask box, decisions needing review, recent projects, recent sources, pending approvals, activity, connector health |
+| Assistant | Conversations, cited answers, evidence panel |
+| Knowledge | Tabs **Sources · Matrix · Claims · Map · Memory** |
+| Projects | Project list and workspace |
+| Approvals | Pending / decided proposals |
 | Activity | Audit timeline |
-| Integrations | Connected apps and scopes |
-| Settings | Account, privacy, memory controls, export/delete |
+| Integrations | Zotero, GitHub, "Use ORIVANA in Claude / ChatGPT" (post-MVP card) |
+| Settings | Profile, security, model preferences, memory, export, deletion, notifications, appearance |
 
-**Automations** is post-MVP. Do not show it in MVP navigation; when it ships it goes between Approvals and Activity.
+Automations appears only after Phase 4, between Approvals and Activity.
 
-Use a workspace switcher at the top of the sidebar. Show the pending approval count as a subtle numeric badge, not an alarm-like notification.
+### 3.3 Global search
 
-### Global search
-
-Search supports:
-
-- Sources and files.
-- Projects.
-- Entities and concepts.
-- Memories and decisions.
-- Conversations.
-- Actions and integrations.
-
-Group results by type. Each row shows a type icon and label, source, project, and modified date. Do not present all result types as indistinguishable text rows. Keyboard: `⌘K` / `Ctrl+K` opens search; arrow keys move; Enter opens.
+Grouped results by type: Sources, Claims, Methods/Datasets, Decisions, Conversations, Actions. Each row: type icon + label, title, project, modified date. `⌘K` / `Ctrl+K` opens; arrows navigate; Enter opens.
 
 ---
 
-## 4. Required screens
+## 4. Screens
 
-### 4.1 Landing page (post-MVP polish; minimal version for MVP)
-
-**Goal:** explain the value proposition before asking users to sign up.
-
-Sections:
+### 4.1 Landing (minimal for MVP)
 
 1. Hero: "Your Knowledge, Connected. Your Intent, in Motion."
-2. Short explanation of Knowledge-to-Action Intelligence.
-3. Three-step visual: Connect → Understand → Act.
-4. Product screenshots: cited assistant, graph, action approval.
-5. Trust section: source provenance, permissions, user control.
-6. Use cases: research first; development and knowledge work as "coming later".
+2. One line: "Keep your research decisions aligned with the evidence in your own papers."
+3. Four-step visual: **Understand → Decide → Watch → Act**.
+4. Screenshots: Matrix, Decision Impact alert, Approval.
+5. Trust: evidence on every answer, approval before every action, export/delete anytime.
+6. "Works with Zotero and GitHub."
 7. CTA: Get started / Sign in.
 
-Avoid claiming that the system "remembers everything" or "works autonomously without limits."
-
-For the MVP, a minimal page with the hero, three-step visual, and sign-in/sign-up buttons is enough.
+Avoid "remembers everything", "autonomous", or comparisons naming competitors.
 
 ### 4.2 Sign up / Sign in / Verify / Reset
 
-**Goal:** secure and low-friction access.
+Unchanged from v1.1 (artboards exist): sign in (+ invalid credentials, email not verified), sign up, check email, reset password. Account sign-in is separate from connector authorization.
 
-Sign up fields:
+### 4.3 Onboarding (updated)
 
-- Name (optional).
-- Email.
-- Password (with strength hint).
-- Terms/privacy acknowledgment.
-
-Sign in:
-
-- Email.
-- Password.
-- Forgot password link.
-- Post-MVP: Google sign-in.
-
-Additional screens:
-
-- "Check your email" after sign up (with resend).
-- Email verified confirmation.
-- Forgot password (email input) and "reset link sent".
-- Set new password.
-
-Required states:
-
-- Invalid credentials.
-- Email not verified (with resend action).
-- Password reset sent.
-- Expired or already-used link.
-- Rate limit.
-- Session expired.
-- Loading and disabled submit.
-- MFA challenge (post-MVP).
-
-Do not imply that external app connections are part of login. Account authentication and connector authorization are separate flows.
-
-### 4.3 Onboarding
-
-A short guided sequence:
-
-1. Welcome and explain the product in one sentence.
-2. Confirm use case (Research is preselected; others shown as "coming later").
+1. Welcome: one sentence on what ORIVANA does.
+2. Use case: Research (preselected); others "coming later".
 3. Create first project (optional).
-4. Upload a PDF or Markdown file (GitHub connection offered but skippable).
-5. Explain what will be extracted and indexed while ingestion runs.
-6. Show privacy and memory controls.
-7. Ask the user to try a cited question (suggested prompts based on the uploaded file).
+4. **Add sources:** primary card "Connect Zotero (recommended)" → choose collections; secondary "Upload PDFs". Both skippable.
+5. Ingestion progress with stages (Parsing → Indexing → Extracting) and a short explanation of what is extracted.
+6. Privacy and memory controls.
+7. First value: show either a suggested cited question **or** the first Matrix preview once extraction finishes.
 
-Allow "Skip for now" on every step except account creation. Never force users to connect applications during onboarding.
+### 4.4 Home / Command Center (updated)
 
-### 4.4 Home / Command Center
+Order of cards (top to bottom, left to right):
 
-**Goal:** give users an overview and a direct way to start work.
+1. Greeting + "Ask your knowledge" input.
+2. **Decisions needing review** (only when > 0): each row shows decision title, claim affected, new paper, severity ("Weakens" / "Uncertain"), and a "Review" button. Uses `status-warning` + alert icon.
+3. Pending approvals.
+4. Recent projects.
+5. Recently added sources with status and source badge (PDF / Zotero).
+6. Recent activity.
+7. Connector health (Zotero last sync, GitHub status).
+
+Empty state (new user): "Connect Zotero or upload your first paper" with both actions.
+
+### 4.5 Assistant (updated)
+
+Layout unchanged (icon rail 64 · conversations 280 · chat · evidence 360).
+
+Additions:
+
+- Under each answer: small label "Answered with <model name>".
+- Answer actions: Copy · Open source · Explore in Claims · **Save as decision** · Flag incorrect.
+- "Save as decision" opens a side sheet prefilled with the answer summary as statement, citations as evidence, and suggested claim dependencies; user edits rationale and saves as Proposed or Confirmed.
+- When an answer touches a decision with `needs_review`, show an inline notice: "This relates to a decision that needs review" → link.
+
+States unchanged: retrieving, generating, no evidence, conflicting sources, source inaccessible, model error, cancelled.
+
+### 4.6 Knowledge → Sources (updated)
+
+- Header actions: **Import from Zotero** (primary when connected) · Upload.
+- Table columns: type badge (PDF, MD, TXT, **Zotero**), title, authors/year, project, status (Queued, Parsing, Indexing, Extracting, Ready, Failed), pages, added.
+- Zotero rows show collection name and "Last synced".
+- "Removed in Zotero" state with "Delete from ORIVANA" / "Keep" actions.
+- Viewer unchanged: page navigation, section outline, highlighted passage, extracted entities, ingestion history, reprocess.
+
+**Zotero import dialog**
+
+1. If not connected: explain read-only access → Connect.
+2. Choose collections (checkbox tree with item counts).
+3. Choose target project.
+4. Summary: "Import 34 items (31 with PDF). Nothing will be changed in Zotero." → Import.
+5. Progress list; finishes with "View in Sources" / "Open Matrix".
+
+### 4.7 Knowledge → Matrix (new)
+
+**Goal:** show which methods were tested on which datasets in the user's collection, and where the gaps are.
 
 Layout:
 
-- Greeting and "Ask your knowledge" input (primary).
-- Recent projects.
-- Recently added sources with ingestion status.
-- Pending approvals (count and top items).
-- Recent activity.
-- Connector health.
-- Suggested next steps based on explicit user activity, not opaque profiling.
+- Toolbar: project selector, year range, toggle "Include candidates", search methods/datasets, Export CSV.
+- Main: grid table — rows = Methods, columns = Datasets.
+- Right inspector (360 px): details of the selected cell.
 
-Primary actions: Ask a question · Add a source.
+Cell anatomy:
 
-Empty state (new user): a single card with "Upload your first paper" and a short explanation of what happens next.
+- Filled: count of papers (e.g. "2") + small citation chips `[1] [2]`; optional metric (e.g. "+3.6 top-20") when extracted. Candidate-only cells show a dashed border and "Candidate".
+- Empty (gap): dashed outline, `—` glyph, accessible text "No evidence in your collection". Hover/focus shows "Gap" tooltip and (post-MVP) "Find papers for this gap".
+- Selected: accent outline.
 
-### 4.5 Assistant workspace
+Inspector for a selected cell:
 
-**Goal:** make evidence-grounded conversation the central interaction.
+- Title: "Hybrid retrieval × HotpotQA".
+- Papers with passages (page, section, quote highlighted).
+- Status and confidence per relationship; Confirm / Reject.
+- "Open in Claims" if related claims exist.
 
-Layout at 1440 px (app sidebar collapsed to the 64 px icon rail on this screen):
+Example content:
 
-```text
-┌────┬──────────────┬──────────────────────────────┬──────────────────┐
-│Rail│Conversations │ Chat timeline                │ Evidence panel   │
-│64px│  280px       │  ~700px                      │  360px           │
-│    │ (collapsible)│                              │                  │
-│    │              │ [Composer]                   │                  │
-└────┴──────────────┴──────────────────────────────┴──────────────────┘
+```
+                 Natural Questions   TriviaQA   HotpotQA   BEIR
+BM25                  2 [1][2]         1 [2]       —        1 [2]
+Dense retrieval       2 [1][2]         1 [2]      1 [3]     1 [2]
+Hybrid                2 [1][2]         1 [2]       —        1 [2]
+GraphRAG               —                —         1 [4]      —
 ```
 
-- The conversation list can be collapsed to give the chat ~980 px.
-- On widths below 1280 px, the conversation list becomes a dropdown in the chat header.
+Empty state: "Matrix fills in as papers are extracted. Import or upload papers to start."
 
-Assistant message anatomy:
+Accessibility: real `<table>` with `<th scope="col">` / `<th scope="row">`; each cell is a button with label "Hybrid retrieval on HotpotQA: no evidence" or "…: 2 papers".
 
-- Answer text with numbered inline citation chips `[1]`, `[2]`.
-- Citation list: source title, page, section.
-- Confidence/limitations in plain language where appropriate.
-- Related entities and project context.
-- Actions: Copy · Open source · Explore relationship · Flag incorrect.
-- "Create action" only when relevant (e.g., the user asked for a GitHub issue).
+### 4.8 Knowledge → Claims (new)
 
-Evidence panel:
-
-- Selected citation's passage with the quoted span highlighted.
-- Source title, page, section, added date.
-- "Open in document viewer" (jumps to the page and highlights the span).
-- List of other passages used in the answer.
-
-Composer:
-
-- Text input (multi-line, `Enter` sends, `Shift+Enter` new line).
-- Attach source.
-- Project/scope selector.
-- Scope indicator ("Searching: Project RAG Comparison · 14 sources").
-- Send / Stop button.
-- Voice input: post-MVP.
-
-States:
-
-- Retrieving sources (shows count of passages found).
-- Generating answer (streaming).
-- No evidence found (answer abstains and suggests adding a source).
-- Conflicting sources (both sides shown with citations).
-- Source inaccessible (deleted or still processing).
-- Model error (retry).
-- User cancelled generation (partial answer marked as cancelled).
-
-### 4.6 Knowledge → Graph
-
-**Goal:** explore relationships and inspect the evidence behind them.
+**Goal:** show which claims are supported or contradicted in the user's collection, and which decisions depend on them.
 
 Layout:
 
-- Main canvas with graph.
-- Left filter panel: entity type, project, source, date, status (confirmed / candidate).
-- Right inspector: selected node or edge details.
-- Search and "Focus on" control.
-- Graph depth control (1 or 2 hops).
-- "List view" toggle (textual alternative).
+- Toolbar: project, sort (Most contested · Most supported · Used by decisions · Newest), filter (status, has contradictions).
+- Main: list of claim cards.
+- Right inspector: selected claim with evidence comparison.
 
-MVP node types: **Paper, Method, Dataset, Claim, Concept, Project, Decision.** Each type has an icon and a shape or label — not color alone.
+Claim card:
 
-MVP edge types: **Uses method, Evaluates on, Supports, Contradicts, Supersedes, Derived from, Contains.** Edge type is shown as a label on hover/selection and in the inspector.
+- Statement (16 px).
+- Counts: "✓ 2 Supports · ✕ 1 Contradicts · 3 Mentions".
+- Status badge (Candidate / Confirmed).
+- "Used by 1 decision" chip (links to Memory); warning icon if that decision needs review.
 
-Interaction:
+Inspector (Evidence comparison):
 
-- Click node to inspect.
-- Click edge to inspect relationship and evidence passages.
-- Double-click or "Expand" to add one hop.
-- Filter by project/date/type/status.
-- Open source passage from evidence.
-- Confirm or reject a candidate relationship from the inspector.
-- Candidate edges are dashed with a "Candidate" label; hidden by default with a toggle "Show candidates".
+- Two columns: **Supports** | **Contradicts**, each with paper, page/section, highlighted quote.
+- Note when evidence differs in context (e.g. "Contradiction is specific to multi-hop questions") — model-generated, labeled as such.
+- Actions: Confirm claim · Merge with… · Reject · Open in Map.
 
-Do not render thousands of nodes at once. Start with a focused subgraph (max ~150 nodes) and provide progressive expansion.
+Empty state: "No claims yet. Claims appear after extraction."
 
-Empty state: "Your graph builds as you add papers" with a link to Sources.
+### 4.9 Knowledge → Map (formerly Graph)
 
-### 4.7 Knowledge → Sources (library and document viewer)
+Unchanged behavior from v1.1 (artboards exist), renamed to **Map**:
 
-**Goal:** manage imported information.
+- Focused node-link graph (≤ ~150 nodes), filter panel, inspector, depth 1/2, List view toggle.
+- Node types differ by icon and shape; candidate edges dashed with "Candidate" label.
+- Mobile: list view by default.
 
-Library features:
+Add: legend explaining edge types including Supports / Contradicts per §2.3.
 
-- Table/list toggle.
-- File type icon.
-- Title, type, project, status, pages, added date.
-- Search and filters.
-- Upload button (drag-and-drop zone).
-- Processing status badge with text (Queued, Parsing, Indexing, Ready, Failed).
-- Retry/reprocess for failed items.
-- Delete with a clear description of derived data that will be removed (chunks, citations in past answers, graph evidence).
+### 4.10 Knowledge → Memory (updated)
 
-Source detail / document viewer:
+Primary view: **Decisions**. Secondary filter for other memory types.
 
-- Original metadata.
-- Page-based viewer with section navigation.
-- Highlighted passage when opened from a citation.
-- Entities extracted (chips).
-- Relationships created.
-- Ingestion history (job attempts and errors).
-- Reprocess action.
+Columns / card fields: title, statement, project, status (Proposed, Confirmed, Superseded, Rejected), **review state** (Needs review badge), dependencies (claims), evidence count, decided date, origin.
 
-### 4.8 Knowledge → Memory
+Default filter order: Needs review → Proposed → Confirmed.
 
-This is a core trust screen.
+Actions: Confirm · Edit · Supersede (choose replacement) · Reject · Delete · View dependencies.
 
-List columns:
+Decision detail side sheet:
 
-- Memory type (episodic, semantic, procedural, project).
-- Content.
-- Project.
-- Origin (user-created, imported, model-proposed).
-- Source/evidence.
-- Created/updated dates.
-- Status (candidate, confirmed, superseded, rejected) as a text badge.
-- Confidence.
+- Statement and rationale.
+- Dependencies (claims) with their current support/contradiction counts.
+- Evidence passages.
+- History (created, confirmed, superseded, alerts and resolutions).
 
-Actions:
+### 4.11 Decision Impact review (new)
 
-- Confirm.
-- Edit.
-- Mark superseded (choose the replacing memory).
-- Reject.
-- Delete.
-- View related memories.
+Opened from Home, Memory, Project timeline, or a notification.
 
-Default filter: "Needs review" (candidates) at the top, then confirmed.
+Layout (full-width page with sidebar):
 
-Users must be able to inspect and correct what the system remembers. Do not silently turn speculative inferences into permanent user facts.
+1. Header: decision title + "Needs review" badge + severity ("Weakens" / "Uncertain") + detected date.
+2. Explanation line: "A new paper contradicts a claim this decision depends on."
+3. Three-part body:
+   - **Decision** (statement, rationale, date).
+   - **Claim affected** (statement, previous support).
+   - **Evidence comparison:** left "Supported by" (old passages), right "New contradicting evidence" (new passage highlighted, paper, page, section, imported date).
+4. Model note (labeled "System assessment"): short reason why it may weaken the decision; confidence.
+5. Action bar:
+   - **Keep decision** (requires a short note) → alert dismissed, history updated.
+   - **Revise decision** → opens editor; saving supersedes the old decision.
+   - **Propose action** → creates a proposal (e.g. GitHub issue) and opens it in Approvals.
 
-### 4.9 Project workspace
+States: loading, alert already resolved (read-only with resolution note), evidence source deleted.
 
-**Goal:** keep a durable context for a specific outcome.
+### 4.12 Project workspace (updated)
 
-Tabs:
+Tabs: Overview · Sources · Matrix · Claims · Decisions · Conversations · Actions · Activity.
 
-- Overview
-- Sources
-- Graph
-- Memories & decisions
-- Conversations
-- Actions
-- Timeline
+Overview cards: description, status, **decisions needing review**, key confirmed decisions, recent sources, pending actions.
 
-Overview cards:
+Decision timeline: superseded decisions struck through and linked to replacements; decisions with open alerts show the warning badge and "Review" link.
 
-- Project description.
-- Current status.
-- Recent changes.
-- Key decisions (confirmed, latest first).
-- Related sources.
-- Pending actions.
+### 4.13 Approvals (updated)
 
-Decision record:
+Unchanged flow (Pending/Decided, review, Edit → Draft, Approve → Executing → Succeeded + Verified, Reject).
 
-- Decision title.
-- Decision statement.
-- Status: proposed / confirmed / superseded.
-- Date.
-- Rationale.
-- Evidence sources.
-- Supersedes / superseded by links.
+Additions:
 
-Decision timeline shows superseded decisions struck through with a link to the replacement.
+- **Origin** field: "From Decision Impact alert: <decision title>" or "From conversation: <title>".
+- Issue body preview includes evidence links (paper, page) and the decision link.
+- After success: "Linked to decision" chip.
 
-### 4.10 Approvals (inbox and action review)
+### 4.14 Integrations (updated)
 
-**Goal:** make AI actions inspectable before execution.
+Cards:
 
-Inbox:
+1. **Zotero** — Read only. Status, account, collections synced, last sync, "Sync now", "Manage collections", Revoke. Plain-language scope: "Read your items, PDFs, and highlights. ORIVANA never changes your Zotero library."
+2. **GitHub** — Read + create issues. Status, account, repositories, scopes in plain language, Revoke.
+3. **Use ORIVANA in Claude / ChatGPT** — "Coming later" card in MVP. Post-MVP: shows MCP server URL with copy button, connected clients, last call, revoke client, and the rule "Actions requested from other apps always wait for your approval here."
+4. "Coming later": Obsidian, Google Drive, Notion.
 
-- List of pending proposals: action, target app/account, project, risk tier, created time.
-- Tabs: Pending · Decided.
-- Click opens the review view.
+### 4.15 Activity (updated)
 
-Review view displays:
+Filters: Ingestion · Zotero sync · Retrieval · Extraction · Memory · **Decision alerts** · Proposals · Approvals · External actions · Errors (post-MVP: External clients / MCP).
 
-- User's original request.
-- Proposed action in plain language ("Create issue in `lab/rag-experiments`").
-- Target application and account.
-- Required permission scope.
-- Exact content to be sent (rendered preview + raw fields).
-- Evidence/context used (citations).
-- Risk tier.
-- Expected side effects.
-- Buttons: **Approve**, **Edit**, **Reject**.
+Each event: actor (user / agent / system / external client), time, target, result, details.
 
-Editing returns the proposal to Draft and re-validates before it can be approved.
+### 4.16 Settings (updated)
 
-In the MVP every write requires explicit approval. Do not use a single generic "Allow AI" permission for every capability.
+Sections: Profile · Security & sessions · **Model preferences** · Memory controls · Data export · Data deletion · Notifications · Appearance.
 
-After execution:
+**Model preferences:**
 
-- Executing state (no success message until the backend confirms).
-- Success with external link or ID (e.g., the GitHub issue URL).
-- Failure with reason.
-- Verification result.
-- Audit event link.
-- Retry only when idempotency and duplicate checks are handled.
+- "Answer model" radio list from `/api/v1/models` (e.g. Fast / Strong per provider), each with a one-line description.
+- Read-only info: "Extraction and embeddings are managed by ORIVANA to keep your knowledge consistent."
+- Note: "Changing the model affects new answers only."
+- List of AI providers that may process your data (transparency).
 
-Proposals also appear inline in the Assistant conversation with the same Approve/Edit/Reject controls.
+### 4.17 Automations (post-MVP)
 
-### 4.11 Integrations
-
-Directory cards:
-
-- Provider name and logo.
-- Capabilities: read, create (MVP: GitHub read + create issue).
-- Connection status.
-- Last sync.
-- Granted scopes in plain language.
-- Connect / reconnect / revoke.
-
-Connection flow:
-
-1. Explain what data will be accessed and which repositories.
-2. Request minimum required scopes.
-3. Redirect to provider OAuth.
-4. Tokens stored server-side (never shown).
-5. Show connection success and granted permissions.
-
-MVP shows **GitHub** as the only connectable integration. Others may appear as "Coming later" cards (Obsidian sync, Google Drive).
-
-### 4.12 Activity and audit
-
-Timeline filters:
-
-- Ingestion.
-- Search/retrieval.
-- Memory updates.
-- Tool calls.
-- Approvals.
-- External actions.
-- Errors.
-
-Each event shows:
-
-- Actor (user, agent, system).
-- Timestamp.
-- Target.
-- Result.
-- Related task/source.
-- Details and error message where appropriate.
-
-### 4.13 Settings
-
-Sections:
-
-- Profile.
-- Security and sessions (active sessions, sign out others).
-- Connected applications (shortcut to Integrations).
-- Model preferences.
-- Memory controls.
-- Data export.
-- Data deletion (source, workspace, account).
-- Notifications.
-- Appearance.
-
-### 4.14 Automations (post-MVP)
-
-Automation list:
-
-- Name and description.
-- Trigger.
-- Connected apps.
-- Last run.
-- Status: active / paused / needs attention.
-- Run history.
-
-Workflow steps: trigger → retrieval/context → AI processing → approval → action → verification.
-
-Start with a simple guided form, not a visual node editor.
+Hidden in MVP. Later: list (name, trigger, apps, last run, status) and a guided form (trigger → context → AI step → approval → action → verification). Example: "Weekly: check new Zotero items against my decisions."
 
 ---
 
 ## 5. Reusable components
 
-- AppShell
-- SidebarNavigation (with icon-rail mode)
-- WorkspaceSwitcher
-- GlobalSearch
-- CommandInput
-- SourceCard
-- SourceStatusBadge
-- DocumentViewer
-- CitationChip
-- EvidencePanel
-- GraphCanvas
-- GraphListView
-- EntityInspector
-- RelationshipEvidence
-- ProjectCard
-- DecisionTimeline
-- MemoryCard
-- StatusBadge (candidate / confirmed / superseded / rejected)
-- OriginBadge (user / imported / model-proposed)
-- ActionProposalCard
-- ApprovalDialog
-- IntegrationCard
-- PermissionScopeList
-- AgentRunTimeline
-- EmptyState
-- ErrorState
-- LoadingSkeleton
-- Toast / InlineAlert
+Existing: AppShell · SidebarNavigation (rail) · WorkspaceSwitcher · GlobalSearch · CommandInput · SourceCard · SourceStatusBadge · DocumentViewer · CitationChip · EvidencePanel · GraphCanvas · GraphListView · EntityInspector · RelationshipEvidence · ProjectCard · DecisionTimeline · MemoryCard · StatusBadge · OriginBadge · ActionProposalCard · ApprovalDialog · IntegrationCard · PermissionScopeList · AgentRunTimeline · EmptyState · ErrorState · LoadingSkeleton · Toast/InlineAlert.
 
-Components must have accessible labels, keyboard focus, and consistent loading/error states.
+New in v2:
+
+| Component | Purpose |
+|---|---|
+| MatrixGrid | Accessible table of Methods × Datasets |
+| MatrixCell | Filled / candidate / gap / selected states |
+| MatrixInspector | Evidence for a cell |
+| ClaimCard | Statement, counts, status, decision usage |
+| EvidenceCompare | Two-column Supports vs Contradicts (or old vs new) passages |
+| ReviewStateBadge | "Needs review" with icon |
+| DecisionAlertCard | Compact alert for Home/Project |
+| DecisionImpactView | Full review page |
+| SaveAsDecisionSheet | Create decision from an answer |
+| SourceTypeBadge | PDF / MD / TXT / Zotero |
+| ZoteroImportDialog | Connect, choose collections, import |
+| ModelLabel | "Answered with …" |
+| ModelPicker | Settings radio list |
+| McpConnectCard | Post-MVP integration card |
+
+All components: accessible names, visible focus, consistent loading/error states.
 
 ---
 
-## 6. UI state and interaction requirements
+## 6. States and interaction rules
 
-Every asynchronous operation needs:
+Every async operation: idle, loading, success, recoverable error, retry/cancel where applicable.
 
-- Idle state.
-- Loading state.
-- Success state.
-- Recoverable error state.
-- Retry/cancel behavior where appropriate.
+Every destructive action: explanation, confirmation, consequences (derived data removed), recovery info.
 
-Every destructive action needs:
+Every AI-generated object: origin (user, imported, model-proposed), evidence, status, and — for decisions — review state.
 
-- Clear explanation.
-- Confirmation.
-- Consequence description (what derived data is removed).
-- Recovery information if available.
-
-Every AI-generated object needs:
-
-- Origin indicator (user-created, imported, model-proposed).
-- Source/evidence when derived from external content.
-- Status (candidate, confirmed, superseded, rejected) where applicable.
-
-Do not use color alone to communicate status: pair color with a text label, icon, or line style.
+Never use color alone for status (see §2.3). Never show success before the backend (or mock service) confirms.
 
 ---
 
 ## 7. Responsive behavior
 
-### Desktop (≥ 1280 px)
-
-Primary experience. Full sidebar, central workspace, optional right inspector. Assistant uses the icon rail.
-
-### Tablet (768–1279 px)
-
-Icon-rail sidebar and overlay inspector. Graph interactions remain available with reduced controls.
-
-### Mobile (< 768 px)
-
-Bottom navigation prioritizing:
-
-- Search.
-- Assistant.
-- Source upload.
-- Approvals review.
-- Activity.
-- Project summaries.
-
-Do not show a dense full graph canvas as the default mobile screen. Provide the list/relationship view.
+| Breakpoint | Behavior |
+|---|---|
+| Desktop ≥ 1280 px | Full shell; Assistant uses icon rail |
+| Tablet 768–1279 px | Icon rail; inspector as overlay; Matrix scrolls horizontally with sticky first column |
+| Mobile < 768 px | Bottom navigation: Home, Assistant, Knowledge, Approvals, More. Matrix becomes a list grouped by method ("Hybrid — tested on: NQ, TriviaQA, BEIR · Gaps: HotpotQA"). Claims as cards. Map shows list view. Decision Impact review stacks sections vertically. |
 
 ---
 
 ## 8. Accessibility
 
 - WCAG 2.2 AA target.
-- Keyboard-operable navigation and graph alternatives.
-- Visible focus indicators (see tokens).
-- Text contrast ≥ 4.5:1; control borders and focus indicators ≥ 3:1.
-- Screen-reader labels for icons and graph controls.
-- Do not rely only on color for graph edge meaning.
-- Respect reduced-motion preferences.
-- Provide a textual list alternative for graph visualization.
+- Keyboard-operable everything, including Matrix (arrow-key navigation between cells) and Map alternatives.
+- Visible focus; text ≥ 4.5:1; controls ≥ 3:1.
+- Screen-reader labels for icons, badges, and cells.
+- Supports/Contradicts/Candidate/Needs review always have text or icon cues.
+- Live regions for streaming status and new alerts (polite).
+- Respect reduced motion.
 
 ---
 
-## 9. Design workflow and handoff
+## 9. Design workflow and status
 
-### Tool workflow
+### 9.1 Workflow
 
-1. **Explore** directions in Google Stitch using the staged prompts in §10 (or an alternative such as UX Pilot or Banani).
-2. **Refine** the chosen direction in Figma: build tokens as variables, components with states, and responsive frames. Figma Make can be used for quick clickable prototypes from that library.
-3. **Prototype in code** with v0 or a coding agent using §11. v0 outputs React + Tailwind + shadcn/ui, which matches the PRD stack.
-4. **Reference** real products while designing (e.g., Mobbin, Refero) — look at how Linear, Notion, Perplexity, and GitHub handle dense dark UIs, citations, and approvals.
+1. Mockups in Claude Design (canvas "ORIVANA — MVP UI").
+2. Export screens as PNG to `docs/design/screens/` for Claude Code.
+3. Build in Claude Code with mock JSON contracts (`packages/contracts`).
+4. Backend in Go implements `docs/API-CONTRACT.md` exactly.
 
-### Handoff deliverables
+### 9.2 Artboards
 
-Before implementation, produce:
+Existing (done, 35): design system, shell, states, search results, sign in (+ errors), sign up, check email, reset password, onboarding 1–3, home (+ empty), assistant (+ retrieving, no evidence, conflict), sources, source viewer, graph (+ list, mobile), memory, project, approvals (+ edit, executing, succeeded, rejected), integrations, activity, settings (+ delete).
 
-1. Design tokens (Figma variables matching §2).
-2. Desktop app shell (expanded and icon-rail).
-3. Core screen designs.
-4. Component states.
-5. Responsive behavior.
-6. Clickable prototype for primary flows.
-7. Empty/loading/error/permission states.
-8. Developer handoff notes.
+New / updated for v2:
 
-### Recommended design order
-
-1. Sign in / onboarding.
-2. Home.
-3. Assistant with evidence panel.
-4. Source library and document viewer.
-5. Knowledge graph.
-6. Memory.
-7. Project workspace.
-8. Approvals.
-9. Integrations.
-10. Activity and settings.
+| Artboard | Type |
+|---|---|
+| `knowledge-matrix` | New |
+| `knowledge-matrix-mobile` | New |
+| `knowledge-claims` | New |
+| `decision-impact-review` | New |
+| `save-as-decision-sheet` | New |
+| `zotero-import-dialog` | New |
+| `settings-model-preferences` | New |
+| `home` | Update: decisions needing review card |
+| `onboarding-2` | Update: Zotero first |
+| `sources` | Update: Zotero badge + import button |
+| `memory` | Update: review state, decisions first |
+| `project` | Update: alerts on timeline, new tabs |
+| `approvals` | Update: origin from alert |
+| `integrations` | Update: Zotero card, MCP "coming later" card |
+| `graph` → `map` | Rename + legend |
 
 ---
 
-## 10. Prompts for Google Stitch (staged)
+## 10. Prompt for Claude Design (v2 additions)
 
-Do not ask for the whole product in one prompt. Send the **base prompt** first, then one screen prompt at a time in the same project so the style stays consistent.
-
-### 10.1 Base prompt (design system and shell)
+Use in the existing canvas so styles stay consistent. Attach the updated `PRD.md` and `UI.md`.
 
 ```text
-Design a high-fidelity desktop web application called ORIVANA.
+I attached the updated PRD.md (v2.0) and UI.md (v2.0) for ORIVANA. Read both fully.
 
-Product:
-ORIVANA is a Personal Intelligence & Action Platform. It connects a researcher's uploaded papers and notes, builds a traceable knowledge graph, remembers project decisions over time, and prepares actions in GitHub that the user must approve before they run.
+Use the existing design system, TopBar, and Sidebar in this canvas. Use skills ui-ux-pro-max and frontend-ui-engineering while designing, and web-design-guidelines to audit at the end.
 
-Tagline: "Your Knowledge, Connected. Your Intent, in Motion."
+Positioning has changed: ORIVANA leads with decisions and evidence, not chat. Follow UI.md §2.3 for Supports / Contradicts / Candidate / Needs review — always with text or icon, never color alone.
 
-Visual direction:
-Professional, calm, premium, dark-first SaaS workspace. Thin borders, generous spacing, highly readable data density. No gradients, glow effects, sci-fi decoration, or generic chatbot styling.
+Create these NEW artboards (1440px unless stated):
+1. Knowledge → Matrix (UI.md §4.7): Methods × Datasets table with filled cells (count + citation chips), candidate cells (dashed), and visible gaps ("—", "No evidence"). Right inspector for the selected cell "Dense retrieval × HotpotQA" with passages.
+2. Knowledge → Matrix, mobile 390px: list grouped by method with gaps.
+3. Knowledge → Claims (§4.8): claim cards with Supports/Contradicts/Mentions counts and "Used by 1 decision"; inspector with two-column evidence comparison for "Hybrid retrieval outperforms dense-only retrieval on open-domain QA".
+4. Decision Impact review (§4.11): decision "Use hybrid retrieval for thesis experiments", claim affected, old supporting evidence vs new contradicting evidence (Varga & Chen 2024, p. 9, §5), system assessment, and actions Keep decision / Revise decision / Propose action.
+5. Save as decision side sheet over the Assistant (§4.5).
+6. Zotero import dialog (§4.6): connect → choose collections → target project → summary → progress.
+7. Settings → Model preferences (§4.16).
 
-Exact colors:
-- App background #0B0D12, sidebar #10141C, cards #151B26, dialogs #1B2432
-- Text primary #F3F6FA, secondary #A5B0C0, muted #8390A3
-- Primary accent #8B9CFF (buttons use dark text #0B0D12 on the accent, never white)
-- Knowledge/graph accent #63D6C3
-- Warning #F2B96B, danger #F07878
-- Divider #273142, input border #64728A
+UPDATE these artboards:
+- Home: add "Decisions needing review" card at the top (§4.4).
+- Onboarding 2: "Connect Zotero (recommended)" as the primary option.
+- Sources: Zotero type badge, "Import from Zotero" button, one "Removed in Zotero" row.
+- Memory: decisions first, Needs review badge, default filter Needs review.
+- Project: alerts on the decision timeline; tabs per §4.12.
+- Approvals: origin "From Decision Impact alert".
+- Integrations: Zotero card (read-only), GitHub card, "Use ORIVANA in Claude / ChatGPT" card marked Coming later.
+- Rename Graph to Map and add an edge legend.
+- Sidebar: Home badge "1" (decision needs review), Knowledge tabs Sources · Matrix · Claims · Map · Memory.
 
-Typography: Inter. Sizes 12, 14, 16, 20, 24, 32 px. Body 14 px.
-Spacing: 8 px grid.
-
-Frame: 1440x900. Left sidebar 240 px with workspace switcher at top and items: Home, Assistant, Knowledge, Projects, Approvals (badge "2"), Activity, Integrations, Settings at the bottom. Top bar with global search "Search anything... ⌘K", help, notifications, avatar.
-
-Sample content: a research project named "RAG Comparison" comparing retrieval-augmented generation methods (papers on GraphRAG, dense retrieval, hybrid BM25 + vector).
-
-First, design only the empty app shell with the Home screen for a returning user.
+Link everything for Play mode, following the demo script in UI.md §13.
+Finish with web-design-guidelines and the checklist in UI.md §12; list pass/fail and fix failures.
 ```
-
-### 10.2 Home
-
-```text
-Using the same ORIVANA style, design the Home / Command Center:
-- Greeting and a large "Ask your knowledge" input as the primary element.
-- Row of recent projects (RAG Comparison, Thesis Proposal).
-- Recently added sources with status badges as text + color (Ready, Indexing, Failed).
-- Pending approvals card: "Create GitHub issue: Re-run eval with hybrid retrieval" with Review button.
-- Recent activity list and a small connector health row (GitHub: Connected).
-Keep it calm and uncluttered.
-```
-
-### 10.3 Assistant
-
-```text
-Using the same ORIVANA style, design the Assistant screen.
-The left sidebar is collapsed to a 64 px icon rail. Then a 280 px conversation list, a central chat (~700 px), and a 360 px evidence panel on the right.
-- Show a user question: "Which papers report that hybrid retrieval beats dense-only, and on which datasets?"
-- Show an assistant answer with numbered citation chips [1] [2] [3], a short "Limitations" line, and related entity chips (Hybrid retrieval, BM25, Natural Questions).
-- The evidence panel shows the selected citation: paper title, page 6, section "4.2 Results", with the quoted sentence highlighted, and an "Open in document" button.
-- Composer at the bottom with attach, scope indicator "Project: RAG Comparison · 14 sources", and send.
-```
-
-### 10.4 Knowledge graph
-
-```text
-Using the same ORIVANA style, design Knowledge → Graph.
-- Tabs at top: Sources, Graph, Memory (Graph selected).
-- Left filter panel: entity type checkboxes (Paper, Method, Dataset, Claim, Concept), project, status (Confirmed / Candidate), date.
-- Center: a focused graph of ~25 nodes. Node types differ by icon and shape, not only color. Confirmed edges solid, candidate edges dashed with a "Candidate" label.
-- Right inspector: a selected edge "Paper A — USES_METHOD → Hybrid retrieval" with two evidence passages (page and section), confidence, and Confirm / Reject buttons.
-- Toolbar: search, Focus on, depth 1/2, List view toggle.
-```
-
-### 10.5 Approvals review
-
-```text
-Using the same ORIVANA style, design the Approvals screen.
-- Left: list of pending proposals with risk tier badges.
-- Main: review of "Create issue in lab/rag-experiments":
-  original user request, target app and account (GitHub · @user), required scope, rendered issue preview (title, body, labels), raw fields, evidence used (2 citations), risk tier "Low write", expected side effects ("Creates 1 public issue").
-- Buttons: Approve (primary), Edit, Reject.
-- Also show a small variant of the success state with the issue link and a "Verified" check.
-```
-
-### 10.6 Source library and document viewer
-
-```text
-Using the same ORIVANA style, design Knowledge → Sources.
-- Table with file icon, title, project, status badge with text (Queued, Parsing, Indexing, Ready, Failed), pages, added date, actions menu.
-- One failed row with "Retry" and an error hint.
-- Upload drop zone at top.
-Then design the document viewer: page navigation, section outline on the left, a highlighted passage opened from a citation, and a right panel with extracted entities and ingestion history.
-```
-
-### 10.7 Memory, Project, Integrations
-
-Use the same pattern: one prompt per screen, referencing §4.8, §4.9, and §4.11. Always include the empty, loading, and error state as small variants on the same canvas.
 
 ---
 
-## 11. Prompt for v0 or Figma Make (after the design direction is approved)
+## 11. Prompt for Claude Code — Phase 8 (v2 features)
+
+Run after Phase 7 is committed. Replace `docs/PRD.md`, `docs/UI.md`, `docs/README.md` with v2.0, and add new PNGs to `docs/design/screens/` if available.
 
 ```text
-Build the approved ORIVANA interface as a responsive React + TypeScript application using Tailwind CSS and shadcn/ui.
+The docs were updated to v2.0. Read docs/PRD.md, docs/UI.md, and docs/README.md fully, and look at any new images in docs/design/screens/. Compare with the current code and docs/API-CONTRACT.md.
 
-Use the supplied UI specification and design tokens (define them as CSS variables and Tailwind theme colors):
-bg-app #0B0D12, bg-sidebar #10141C, bg-surface #151B26, bg-elevated #1B2432,
-text-primary #F3F6FA, text-secondary #A5B0C0, text-muted #8390A3,
-accent-primary #8B9CFF with on-accent #0B0D12, accent-knowledge #63D6C3,
-warning #F2B96B, danger #F07878, border-subtle #273142, border-control #64728A.
+Use skills: frontend-design, frontend-ui-engineering, ui-ux-pro-max, vercel-react-best-practices while building; web-design-guidelines for audits.
 
-Implement the app shell (expanded sidebar and 64 px icon rail), routing, reusable components, realistic typed mock data, and functional client-side interactions.
+GOAL (Phase 8): add the v2.0 features to the existing prototype WITHOUT breaking existing screens. Everything stays mock-JSON driven through services; no hardcoded data in components.
 
-Navigation: Home, Assistant, Knowledge (tabs Sources, Graph, Memory), Projects, Approvals, Activity, Integrations, Settings. No Automations.
+Work in sub-phases. At the end of each: run dev server and build, no TypeScript/console errors, commit, summarize (including skills used), and WAIT for my approval.
 
-Prioritize these flows:
-- Sign in, verify email, and onboarding mock flow.
-- Home to Assistant.
-- Assistant answer to citation to document viewer at the cited page.
-- Knowledge graph node/edge selection to inspector, with candidate edges dashed.
-- Memory list with confirm/edit/supersede.
-- Project decision timeline.
-- Approvals: review, edit, approve/reject, with an executing state before success.
-- Integrations: GitHub permission view.
+8.0 Plan
+- List the differences between v1.1 and v2.0 that affect code (UI.md §0 and §9.2).
+- List new/changed types, fixtures, services, routes, and components. No code yet.
 
-Do not invent a production backend. Put typed mock data in a separate mock service layer whose function signatures mirror the REST endpoints in PRD §14, so it can be replaced by the Go REST/SSE API later. Simulate SSE streaming for assistant answers.
+8.1 Contracts (additive only)
+- Types/fixtures for: matrix (GET /knowledge/matrix, /knowledge/matrix/cell), claims (GET /claims, GET/PATCH /claims/{id}), decision alerts (GET /decision-alerts, PATCH /decision-alerts/{id}, POST /decision-alerts/{id}/propose-action), memory fields (kind, rationale, review_state, dependencies), source type "zotero" + zotero fields, Zotero endpoints (/connections/zotero/collections, /connections/zotero/sync), models (GET /models, GET/PATCH /me/preferences), message.model.
+- Fixture data must tell the flagship story: decision "Use hybrid retrieval for thesis experiments" depends on claim "Hybrid retrieval outperforms dense-only retrieval on open-domain QA", supported by Santos & Lee 2025 (p. 4) and Okafor et al. 2025 (p. 6), newly contradicted by Varga & Chen 2024 (p. 9, §5) imported from Zotero.
+- Update docs/API-CONTRACT.md. Do not change existing endpoint shapes.
 
-Use accessible controls, keyboard focus, responsive layouts, and loading/empty/error states. Keep the code modular; do not put the application in one component.
+8.2 Knowledge restructure
+- Knowledge tabs: Sources · Matrix · Claims · Map · Memory. Rename Graph to Map (keep its behavior) and add the legend.
+- Matrix (UI.md §4.7): accessible table, filled/candidate/gap/selected cells, inspector, filters, CSV export, arrow-key navigation, mobile list.
+- Claims (§4.8): cards, sorting/filters, EvidenceCompare inspector, confirm/merge/reject.
+
+8.3 Decisions and Decision Impact
+- Memory (§4.10): decisions first, review state, detail sheet with dependencies and history.
+- Decision Impact review page (§4.11) with Keep / Revise / Propose action working against mock services.
+- Home card "Decisions needing review"; sidebar Home badge; Project timeline alerts.
+- Assistant: "Answered with <model>" label and Save as decision sheet.
+- Approvals: origin "From Decision Impact alert"; after success, "Linked to decision".
+
+8.4 Zotero, models, integrations
+- Sources: Zotero badge, Import from Zotero dialog (§4.6), "Removed in Zotero" state.
+- Onboarding 2: Zotero first.
+- Integrations: Zotero card, GitHub card, MCP "Coming later" card.
+- Settings → Model preferences (§4.16).
+- Activity: new event types (zotero_sync, extraction, decision_alert).
+
+8.5 Audit and demo
+- web-design-guidelines on changed files; UI.md §12 checklist (pass/fail table); fix failures.
+- Update README demo script to UI.md §13 and make the flagship flow fully clickable.
+
+RULES: UI text in English; tokens only (no raw hex in components); status never color-only (UI.md §2.3); actions use <button>, navigation uses <a>/Link; components ~200 lines max; never show success before the mock service confirms.
+
+Start with 8.0.
 ```
 
 ---
 
 ## 12. UI acceptance checklist
 
-- [ ] Navigation is consistent across screens and matches §3.
+- [ ] Navigation matches §3.2; Knowledge tabs are Sources · Matrix · Claims · Map · Memory.
 - [ ] Tagline and category match PRD exactly.
-- [ ] User can identify the current workspace and project.
+- [ ] Current workspace and project are always identifiable.
 - [ ] Search results show type and source.
-- [ ] Assistant citations open the relevant page and passage.
-- [ ] Graph nodes and edges expose provenance.
-- [ ] Candidate relationships are visually distinct without relying on color.
-- [ ] Memory can be confirmed, edited, superseded, and deleted.
-- [ ] Action preview shows exact target and side effects.
-- [ ] Approval and rejection produce visible state changes.
+- [ ] Every citation opens the right page and passage.
+- [ ] Matrix shows filled, candidate, and gap cells distinguishably without color alone.
+- [ ] Every Matrix cell and Claim opens its evidence.
+- [ ] Supports / Contradicts / Candidate / Needs review follow §2.3.
+- [ ] Decisions show status, review state, rationale, dependencies, history.
+- [ ] Decision Impact review shows old vs new evidence and the three actions.
+- [ ] A decision alert can produce a proposal that appears in Approvals with its origin.
+- [ ] Action preview shows exact target and side effects; no success before confirmation.
+- [ ] Zotero is clearly read-only.
+- [ ] Model used is visible on answers; model preference is changeable.
 - [ ] Integration scopes are understandable.
-- [ ] Empty/loading/error states are designed.
-- [ ] Keyboard navigation and focus states work.
-- [ ] Text contrast ≥ 4.5:1; control borders ≥ 3:1.
-- [ ] Assistant screen never shows four full columns with the expanded sidebar.
-- [ ] Mobile layout does not force a dense graph canvas.
-- [ ] No screen implies an action succeeded before the backend confirms it.
+- [ ] Empty, loading, and error states exist for every new screen.
+- [ ] Keyboard navigation works, including Matrix cells.
+- [ ] Contrast: text ≥ 4.5:1, controls ≥ 3:1.
+- [ ] Assistant never shows four full columns with the expanded sidebar.
+- [ ] Mobile never forces a dense graph or a wide table without an alternative.
 
 ---
 
-## 13. Final design principle
+## 13. Demo script (for supervisor presentations)
 
-ORIVANA should feel like a **personal knowledge workspace with an intelligent action layer**, not a chatbot with a graph attached.
+Three minutes, in Play mode or the running prototype:
 
-The graph explains relationships. The evidence panel explains why the system believes something. Memory preserves context. The action review explains what the agent intends to do. The user remains in control.
+1. **Sign in** → Home shows "1 decision needs review".
+2. Open **Knowledge → Matrix**: point out the gap "Hybrid × HotpotQA".
+3. Open **Claims**: "Hybrid outperforms dense-only" — 2 supports, 1 new contradiction.
+4. Open the **Decision Impact review**: old vs new evidence; click a citation → page 9 of Varga & Chen.
+5. **Propose action** → GitHub issue "Re-evaluate retrieval choice for multi-hop questions".
+6. **Approvals** → review preview with evidence links → Approve → Executing → Succeeded + Verified.
+7. **Activity**: Zotero sync → extraction → alert → proposal → approval → issue created.
+8. (Optional) **Assistant**: ask a question, show page-level citations and "Save as decision".
+
+Key sentence: "NotebookLM helps me read my papers. ORIVANA keeps my research decisions honest as evidence changes — and helps me act on it."
+
+---
+
+## 14. Final design principle
+
+ORIVANA should feel like a **research decision workspace with an intelligent action layer**, not a chatbot with a graph attached.
+
+The Matrix shows what has and has not been tested. Claims show where evidence agrees and disagrees. Decisions record what the user chose and why. Decision Impact shows when that choice is at risk. Approvals show exactly what will happen next. The user remains in control.
