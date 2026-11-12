@@ -62,6 +62,12 @@
   "changes_since_proposal": [],
   "latest_run": null,
   "audit_event_id": "evt_7f3a9c",
+  "origin": {
+    "type": "assistant",
+    "id": "conv_hybrid",
+    "label": "From conversation: Hybrid vs dense-only results"
+  },
+  "linked_decision": null,
   "title": "Create issue: Re-run eval with hybrid retrieval",
   "status": "rejected",
   "created_at": "2026-11-11T07:34:00Z",

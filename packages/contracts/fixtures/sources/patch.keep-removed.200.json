@@ -1,0 +1,52 @@
+{
+  "id": "src_nakamura2025",
+  "workspace_id": "ws_personal",
+  "project_id": "prj_rag",
+  "project_name": "RAG Comparison",
+  "type": "zotero",
+  "title": "Sparse–Dense Hybrids in Low-Resource Domains",
+  "file_name": "Sparse–Dense Hybrids in Low-Resource Domains.pdf",
+  "authors": "Nakamura",
+  "short_label": "Nakamura 2025",
+  "year": 2025,
+  "status": "ready",
+  "checksum": "sha256:naka9c41a7e2…e07b",
+  "size_bytes": 1992294,
+  "page_count": 12,
+  "section_count": 6,
+  "chunk_count": 74,
+  "created_at": "2026-10-25T02:10:00Z",
+  "updated_at": "2026-10-25T02:10:00Z",
+  "job": {
+    "id": "job_nakamura",
+    "workspace_id": "ws_personal",
+    "source_id": "src_nakamura2025",
+    "kind": "ingest",
+    "attempts": 1,
+    "max_attempts": 3,
+    "progress": {
+      "current": 12,
+      "total": 12,
+      "unit": "pages"
+    },
+    "eta_seconds": null,
+    "error_code": null,
+    "error_message": null,
+    "started_at": "2026-10-25T02:10:00Z",
+    "finished_at": "2026-10-25T02:10:00Z",
+    "status": "succeeded",
+    "stage": "ready"
+  },
+  "zotero": {
+    "library_id": "zlib_4417302",
+    "item_key": "NKM25SDH",
+    "item_version": 352,
+    "collection_key": "ZC7K2RAG",
+    "collection_name": "RAG Comparison",
+    "last_synced_at": "2026-11-11T02:00:00Z",
+    "has_pdf": true,
+    "annotation_count": 0,
+    "removed_in_zotero": true
+  },
+  "_note": "PATCH /api/v1/sources/{id} {keep_removed_zotero_item: true} — the item stays; the flag is kept so the badge still explains it."
+}

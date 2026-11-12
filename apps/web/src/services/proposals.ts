@@ -148,6 +148,11 @@ async function execute(db: MockDb, proposal: ActionProposal, run: ActionRun) {
   run.steps = run.steps.map((s) => ({ ...s, state: 'done', at: s.at ?? nowIso() }));
   proposal.status = 'succeeded';
   proposal.audit_event_id = audit.id;
+  // v2: link the created issue back to the decision (PRD §8.7).
+  const decision = proposal.linked_decision ? db.decisions.find((d) => d.id === proposal.linked_decision?.id) : undefined;
+  if (decision) {
+    decision.history = [...(decision.history ?? []), { at: nowIso(), kind: 'action_proposed', text: `Issue ${ref} created and verified`, link: { target_type: 'proposal', target_id: proposal.id } }];
+  }
 }
 
 /** POST /api/v1/action-proposals/{id}/approve — the only call that writes to GitHub. */
@@ -224,11 +229,13 @@ export function ensureProposalFromChat(db: MockDb, conversationId: string, quest
     created_at: nowIso(),
     expires_at: new Date(Date.now() + 7 * 86_400_000).toISOString(),
     original_request: { text: question, at: nowIso() },
+    origin: { type: 'assistant', id: conversationId, label: `From conversation: ${conversation?.title ?? 'Assistant'}` },
+    linked_decision: null,
   };
   db.proposals.unshift(created);
   recordAudit(db, {
     actor_type: 'agent',
-    category: 'approvals',
+    category: 'proposals',
     event_type: 'action_proposal.created',
     target_type: 'proposal',
     target_id: id,

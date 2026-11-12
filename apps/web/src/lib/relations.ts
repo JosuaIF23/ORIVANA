@@ -5,6 +5,7 @@ export const RELATION_LABEL: Record<RelationType, string> = {
   evaluates_on: 'Evaluates on',
   supports: 'Supports',
   contradicts: 'Contradicts',
+  mentions: 'Mentions',
   supersedes: 'Supersedes',
   derived_from: 'Derived from',
   contains: 'Contains',

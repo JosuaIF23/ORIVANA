@@ -19,7 +19,7 @@ export function listAuditEvents(query: AuditListQuery & { limit?: number } = {})
       .filter((e) => Date.parse(e.created_at) >= since)
       .filter((e) => !query.actor_type || e.actor_type === query.actor_type)
       .filter((e) => !q || matches(e, q));
-    const counts = { ingestion: 0, retrieval: 0, memory: 0, tool_calls: 0, approvals: 0, external_actions: 0, errors: 0 } as Record<AuditCategory, number>;
+    const counts: Record<AuditCategory, number> = { ingestion: 0, zotero_sync: 0, retrieval: 0, extraction: 0, memory: 0, decision_alerts: 0, proposals: 0, tool_calls: 0, approvals: 0, external_actions: 0, errors: 0 };
     for (const e of scoped) counts[e.category] += 1;
     const filtered = scoped
       .filter((e) => !query.categories?.length || query.categories.includes(e.category))

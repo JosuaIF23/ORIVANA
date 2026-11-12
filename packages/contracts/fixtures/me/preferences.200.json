@@ -4,5 +4,12 @@
   "suggest_memories_from_sources": true,
   "use_unconfirmed_candidates_in_answers": false,
   "discard_unreviewed_candidates_after_days": 30,
-  "default_project_id": "prj_rag"
+  "default_project_id": "prj_rag",
+  "answer_model": "claude-sonnet-5-5",
+  "theme": "dark",
+  "notifications": {
+    "decision_alerts": true,
+    "approvals": true,
+    "weekly_digest": false
+  }
 }

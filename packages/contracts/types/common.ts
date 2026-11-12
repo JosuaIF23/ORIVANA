@@ -44,6 +44,7 @@ export interface Page<T> {
   total: number;
 }
 
-export type ActorType = 'user' | 'agent' | 'system';
+/** `external_client` is reserved for MCP calls (post-MVP, PRD §15). */
+export type ActorType = 'user' | 'agent' | 'system' | 'external_client';
 
 export type Origin = 'user' | 'imported' | 'model_proposed';

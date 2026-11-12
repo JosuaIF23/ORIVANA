@@ -1,0 +1,49 @@
+{
+  "id": "conn_zotero",
+  "workspace_id": "ws_personal",
+  "provider": "zotero",
+  "account_label": "josua-silalahi",
+  "status": "connected",
+  "connected_at": "2026-11-02T02:05:00Z",
+  "last_checked_at": "2026-11-11T02:00:00Z",
+  "last_sync_at": "2026-11-11T02:00:00Z",
+  "health": "passed",
+  "status_detail": null,
+  "repositories": [],
+  "library_label": "josua-silalahi · My Library",
+  "collections": [
+    {
+      "key": "ZC7K2RAG",
+      "name": "RAG Comparison",
+      "item_count": 18
+    }
+  ],
+  "grant": {
+    "id": "grant_zotero",
+    "connection_id": "conn_zotero",
+    "approval_policy": "every_write",
+    "granted_at": "2026-11-02T02:05:00Z",
+    "scopes": [
+      {
+        "kind": "read",
+        "label": "Read your items and their metadata",
+        "scope": "library:read"
+      },
+      {
+        "kind": "read",
+        "label": "Download attached PDFs",
+        "scope": "files:read"
+      },
+      {
+        "kind": "read",
+        "label": "Read your highlights and notes",
+        "scope": "notes:read"
+      },
+      {
+        "kind": "not_granted",
+        "label": "Change or delete anything in your Zotero library",
+        "scope": null
+      }
+    ]
+  }
+}

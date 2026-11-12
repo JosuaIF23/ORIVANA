@@ -1,0 +1,42 @@
+{
+  "_note": "GET /api/v1/connections/zotero/collections",
+  "library_label": "josua-silalahi · My Library",
+  "collections": [
+    {
+      "key": "ZC7K2RAG",
+      "name": "RAG Comparison",
+      "parent_key": null,
+      "item_count": 18,
+      "pdf_count": 17,
+      "synced_project_id": "prj_rag",
+      "last_synced_at": "2026-11-11T02:00:00Z"
+    },
+    {
+      "key": "ZC7K2MHP",
+      "name": "Multi-hop",
+      "parent_key": "ZC7K2RAG",
+      "item_count": 4,
+      "pdf_count": 4,
+      "synced_project_id": null,
+      "last_synced_at": null
+    },
+    {
+      "key": "ZC9T4THS",
+      "name": "Thesis — graph retrieval",
+      "parent_key": null,
+      "item_count": 9,
+      "pdf_count": 8,
+      "synced_project_id": null,
+      "last_synced_at": null
+    },
+    {
+      "key": "ZC3R8RDG",
+      "name": "To read",
+      "parent_key": null,
+      "item_count": 7,
+      "pdf_count": 6,
+      "synced_project_id": null,
+      "last_synced_at": null
+    }
+  ]
+}

@@ -20,7 +20,7 @@ export function connectGitHub(): Promise<ToolConnection> {
   return simulate(() => {
     const db = requireDb();
     const existing = db.connections.find((c) => c.provider === 'github');
-    const connection = structuredClone(fixtures.connections.list.connections[0]);
+    const connection = structuredClone(fixtures.connections.list.connections.find((c) => c.provider === 'github')!);
     Object.assign(connection, { workspace_id: db.me.workspace.id, connected_at: nowIso(), last_checked_at: nowIso(), last_sync_at: nowIso() });
     if (existing) Object.assign(existing, connection);
     else db.connections.push(connection);
@@ -54,7 +54,7 @@ export function revokeConnection(id: string): Promise<{ revoked_connection_id: s
         cancelled += 1;
       }
     }
-    recordAudit(db, { actor_type: 'user', category: 'tool_calls', event_type: 'connection.revoked', target_type: 'connection', target_id: id, summary: `Revoked GitHub access; ${cancelled} pending proposals cancelled`, link: null, result: 'succeeded' });
+    recordAudit(db, { actor_type: 'user', category: 'tool_calls', event_type: 'connection.revoked', target_type: 'connection', target_id: id, summary: connection.provider === 'zotero' ? 'Revoked Zotero access; imported sources stay in ORIVANA' : `Revoked GitHub access; ${cancelled} pending proposals cancelled`, link: null, result: 'succeeded' });
     return { revoked_connection_id: id, cancelled_proposals: cancelled };
   }, { ms: 800 });
 }

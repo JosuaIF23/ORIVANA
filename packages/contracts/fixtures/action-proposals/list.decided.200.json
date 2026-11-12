@@ -49,6 +49,12 @@
       "changes_since_proposal": [],
       "latest_run": null,
       "audit_event_id": null,
+      "origin": {
+        "type": "manual",
+        "id": null,
+        "label": "Created by you"
+      },
+      "linked_decision": null,
       "title": "Create issue: Update README eval table",
       "status": "rejected",
       "created_at": "2026-11-11T02:40:00Z",
@@ -130,6 +136,12 @@
         "audit_event_id": null
       },
       "audit_event_id": null,
+      "origin": {
+        "type": "manual",
+        "id": null,
+        "label": "Created by you"
+      },
+      "linked_decision": null,
       "title": "Create issue: Log chunk-size results",
       "status": "succeeded",
       "created_at": "2026-11-10T09:10:00Z",
@@ -211,6 +223,12 @@
         "audit_event_id": null
       },
       "audit_event_id": null,
+      "origin": {
+        "type": "manual",
+        "id": null,
+        "label": "Created by you"
+      },
+      "linked_decision": null,
       "title": "Create issue: Fix random seed in eval script",
       "status": "succeeded",
       "created_at": "2026-11-09T04:20:00Z",
@@ -278,6 +296,12 @@
       "changes_since_proposal": [],
       "latest_run": null,
       "audit_event_id": null,
+      "origin": {
+        "type": "manual",
+        "id": null,
+        "label": "Created by you"
+      },
+      "linked_decision": null,
       "title": "Create issue: Tune BM25 k1 and b",
       "status": "rejected",
       "created_at": "2026-11-08T10:45:00Z",
@@ -359,6 +383,12 @@
         "audit_event_id": null
       },
       "audit_event_id": null,
+      "origin": {
+        "type": "manual",
+        "id": null,
+        "label": "Created by you"
+      },
+      "linked_decision": null,
       "title": "Create issue: Add nDCG@10 to the report",
       "status": "succeeded",
       "created_at": "2026-11-06T03:05:00Z",
@@ -426,6 +456,12 @@
       "changes_since_proposal": [],
       "latest_run": null,
       "audit_event_id": null,
+      "origin": {
+        "type": "manual",
+        "id": null,
+        "label": "Created by you"
+      },
+      "linked_decision": null,
       "title": "Create issue: Re-index Okafor et al. 2025",
       "status": "expired",
       "created_at": "2026-11-05T02:00:00Z",
@@ -507,6 +543,12 @@
         "audit_event_id": null
       },
       "audit_event_id": null,
+      "origin": {
+        "type": "manual",
+        "id": null,
+        "label": "Created by you"
+      },
+      "linked_decision": null,
       "title": "Create issue: Compare RRF k = 20 / 60",
       "status": "succeeded",
       "created_at": "2026-11-04T08:30:00Z",
@@ -588,6 +630,12 @@
         "audit_event_id": null
       },
       "audit_event_id": null,
+      "origin": {
+        "type": "manual",
+        "id": null,
+        "label": "Created by you"
+      },
+      "linked_decision": null,
       "title": "Create issue: Test 64-token overlap",
       "status": "succeeded",
       "created_at": "2026-11-03T06:15:00Z",
@@ -655,6 +703,12 @@
       "changes_since_proposal": [],
       "latest_run": null,
       "audit_event_id": null,
+      "origin": {
+        "type": "manual",
+        "id": null,
+        "label": "Created by you"
+      },
+      "linked_decision": null,
       "title": "Create issue: Add SciFact subset",
       "status": "rejected",
       "created_at": "2026-11-02T09:40:00Z",
@@ -736,6 +790,12 @@
         "audit_event_id": null
       },
       "audit_event_id": null,
+      "origin": {
+        "type": "manual",
+        "id": null,
+        "label": "Created by you"
+      },
+      "linked_decision": null,
       "title": "Create issue: Log query latency",
       "status": "succeeded",
       "created_at": "2026-11-01T03:30:00Z",
@@ -803,6 +863,12 @@
       "changes_since_proposal": [],
       "latest_run": null,
       "audit_event_id": null,
+      "origin": {
+        "type": "manual",
+        "id": null,
+        "label": "Created by you"
+      },
+      "linked_decision": null,
       "title": "Create issue: Reserve GPU for re-index",
       "status": "rejected",
       "created_at": "2026-10-31T11:00:00Z",
@@ -884,6 +950,12 @@
         "audit_event_id": null
       },
       "audit_event_id": null,
+      "origin": {
+        "type": "manual",
+        "id": null,
+        "label": "Created by you"
+      },
+      "linked_decision": null,
       "title": "Create issue: Split retriever configs",
       "status": "succeeded",
       "created_at": "2026-10-30T04:10:00Z",
@@ -965,6 +1037,12 @@
         "audit_event_id": null
       },
       "audit_event_id": null,
+      "origin": {
+        "type": "manual",
+        "id": null,
+        "label": "Created by you"
+      },
+      "linked_decision": null,
       "title": "Create issue: Document eval protocol",
       "status": "succeeded",
       "created_at": "2026-10-29T07:50:00Z",
@@ -1046,6 +1124,12 @@
         "audit_event_id": null
       },
       "audit_event_id": null,
+      "origin": {
+        "type": "manual",
+        "id": null,
+        "label": "Created by you"
+      },
+      "linked_decision": null,
       "title": "Create issue: Add dense-only baseline",
       "status": "succeeded",
       "created_at": "2026-10-28T02:40:00Z",

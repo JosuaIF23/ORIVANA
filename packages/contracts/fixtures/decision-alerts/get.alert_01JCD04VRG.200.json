@@ -1,0 +1,94 @@
+{
+  "id": "alert_01JCD04VRG",
+  "workspace_id": "ws_personal",
+  "project_id": "prj_rag",
+  "project_name": "RAG Comparison",
+  "memory_id": "dec_rag_04",
+  "decision_code": "D-04",
+  "decision_title": "Use hybrid retrieval for thesis experiments",
+  "decision_statement": "Use hybrid retrieval (BM25 + dense, RRF k = 60) for every thesis experiment.",
+  "decision_rationale": "Two papers report consistent gains over dense-only on NQ and TriviaQA, largest under distribution shift.",
+  "decided_at": "2026-11-06T03:00:00Z",
+  "claim_id": "ent_c_hybridbeats",
+  "claim_statement": "Hybrid retrieval outperforms dense-only retrieval on open-domain QA",
+  "previous_support": {
+    "supports_count": 2,
+    "contradicts_count": 0
+  },
+  "trigger_source_id": "src_varga2024",
+  "trigger_source_label": "Varga & Chen 2024",
+  "trigger_relationship_id": "rel_varga_contradicts",
+  "severity": "weakens",
+  "reason": "Varga & Chen 2024 find no gain from hybrid retrieval over a tuned dense retriever on HotpotQA. Your thesis experiments include multi-hop questions (D-05 proposes adding the HotpotQA split), so the decision may not hold for part of the evaluation.",
+  "confidence": 0.78,
+  "status": "open",
+  "resolution": null,
+  "previous_evidence": [
+    {
+      "source_id": "src_santos2025",
+      "source_label": "Santos & Lee 2025",
+      "source_title": "Fusion Retrieval Revisited: BM25 + Dense on Open-Domain QA",
+      "imported_at": null,
+      "passage": {
+        "id": "ev_t_santos_p4_1",
+        "relationship_id": "alert_santos_p4",
+        "memory_id": null,
+        "chunk_id": "chk_santos_0401",
+        "source_id": "src_santos2025",
+        "source_label": "Santos & Lee 2025",
+        "page": 4,
+        "section": "3.1 Main results",
+        "passage": "Table 2 reports the main results on Natural Questions. With reciprocal rank fusion (k = 60), the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5, a gain of 4.1 points over the dense-only baseline.",
+        "quote": "the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5",
+        "char_start": 93,
+        "char_end": 163
+      }
+    },
+    {
+      "source_id": "src_okafor2025",
+      "source_label": "Okafor et al. 2025",
+      "source_title": "Hybrid Retrieval Under Distribution Shift",
+      "imported_at": null,
+      "passage": {
+        "id": "ev_t_okafor_p6_1",
+        "relationship_id": "alert_okafor_p6",
+        "memory_id": null,
+        "chunk_id": "chk_okafor_0601",
+        "source_id": "src_okafor2025",
+        "source_label": "Okafor et al. 2025",
+        "page": 6,
+        "section": "4.2 Results",
+        "passage": "Table 3 summarises retrieval accuracy on in-domain and shifted test sets. Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets. We attribute most of this gain to lexical matching of rare entity names that the dense encoder under-represents.",
+        "quote": "Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets.",
+        "char_start": 74,
+        "char_end": 273
+      }
+    }
+  ],
+  "new_evidence": [
+    {
+      "source_id": "src_varga2024",
+      "source_label": "Varga & Chen 2024",
+      "source_title": "Dense-Only Baselines for Multi-hop QA",
+      "imported_at": "2026-11-10T09:40:00Z",
+      "passage": {
+        "id": "ev_t_varga_p9_1",
+        "relationship_id": "alert_varga_p9",
+        "memory_id": null,
+        "chunk_id": "chk_varga_0901",
+        "source_id": "src_varga2024",
+        "source_label": "Varga & Chen 2024",
+        "page": 9,
+        "section": "5 Discussion",
+        "passage": "The hybrid configuration from Section 2.2 does not improve over our tuned dense retriever on HotpotQA, suggesting lexical signals matter less for multi-hop questions. Overall, on HotpotQA our tuned dense retriever is within 0.5 points of the hybrid configuration across all retrieval budgets.",
+        "quote": "on HotpotQA our tuned dense retriever is within 0.5 points of the hybrid configuration",
+        "char_start": 176,
+        "char_end": 262
+      }
+    }
+  ],
+  "proposal_id": null,
+  "trigger_source_deleted": false,
+  "detected_at": "2026-11-10T09:45:00Z",
+  "updated_at": "2026-11-10T09:45:00Z"
+}

@@ -1,0 +1,103 @@
+{
+  "_note": "GET /api/v1/claims?project_id=prj_rag&sort=most_contested",
+  "items": [
+    {
+      "id": "ent_c_hybridbeats",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "statement": "Hybrid retrieval outperforms dense-only retrieval on open-domain QA",
+      "short_name": "Hybrid beats dense-only",
+      "status": "confirmed",
+      "supports_count": 2,
+      "contradicts_count": 1,
+      "mentions_count": 3,
+      "used_by_decisions": [
+        {
+          "id": "dec_rag_04",
+          "code": "D-04",
+          "title": "Use hybrid retrieval for thesis experiments",
+          "review_state": "needs_review"
+        }
+      ],
+      "has_new_contradiction": true,
+      "created_at": "2026-11-01T03:00:00Z",
+      "updated_at": "2026-11-10T09:44:00Z"
+    },
+    {
+      "id": "ent_c_gapcloses",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "statement": "The hybrid advantage disappears on multi-hop questions",
+      "short_name": "Gap closes on multi-hop",
+      "status": "candidate",
+      "supports_count": 1,
+      "contradicts_count": 0,
+      "mentions_count": 1,
+      "used_by_decisions": [
+        {
+          "id": "dec_rag_05",
+          "code": "D-05",
+          "title": "Add the HotpotQA multi-hop split to the evaluation",
+          "review_state": "ok"
+        }
+      ],
+      "has_new_contradiction": false,
+      "created_at": "2026-11-10T09:44:00Z",
+      "updated_at": "2026-11-10T09:44:00Z"
+    },
+    {
+      "id": "ent_c_lexicalaids",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "statement": "Lexical matching helps most for questions with rare entity names",
+      "short_name": "Lexical aids rare names",
+      "status": "confirmed",
+      "supports_count": 1,
+      "contradicts_count": 0,
+      "mentions_count": 1,
+      "used_by_decisions": [
+        {
+          "id": "dec_rag_04",
+          "code": "D-04",
+          "title": "Use hybrid retrieval for thesis experiments",
+          "review_state": "needs_review"
+        }
+      ],
+      "has_new_contradiction": false,
+      "created_at": "2026-11-03T02:15:00Z",
+      "updated_at": "2026-11-03T02:15:00Z"
+    },
+    {
+      "id": "ent_c_longchunks",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "statement": "Long chunks hurt retrieval recall",
+      "short_name": "Long chunks hurt recall",
+      "status": "candidate",
+      "supports_count": 1,
+      "contradicts_count": 1,
+      "mentions_count": 0,
+      "used_by_decisions": [],
+      "has_new_contradiction": false,
+      "created_at": "2026-11-11T06:58:00Z",
+      "updated_at": "2026-11-11T06:58:00Z"
+    },
+    {
+      "id": "ent_c_fusionnq",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "statement": "BM25 + dense fusion improves top-20 accuracy on Natural Questions",
+      "short_name": "Fusion improves NQ",
+      "status": "candidate",
+      "supports_count": 1,
+      "contradicts_count": 0,
+      "mentions_count": 0,
+      "used_by_decisions": [],
+      "has_new_contradiction": false,
+      "created_at": "2026-11-01T08:30:00Z",
+      "updated_at": "2026-11-01T08:30:00Z"
+    }
+  ],
+  "next_cursor": null,
+  "total": 5
+}

@@ -1,4 +1,4 @@
-// Audit events: 46 in the last 7 days, matching the Activity filter counts.
+// Audit events: 50 in the last 7 days (46 from v1 + 4 v2 events), matching the Activity filter counts.
 import { t, tOct, write } from './lib.mjs';
 import { SOURCES } from './sources.mjs';
 
@@ -28,8 +28,20 @@ const repo = { label: 'lab/rag-experiments', target_type: 'repository', target_i
 const convHybrid = { label: 'Hybrid vs dense-only results', target_type: 'conversation', target_id: 'conv_hybrid' };
 const srcLink = (id, label) => ({ label, target_type: 'source', target_id: id });
 
+const alertLink = { label: 'D-04 Use hybrid retrieval for thesis experiments', target_type: 'decision_alert', target_id: 'alert_01JCD04VRG' };
+
+// v2 events for the flagship story (Zotero sync → extraction → decision alert).
+const V2 = [
+  evt('evt_8a01', t('09:00'), 'system', 'zotero_sync', 'zotero.sync_completed', 'Synced Zotero collection {link}: no changes, 1 item removed in Zotero', { label: 'RAG Comparison', target_type: 'zotero_collection', target_id: 'ZC7K2RAG' }, 'succeeded'),
+  evt('evt_8a02', t('16:44', 10), 'system', 'extraction', 'extraction.completed', 'Extracted 6 entities and 5 relationships from {link}; 1 contradicts a claim', srcLink('src_varga2024', 'Dense-Only Baselines for Multi-hop QA'), 'candidate'),
+  evt('evt_8a03', t('16:45', 10), 'system', 'decision_alerts', 'decision_alert.raised', 'Decision {link} needs review: new evidence contradicts a claim it depends on', alertLink, 'needs_review', {
+    metadata: { secondary: { label: 'Hybrid retrieval outperforms dense-only retrieval on open-domain QA', target_type: 'claim', target_id: 'ent_c_hybridbeats' } },
+  }),
+  evt('evt_8a04', t('16:45', 10), 'agent', 'proposals', 'decision_alert.assessed', 'Assessed the impact on {link}: weakens (confidence 0.78)', alertLink, 'succeeded'),
+];
+
 const VISIBLE = [
-  evt('evt_7f3a01', t('14:34'), 'agent', 'approvals', 'action_proposal.created', 'Proposed creating an issue in {link}', repo, 'awaiting_approval'),
+  evt('evt_7f3a01', t('14:34'), 'agent', 'proposals', 'action_proposal.created', 'Proposed creating an issue in {link}', repo, 'awaiting_approval'),
   evt('evt_7f3a02', t('14:22'), 'agent', 'memory', 'memory.suggested', 'Suggested 2 memories from {link}', convHybrid, 'candidate'),
   evt('evt_7f3a03', t('14:20'), 'system', 'retrieval', 'retrieval.completed', 'Retrieved 12 passages from 5 sources; 3 cited in {link}', convHybrid, 'succeeded'),
   evt('evt_7f3a04', t('14:05'), 'agent', 'tool_calls', 'tool.github.list_issues', 'Read 23 open issues (github.list_issues) in {link}', repo, 'succeeded'),
@@ -45,7 +57,7 @@ const VISIBLE = [
   }),
   evt('evt_7f3a07', t('09:40'), 'user', 'approvals', 'action_proposal.rejected', 'Rejected proposal “Update README eval table” for {link}', repo, 'rejected'),
   evt('evt_7f3a08', t('17:02', 10), 'user', 'memory', 'memory.confirmed', 'Confirmed memory {link}', { label: 'Default chunking: 384 tokens', target_type: 'memory', target_id: 'mem_chunking_384' }, 'confirmed'),
-  evt('evt_7f3a09', t('16:40', 10), 'user', 'ingestion', 'source.uploaded', 'Uploaded {link}', srcLink('src_varga2024', 'Dense-Only Baselines for Multi-hop QA'), 'ready'),
+  evt('evt_7f3a09', t('16:40', 10), 'system', 'zotero_sync', 'zotero.sync_completed', 'Synced 1 new item from Zotero collection “RAG Comparison”: {link}', srcLink('src_varga2024', 'Dense-Only Baselines for Multi-hop QA'), 'succeeded'),
   evt('evt_7f3a10', t('16:10', 10), 'system', 'external_actions', 'external_action.succeeded', 'Created and verified issue {link}', { label: 'lab/rag-experiments#41', target_type: 'issue', target_id: 'lab/rag-experiments#41' }, 'verified'),
 ];
 
@@ -100,8 +112,8 @@ function older() {
 }
 
 export function generateAudit() {
-  const all = [...VISIBLE, ...older()].sort((a, b) => b.created_at.localeCompare(a.created_at));
-  const counts = { ingestion: 0, retrieval: 0, memory: 0, tool_calls: 0, approvals: 0, external_actions: 0, errors: 0 };
+  const all = [...V2, ...VISIBLE, ...older()].sort((a, b) => b.created_at.localeCompare(a.created_at));
+  const counts = { ingestion: 0, zotero_sync: 0, retrieval: 0, extraction: 0, memory: 0, decision_alerts: 0, proposals: 0, tool_calls: 0, approvals: 0, external_actions: 0, errors: 0 };
   for (const e of all) counts[e.category] += 1;
   write('audit-events/list.200.json', {
     _note: 'Mock store seed: all events in the last 7 days. The real API returns 10 per page with next_cursor.',

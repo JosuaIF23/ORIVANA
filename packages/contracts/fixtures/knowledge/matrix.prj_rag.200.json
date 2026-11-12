@@ -1,0 +1,172 @@
+{
+  "_note": "GET /api/v1/knowledge/matrix?project_id=prj_rag (confirmed only, the default)",
+  "project_id": "prj_rag",
+  "include_candidates": false,
+  "methods": [
+    {
+      "id": "ent_m_bm25",
+      "name": "BM25"
+    },
+    {
+      "id": "ent_m_dense",
+      "name": "Dense retrieval"
+    },
+    {
+      "id": "ent_m_hybrid",
+      "name": "Hybrid retrieval"
+    },
+    {
+      "id": "ent_m_graphrag",
+      "name": "GraphRAG"
+    }
+  ],
+  "datasets": [
+    {
+      "id": "ent_d_nq",
+      "name": "Natural Questions"
+    },
+    {
+      "id": "ent_d_triviaqa",
+      "name": "TriviaQA"
+    },
+    {
+      "id": "ent_d_hotpotqa",
+      "name": "HotpotQA"
+    },
+    {
+      "id": "ent_d_beir",
+      "name": "BEIR"
+    }
+  ],
+  "papers": [
+    {
+      "ordinal": 1,
+      "source_id": "src_santos2025",
+      "entity_id": "ent_p_santos",
+      "label": "Santos & Lee 2025",
+      "title": "Fusion Retrieval Revisited: BM25 + Dense on Open-Domain QA",
+      "year": 2025
+    },
+    {
+      "ordinal": 2,
+      "source_id": "src_okafor2025",
+      "entity_id": "ent_p_okafor",
+      "label": "Okafor et al. 2025",
+      "title": "Hybrid Retrieval Under Distribution Shift",
+      "year": 2025
+    },
+    {
+      "ordinal": 3,
+      "source_id": "src_varga2024",
+      "entity_id": "ent_p_varga",
+      "label": "Varga & Chen 2024",
+      "title": "Dense-Only Baselines for Multi-hop QA",
+      "year": 2024
+    },
+    {
+      "ordinal": 4,
+      "source_id": "src_ito2025",
+      "entity_id": "ent_p_ito",
+      "label": "Ito 2025",
+      "title": "GraphRAG: Community Summaries for Global Questions",
+      "year": 2025
+    }
+  ],
+  "cells": [
+    {
+      "method_id": "ent_m_bm25",
+      "dataset_id": "ent_d_nq",
+      "paper_ordinals": [
+        1,
+        2
+      ],
+      "status": "confirmed",
+      "metric": null
+    },
+    {
+      "method_id": "ent_m_bm25",
+      "dataset_id": "ent_d_triviaqa",
+      "paper_ordinals": [
+        2
+      ],
+      "status": "confirmed",
+      "metric": null
+    },
+    {
+      "method_id": "ent_m_bm25",
+      "dataset_id": "ent_d_beir",
+      "paper_ordinals": [
+        2
+      ],
+      "status": "confirmed",
+      "metric": null
+    },
+    {
+      "method_id": "ent_m_dense",
+      "dataset_id": "ent_d_nq",
+      "paper_ordinals": [
+        1,
+        2
+      ],
+      "status": "confirmed",
+      "metric": null
+    },
+    {
+      "method_id": "ent_m_dense",
+      "dataset_id": "ent_d_triviaqa",
+      "paper_ordinals": [
+        2
+      ],
+      "status": "confirmed",
+      "metric": null
+    },
+    {
+      "method_id": "ent_m_dense",
+      "dataset_id": "ent_d_hotpotqa",
+      "paper_ordinals": [
+        3
+      ],
+      "status": "confirmed",
+      "metric": null
+    },
+    {
+      "method_id": "ent_m_dense",
+      "dataset_id": "ent_d_beir",
+      "paper_ordinals": [
+        2
+      ],
+      "status": "confirmed",
+      "metric": null
+    },
+    {
+      "method_id": "ent_m_hybrid",
+      "dataset_id": "ent_d_nq",
+      "paper_ordinals": [
+        1,
+        2
+      ],
+      "status": "confirmed",
+      "metric": "+3.6 to +4.1 top-20"
+    },
+    {
+      "method_id": "ent_m_hybrid",
+      "dataset_id": "ent_d_triviaqa",
+      "paper_ordinals": [
+        2
+      ],
+      "status": "confirmed",
+      "metric": "+2.9 top-20"
+    },
+    {
+      "method_id": "ent_m_hybrid",
+      "dataset_id": "ent_d_beir",
+      "paper_ordinals": [
+        2
+      ],
+      "status": "confirmed",
+      "metric": null
+    }
+  ],
+  "gap_count": 6,
+  "generated_at": "2026-11-11T08:10:00Z"
+}

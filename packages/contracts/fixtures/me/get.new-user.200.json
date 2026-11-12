@@ -23,6 +23,7 @@
     "projects": 0,
     "pending_approvals": 0,
     "memories_needing_review": 0,
-    "unread_notifications": 0
+    "unread_notifications": 0,
+    "decisions_needing_review": 0
   }
 }

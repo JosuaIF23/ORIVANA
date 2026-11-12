@@ -102,6 +102,16 @@ export interface ActionProposal {
   changes_since_proposal: string[];
   latest_run: ActionRun | null;
   audit_event_id: Id | null;
+  /** v2: where the proposal came from (PRD §8.7). */
+  origin?: ProposalOrigin;
+  /** v2: decision the created issue is linked back to. */
+  linked_decision?: { id: Id; code: string | null; title: string } | null;
+}
+
+export interface ProposalOrigin {
+  type: 'assistant' | 'decision_alert' | 'manual';
+  id: Id | null;
+  label: string;
 }
 
 export interface ProposalListResponse {

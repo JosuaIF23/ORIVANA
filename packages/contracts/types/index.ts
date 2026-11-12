@@ -12,3 +12,8 @@ export type * from './action';
 export type * from './audit';
 export type * from './search';
 export type * from './home';
+export type * from './matrix';
+export type * from './claim';
+export type * from './decision-alert';
+export type * from './model';
+export type * from './zotero';

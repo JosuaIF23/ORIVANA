@@ -8,6 +8,8 @@ import { generateConversations } from './fixtures/conversations.mjs';
 import { generateMemories } from './fixtures/memories.mjs';
 import { generateActions } from './fixtures/actions.mjs';
 import { generateAudit } from './fixtures/audit.mjs';
+import { generateKnowledge } from './fixtures/knowledge.mjs';
+import { generateModelsAndZotero } from './fixtures/models-zotero.mjs';
 import { generateAuth, generateMe, generateProjects, generateConnections, generateSearch, generateMisc } from './fixtures/misc.mjs';
 
 rmSync(FIXTURES_DIR, { recursive: true, force: true });
@@ -19,6 +21,8 @@ generateGraph();
 generateConversations();
 generateMemories();
 generateActions();
+generateKnowledge();
+generateModelsAndZotero();
 const counts = generateAudit();
 generateConnections();
 generateSearch();

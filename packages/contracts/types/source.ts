@@ -1,10 +1,12 @@
 import type { Id, ISODateTime } from './common';
 import type { EntityType, RelationshipStatus, RelationType } from './graph';
+import type { ZoteroItemRef } from './zotero';
 
-export type SourceType = 'pdf' | 'markdown' | 'txt';
+/** v2 adds `zotero` (an item imported read-only from Zotero, usually with its PDF). */
+export type SourceType = 'pdf' | 'markdown' | 'txt' | 'zotero';
 
 /** Processing status shown as a text badge (UI.md §4.7). */
-export type SourceStatus = 'queued' | 'parsing' | 'indexing' | 'ready' | 'failed';
+export type SourceStatus = 'queued' | 'parsing' | 'indexing' | 'extracting' | 'ready' | 'failed';
 
 export type JobStatus = 'queued' | 'running' | 'succeeded' | 'failed';
 
@@ -49,6 +51,8 @@ export interface Source {
   created_at: ISODateTime;
   updated_at: ISODateTime;
   job: Job | null;
+  /** v2: set when `type` is `zotero`. */
+  zotero?: ZoteroItemRef | null;
 }
 
 export interface Section {
@@ -125,6 +129,8 @@ export interface SourceListQuery {
   project_id?: Id;
   status?: SourceStatus;
   type?: SourceType;
+  /** v2: only items removed in Zotero. */
+  removed_in_zotero?: boolean;
   cursor?: string;
   limit?: number;
 }

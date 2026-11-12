@@ -1,0 +1,115 @@
+{
+  "_note": "GET /api/v1/memories?decisions_only=true&review_state=needs_review",
+  "items": [
+    {
+      "id": "dec_rag_04",
+      "workspace_id": "ws_personal",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "confidence": null,
+      "supersedes_id": "dec_rag_02",
+      "superseded_by_id": null,
+      "valid_from": "2026-11-06T03:00:00Z",
+      "valid_to": null,
+      "updated_at": "2026-11-06T03:00:00Z",
+      "decision": {
+        "code": "D-04",
+        "title": "Use hybrid retrieval for thesis experiments",
+        "rationale": "two papers report consistent gains over dense-only on NQ and TriviaQA, largest under distribution shift.",
+        "evidence": [
+          {
+            "source_id": "src_okafor2025",
+            "label": "Okafor et al. 2025",
+            "page": 6
+          },
+          {
+            "source_id": "src_santos2025",
+            "label": "Santos & Lee 2025",
+            "page": 4
+          }
+        ]
+      },
+      "kind": "decision",
+      "title": "Use hybrid retrieval for thesis experiments",
+      "rationale": "two papers report consistent gains over dense-only on NQ and TriviaQA, largest under distribution shift.",
+      "review_state": "needs_review",
+      "dependencies": [
+        {
+          "claim_id": "ent_c_hybridbeats",
+          "statement": "Hybrid retrieval outperforms dense-only retrieval on open-domain QA",
+          "supports_count": 2,
+          "contradicts_count": 1,
+          "note": null
+        },
+        {
+          "claim_id": "ent_c_lexicalaids",
+          "statement": "Lexical matching helps most for questions with rare entity names",
+          "supports_count": 1,
+          "contradicts_count": 0,
+          "note": null
+        }
+      ],
+      "decided_at": "2026-11-06T03:00:00Z",
+      "history": [
+        {
+          "at": "2026-11-06T03:00:00Z",
+          "kind": "created",
+          "text": "Recorded by you",
+          "link": null
+        },
+        {
+          "at": "2026-11-06T03:00:00Z",
+          "kind": "confirmed",
+          "text": "Confirmed by you",
+          "link": null
+        },
+        {
+          "at": "2026-11-06T03:00:00Z",
+          "kind": "superseded",
+          "text": "Replaced an earlier decision",
+          "link": {
+            "target_type": "memory",
+            "target_id": "dec_rag_02"
+          }
+        },
+        {
+          "at": "2026-11-06T03:02:00Z",
+          "kind": "dependencies_changed",
+          "text": "Linked to 2 claims",
+          "link": null
+        },
+        {
+          "at": "2026-11-10T09:45:00Z",
+          "kind": "alert_raised",
+          "text": "Needs review: Varga & Chen 2024 (p. 9) contradicts a claim this decision depends on",
+          "link": {
+            "target_type": "decision_alert",
+            "target_id": "alert_01JCD04VRG"
+          }
+        }
+      ],
+      "open_alert_id": "alert_01JCD04VRG",
+      "memory_type": "project",
+      "content": "Use hybrid retrieval (BM25 + dense, RRF k = 60) for every thesis experiment.",
+      "origin": "user",
+      "status": "confirmed",
+      "created_at": "2026-11-06T03:00:00Z",
+      "evidence": {
+        "kind": "source",
+        "label": "Okafor et al. 2025 · p. 6",
+        "conversation_id": null,
+        "source_id": "src_okafor2025",
+        "page": 6
+      }
+    }
+  ],
+  "next_cursor": null,
+  "total": 1,
+  "counts": {
+    "candidate": 0,
+    "proposed": 1,
+    "confirmed": 5,
+    "superseded": 1,
+    "rejected": 0
+  }
+}

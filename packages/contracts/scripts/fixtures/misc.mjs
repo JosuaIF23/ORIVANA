@@ -1,4 +1,5 @@
 // Auth, me, projects, connections, search, exports, home, workspace deletion.
+import { ZOTERO_CONNECTION } from './models-zotero.mjs';
 import { t, write, error, USER, WORKSPACE, NOW } from './lib.mjs';
 
 export function generateAuth() {
@@ -36,7 +37,7 @@ export function generateMe() {
     workspace: WORKSPACE,
     role: 'owner',
     onboarding_completed: true,
-    counts: { sources: 31, projects: 2, pending_approvals: 2, memories_needing_review: 3, unread_notifications: 1 },
+    counts: { sources: 31, projects: 2, pending_approvals: 2, memories_needing_review: 3, unread_notifications: 1, decisions_needing_review: 1 },
   };
   write('me/get.200.json', me);
   write('me/get.new-user.200.json', {
@@ -44,7 +45,7 @@ export function generateMe() {
     workspace: { ...WORKSPACE, id: 'ws_new', owner_user_id: 'usr_new', created_at: NOW },
     role: 'owner',
     onboarding_completed: false,
-    counts: { sources: 0, projects: 0, pending_approvals: 0, memories_needing_review: 0, unread_notifications: 0 },
+    counts: { sources: 0, projects: 0, pending_approvals: 0, memories_needing_review: 0, unread_notifications: 0, decisions_needing_review: 0 },
   });
   write('me/get.401-unauthenticated.json', error('UNAUTHENTICATED', 'Your session has expired. Sign in again.', 'req_4e81c0d2'));
   write('me/delete.200.json', { ok: true });
@@ -55,6 +56,9 @@ export function generateMe() {
     use_unconfirmed_candidates_in_answers: false,
     discard_unreviewed_candidates_after_days: 30,
     default_project_id: 'prj_rag',
+    answer_model: 'claude-sonnet-5-5',
+    theme: 'dark',
+    notifications: { decision_alerts: true, approvals: true, weekly_digest: false },
   });
   write('me/sessions.200.json', {
     items: [
@@ -76,8 +80,8 @@ export const PROJECTS = [
     status: 'active',
     created_at: t('09:00', 2),
     updated_at: t('13:10'),
-    summary: 'Latest decision: use hybrid retrieval (BM25 + dense, RRF) as the default retriever.',
-    counts: { sources: 14, decisions: 4, conversations: 5, pending_actions: 2 },
+    summary: 'Latest decision: use hybrid retrieval for thesis experiments (needs review).',
+    counts: { sources: 14, decisions: 4, conversations: 5, pending_actions: 2, claims: 5, activity: 38, decisions_needing_review: 1 },
   },
   {
     id: 'prj_thesis',
@@ -88,7 +92,7 @@ export const PROJECTS = [
     created_at: t('10:00', 1),
     updated_at: t('19:52', 8),
     summary: 'Outline drafted; research question narrowed to graph-aware retrieval.',
-    counts: { sources: 6, decisions: 2, conversations: 2, pending_actions: 0 },
+    counts: { sources: 6, decisions: 2, conversations: 2, pending_actions: 0, claims: 0, activity: 6, decisions_needing_review: 0 },
   },
 ];
 
@@ -99,7 +103,7 @@ export function generateProjects() {
     items: {
       prj_rag: {
         ...PROJECTS[0],
-        current_status: { text: 'Hybrid retrieval is the default. Next: re-run the evaluation and add a multi-hop split.', based_on_memory_id: 'dec_rag_04', based_on_label: 'Based on confirmed decision D-04 · 6 Nov' },
+        current_status: { text: 'Hybrid retrieval is used for thesis experiments, but a new paper questions it on multi-hop questions. Next: review D-04 and add a multi-hop split.', based_on_memory_id: 'dec_rag_04', based_on_label: 'Based on confirmed decision D-04 · 6 Nov' },
         recent_changes: [
           { at: t('13:58'), text: '3 sources added, 1 indexing' },
           { at: t('14:34'), text: '2 GitHub issues proposed' },
@@ -152,20 +156,25 @@ const GITHUB = {
 };
 
 const CATALOG = [
+  { provider: 'zotero', name: 'Zotero', tagline: 'Import items, PDFs, and highlights from chosen collections (read only)', availability: 'available', workaround: null },
   { provider: 'github', name: 'GitHub', tagline: 'Read repositories and issues; create issues after approval', availability: 'available', workaround: null },
+  { provider: 'mcp', name: 'Use ORIVANA in Claude / ChatGPT', tagline: 'Ask about your papers and decisions from the AI assistants you already use', availability: 'coming_later', workaround: 'Actions requested from other apps will always wait for your approval here.' },
   { provider: 'obsidian', name: 'Obsidian sync', tagline: 'Read notes from a local vault', availability: 'coming_later', workaround: 'Until sync ships, upload your Markdown notes — links and headings are kept.' },
   { provider: 'google_drive', name: 'Google Drive', tagline: 'Read PDFs and docs from chosen folders', availability: 'coming_later', workaround: 'Download files from Drive and upload them to Sources for now.' },
+  { provider: 'notion', name: 'Notion', tagline: 'Read pages from chosen workspaces', availability: 'coming_later', workaround: 'Export pages as Markdown and upload them to Sources for now.' },
 ];
 
 export function generateConnections() {
-  write('connections/list.200.json', { connections: [GITHUB], catalog: CATALOG });
+  write('connections/list.200.json', { connections: [ZOTERO_CONNECTION, GITHUB], catalog: CATALOG });
   write('connections/list.needs-reconnect.200.json', {
-    connections: [{ ...GITHUB, status: 'needs_reconnect', health: 'failed', status_detail: 'GitHub rejected the stored token on 11 Nov at 09:02. Reads are paused and pending proposals can’t run until you reconnect.' }],
+    connections: [ZOTERO_CONNECTION, { ...GITHUB, status: 'needs_reconnect', health: 'failed', status_detail: 'GitHub rejected the stored token on 11 Nov at 09:02. Reads are paused and pending proposals can’t run until you reconnect.' }],
     catalog: CATALOG,
   });
   write('connections/list.empty.200.json', { connections: [], catalog: CATALOG });
   write('connections/start.200.json', { provider: 'github', authorize_url: 'https://github.com/login/oauth/authorize?client_id=orivana-demo&scope=repo%3Aissues', requested_scopes: ['contents:read', 'issues:read', 'issues:write'] });
   write('connections/callback.200.json', GITHUB);
+  write('connections/zotero.start.200.json', { provider: 'zotero', authorize_url: 'https://www.zotero.org/oauth/authorize?oauth_token=orivana-demo', requested_scopes: ['library:read', 'files:read', 'notes:read'] });
+  write('connections/zotero.callback.200.json', ZOTERO_CONNECTION);
   write('connections/reconnect.200.json', { ...GITHUB, last_checked_at: NOW });
   write('connections/delete.200.json', { revoked_connection_id: 'conn_github', cancelled_proposals: 2 });
   write('connections/repositories.200.json', { items: GITHUB.repositories });
@@ -176,7 +185,7 @@ export function generateSearch() {
     _note: 'POST /api/v1/search {"query":"hybrid"}',
     query: 'hybrid',
     scope_label: 'Searching all of Personal workspace',
-    total: 7,
+    total: 8,
     groups: [
       {
         key: 'sources',
@@ -197,7 +206,12 @@ export function generateSearch() {
       {
         key: 'memories',
         label: 'Memories & decisions',
-        results: [{ id: 'dec_rag_04', type: 'decision', type_label: 'Decision', icon: 'decision', title: 'D-04 Use hybrid retrieval as the default retriever', subtitle: 'RAG Comparison · confirmed', updated_at: t('10:00', 6), page: null }],
+        results: [{ id: 'dec_rag_04', type: 'decision', type_label: 'Decision', icon: 'decision', title: 'D-04 Use hybrid retrieval for thesis experiments', subtitle: 'RAG Comparison · confirmed · needs review', updated_at: t('10:00', 6), page: null }],
+      },
+      {
+        key: 'claims',
+        label: 'Claims',
+        results: [{ id: 'ent_c_hybridbeats', type: 'claim', type_label: 'Claim', icon: 'claim', title: 'Hybrid retrieval outperforms dense-only retrieval on open-domain QA', subtitle: 'RAG Comparison · 2 supports · 1 contradicts', updated_at: t('16:44', 10), page: null }],
       },
       {
         key: 'conversations',

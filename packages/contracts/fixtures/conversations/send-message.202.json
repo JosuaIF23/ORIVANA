@@ -6,6 +6,8 @@
     "content": "Create a GitHub issue in lab/rag-experiments to re-run our eval with hybrid retrieval, based on this finding.",
     "status": "complete",
     "created_at": "2026-11-11T07:33:00Z",
+    "model": null,
+    "model_name": null,
     "answer_kind": null,
     "sources_used": null,
     "sources_searched": null,

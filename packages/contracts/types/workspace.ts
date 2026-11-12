@@ -31,6 +31,8 @@ export interface MeResponse {
     pending_approvals: number;
     memories_needing_review: number;
     unread_notifications: number;
+    /** v2: decisions with an open Decision Impact alert. */
+    decisions_needing_review?: number;
   };
 }
 
@@ -42,6 +44,10 @@ export interface Preferences {
   use_unconfirmed_candidates_in_answers: boolean;
   discard_unreviewed_candidates_after_days: 7 | 30 | 90 | null;
   default_project_id: Id | null;
+  /* v2 (PRD §12 user_preferences). */
+  answer_model?: Id;
+  theme?: 'dark' | 'light' | 'system';
+  notifications?: { decision_alerts: boolean; approvals: boolean; weekly_digest: boolean };
 }
 
 /** Extension: GET /api/v1/workspaces/{id}/deletion-preview */

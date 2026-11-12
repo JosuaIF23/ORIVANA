@@ -126,7 +126,7 @@
         {
           "type": "paragraph",
           "chunk_id": "chk_santos_0401",
-          "text": "Table 2 reports the main results. Across both datasets, the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5, a gain of 4.1 points, and improves TriviaQA by 2.2 points with reciprocal rank fusion (k = 60)."
+          "text": "Table 2 reports the main results on Natural Questions. With reciprocal rank fusion (k = 60), the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5, a gain of 4.1 points over the dense-only baseline."
         }
       ],
       "chunks": [
@@ -148,15 +148,15 @@
           "id": "chk_santos_0401",
           "document_id": "doc_santos2025",
           "ordinal": 5,
-          "text": "Table 2 reports the main results. Across both datasets, the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5, a gain of 4.1 points, and improves TriviaQA by 2.2 points with reciprocal rank fusion (k = 60).",
-          "token_count": 53,
+          "text": "Table 2 reports the main results on Natural Questions. With reciprocal rank fusion (k = 60), the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5, a gain of 4.1 points over the dense-only baseline.",
+          "token_count": 51,
           "page_start": 4,
           "page_end": 4,
           "section_path": [
             "3.1 Main results"
           ],
           "char_start": 6000,
-          "char_end": 6223
+          "char_end": 6215
         }
       ]
     },

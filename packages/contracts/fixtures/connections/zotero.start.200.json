@@ -1,0 +1,9 @@
+{
+  "provider": "zotero",
+  "authorize_url": "https://www.zotero.org/oauth/authorize?oauth_token=orivana-demo",
+  "requested_scopes": [
+    "library:read",
+    "files:read",
+    "notes:read"
+  ]
+}

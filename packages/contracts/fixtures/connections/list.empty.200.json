@@ -2,11 +2,25 @@
   "connections": [],
   "catalog": [
     {
+      "provider": "zotero",
+      "name": "Zotero",
+      "tagline": "Import items, PDFs, and highlights from chosen collections (read only)",
+      "availability": "available",
+      "workaround": null
+    },
+    {
       "provider": "github",
       "name": "GitHub",
       "tagline": "Read repositories and issues; create issues after approval",
       "availability": "available",
       "workaround": null
+    },
+    {
+      "provider": "mcp",
+      "name": "Use ORIVANA in Claude / ChatGPT",
+      "tagline": "Ask about your papers and decisions from the AI assistants you already use",
+      "availability": "coming_later",
+      "workaround": "Actions requested from other apps will always wait for your approval here."
     },
     {
       "provider": "obsidian",
@@ -21,6 +35,13 @@
       "tagline": "Read PDFs and docs from chosen folders",
       "availability": "coming_later",
       "workaround": "Download files from Drive and upload them to Sources for now."
+    },
+    {
+      "provider": "notion",
+      "name": "Notion",
+      "tagline": "Read pages from chosen workspaces",
+      "availability": "coming_later",
+      "workaround": "Export pages as Markdown and upload them to Sources for now."
     }
   ]
 }

@@ -26,5 +26,7 @@ export function resultHref(r: SearchResult): string {
       return `/projects/prj_rag#${r.id}`;
     case 'memory':
       return `/knowledge/memory?status=all&q=${encodeURIComponent(r.title.slice(0, 30))}`;
+    case 'claim':
+      return `/knowledge/claims?claim=${r.id}`;
   }
 }

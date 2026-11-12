@@ -212,6 +212,8 @@
           "content": "Your sources reach different conclusions, so here are both sides.",
           "status": "complete",
           "created_at": "2026-11-11T08:10:00Z",
+          "model": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
           "answer_kind": "conflicting",
           "sources_used": 2,
           "sources_searched": 14,

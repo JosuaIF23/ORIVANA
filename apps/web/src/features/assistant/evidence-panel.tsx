@@ -7,6 +7,7 @@ import { CitationChip, EvidencePassage } from '@/components/common/citation';
 import { EmptyState } from '@/components/common/states';
 import { MetaList } from '@/components/ui/primitives';
 import { useSource } from '@/features/sources/use-sources';
+import { SOURCE_TYPE_LABEL } from '@/lib/labels';
 
 interface Props {
   message: Message | null;
@@ -15,7 +16,7 @@ interface Props {
   onSelect: (ordinal: number) => void;
 }
 
-const TYPE = { pdf: 'PDF', markdown: 'Markdown', txt: 'TXT' } as const;
+const TYPE = SOURCE_TYPE_LABEL;
 
 /** Selected citation's passage with the quoted span highlighted (UI.md §4.5). */
 export function EvidencePanel({ message, ordinal, conversationId, onSelect }: Props) {

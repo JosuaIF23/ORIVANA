@@ -69,6 +69,9 @@ export interface Message {
   proposal_id: Id | null;
   error: { code: string; message: string; retryable: boolean } | null;
   cancelled_at: ISODateTime | null;
+  /** v2: answer model id recorded per message (PRD §8.3) and its display name. */
+  model?: Id | null;
+  model_name?: string | null;
 }
 
 /** GET /api/v1/conversations/{id} */

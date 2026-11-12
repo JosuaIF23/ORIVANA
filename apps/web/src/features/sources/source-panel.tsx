@@ -11,8 +11,9 @@ import { EntityTypeIcon } from '@/components/common/entity-icon';
 import { StatusBadge } from '@/components/common/status-badge';
 import { DeleteSourceDialog } from './delete-source-dialog';
 import { useReprocessSource } from './use-sources';
+import { SOURCE_TYPE_LABEL } from '@/lib/labels';
 
-const TYPE = { pdf: 'PDF', markdown: 'Markdown', txt: 'TXT' } as const;
+const TYPE = SOURCE_TYPE_LABEL;
 
 /** Metadata, extracted entities, relationships, ingestion history, actions. */
 export function SourcePanel({ source: s, className }: { source: SourceDetail; className?: string }) {

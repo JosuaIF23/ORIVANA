@@ -27,7 +27,7 @@ const ENTITY_ROWS = [
   ['ent_k_lexical', 'Lexical matching', 'concept', null],
   ['ent_k_shift', 'Distribution shift', 'concept', null],
   ['ent_prj_rag', 'RAG Comparison', 'project', null],
-  ['ent_dec_04', 'D-04 Hybrid as default', 'decision', null, 'active'],
+  ['ent_dec_04', 'D-04 Hybrid for thesis experiments', 'decision', null, 'active'],
   ['ent_dec_02', 'D-02 Dense-only default', 'decision', null, 'superseded'],
 ];
 
@@ -48,8 +48,8 @@ const typeOf = Object.fromEntries(ENTITIES.map((e) => [e.id, e.entity_type]));
 
 // [id, from, relation, to, status, confidence|null(user), passages(keys or inline), extractedDay]
 const REL_ROWS = [
-  ['rel_varga_hybrid', 'ent_p_varga', 'uses_method', 'ent_m_hybrid', 'candidate', 0.72, ['varga_p3', 'varga_p9_graph'], 5],
-  ['rel_varga_contradicts', 'ent_p_varga', 'contradicts', 'ent_c_hybridbeats', 'candidate', 0.64, ['varga_p9_graph'], 5],
+  ['rel_varga_hybrid', 'ent_p_varga', 'uses_method', 'ent_m_hybrid', 'candidate', 0.72, ['varga_p3', 'varga_p9_graph'], 10],
+  ['rel_varga_contradicts', 'ent_p_varga', 'contradicts', 'ent_c_hybridbeats', 'candidate', 0.64, ['varga_p9_graph'], 10],
   ['rel_daly_dense', 'ent_p_daly', 'uses_method', 'ent_m_dense', 'candidate', 0.69, [inline('src_daly2025', 'Daly 2025', 3, '3 Method', 'All runs use a 110M-parameter dense bi-encoder fine-tuned on the training split.', 'dense bi-encoder')], 11],
   ['rel_daly_longchunks', 'ent_p_daly', 'supports', 'ent_c_longchunks', 'candidate', 0.77, ['daly_p7', inline('src_daly2025', 'Daly 2025', 12, '5 Discussion', 'Shorter chunks consistently retrieve the answer-bearing sentence more often than long ones.', 'Shorter chunks consistently retrieve the answer-bearing sentence more often')], 11],
   ['rel_ito_hotpotqa', 'ent_p_ito', 'evaluates_on', 'ent_d_hotpotqa', 'candidate', 0.58, [inline('src_ito2025', 'Ito 2025', 7, '4 Experiments', 'We also report a small comparison on 500 HotpotQA questions to probe multi-hop behaviour.', '500 HotpotQA questions')], 11],
@@ -71,7 +71,7 @@ const REL_ROWS = [
   ['rel_varga_dense', 'ent_p_varga', 'uses_method', 'ent_m_dense', 'confirmed', 0.92, ['varga_p9'], 10],
   ['rel_varga_hotpotqa', 'ent_p_varga', 'evaluates_on', 'ent_d_hotpotqa', 'confirmed', 0.95, ['varga_p9'], 10],
   ['rel_dec04_santos', 'ent_dec_04', 'derived_from', 'ent_p_santos', 'confirmed', null, ['santos_p4'], 6],
-  ['rel_dec02_varga', 'ent_dec_02', 'derived_from', 'ent_p_varga', 'confirmed', null, ['varga_p9'], 10],
+  ['rel_varga_multihop', 'ent_p_varga', 'mentions', 'ent_k_multihop', 'confirmed', 0.9, ['varga_p9'], 10],
   ['rel_dec02_meyer', 'ent_dec_02', 'derived_from', 'ent_p_meyer', 'confirmed', null, ['meyer_p11'], 10],
   ['rel_rag_okafor', 'ent_prj_rag', 'contains', 'ent_p_okafor', 'confirmed', null, [], 3],
   ['rel_rag_varga', 'ent_prj_rag', 'contains', 'ent_p_varga', 'confirmed', null, [], 10],
@@ -113,6 +113,8 @@ function evidenceFor(relId, items) {
   });
 }
 
+export { SOURCE_LABEL, inline, evidenceFor, nameOf };
+
 export const RELATIONSHIPS = REL_ROWS.map(([id, from, relation_type, to, status, confidence, passages, day]) => {
   const evidence = evidenceFor(id, passages);
   const user = confidence === null;
@@ -126,7 +128,8 @@ export const RELATIONSHIPS = REL_ROWS.map(([id, from, relation_type, to, status,
     status,
     origin: user ? 'user' : status === 'candidate' ? 'model_proposed' : 'model_proposed',
     extraction_method: user ? 'user' : 'model_section',
-    extracted_at: t('10:00', day),
+    // Varga & Chen 2024 was synced from Zotero on 10 Nov 16:40 and extracted at 16:44.
+    extracted_at: from === 'ent_p_varga' ? t('16:44', 10) : t('10:00', day),
     valid_from: null,
     valid_to: null,
     evidence_count: evidence.length,
@@ -148,7 +151,7 @@ export function relationshipDetail(rel) {
 function counts(nodes, edges) {
   const by_type = { paper: 0, method: 0, dataset: 0, claim: 0, concept: 0, project: 0, decision: 0 };
   for (const n of nodes) by_type[n.entity_type] += 1;
-  const by_relation = { uses_method: 0, evaluates_on: 0, supports: 0, contradicts: 0, supersedes: 0, derived_from: 0, contains: 0 };
+  const by_relation = { uses_method: 0, evaluates_on: 0, supports: 0, contradicts: 0, mentions: 0, supersedes: 0, derived_from: 0, contains: 0 };
   for (const e of edges) by_relation[e.relation_type] += 1;
   return {
     by_type,

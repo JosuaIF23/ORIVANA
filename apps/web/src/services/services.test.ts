@@ -83,7 +83,7 @@ describe('memory', () => {
   it('needs_review lists candidates before confirmed', async () => {
     const res = await listMemories({ status: 'needs_review' });
     expect(res.items[0].status).toBe('candidate');
-    expect(res.counts).toEqual({ candidate: 3, confirmed: 5, superseded: 1, rejected: 2 });
+    expect(res.counts).toEqual({ candidate: 3, proposed: 0, confirmed: 5, superseded: 1, rejected: 2 });
   });
 
   it('supersede links both records', async () => {
@@ -177,13 +177,14 @@ describe('assistant streaming', () => {
 describe('search and activity', () => {
   it('returns the grouped design results for "hybrid"', async () => {
     const res = await search({ query: 'hybrid' });
-    expect(res.total).toBe(7);
-    expect(res.groups.map((g) => g.key)).toContain('entities');
+    expect(res.total).toBe(8);
+    expect(res.groups.map((g) => g.key)).toEqual(expect.arrayContaining(['entities', 'claims']));
   });
 
   it('counts audit events per category', async () => {
     const res = await listAuditEvents({ since_days: 30 });
-    expect(res.counts).toMatchObject({ ingestion: 14, retrieval: 11, memory: 6, tool_calls: 5, approvals: 4, external_actions: 3, errors: 3 });
+    expect(res.counts).toMatchObject({ ingestion: 13, zotero_sync: 2, retrieval: 11, extraction: 1, memory: 6, decision_alerts: 1, proposals: 2, tool_calls: 5, approvals: 3, external_actions: 3, errors: 3 });
+    expect(res.total).toBe(50);
     expect(res.items).toHaveLength(10);
   });
 });

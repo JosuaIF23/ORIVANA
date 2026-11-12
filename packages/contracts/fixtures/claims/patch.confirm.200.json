@@ -1,0 +1,78 @@
+{
+  "id": "ent_c_gapcloses",
+  "project_id": "prj_rag",
+  "project_name": "RAG Comparison",
+  "statement": "The hybrid advantage disappears on multi-hop questions",
+  "short_name": "Gap closes on multi-hop",
+  "status": "confirmed",
+  "supports_count": 1,
+  "contradicts_count": 0,
+  "mentions_count": 1,
+  "used_by_decisions": [
+    {
+      "id": "dec_rag_05",
+      "code": "D-05",
+      "title": "Add the HotpotQA multi-hop split to the evaluation",
+      "review_state": "ok"
+    }
+  ],
+  "has_new_contradiction": false,
+  "created_at": "2026-11-10T09:44:00Z",
+  "updated_at": "2026-11-11T08:10:00Z",
+  "evidence": [
+    {
+      "relationship_id": "rel_cl_varga_gapcloses",
+      "stance": "supports",
+      "status": "candidate",
+      "confidence": 0.71,
+      "source_id": "src_varga2024",
+      "source_label": "Varga & Chen 2024",
+      "source_title": "Dense-Only Baselines for Multi-hop QA",
+      "imported_at": "2026-11-10T09:40:00Z",
+      "evidence": [
+        {
+          "id": "ev_cl_varga_gapcloses_1",
+          "relationship_id": "rel_cl_varga_gapcloses",
+          "memory_id": null,
+          "chunk_id": "chk_varga_0901",
+          "source_id": "src_varga2024",
+          "source_label": "Varga & Chen 2024",
+          "page": 9,
+          "section": "5 Discussion",
+          "passage": "The hybrid configuration from Section 2.2 does not improve over our tuned dense retriever on HotpotQA, suggesting lexical signals matter less for multi-hop questions. Overall, on HotpotQA our tuned dense retriever is within 0.5 points of the hybrid configuration across all retrieval budgets.",
+          "quote": "on HotpotQA our tuned dense retriever is within 0.5 points of the hybrid configuration",
+          "char_start": 176,
+          "char_end": 262
+        }
+      ]
+    },
+    {
+      "relationship_id": "rel_cl_fischer_gapcloses",
+      "stance": "mentions",
+      "status": "confirmed",
+      "confidence": 0.74,
+      "source_id": "src_fischer2024",
+      "source_label": "Fischer 2024",
+      "source_title": "Query Rewriting for Multi-hop Retrieval",
+      "imported_at": null,
+      "evidence": [
+        {
+          "id": "ev_cl_fischer_gapcloses_1",
+          "relationship_id": "rel_cl_fischer_gapcloses",
+          "memory_id": null,
+          "chunk_id": "chk_fischer2024_2e",
+          "source_id": "src_fischer2024",
+          "source_label": "Fischer 2024",
+          "page": 2,
+          "section": "1 Introduction",
+          "passage": "Multi-hop questions need evidence from several documents, so lexical overlap with the question is a weaker signal than in single-hop QA.",
+          "quote": "lexical overlap with the question is a weaker signal than in single-hop QA",
+          "char_start": 61,
+          "char_end": 135
+        }
+      ]
+    }
+  ],
+  "context_note": null,
+  "merge_suggestions": []
+}

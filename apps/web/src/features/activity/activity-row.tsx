@@ -1,6 +1,6 @@
 import { useId, useState } from 'react';
 import { Link } from 'react-router';
-import { ChevronDown, Cpu, Server, User } from 'lucide-react';
+import { ChevronDown, Cpu, Plug, Server, User } from 'lucide-react';
 import type { AuditEvent } from '@contracts/types';
 import { cn } from '@/lib/cn';
 import { formatTime } from '@/lib/format';
@@ -8,9 +8,15 @@ import { Button, ButtonLink } from '@/components/ui/button';
 import { AuditSummary, auditHref } from '@/components/common/audit-summary';
 import { StatusBadge } from '@/components/common/status-badge';
 import { useToast } from '@/components/common/toast';
+import { ACTOR_LABEL } from '@/lib/labels';
 import { CATEGORY } from './category-chips';
 
-const ACTOR = { user: { label: 'User', icon: <User /> }, agent: { label: 'Agent', icon: <Cpu /> }, system: { label: 'System', icon: <Server /> } };
+const ACTOR: Record<AuditEvent['actor_type'], { label: string; icon: React.ReactNode }> = {
+  user: { label: ACTOR_LABEL.user, icon: <User /> },
+  agent: { label: ACTOR_LABEL.agent, icon: <Cpu /> },
+  system: { label: ACTOR_LABEL.system, icon: <Server /> },
+  external_client: { label: ACTOR_LABEL.external_client, icon: <Plug /> },
+};
 
 /** One audit event with expandable details (error code, job, request id). */
 export function ActivityRow({ event: e, defaultOpen }: { event: AuditEvent; defaultOpen: boolean }) {

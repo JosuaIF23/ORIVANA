@@ -16,6 +16,10 @@ export interface Project {
     decisions: number;
     conversations: number;
     pending_actions: number;
+    /* v2 tab counts */
+    claims?: number;
+    activity?: number;
+    decisions_needing_review?: number;
   };
 }
 

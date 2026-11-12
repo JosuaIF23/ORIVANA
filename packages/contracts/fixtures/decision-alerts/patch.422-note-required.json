@@ -1,0 +1,10 @@
+{
+  "error": {
+    "code": "VALIDATION_FAILED",
+    "message": "Add a short note on why you keep this decision.",
+    "details": {
+      "field": "resolution_note"
+    },
+    "request_id": "req_9d8c7b6a"
+  }
+}

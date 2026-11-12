@@ -1,0 +1,1090 @@
+{
+  "_note": "Mock store seed: GET /api/v1/knowledge/matrix/cell?method_id=&dataset_id= for every pair (gaps included), with candidate papers.",
+  "items": [
+    {
+      "method": {
+        "id": "ent_m_bm25",
+        "name": "BM25"
+      },
+      "dataset": {
+        "id": "ent_d_nq",
+        "name": "Natural Questions"
+      },
+      "is_gap": false,
+      "papers": [
+        {
+          "ordinal": 1,
+          "source_id": "src_santos2025",
+          "entity_id": "ent_p_santos",
+          "label": "Santos & Lee 2025",
+          "title": "Fusion Retrieval Revisited: BM25 + Dense on Open-Domain QA",
+          "year": 2025,
+          "status": "confirmed",
+          "relationships": [
+            {
+              "id": "rel_santos_bm25",
+              "relation_type": "uses_method",
+              "status": "confirmed",
+              "confidence": 0.95
+            },
+            {
+              "id": "rel_santos_nq",
+              "relation_type": "evaluates_on",
+              "status": "confirmed",
+              "confidence": 0.93
+            }
+          ],
+          "evidence": [
+            {
+              "id": "ev_santos_bm25_1",
+              "relationship_id": "rel_santos_bm25",
+              "memory_id": null,
+              "chunk_id": "chk_santos_0401",
+              "source_id": "src_santos2025",
+              "source_label": "Santos & Lee 2025",
+              "page": 4,
+              "section": "3.1 Main results",
+              "passage": "Table 2 reports the main results on Natural Questions. With reciprocal rank fusion (k = 60), the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5, a gain of 4.1 points over the dense-only baseline.",
+              "quote": "the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5",
+              "char_start": 93,
+              "char_end": 163
+            },
+            {
+              "id": "ev_santos_nq_2",
+              "relationship_id": "rel_santos_nq",
+              "memory_id": null,
+              "chunk_id": "chk_santos2025_2e",
+              "source_id": "src_santos2025",
+              "source_label": "Santos & Lee 2025",
+              "page": 2,
+              "section": "2 Setup",
+              "passage": "We use the Natural Questions open-domain split with the standard 21M-passage Wikipedia index.",
+              "quote": "Natural Questions open-domain split",
+              "char_start": 11,
+              "char_end": 46
+            }
+          ]
+        },
+        {
+          "ordinal": 2,
+          "source_id": "src_okafor2025",
+          "entity_id": "ent_p_okafor",
+          "label": "Okafor et al. 2025",
+          "title": "Hybrid Retrieval Under Distribution Shift",
+          "year": 2025,
+          "status": "confirmed",
+          "relationships": [
+            {
+              "id": "rel_mx_okafor_bm25",
+              "relation_type": "uses_method",
+              "status": "confirmed",
+              "confidence": 0.91
+            },
+            {
+              "id": "rel_mx_okafor_nq",
+              "relation_type": "evaluates_on",
+              "status": "confirmed",
+              "confidence": 0.93
+            }
+          ],
+          "evidence": [
+            {
+              "id": "ev_mx_okafor_bm25_1",
+              "relationship_id": "rel_mx_okafor_bm25",
+              "memory_id": null,
+              "chunk_id": "chk_okafor_0601",
+              "source_id": "src_okafor2025",
+              "source_label": "Okafor et al. 2025",
+              "page": 6,
+              "section": "4.2 Results",
+              "passage": "Table 3 summarises retrieval accuracy on in-domain and shifted test sets. Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets. We attribute most of this gain to lexical matching of rare entity names that the dense encoder under-represents.",
+              "quote": "Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets.",
+              "char_start": 74,
+              "char_end": 273
+            },
+            {
+              "id": "ev_mx_okafor_nq_1",
+              "relationship_id": "rel_mx_okafor_nq",
+              "memory_id": null,
+              "chunk_id": "chk_okafor_0502",
+              "source_id": "src_okafor2025",
+              "source_label": "Okafor et al. 2025",
+              "page": 5,
+              "section": "4.1 Setup",
+              "passage": "We evaluate distribution shift on six BEIR subsets whose vocabulary differs from the training data, and report in-domain results on Natural Questions and TriviaQA for reference.",
+              "quote": "We evaluate distribution shift on six BEIR subsets",
+              "char_start": 0,
+              "char_end": 50
+            }
+          ]
+        }
+      ],
+      "related_claim_ids": [
+        "ent_c_lexicalaids"
+      ]
+    },
+    {
+      "method": {
+        "id": "ent_m_bm25",
+        "name": "BM25"
+      },
+      "dataset": {
+        "id": "ent_d_triviaqa",
+        "name": "TriviaQA"
+      },
+      "is_gap": false,
+      "papers": [
+        {
+          "ordinal": 2,
+          "source_id": "src_okafor2025",
+          "entity_id": "ent_p_okafor",
+          "label": "Okafor et al. 2025",
+          "title": "Hybrid Retrieval Under Distribution Shift",
+          "year": 2025,
+          "status": "confirmed",
+          "relationships": [
+            {
+              "id": "rel_mx_okafor_bm25",
+              "relation_type": "uses_method",
+              "status": "confirmed",
+              "confidence": 0.91
+            },
+            {
+              "id": "rel_okafor_triviaqa",
+              "relation_type": "evaluates_on",
+              "status": "confirmed",
+              "confidence": 0.91
+            }
+          ],
+          "evidence": [
+            {
+              "id": "ev_mx_okafor_bm25_1",
+              "relationship_id": "rel_mx_okafor_bm25",
+              "memory_id": null,
+              "chunk_id": "chk_okafor_0601",
+              "source_id": "src_okafor2025",
+              "source_label": "Okafor et al. 2025",
+              "page": 6,
+              "section": "4.2 Results",
+              "passage": "Table 3 summarises retrieval accuracy on in-domain and shifted test sets. Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets. We attribute most of this gain to lexical matching of rare entity names that the dense encoder under-represents.",
+              "quote": "Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets.",
+              "char_start": 74,
+              "char_end": 273
+            },
+            {
+              "id": "ev_okafor_triviaqa_2",
+              "relationship_id": "rel_okafor_triviaqa",
+              "memory_id": null,
+              "chunk_id": "chk_okafor_0502",
+              "source_id": "src_okafor2025",
+              "source_label": "Okafor et al. 2025",
+              "page": 5,
+              "section": "4.1 Setup",
+              "passage": "We evaluate distribution shift on six BEIR subsets whose vocabulary differs from the training data, and report in-domain results on Natural Questions and TriviaQA for reference.",
+              "quote": "We evaluate distribution shift on six BEIR subsets",
+              "char_start": 0,
+              "char_end": 50
+            }
+          ]
+        }
+      ],
+      "related_claim_ids": [
+        "ent_c_lexicalaids"
+      ]
+    },
+    {
+      "method": {
+        "id": "ent_m_bm25",
+        "name": "BM25"
+      },
+      "dataset": {
+        "id": "ent_d_hotpotqa",
+        "name": "HotpotQA"
+      },
+      "is_gap": true,
+      "papers": [],
+      "related_claim_ids": [
+        "ent_c_lexicalaids"
+      ]
+    },
+    {
+      "method": {
+        "id": "ent_m_bm25",
+        "name": "BM25"
+      },
+      "dataset": {
+        "id": "ent_d_beir",
+        "name": "BEIR"
+      },
+      "is_gap": false,
+      "papers": [
+        {
+          "ordinal": 2,
+          "source_id": "src_okafor2025",
+          "entity_id": "ent_p_okafor",
+          "label": "Okafor et al. 2025",
+          "title": "Hybrid Retrieval Under Distribution Shift",
+          "year": 2025,
+          "status": "confirmed",
+          "relationships": [
+            {
+              "id": "rel_mx_okafor_bm25",
+              "relation_type": "uses_method",
+              "status": "confirmed",
+              "confidence": 0.91
+            },
+            {
+              "id": "rel_okafor_beir",
+              "relation_type": "evaluates_on",
+              "status": "confirmed",
+              "confidence": 0.89
+            }
+          ],
+          "evidence": [
+            {
+              "id": "ev_mx_okafor_bm25_1",
+              "relationship_id": "rel_mx_okafor_bm25",
+              "memory_id": null,
+              "chunk_id": "chk_okafor_0601",
+              "source_id": "src_okafor2025",
+              "source_label": "Okafor et al. 2025",
+              "page": 6,
+              "section": "4.2 Results",
+              "passage": "Table 3 summarises retrieval accuracy on in-domain and shifted test sets. Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets. We attribute most of this gain to lexical matching of rare entity names that the dense encoder under-represents.",
+              "quote": "Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets.",
+              "char_start": 74,
+              "char_end": 273
+            },
+            {
+              "id": "ev_okafor_beir_1",
+              "relationship_id": "rel_okafor_beir",
+              "memory_id": null,
+              "chunk_id": "chk_okafor_0502",
+              "source_id": "src_okafor2025",
+              "source_label": "Okafor et al. 2025",
+              "page": 5,
+              "section": "4.1 Setup",
+              "passage": "We evaluate distribution shift on six BEIR subsets whose vocabulary differs from the training data, and report in-domain results on Natural Questions and TriviaQA for reference.",
+              "quote": "We evaluate distribution shift on six BEIR subsets",
+              "char_start": 0,
+              "char_end": 50
+            }
+          ]
+        }
+      ],
+      "related_claim_ids": [
+        "ent_c_lexicalaids"
+      ]
+    },
+    {
+      "method": {
+        "id": "ent_m_dense",
+        "name": "Dense retrieval"
+      },
+      "dataset": {
+        "id": "ent_d_nq",
+        "name": "Natural Questions"
+      },
+      "is_gap": false,
+      "papers": [
+        {
+          "ordinal": 1,
+          "source_id": "src_santos2025",
+          "entity_id": "ent_p_santos",
+          "label": "Santos & Lee 2025",
+          "title": "Fusion Retrieval Revisited: BM25 + Dense on Open-Domain QA",
+          "year": 2025,
+          "status": "confirmed",
+          "relationships": [
+            {
+              "id": "rel_mx_santos_dense",
+              "relation_type": "uses_method",
+              "status": "confirmed",
+              "confidence": 0.9
+            },
+            {
+              "id": "rel_santos_nq",
+              "relation_type": "evaluates_on",
+              "status": "confirmed",
+              "confidence": 0.93
+            }
+          ],
+          "evidence": [
+            {
+              "id": "ev_mx_santos_dense_1",
+              "relationship_id": "rel_mx_santos_dense",
+              "memory_id": null,
+              "chunk_id": "chk_santos_0401",
+              "source_id": "src_santos2025",
+              "source_label": "Santos & Lee 2025",
+              "page": 4,
+              "section": "3.1 Main results",
+              "passage": "Table 2 reports the main results on Natural Questions. With reciprocal rank fusion (k = 60), the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5, a gain of 4.1 points over the dense-only baseline.",
+              "quote": "the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5",
+              "char_start": 93,
+              "char_end": 163
+            },
+            {
+              "id": "ev_santos_nq_2",
+              "relationship_id": "rel_santos_nq",
+              "memory_id": null,
+              "chunk_id": "chk_santos2025_2e",
+              "source_id": "src_santos2025",
+              "source_label": "Santos & Lee 2025",
+              "page": 2,
+              "section": "2 Setup",
+              "passage": "We use the Natural Questions open-domain split with the standard 21M-passage Wikipedia index.",
+              "quote": "Natural Questions open-domain split",
+              "char_start": 11,
+              "char_end": 46
+            }
+          ]
+        },
+        {
+          "ordinal": 2,
+          "source_id": "src_okafor2025",
+          "entity_id": "ent_p_okafor",
+          "label": "Okafor et al. 2025",
+          "title": "Hybrid Retrieval Under Distribution Shift",
+          "year": 2025,
+          "status": "confirmed",
+          "relationships": [
+            {
+              "id": "rel_mx_okafor_dense",
+              "relation_type": "uses_method",
+              "status": "confirmed",
+              "confidence": 0.92
+            },
+            {
+              "id": "rel_mx_okafor_nq",
+              "relation_type": "evaluates_on",
+              "status": "confirmed",
+              "confidence": 0.93
+            }
+          ],
+          "evidence": [
+            {
+              "id": "ev_mx_okafor_dense_1",
+              "relationship_id": "rel_mx_okafor_dense",
+              "memory_id": null,
+              "chunk_id": "chk_okafor_0601",
+              "source_id": "src_okafor2025",
+              "source_label": "Okafor et al. 2025",
+              "page": 6,
+              "section": "4.2 Results",
+              "passage": "Table 3 summarises retrieval accuracy on in-domain and shifted test sets. Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets. We attribute most of this gain to lexical matching of rare entity names that the dense encoder under-represents.",
+              "quote": "Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets.",
+              "char_start": 74,
+              "char_end": 273
+            },
+            {
+              "id": "ev_mx_okafor_nq_1",
+              "relationship_id": "rel_mx_okafor_nq",
+              "memory_id": null,
+              "chunk_id": "chk_okafor_0502",
+              "source_id": "src_okafor2025",
+              "source_label": "Okafor et al. 2025",
+              "page": 5,
+              "section": "4.1 Setup",
+              "passage": "We evaluate distribution shift on six BEIR subsets whose vocabulary differs from the training data, and report in-domain results on Natural Questions and TriviaQA for reference.",
+              "quote": "We evaluate distribution shift on six BEIR subsets",
+              "char_start": 0,
+              "char_end": 50
+            }
+          ]
+        }
+      ],
+      "related_claim_ids": [
+        "ent_c_hybridbeats"
+      ]
+    },
+    {
+      "method": {
+        "id": "ent_m_dense",
+        "name": "Dense retrieval"
+      },
+      "dataset": {
+        "id": "ent_d_triviaqa",
+        "name": "TriviaQA"
+      },
+      "is_gap": false,
+      "papers": [
+        {
+          "ordinal": 2,
+          "source_id": "src_okafor2025",
+          "entity_id": "ent_p_okafor",
+          "label": "Okafor et al. 2025",
+          "title": "Hybrid Retrieval Under Distribution Shift",
+          "year": 2025,
+          "status": "confirmed",
+          "relationships": [
+            {
+              "id": "rel_mx_okafor_dense",
+              "relation_type": "uses_method",
+              "status": "confirmed",
+              "confidence": 0.92
+            },
+            {
+              "id": "rel_okafor_triviaqa",
+              "relation_type": "evaluates_on",
+              "status": "confirmed",
+              "confidence": 0.91
+            }
+          ],
+          "evidence": [
+            {
+              "id": "ev_mx_okafor_dense_1",
+              "relationship_id": "rel_mx_okafor_dense",
+              "memory_id": null,
+              "chunk_id": "chk_okafor_0601",
+              "source_id": "src_okafor2025",
+              "source_label": "Okafor et al. 2025",
+              "page": 6,
+              "section": "4.2 Results",
+              "passage": "Table 3 summarises retrieval accuracy on in-domain and shifted test sets. Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets. We attribute most of this gain to lexical matching of rare entity names that the dense encoder under-represents.",
+              "quote": "Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets.",
+              "char_start": 74,
+              "char_end": 273
+            },
+            {
+              "id": "ev_okafor_triviaqa_2",
+              "relationship_id": "rel_okafor_triviaqa",
+              "memory_id": null,
+              "chunk_id": "chk_okafor_0502",
+              "source_id": "src_okafor2025",
+              "source_label": "Okafor et al. 2025",
+              "page": 5,
+              "section": "4.1 Setup",
+              "passage": "We evaluate distribution shift on six BEIR subsets whose vocabulary differs from the training data, and report in-domain results on Natural Questions and TriviaQA for reference.",
+              "quote": "We evaluate distribution shift on six BEIR subsets",
+              "char_start": 0,
+              "char_end": 50
+            }
+          ]
+        }
+      ],
+      "related_claim_ids": [
+        "ent_c_hybridbeats"
+      ]
+    },
+    {
+      "method": {
+        "id": "ent_m_dense",
+        "name": "Dense retrieval"
+      },
+      "dataset": {
+        "id": "ent_d_hotpotqa",
+        "name": "HotpotQA"
+      },
+      "is_gap": false,
+      "papers": [
+        {
+          "ordinal": 3,
+          "source_id": "src_varga2024",
+          "entity_id": "ent_p_varga",
+          "label": "Varga & Chen 2024",
+          "title": "Dense-Only Baselines for Multi-hop QA",
+          "year": 2024,
+          "status": "confirmed",
+          "relationships": [
+            {
+              "id": "rel_varga_dense",
+              "relation_type": "uses_method",
+              "status": "confirmed",
+              "confidence": 0.92
+            },
+            {
+              "id": "rel_varga_hotpotqa",
+              "relation_type": "evaluates_on",
+              "status": "confirmed",
+              "confidence": 0.95
+            }
+          ],
+          "evidence": [
+            {
+              "id": "ev_varga_dense_1",
+              "relationship_id": "rel_varga_dense",
+              "memory_id": null,
+              "chunk_id": "chk_varga_0901",
+              "source_id": "src_varga2024",
+              "source_label": "Varga & Chen 2024",
+              "page": 9,
+              "section": "5 Discussion",
+              "passage": "The hybrid configuration from Section 2.2 does not improve over our tuned dense retriever on HotpotQA, suggesting lexical signals matter less for multi-hop questions. Overall, on HotpotQA our tuned dense retriever is within 0.5 points of the hybrid configuration across all retrieval budgets.",
+              "quote": "on HotpotQA our tuned dense retriever is within 0.5 points of the hybrid configuration",
+              "char_start": 176,
+              "char_end": 262
+            }
+          ]
+        }
+      ],
+      "related_claim_ids": [
+        "ent_c_hybridbeats",
+        "ent_c_gapcloses"
+      ]
+    },
+    {
+      "method": {
+        "id": "ent_m_dense",
+        "name": "Dense retrieval"
+      },
+      "dataset": {
+        "id": "ent_d_beir",
+        "name": "BEIR"
+      },
+      "is_gap": false,
+      "papers": [
+        {
+          "ordinal": 2,
+          "source_id": "src_okafor2025",
+          "entity_id": "ent_p_okafor",
+          "label": "Okafor et al. 2025",
+          "title": "Hybrid Retrieval Under Distribution Shift",
+          "year": 2025,
+          "status": "confirmed",
+          "relationships": [
+            {
+              "id": "rel_mx_okafor_dense",
+              "relation_type": "uses_method",
+              "status": "confirmed",
+              "confidence": 0.92
+            },
+            {
+              "id": "rel_okafor_beir",
+              "relation_type": "evaluates_on",
+              "status": "confirmed",
+              "confidence": 0.89
+            }
+          ],
+          "evidence": [
+            {
+              "id": "ev_mx_okafor_dense_1",
+              "relationship_id": "rel_mx_okafor_dense",
+              "memory_id": null,
+              "chunk_id": "chk_okafor_0601",
+              "source_id": "src_okafor2025",
+              "source_label": "Okafor et al. 2025",
+              "page": 6,
+              "section": "4.2 Results",
+              "passage": "Table 3 summarises retrieval accuracy on in-domain and shifted test sets. Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets. We attribute most of this gain to lexical matching of rare entity names that the dense encoder under-represents.",
+              "quote": "Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets.",
+              "char_start": 74,
+              "char_end": 273
+            },
+            {
+              "id": "ev_okafor_beir_1",
+              "relationship_id": "rel_okafor_beir",
+              "memory_id": null,
+              "chunk_id": "chk_okafor_0502",
+              "source_id": "src_okafor2025",
+              "source_label": "Okafor et al. 2025",
+              "page": 5,
+              "section": "4.1 Setup",
+              "passage": "We evaluate distribution shift on six BEIR subsets whose vocabulary differs from the training data, and report in-domain results on Natural Questions and TriviaQA for reference.",
+              "quote": "We evaluate distribution shift on six BEIR subsets",
+              "char_start": 0,
+              "char_end": 50
+            }
+          ]
+        }
+      ],
+      "related_claim_ids": [
+        "ent_c_hybridbeats"
+      ]
+    },
+    {
+      "method": {
+        "id": "ent_m_hybrid",
+        "name": "Hybrid retrieval"
+      },
+      "dataset": {
+        "id": "ent_d_nq",
+        "name": "Natural Questions"
+      },
+      "is_gap": false,
+      "papers": [
+        {
+          "ordinal": 1,
+          "source_id": "src_santos2025",
+          "entity_id": "ent_p_santos",
+          "label": "Santos & Lee 2025",
+          "title": "Fusion Retrieval Revisited: BM25 + Dense on Open-Domain QA",
+          "year": 2025,
+          "status": "confirmed",
+          "relationships": [
+            {
+              "id": "rel_santos_hybrid",
+              "relation_type": "uses_method",
+              "status": "confirmed",
+              "confidence": 0.93
+            },
+            {
+              "id": "rel_santos_nq",
+              "relation_type": "evaluates_on",
+              "status": "confirmed",
+              "confidence": 0.93
+            }
+          ],
+          "evidence": [
+            {
+              "id": "ev_santos_hybrid_1",
+              "relationship_id": "rel_santos_hybrid",
+              "memory_id": null,
+              "chunk_id": "chk_santos_0401",
+              "source_id": "src_santos2025",
+              "source_label": "Santos & Lee 2025",
+              "page": 4,
+              "section": "3.1 Main results",
+              "passage": "Table 2 reports the main results on Natural Questions. With reciprocal rank fusion (k = 60), the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5, a gain of 4.1 points over the dense-only baseline.",
+              "quote": "the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5",
+              "char_start": 93,
+              "char_end": 163
+            },
+            {
+              "id": "ev_santos_nq_2",
+              "relationship_id": "rel_santos_nq",
+              "memory_id": null,
+              "chunk_id": "chk_santos2025_2e",
+              "source_id": "src_santos2025",
+              "source_label": "Santos & Lee 2025",
+              "page": 2,
+              "section": "2 Setup",
+              "passage": "We use the Natural Questions open-domain split with the standard 21M-passage Wikipedia index.",
+              "quote": "Natural Questions open-domain split",
+              "char_start": 11,
+              "char_end": 46
+            }
+          ]
+        },
+        {
+          "ordinal": 2,
+          "source_id": "src_okafor2025",
+          "entity_id": "ent_p_okafor",
+          "label": "Okafor et al. 2025",
+          "title": "Hybrid Retrieval Under Distribution Shift",
+          "year": 2025,
+          "status": "confirmed",
+          "relationships": [
+            {
+              "id": "rel_okafor_hybrid",
+              "relation_type": "uses_method",
+              "status": "confirmed",
+              "confidence": 0.94
+            },
+            {
+              "id": "rel_mx_okafor_nq",
+              "relation_type": "evaluates_on",
+              "status": "confirmed",
+              "confidence": 0.93
+            }
+          ],
+          "evidence": [
+            {
+              "id": "ev_okafor_hybrid_1",
+              "relationship_id": "rel_okafor_hybrid",
+              "memory_id": null,
+              "chunk_id": "chk_okafor_0601",
+              "source_id": "src_okafor2025",
+              "source_label": "Okafor et al. 2025",
+              "page": 6,
+              "section": "4.2 Results",
+              "passage": "Table 3 summarises retrieval accuracy on in-domain and shifted test sets. Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets. We attribute most of this gain to lexical matching of rare entity names that the dense encoder under-represents.",
+              "quote": "Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets.",
+              "char_start": 74,
+              "char_end": 273
+            },
+            {
+              "id": "ev_okafor_hybrid_2",
+              "relationship_id": "rel_okafor_hybrid",
+              "memory_id": null,
+              "chunk_id": "chk_okafor_0502",
+              "source_id": "src_okafor2025",
+              "source_label": "Okafor et al. 2025",
+              "page": 5,
+              "section": "4.1 Setup",
+              "passage": "We evaluate distribution shift on six BEIR subsets whose vocabulary differs from the training data, and report in-domain results on Natural Questions and TriviaQA for reference.",
+              "quote": "We evaluate distribution shift on six BEIR subsets",
+              "char_start": 0,
+              "char_end": 50
+            },
+            {
+              "id": "ev_okafor_hybrid_3",
+              "relationship_id": "rel_okafor_hybrid",
+              "memory_id": null,
+              "chunk_id": "chk_okafor_0602",
+              "source_id": "src_okafor2025",
+              "source_label": "Okafor et al. 2025",
+              "page": 6,
+              "section": "4.2 Results",
+              "passage": "Gains are smallest on questions whose answers appear in long, paraphrased passages, where the dense encoder already retrieves the relevant chunk. Section 4.3 isolates the contribution of the fusion step.",
+              "quote": "Section 4.3 isolates the contribution of the fusion step.",
+              "char_start": 146,
+              "char_end": 203
+            }
+          ]
+        }
+      ],
+      "related_claim_ids": [
+        "ent_c_hybridbeats"
+      ]
+    },
+    {
+      "method": {
+        "id": "ent_m_hybrid",
+        "name": "Hybrid retrieval"
+      },
+      "dataset": {
+        "id": "ent_d_triviaqa",
+        "name": "TriviaQA"
+      },
+      "is_gap": false,
+      "papers": [
+        {
+          "ordinal": 2,
+          "source_id": "src_okafor2025",
+          "entity_id": "ent_p_okafor",
+          "label": "Okafor et al. 2025",
+          "title": "Hybrid Retrieval Under Distribution Shift",
+          "year": 2025,
+          "status": "confirmed",
+          "relationships": [
+            {
+              "id": "rel_okafor_hybrid",
+              "relation_type": "uses_method",
+              "status": "confirmed",
+              "confidence": 0.94
+            },
+            {
+              "id": "rel_okafor_triviaqa",
+              "relation_type": "evaluates_on",
+              "status": "confirmed",
+              "confidence": 0.91
+            }
+          ],
+          "evidence": [
+            {
+              "id": "ev_okafor_hybrid_1",
+              "relationship_id": "rel_okafor_hybrid",
+              "memory_id": null,
+              "chunk_id": "chk_okafor_0601",
+              "source_id": "src_okafor2025",
+              "source_label": "Okafor et al. 2025",
+              "page": 6,
+              "section": "4.2 Results",
+              "passage": "Table 3 summarises retrieval accuracy on in-domain and shifted test sets. Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets. We attribute most of this gain to lexical matching of rare entity names that the dense encoder under-represents.",
+              "quote": "Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets.",
+              "char_start": 74,
+              "char_end": 273
+            },
+            {
+              "id": "ev_okafor_hybrid_2",
+              "relationship_id": "rel_okafor_hybrid",
+              "memory_id": null,
+              "chunk_id": "chk_okafor_0502",
+              "source_id": "src_okafor2025",
+              "source_label": "Okafor et al. 2025",
+              "page": 5,
+              "section": "4.1 Setup",
+              "passage": "We evaluate distribution shift on six BEIR subsets whose vocabulary differs from the training data, and report in-domain results on Natural Questions and TriviaQA for reference.",
+              "quote": "We evaluate distribution shift on six BEIR subsets",
+              "char_start": 0,
+              "char_end": 50
+            },
+            {
+              "id": "ev_okafor_hybrid_3",
+              "relationship_id": "rel_okafor_hybrid",
+              "memory_id": null,
+              "chunk_id": "chk_okafor_0602",
+              "source_id": "src_okafor2025",
+              "source_label": "Okafor et al. 2025",
+              "page": 6,
+              "section": "4.2 Results",
+              "passage": "Gains are smallest on questions whose answers appear in long, paraphrased passages, where the dense encoder already retrieves the relevant chunk. Section 4.3 isolates the contribution of the fusion step.",
+              "quote": "Section 4.3 isolates the contribution of the fusion step.",
+              "char_start": 146,
+              "char_end": 203
+            }
+          ]
+        }
+      ],
+      "related_claim_ids": [
+        "ent_c_hybridbeats"
+      ]
+    },
+    {
+      "method": {
+        "id": "ent_m_hybrid",
+        "name": "Hybrid retrieval"
+      },
+      "dataset": {
+        "id": "ent_d_hotpotqa",
+        "name": "HotpotQA"
+      },
+      "is_gap": false,
+      "papers": [
+        {
+          "ordinal": 3,
+          "source_id": "src_varga2024",
+          "entity_id": "ent_p_varga",
+          "label": "Varga & Chen 2024",
+          "title": "Dense-Only Baselines for Multi-hop QA",
+          "year": 2024,
+          "status": "candidate",
+          "relationships": [
+            {
+              "id": "rel_varga_hybrid",
+              "relation_type": "uses_method",
+              "status": "candidate",
+              "confidence": 0.72
+            },
+            {
+              "id": "rel_varga_hotpotqa",
+              "relation_type": "evaluates_on",
+              "status": "confirmed",
+              "confidence": 0.95
+            }
+          ],
+          "evidence": [
+            {
+              "id": "ev_varga_hybrid_1",
+              "relationship_id": "rel_varga_hybrid",
+              "memory_id": null,
+              "chunk_id": "chk_varga_0302",
+              "source_id": "src_varga2024",
+              "source_label": "Varga & Chen 2024",
+              "page": 3,
+              "section": "2.2 Experimental setup",
+              "passage": "We additionally report a hybrid configuration that interpolates BM25 and dense scores with α = 0.3 as a reference point.",
+              "quote": "interpolates BM25 and dense scores with α = 0.3",
+              "char_start": 51,
+              "char_end": 98
+            },
+            {
+              "id": "ev_varga_hybrid_2",
+              "relationship_id": "rel_varga_hybrid",
+              "memory_id": null,
+              "chunk_id": "chk_varga_0901",
+              "source_id": "src_varga2024",
+              "source_label": "Varga & Chen 2024",
+              "page": 9,
+              "section": "5 Discussion",
+              "passage": "The hybrid configuration from Section 2.2 does not improve over our tuned dense retriever on HotpotQA, suggesting lexical signals matter less for multi-hop questions. Overall, on HotpotQA our tuned dense retriever is within 0.5 points of the hybrid configuration across all retrieval budgets.",
+              "quote": "The hybrid configuration from Section 2.2 does not improve over our tuned dense retriever on HotpotQA",
+              "char_start": 0,
+              "char_end": 101
+            },
+            {
+              "id": "ev_varga_hotpotqa_1",
+              "relationship_id": "rel_varga_hotpotqa",
+              "memory_id": null,
+              "chunk_id": "chk_varga_0901",
+              "source_id": "src_varga2024",
+              "source_label": "Varga & Chen 2024",
+              "page": 9,
+              "section": "5 Discussion",
+              "passage": "The hybrid configuration from Section 2.2 does not improve over our tuned dense retriever on HotpotQA, suggesting lexical signals matter less for multi-hop questions. Overall, on HotpotQA our tuned dense retriever is within 0.5 points of the hybrid configuration across all retrieval budgets.",
+              "quote": "on HotpotQA our tuned dense retriever is within 0.5 points of the hybrid configuration",
+              "char_start": 176,
+              "char_end": 262
+            }
+          ]
+        }
+      ],
+      "related_claim_ids": [
+        "ent_c_hybridbeats",
+        "ent_c_gapcloses"
+      ]
+    },
+    {
+      "method": {
+        "id": "ent_m_hybrid",
+        "name": "Hybrid retrieval"
+      },
+      "dataset": {
+        "id": "ent_d_beir",
+        "name": "BEIR"
+      },
+      "is_gap": false,
+      "papers": [
+        {
+          "ordinal": 2,
+          "source_id": "src_okafor2025",
+          "entity_id": "ent_p_okafor",
+          "label": "Okafor et al. 2025",
+          "title": "Hybrid Retrieval Under Distribution Shift",
+          "year": 2025,
+          "status": "confirmed",
+          "relationships": [
+            {
+              "id": "rel_okafor_hybrid",
+              "relation_type": "uses_method",
+              "status": "confirmed",
+              "confidence": 0.94
+            },
+            {
+              "id": "rel_okafor_beir",
+              "relation_type": "evaluates_on",
+              "status": "confirmed",
+              "confidence": 0.89
+            }
+          ],
+          "evidence": [
+            {
+              "id": "ev_okafor_hybrid_1",
+              "relationship_id": "rel_okafor_hybrid",
+              "memory_id": null,
+              "chunk_id": "chk_okafor_0601",
+              "source_id": "src_okafor2025",
+              "source_label": "Okafor et al. 2025",
+              "page": 6,
+              "section": "4.2 Results",
+              "passage": "Table 3 summarises retrieval accuracy on in-domain and shifted test sets. Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets. We attribute most of this gain to lexical matching of rare entity names that the dense encoder under-represents.",
+              "quote": "Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets.",
+              "char_start": 74,
+              "char_end": 273
+            },
+            {
+              "id": "ev_okafor_hybrid_2",
+              "relationship_id": "rel_okafor_hybrid",
+              "memory_id": null,
+              "chunk_id": "chk_okafor_0502",
+              "source_id": "src_okafor2025",
+              "source_label": "Okafor et al. 2025",
+              "page": 5,
+              "section": "4.1 Setup",
+              "passage": "We evaluate distribution shift on six BEIR subsets whose vocabulary differs from the training data, and report in-domain results on Natural Questions and TriviaQA for reference.",
+              "quote": "We evaluate distribution shift on six BEIR subsets",
+              "char_start": 0,
+              "char_end": 50
+            },
+            {
+              "id": "ev_okafor_hybrid_3",
+              "relationship_id": "rel_okafor_hybrid",
+              "memory_id": null,
+              "chunk_id": "chk_okafor_0602",
+              "source_id": "src_okafor2025",
+              "source_label": "Okafor et al. 2025",
+              "page": 6,
+              "section": "4.2 Results",
+              "passage": "Gains are smallest on questions whose answers appear in long, paraphrased passages, where the dense encoder already retrieves the relevant chunk. Section 4.3 isolates the contribution of the fusion step.",
+              "quote": "Section 4.3 isolates the contribution of the fusion step.",
+              "char_start": 146,
+              "char_end": 203
+            }
+          ]
+        }
+      ],
+      "related_claim_ids": [
+        "ent_c_hybridbeats"
+      ]
+    },
+    {
+      "method": {
+        "id": "ent_m_graphrag",
+        "name": "GraphRAG"
+      },
+      "dataset": {
+        "id": "ent_d_nq",
+        "name": "Natural Questions"
+      },
+      "is_gap": true,
+      "papers": [],
+      "related_claim_ids": []
+    },
+    {
+      "method": {
+        "id": "ent_m_graphrag",
+        "name": "GraphRAG"
+      },
+      "dataset": {
+        "id": "ent_d_triviaqa",
+        "name": "TriviaQA"
+      },
+      "is_gap": true,
+      "papers": [],
+      "related_claim_ids": []
+    },
+    {
+      "method": {
+        "id": "ent_m_graphrag",
+        "name": "GraphRAG"
+      },
+      "dataset": {
+        "id": "ent_d_hotpotqa",
+        "name": "HotpotQA"
+      },
+      "is_gap": false,
+      "papers": [
+        {
+          "ordinal": 4,
+          "source_id": "src_ito2025",
+          "entity_id": "ent_p_ito",
+          "label": "Ito 2025",
+          "title": "GraphRAG: Community Summaries for Global Questions",
+          "year": 2025,
+          "status": "candidate",
+          "relationships": [
+            {
+              "id": "rel_ito_graphrag",
+              "relation_type": "uses_method",
+              "status": "confirmed",
+              "confidence": 0.96
+            },
+            {
+              "id": "rel_ito_hotpotqa",
+              "relation_type": "evaluates_on",
+              "status": "candidate",
+              "confidence": 0.58
+            }
+          ],
+          "evidence": [
+            {
+              "id": "ev_ito_graphrag_1",
+              "relationship_id": "rel_ito_graphrag",
+              "memory_id": null,
+              "chunk_id": "chk_ito_0501",
+              "source_id": "src_ito2025",
+              "source_label": "Ito 2025",
+              "page": 5,
+              "section": "3 Method",
+              "passage": "The indexing pipeline extracts entities and relations from each text unit, clusters them into communities with the Leiden algorithm, and pre-generates a summary for every community. We do not tune retrieval hyperparameters for this study.",
+              "quote": "clusters them into communities with the Leiden algorithm, and pre-generates a summary for every community",
+              "char_start": 75,
+              "char_end": 180
+            },
+            {
+              "id": "ev_ito_hotpotqa_1",
+              "relationship_id": "rel_ito_hotpotqa",
+              "memory_id": null,
+              "chunk_id": "chk_ito2025_7e",
+              "source_id": "src_ito2025",
+              "source_label": "Ito 2025",
+              "page": 7,
+              "section": "4 Experiments",
+              "passage": "We also report a small comparison on 500 HotpotQA questions to probe multi-hop behaviour.",
+              "quote": "500 HotpotQA questions",
+              "char_start": 37,
+              "char_end": 59
+            }
+          ]
+        }
+      ],
+      "related_claim_ids": [
+        "ent_c_gapcloses"
+      ]
+    },
+    {
+      "method": {
+        "id": "ent_m_graphrag",
+        "name": "GraphRAG"
+      },
+      "dataset": {
+        "id": "ent_d_beir",
+        "name": "BEIR"
+      },
+      "is_gap": true,
+      "papers": [],
+      "related_claim_ids": []
+    }
+  ]
+}

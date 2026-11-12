@@ -1,0 +1,10 @@
+{
+  "error": {
+    "code": "CONFLICT",
+    "message": "This claim was already reviewed.",
+    "details": {
+      "status": "confirmed"
+    },
+    "request_id": "req_3c4d5e6f"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "_note": "GET /api/v1/models",
+  "answer_models": [
+    {
+      "id": "claude-sonnet-5-5",
+      "name": "Claude Sonnet 5.5",
+      "provider": "Anthropic",
+      "tier": "strong",
+      "description": "Careful, well-cited answers for comparisons and synthesis.",
+      "is_default": true
+    },
+    {
+      "id": "claude-haiku-5-5",
+      "name": "Claude Haiku 5.5",
+      "provider": "Anthropic",
+      "tier": "fast",
+      "description": "Quick answers for lookups and short questions.",
+      "is_default": false
+    },
+    {
+      "id": "gpt-5",
+      "name": "GPT-5",
+      "provider": "OpenAI",
+      "tier": "strong",
+      "description": "Strong reasoning across long evidence packets.",
+      "is_default": false
+    },
+    {
+      "id": "gpt-5-mini",
+      "name": "GPT-5 mini",
+      "provider": "OpenAI",
+      "tier": "fast",
+      "description": "Fast, low-cost answers for simple questions.",
+      "is_default": false
+    }
+  ],
+  "managed": [
+    {
+      "task": "extraction",
+      "name": "Claude Haiku 5.5",
+      "provider": "Anthropic"
+    },
+    {
+      "task": "embeddings",
+      "name": "text-embedding-3-large",
+      "provider": "OpenAI"
+    },
+    {
+      "task": "decision_impact",
+      "name": "Claude Sonnet 5.5",
+      "provider": "Anthropic"
+    }
+  ],
+  "providers": [
+    {
+      "name": "Anthropic",
+      "purpose": "Answers, extraction, and Decision Impact checks"
+    },
+    {
+      "name": "OpenAI",
+      "purpose": "Embeddings, and answers when you choose a GPT model"
+    }
+  ]
+}

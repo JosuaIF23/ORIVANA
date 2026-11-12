@@ -20,6 +20,12 @@ export function auditHref(link: AuditLink): { href: string; external: boolean } 
     }
     case 'repository':
       return { href: `https://github.com/${link.target_id.replace(/^@/, '')}`, external: true };
+    case 'decision_alert':
+      return { href: `/decision-alerts/${link.target_id}`, external: false };
+    case 'claim':
+      return { href: `/knowledge/claims?claim=${link.target_id}`, external: false };
+    case 'zotero_collection':
+      return { href: '/integrations', external: false };
   }
 }
 

@@ -40,6 +40,7 @@
         "status": "running",
         "stage": "indexing"
       },
+      "zotero": null,
       "sections": [
         {
           "id": "sec_daly2025_1",
@@ -169,6 +170,7 @@
         "status": "running",
         "stage": "parsing"
       },
+      "zotero": null,
       "sections": [
         {
           "id": "sec_meyer2024_1",
@@ -287,6 +289,7 @@
         "status": "queued",
         "stage": "queued"
       },
+      "zotero": null,
       "sections": [
         {
           "id": "sec_ito2025_1",
@@ -393,6 +396,7 @@
         "status": "failed",
         "stage": "failed"
       },
+      "zotero": null,
       "sections": [],
       "entities": [],
       "entity_count": 0,
@@ -422,7 +426,7 @@
       "workspace_id": "ws_personal",
       "project_id": "prj_rag",
       "project_name": "RAG Comparison",
-      "type": "pdf",
+      "type": "zotero",
       "title": "Dense-Only Baselines for Multi-hop QA",
       "file_name": "Dense-Only Baselines for Multi-hop QA.pdf",
       "authors": "Varga & Chen",
@@ -455,6 +459,17 @@
         "finished_at": "2026-11-10T09:40:00Z",
         "status": "succeeded",
         "stage": "ready"
+      },
+      "zotero": {
+        "library_id": "zlib_4417302",
+        "item_key": "VRG24CHN",
+        "item_version": 412,
+        "collection_key": "ZC7K2RAG",
+        "collection_name": "RAG Comparison",
+        "last_synced_at": "2026-11-11T02:00:00Z",
+        "has_pdf": true,
+        "annotation_count": 3,
+        "removed_in_zotero": false
       },
       "sections": [
         {
@@ -584,6 +599,7 @@
         "status": "succeeded",
         "stage": "ready"
       },
+      "zotero": null,
       "sections": [
         {
           "id": "sec_labnotes_1",
@@ -690,6 +706,7 @@
         "status": "succeeded",
         "stage": "ready"
       },
+      "zotero": null,
       "sections": [
         {
           "id": "sec_rao2025_1",
@@ -811,6 +828,7 @@
         "status": "succeeded",
         "stage": "ready"
       },
+      "zotero": null,
       "sections": [
         {
           "id": "sec_thesisoutline_1",
@@ -910,6 +928,7 @@
         "status": "succeeded",
         "stage": "ready"
       },
+      "zotero": null,
       "sections": [
         {
           "id": "sec_weber2024_1",
@@ -1035,6 +1054,7 @@
         "status": "succeeded",
         "stage": "ready"
       },
+      "zotero": null,
       "sections": [
         {
           "id": "sec_alvarez2025_1",
@@ -1156,6 +1176,7 @@
         "status": "succeeded",
         "stage": "ready"
       },
+      "zotero": null,
       "sections": [
         {
           "id": "sec_supervisornotes_1",
@@ -1241,6 +1262,7 @@
         "status": "succeeded",
         "stage": "ready"
       },
+      "zotero": null,
       "sections": [
         {
           "id": "sec_okafor2025_1",
@@ -1482,6 +1504,7 @@
         "status": "succeeded",
         "stage": "ready"
       },
+      "zotero": null,
       "sections": [
         {
           "id": "sec_santos2025_1",
@@ -1573,7 +1596,7 @@
       "workspace_id": "ws_personal",
       "project_id": "prj_rag",
       "project_name": "RAG Comparison",
-      "type": "pdf",
+      "type": "zotero",
       "title": "Reciprocal Rank Fusion for Neural Retrievers",
       "file_name": "Reciprocal Rank Fusion for Neural Retrievers.pdf",
       "authors": "Kowalski",
@@ -1606,6 +1629,17 @@
         "finished_at": "2026-10-30T03:00:00Z",
         "status": "succeeded",
         "stage": "ready"
+      },
+      "zotero": {
+        "library_id": "zlib_4417302",
+        "item_key": "KWL24RRF",
+        "item_version": 377,
+        "collection_key": "ZC7K2RAG",
+        "collection_name": "RAG Comparison",
+        "last_synced_at": "2026-11-11T02:00:00Z",
+        "has_pdf": true,
+        "annotation_count": 0,
+        "removed_in_zotero": false
       },
       "sections": [
         {
@@ -1698,7 +1732,7 @@
       "workspace_id": "ws_personal",
       "project_id": "prj_rag",
       "project_name": "RAG Comparison",
-      "type": "pdf",
+      "type": "zotero",
       "title": "BEIR Revisited: Zero-Shot Retrieval Benchmarks",
       "file_name": "BEIR Revisited: Zero-Shot Retrieval Benchmarks.pdf",
       "authors": "Lindqvist & Moreau",
@@ -1731,6 +1765,17 @@
         "finished_at": "2026-10-28T09:20:00Z",
         "status": "succeeded",
         "stage": "ready"
+      },
+      "zotero": {
+        "library_id": "zlib_4417302",
+        "item_key": "LDQ24BEI",
+        "item_version": 371,
+        "collection_key": "ZC7K2RAG",
+        "collection_name": "RAG Comparison",
+        "last_synced_at": "2026-11-11T02:00:00Z",
+        "has_pdf": true,
+        "annotation_count": 5,
+        "removed_in_zotero": false
       },
       "sections": [
         {
@@ -1823,7 +1868,7 @@
       "workspace_id": "ws_personal",
       "project_id": "prj_rag",
       "project_name": "RAG Comparison",
-      "type": "pdf",
+      "type": "zotero",
       "title": "ColBERT-Style Late Interaction for Scientific QA",
       "file_name": "ColBERT-Style Late Interaction for Scientific QA.pdf",
       "authors": "Haddad",
@@ -1856,6 +1901,17 @@
         "finished_at": "2026-10-27T06:45:00Z",
         "status": "succeeded",
         "stage": "ready"
+      },
+      "zotero": {
+        "library_id": "zlib_4417302",
+        "item_key": "HDD25COL",
+        "item_version": 366,
+        "collection_key": "ZC7K2RAG",
+        "collection_name": "RAG Comparison",
+        "last_synced_at": "2026-11-11T02:00:00Z",
+        "has_pdf": true,
+        "annotation_count": 1,
+        "removed_in_zotero": false
       },
       "sections": [
         {
@@ -1948,7 +2004,7 @@
       "workspace_id": "ws_personal",
       "project_id": "prj_rag",
       "project_name": "RAG Comparison",
-      "type": "pdf",
+      "type": "zotero",
       "title": "Sparse–Dense Hybrids in Low-Resource Domains",
       "file_name": "Sparse–Dense Hybrids in Low-Resource Domains.pdf",
       "authors": "Nakamura",
@@ -1981,6 +2037,17 @@
         "finished_at": "2026-10-25T02:10:00Z",
         "status": "succeeded",
         "stage": "ready"
+      },
+      "zotero": {
+        "library_id": "zlib_4417302",
+        "item_key": "NKM25SDH",
+        "item_version": 352,
+        "collection_key": "ZC7K2RAG",
+        "collection_name": "RAG Comparison",
+        "last_synced_at": "2026-11-11T02:00:00Z",
+        "has_pdf": true,
+        "annotation_count": 0,
+        "removed_in_zotero": true
       },
       "sections": [
         {
@@ -2107,6 +2174,7 @@
         "status": "succeeded",
         "stage": "ready"
       },
+      "zotero": null,
       "sections": [
         {
           "id": "sec_brennan2024_1",
@@ -2232,6 +2300,7 @@
         "status": "succeeded",
         "stage": "ready"
       },
+      "zotero": null,
       "sections": [
         {
           "id": "sec_osei2025_1",
@@ -2357,6 +2426,7 @@
         "status": "succeeded",
         "stage": "ready"
       },
+      "zotero": null,
       "sections": [
         {
           "id": "sec_fischer2024_1",
@@ -2482,6 +2552,7 @@
         "status": "succeeded",
         "stage": "ready"
       },
+      "zotero": null,
       "sections": [
         {
           "id": "sec_kim2025_1",
@@ -2607,6 +2678,7 @@
         "status": "succeeded",
         "stage": "ready"
       },
+      "zotero": null,
       "sections": [
         {
           "id": "sec_patel2025_1",
@@ -2732,6 +2804,7 @@
         "status": "succeeded",
         "stage": "ready"
       },
+      "zotero": null,
       "sections": [
         {
           "id": "sec_novak2024_1",
@@ -2853,6 +2926,7 @@
         "status": "succeeded",
         "stage": "ready"
       },
+      "zotero": null,
       "sections": [
         {
           "id": "sec_readinglist_1",
@@ -2945,6 +3019,7 @@
         "status": "succeeded",
         "stage": "ready"
       },
+      "zotero": null,
       "sections": [
         {
           "id": "sec_duarte2025_1",
@@ -3070,6 +3145,7 @@
         "status": "succeeded",
         "stage": "ready"
       },
+      "zotero": null,
       "sections": [
         {
           "id": "sec_sato2025_1",
@@ -3195,6 +3271,7 @@
         "status": "succeeded",
         "stage": "ready"
       },
+      "zotero": null,
       "sections": [
         {
           "id": "sec_mbeki2024_1",
@@ -3320,6 +3397,7 @@
         "status": "succeeded",
         "stage": "ready"
       },
+      "zotero": null,
       "sections": [
         {
           "id": "sec_ivanova2025_1",
@@ -3441,6 +3519,7 @@
         "status": "succeeded",
         "stage": "ready"
       },
+      "zotero": null,
       "sections": [
         {
           "id": "sec_seminarnotes_1",
@@ -3526,6 +3605,7 @@
         "status": "succeeded",
         "stage": "ready"
       },
+      "zotero": null,
       "sections": [
         {
           "id": "sec_grant2025_1",
@@ -3651,6 +3731,7 @@
         "status": "succeeded",
         "stage": "ready"
       },
+      "zotero": null,
       "sections": [
         {
           "id": "sec_costa2024_1",

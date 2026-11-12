@@ -294,6 +294,8 @@
           "content": "In **Hybrid Retrieval Under Distribution Shift**, combining BM25 with the dense retriever improves top-20 accuracy over dense-only on both datasets the paper tests:\n\n- **Natural Questions** — +3.6 points [1]\n- **TriviaQA** — +2.9 points [1]\n\nThe largest gains are on the shifted **BEIR** subsets, which the authors use to test distribution shift [2].",
           "status": "complete",
           "created_at": "2026-11-11T08:10:00Z",
+          "model": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
           "answer_kind": "answer",
           "sources_used": 1,
           "sources_searched": 1,

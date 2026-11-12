@@ -6,6 +6,7 @@ import { DeleteMemoryDialog, MemoryFormDialog, SupersedeDialog } from './memory-
 
 const GROUP: Record<MemoryStatus, { label: string; cls: string }> = {
   candidate: { label: 'Needs review', cls: 'text-warning' },
+  proposed: { label: 'Proposed', cls: 'text-warning' },
   confirmed: { label: 'Confirmed', cls: 'text-knowledge' },
   superseded: { label: 'Superseded', cls: 'text-fg-secondary' },
   rejected: { label: 'Rejected', cls: 'text-danger' },
@@ -16,7 +17,7 @@ type Dialogs = { kind: 'edit' | 'supersede' | 'delete'; memory: Memory } | null;
 /** Memory list grouped by status (candidates first), with row actions. */
 export function MemoryTable({ items, grouped }: { items: Memory[]; grouped: boolean }) {
   const [dialog, setDialog] = useState<Dialogs>(null);
-  const groups = grouped ? (['candidate', 'confirmed', 'superseded', 'rejected'] as MemoryStatus[]).map((s) => [s, items.filter((m) => m.status === s)] as const).filter(([, list]) => list.length) : [[null, items] as const];
+  const groups = grouped ? (['candidate', 'proposed', 'confirmed', 'superseded', 'rejected'] as MemoryStatus[]).map((s) => [s, items.filter((m) => m.status === s)] as const).filter(([, list]) => list.length) : [[null, items] as const];
   const close = (open: boolean) => !open && setDialog(null);
   return (
     <div className="overflow-x-auto rounded-card border border-subtle">

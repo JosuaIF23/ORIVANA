@@ -32,6 +32,7 @@ export function listSources(query: SourceListQuery = {}): Promise<SourceListResp
       .filter((s) => !query.project_id || s.project_id === query.project_id)
       .filter((s) => !query.status || s.status === query.status)
       .filter((s) => !query.type || s.type === query.type)
+      .filter((s) => !query.removed_in_zotero || Boolean(s.zotero?.removed_in_zotero))
       .filter((s) => !q || [s.title, s.authors ?? '', s.file_name].some((v) => v.toLowerCase().includes(q)))
       .toSorted((a, b) => b.created_at.localeCompare(a.created_at));
     const offset = query.cursor ? Number(query.cursor) : 0;
@@ -91,8 +92,8 @@ function patchJob(source: SourceDetail, patch: Partial<Job>) {
   source.updated_at = nowIso();
 }
 
-/** Moves a job through queued → parsing → indexing → ready in the background. */
-async function runIngestion(db: MockDb, source: SourceDetail, opts: { failWith?: { code: string; message: string }; chunks?: number } = {}) {
+/** Moves a job through queued → parsing → indexing → extracting → ready in the background. */
+export async function runIngestion(db: MockDb, source: SourceDetail, opts: { failWith?: { code: string; message: string }; chunks?: number } = {}) {
   const pages = source.page_count ?? 12;
   const chunks = opts.chunks ?? Math.round(pages * 6.2);
   await delay(900);
@@ -117,6 +118,7 @@ async function runIngestion(db: MockDb, source: SourceDetail, opts: { failWith?:
     patchJob(source, { progress: { current: Math.min(c, chunks), total: chunks, unit: 'chunks' }, eta_seconds: Math.max(5, Math.round(((chunks - c) / chunks) * 30)) });
   }
   source.ingestion_history.push({ label: `Chunked & embedded · ${chunks} chunks`, status: 'done', at: nowIso() });
+  patchJob(source, { stage: 'extracting', progress: null, eta_seconds: 10 });
   await delay(800);
   patchJob(source, { status: 'succeeded', stage: 'ready', finished_at: nowIso(), progress: { current: chunks, total: chunks, unit: 'chunks' }, eta_seconds: null });
   source.chunk_count = chunks;
@@ -219,6 +221,12 @@ export function deleteSource(id: string): Promise<DeleteSourceResponse> {
       if (before > 0 && rel.evidence.length === 0) orphaned += 1;
     }
     const memories = db.memories.filter((m) => m.evidence.source_id === id).length;
+    // v2: remove the source from Claims and Matrix evidence too (PRD §12.4).
+    for (const claim of db.claims) claim.evidence = claim.evidence.filter((e) => e.source_id !== id);
+    for (const cell of db.matrixCells) {
+      cell.papers = cell.papers.filter((p) => p.source_id !== id);
+      cell.is_gap = cell.papers.length === 0;
+    }
     db.sources = db.sources.filter((s) => s.id !== id);
     db.recentSourceIds = db.recentSourceIds.filter((x) => x !== id);
     recordAudit(db, { actor_type: 'user', category: 'ingestion', event_type: 'source.deleted', target_type: 'source', target_id: id, summary: `Deleted ${source.title} and its derived data`, link: null, result: 'succeeded' });
@@ -232,5 +240,20 @@ export function deleteSource(id: string): Promise<DeleteSourceResponse> {
 
 /** True while any visible source is still processing (drives polling). */
 export function isProcessing(sources: Pick<Source, 'status'>[]): boolean {
-  return sources.some((s) => s.status === 'queued' || s.status === 'parsing' || s.status === 'indexing');
+  return sources.some((s) => s.status === 'queued' || s.status === 'parsing' || s.status === 'indexing' || s.status === 'extracting');
+}
+
+/** Extension: PATCH /api/v1/sources/{id} — "Keep" a source that was removed in Zotero. */
+export function keepRemovedZoteroItem(id: string): Promise<Source> {
+  return simulate(() => {
+    const db = requireDb();
+    const source = db.sources.find((s) => s.id === id);
+    if (!source) fail(fixtures.sources.notFound);
+    if (!source.zotero?.removed_in_zotero) failWith('CONFLICT', 'This source is still in your Zotero library.');
+    // The item stays in ORIVANA as a local copy; it no longer syncs.
+    source.zotero = { ...source.zotero, removed_in_zotero: false, collection_name: `${source.zotero.collection_name} (kept after removal)` };
+    source.updated_at = nowIso();
+    recordAudit(db, { actor_type: 'user', category: 'zotero_sync', event_type: 'zotero.removed_item_kept', target_type: 'source', target_id: id, summary: 'Kept {link} after it was removed in Zotero', link: { label: source.title, target_type: 'source', target_id: id }, result: 'confirmed' });
+    return summary(source);
+  }, { ms: 420 });
 }

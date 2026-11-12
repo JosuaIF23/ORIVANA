@@ -7,7 +7,12 @@ export type AuditCategory =
   | 'tool_calls'
   | 'approvals'
   | 'external_actions'
-  | 'errors';
+  | 'errors'
+  /* v2 */
+  | 'zotero_sync'
+  | 'extraction'
+  | 'decision_alerts'
+  | 'proposals';
 
 export type AuditResult =
   | 'succeeded'
@@ -18,12 +23,14 @@ export type AuditResult =
   | 'confirmed'
   | 'rejected'
   | 'verified'
-  | 'ready';
+  | 'ready'
+  /** v2: a decision alert was raised. */
+  | 'needs_review';
 
 /** A link rendered inside the event summary. */
 export interface AuditLink {
   label: string;
-  target_type: 'source' | 'conversation' | 'proposal' | 'memory' | 'repository' | 'issue' | 'project';
+  target_type: 'source' | 'conversation' | 'proposal' | 'memory' | 'repository' | 'issue' | 'project' | 'decision_alert' | 'claim' | 'zotero_collection';
   target_id: string;
 }
 
@@ -48,6 +55,8 @@ export interface AuditEvent {
     error_message?: string;
     job?: string;
     related?: AuditLink & { project_name?: string };
+    /** v2: secondary link (e.g. the claim an alert is about). */
+    secondary?: AuditLink;
   };
 }
 

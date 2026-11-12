@@ -19,6 +19,11 @@ import type {
   SourceDetail,
   ToolConnection,
   ProviderCatalogItem,
+  MatrixCellDetail,
+  ClaimDetail,
+  DecisionAlert,
+  ZoteroCollection,
+  ZoteroSyncResponse,
 } from '@contracts/types';
 import { fixtures } from './fixtures';
 
@@ -43,6 +48,13 @@ export interface MockDb {
   audit: AuditEvent[];
   latestExport: DataExport | null;
   exportIncluded: string[];
+  /* v2 */
+  matrixCells: MatrixCellDetail[];
+  matrixProjectId: string | null;
+  claims: ClaimDetail[];
+  alerts: DecisionAlert[];
+  zoteroCollections: ZoteroCollection[];
+  zoteroSyncs: ZoteroSyncResponse[];
 }
 
 function seed(scenario: Scenario): MockDb {
@@ -67,6 +79,12 @@ function seed(scenario: Scenario): MockDb {
       audit: [],
       latestExport: null,
       exportIncluded: f.exports.list.included,
+      matrixCells: [],
+      matrixProjectId: null,
+      claims: [],
+      alerts: [],
+      zoteroCollections: f.zotero.collections.collections.map((c) => ({ ...c, synced_project_id: null, last_synced_at: null })),
+      zoteroSyncs: [],
     };
   }
   const relationshipDetails = f.graph.relationships.items;
@@ -89,6 +107,12 @@ function seed(scenario: Scenario): MockDb {
     audit: f.audit.items,
     latestExport: f.exports.list.latest,
     exportIncluded: f.exports.list.included,
+    matrixCells: f.knowledge.cells.items,
+    matrixProjectId: f.knowledge.matrix.project_id,
+    claims: f.claims.list.items.map((c) => f.claims.detail.items[c.id]),
+    alerts: f.alerts.open.items,
+    zoteroCollections: f.zotero.collections.collections,
+    zoteroSyncs: [],
   };
 }
 

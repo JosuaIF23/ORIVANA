@@ -1,8 +1,13 @@
 import type { Id, ISODateTime, Origin } from './common';
+import type { ReviewState } from './claim';
 
 export type MemoryType = 'episodic' | 'semantic' | 'procedural' | 'project';
 
-export type MemoryStatus = 'candidate' | 'confirmed' | 'superseded' | 'rejected';
+/** v2 adds `proposed` for decisions; other memory types keep `candidate`. */
+export type MemoryStatus = 'candidate' | 'proposed' | 'confirmed' | 'superseded' | 'rejected';
+
+/** v2 (PRD §12 memories.kind). */
+export type MemoryKind = 'decision' | 'fact' | 'event' | 'preference';
 
 /** Where a memory came from, rendered as the "Source / evidence" link. */
 export interface MemoryEvidenceRef {
@@ -40,6 +45,32 @@ export interface Memory {
   updated_at: ISODateTime;
   evidence: MemoryEvidenceRef;
   decision: DecisionRecord | null;
+  /* v2 fields (PRD §8.5, §12). Optional so v1 clients keep working. */
+  kind?: MemoryKind;
+  title?: string | null;
+  rationale?: string | null;
+  review_state?: ReviewState;
+  dependencies?: DecisionDependency[];
+  decided_at?: ISODateTime | null;
+  history?: DecisionHistoryEntry[];
+  /** Open Decision Impact alert, if any. */
+  open_alert_id?: Id | null;
+}
+
+/** decision_dependencies (PRD §12) with the claim's current counts. */
+export interface DecisionDependency {
+  claim_id: Id;
+  statement: string;
+  supports_count: number;
+  contradicts_count: number;
+  note: string | null;
+}
+
+export interface DecisionHistoryEntry {
+  at: ISODateTime;
+  kind: 'created' | 'confirmed' | 'edited' | 'superseded' | 'alert_raised' | 'alert_kept' | 'alert_resolved' | 'action_proposed' | 'dependencies_changed';
+  text: string;
+  link: { target_type: 'memory' | 'decision_alert' | 'proposal' | 'source'; target_id: Id } | null;
 }
 
 export interface MemoryListQuery {
@@ -48,6 +79,9 @@ export interface MemoryListQuery {
   project_id?: Id;
   q?: string;
   decisions_only?: boolean;
+  /** v2: filter by review state (`status=needs_review` keeps its v1 meaning). */
+  review_state?: ReviewState;
+  kind?: MemoryKind;
 }
 
 export interface MemoryListResponse {
@@ -61,6 +95,21 @@ export interface CreateMemoryRequest {
   memory_type: MemoryType;
   content: string;
   project_id: Id | null;
+  /* v2 decision fields (Save as decision, Revise decision). */
+  kind?: MemoryKind;
+  title?: string;
+  rationale?: string;
+  status?: 'proposed' | 'confirmed';
+  dependencies?: Id[];
+  evidence?: Array<{ source_id: Id; label: string; page: number }>;
+  from_message_id?: Id;
+  /** Saving a revision supersedes this decision. */
+  supersedes_id?: Id;
+}
+
+/** PUT /api/v1/memories/{id}/dependencies */
+export interface SetDependenciesRequest {
+  claim_ids: Id[];
 }
 
 /** PATCH /api/v1/memories/{id} — one operation per request. */

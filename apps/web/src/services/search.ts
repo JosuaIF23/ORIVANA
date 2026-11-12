@@ -1,8 +1,10 @@
-import type { SearchGroup, SearchRequest, SearchResponse, SearchResult } from '@contracts/types';
+import type { SearchGroup, SearchRequest, SearchResponse, SearchResult, SourceType } from '@contracts/types';
 import { fixtures } from './core/fixtures';
 import { simulate } from './core/http';
 import { requireDb } from './core/session';
 import type { MockDb } from './core/store';
+
+const SOURCE_LABEL: Record<SourceType, string> = { pdf: 'Source · PDF', markdown: 'Source · Markdown', txt: 'Source · TXT', zotero: 'Source · Zotero' };
 
 const TYPE_LABEL: Record<string, string> = { paper: 'Paper', method: 'Method', dataset: 'Dataset', claim: 'Claim', concept: 'Concept', project: 'Project', decision: 'Decision' };
 
@@ -13,8 +15,8 @@ function compute(db: MockDb, query: string): SearchGroup[] {
   const sources: SearchResult[] = take(db.sources.filter((s) => s.title.toLowerCase().includes(q) || (s.authors ?? '').toLowerCase().includes(q)), 4).map((s) => ({
     id: s.id,
     type: 'source',
-    type_label: s.type === 'pdf' ? 'Source · PDF' : s.type === 'markdown' ? 'Source · Markdown' : 'Source · TXT',
-    icon: s.type === 'pdf' ? 'pdf' : 'markdown',
+    type_label: SOURCE_LABEL[s.type],
+    icon: s.type === 'pdf' ? 'pdf' : s.type === 'zotero' ? 'zotero' : 'markdown',
     title: s.title,
     subtitle: [s.project_name ?? 'No project', s.authors].filter(Boolean).join(' · '),
     updated_at: s.created_at,
@@ -35,7 +37,7 @@ function compute(db: MockDb, query: string): SearchGroup[] {
     type: m.decision ? 'decision' : 'memory',
     type_label: m.decision ? 'Decision' : 'Memory',
     icon: m.decision ? 'decision' : 'concept',
-    title: m.decision ? `${m.decision.code} ${m.content}` : m.content,
+    title: m.decision ? `${m.decision.code} ${m.title ?? m.content}` : m.content,
     subtitle: `${m.project_name ?? 'Workspace'} · ${m.status}`,
     updated_at: m.updated_at,
     page: null,
@@ -52,9 +54,20 @@ function compute(db: MockDb, query: string): SearchGroup[] {
   }));
   const projects: SearchResult[] = take(db.projects.filter((p) => p.name.toLowerCase().includes(q)), 2).map((p) => ({ id: p.id, type: 'project', type_label: 'Project', icon: 'project', title: p.name, subtitle: p.summary, updated_at: p.updated_at, page: null }));
   const actions: SearchResult[] = take(db.proposals.filter((p) => p.title.toLowerCase().includes(q)), 2).map((p) => ({ id: p.id, type: 'action', type_label: 'Action', icon: 'action', title: p.title, subtitle: `GitHub · ${p.status.replaceAll('_', ' ')}`, updated_at: p.created_at, page: null }));
+  const claims: SearchResult[] = take(db.claims.filter((c) => c.status !== 'rejected' && (c.statement.toLowerCase().includes(q) || c.short_name.toLowerCase().includes(q))), 3).map((c) => ({
+    id: c.id,
+    type: 'claim',
+    type_label: 'Claim',
+    icon: 'claim',
+    title: c.statement,
+    subtitle: `${c.project_name ?? 'Workspace'} · ${c.supports_count} supports · ${c.contradicts_count} contradicts`,
+    updated_at: c.updated_at,
+    page: null,
+  }));
   const groups: SearchGroup[] = [
     { key: 'sources', label: 'Sources', results: sources },
     { key: 'projects', label: 'Projects', results: projects },
+    { key: 'claims', label: 'Claims', results: claims },
     { key: 'entities', label: 'Entities & concepts', results: entities },
     { key: 'memories', label: 'Memories & decisions', results: memories },
     { key: 'conversations', label: 'Conversations', results: conversations },

@@ -6,8 +6,9 @@ import { StatusBadge } from '@/components/common/status-badge';
 import { LoadingSkeleton, ErrorState } from '@/components/common/states';
 import { useRecentSources, useReprocessSource } from '@/features/sources/use-sources';
 import { HomeCard } from './home-card';
+import { SOURCE_TYPE_LABEL } from '@/lib/labels';
 
-const TYPE_LABEL = { pdf: 'PDF', markdown: 'Markdown', txt: 'TXT' } as const;
+const TYPE_LABEL = SOURCE_TYPE_LABEL;
 
 export function RecentSourcesCard() {
   const { data, isPending, error, refetch } = useRecentSources();

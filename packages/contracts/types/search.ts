@@ -7,7 +7,8 @@ export type SearchResultType =
   | 'memory'
   | 'decision'
   | 'conversation'
-  | 'action';
+  | 'action'
+  | 'claim';
 
 /** POST /api/v1/search */
 export interface SearchRequest {
@@ -23,7 +24,7 @@ export interface SearchResult {
   /** Type label shown in the left column, e.g. "Source · PDF", "Method". */
   type_label: string;
   /** Icon key for the type column. */
-  icon: 'pdf' | 'markdown' | 'paper' | 'method' | 'dataset' | 'claim' | 'concept' | 'project' | 'decision' | 'conversation' | 'action';
+  icon: 'pdf' | 'markdown' | 'zotero' | 'paper' | 'method' | 'dataset' | 'claim' | 'concept' | 'project' | 'decision' | 'conversation' | 'action';
   title: string;
   subtitle: string;
   updated_at: ISODateTime;
@@ -32,7 +33,7 @@ export interface SearchResult {
 }
 
 export interface SearchGroup {
-  key: 'sources' | 'entities' | 'memories' | 'conversations' | 'projects' | 'actions';
+  key: 'sources' | 'entities' | 'memories' | 'conversations' | 'projects' | 'actions' | 'claims';
   label: string;
   results: SearchResult[];
 }

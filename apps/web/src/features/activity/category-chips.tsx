@@ -1,12 +1,17 @@
 import type { ReactNode } from 'react';
-import { Bookmark, ExternalLink, Search, ShieldCheck, TriangleAlert, Upload, Wrench } from 'lucide-react';
+import { Bookmark, CircleAlert, ExternalLink, FilePen, Library, ScanSearch, Search, ShieldCheck, TriangleAlert, Upload, Wrench } from 'lucide-react';
 import type { AuditCategory } from '@contracts/types';
 import { cn } from '@/lib/cn';
 
+/** Order follows UI.md §4.15; Tool calls (v1) stays last before Errors. */
 export const CATEGORY: Record<AuditCategory, { label: string; icon: ReactNode }> = {
   ingestion: { label: 'Ingestion', icon: <Upload /> },
+  zotero_sync: { label: 'Zotero sync', icon: <Library /> },
   retrieval: { label: 'Retrieval', icon: <Search /> },
+  extraction: { label: 'Extraction', icon: <ScanSearch /> },
   memory: { label: 'Memory', icon: <Bookmark /> },
+  decision_alerts: { label: 'Decision alerts', icon: <CircleAlert className="text-warning" /> },
+  proposals: { label: 'Proposals', icon: <FilePen /> },
   tool_calls: { label: 'Tool calls', icon: <Wrench /> },
   approvals: { label: 'Approvals', icon: <ShieldCheck className="text-warning" /> },
   external_actions: { label: 'External actions', icon: <ExternalLink /> },

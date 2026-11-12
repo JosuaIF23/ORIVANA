@@ -24,6 +24,8 @@ interface StatusDef {
   tone: Tone;
   icon: ReactNode;
   dashed?: boolean;
+  /** Superseded items are struck through (UI.md §2.3). */
+  strike?: boolean;
 }
 
 const spin = <Spinner className="size-3.5" />;
@@ -36,12 +38,13 @@ export const STATUS: Record<string, StatusDef> = {
   queued: { label: 'Queued', tone: 'neutral', icon: <Clock /> },
   parsing: { label: 'Parsing', tone: 'accent', icon: spin },
   indexing: { label: 'Indexing', tone: 'accent', icon: spin },
+  extracting: { label: 'Extracting', tone: 'accent', icon: spin },
   ready: { label: 'Ready', tone: 'knowledge', icon: <Check /> },
   failed: { label: 'Failed', tone: 'danger', icon: <TriangleAlert /> },
   candidate: { label: 'Candidate', tone: 'warning', icon: <CircleDashed />, dashed: true },
   proposed: { label: 'Proposed', tone: 'warning', icon: <CircleDashed />, dashed: true },
   confirmed: { label: 'Confirmed', tone: 'knowledge', icon: <Check /> },
-  superseded: { label: 'Superseded', tone: 'neutral', icon: <ArrowRightToLine /> },
+  superseded: { label: 'Superseded', tone: 'neutral', icon: <ArrowRightToLine />, strike: true },
   rejected: { label: 'Rejected', tone: 'danger', icon: <X /> },
   active: { label: 'Active', tone: 'knowledge', icon: null },
   archived: { label: 'Archived', tone: 'neutral', icon: null },
@@ -63,6 +66,17 @@ export const STATUS: Record<string, StatusDef> = {
   coming_later: { label: 'Coming later', tone: 'neutral', icon: null },
   link_expired: { label: 'Link expired', tone: 'neutral', icon: null },
   recommended: { label: 'Recommended', tone: 'accent', icon: null },
+  /* v2 semantics (UI.md §2.3) */
+  needs_review: { label: 'Needs review', tone: 'warning', icon: <TriangleAlert /> },
+  supports: { label: 'Supports', tone: 'knowledge', icon: <Check /> },
+  contradicts: { label: 'Contradicts', tone: 'danger', icon: <X /> },
+  mentions: { label: 'Mentions', tone: 'neutral', icon: null },
+  weakens: { label: 'Weakens', tone: 'warning', icon: <TriangleAlert /> },
+  uncertain: { label: 'Uncertain', tone: 'warning', icon: <CircleDashed /> },
+  open: { label: 'Open', tone: 'warning', icon: <TriangleAlert /> },
+  dismissed: { label: 'Kept', tone: 'neutral', icon: <Check /> },
+  resolved: { label: 'Resolved', tone: 'knowledge', icon: <Check /> },
+  read_only: { label: 'Read only', tone: 'neutral', icon: null },
 };
 
 const TONE: Record<Tone, string> = {
@@ -94,7 +108,7 @@ export function StatusBadge({ status, label, className, size = 'sm' }: StatusBad
       )}
     >
       {def.icon}
-      {label ?? def.label}
+      {def.strike ? <span className="line-through">{label ?? def.label}</span> : (label ?? def.label)}
     </span>
   );
 }

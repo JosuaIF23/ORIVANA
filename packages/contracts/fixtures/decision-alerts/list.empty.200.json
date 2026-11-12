@@ -1,0 +1,10 @@
+{
+  "items": [],
+  "next_cursor": null,
+  "total": 0,
+  "counts": {
+    "open": 0,
+    "dismissed": 0,
+    "resolved": 0
+  }
+}

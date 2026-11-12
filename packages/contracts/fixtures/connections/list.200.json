@@ -1,6 +1,55 @@
 {
   "connections": [
     {
+      "id": "conn_zotero",
+      "workspace_id": "ws_personal",
+      "provider": "zotero",
+      "account_label": "josua-silalahi",
+      "status": "connected",
+      "connected_at": "2026-11-02T02:05:00Z",
+      "last_checked_at": "2026-11-11T02:00:00Z",
+      "last_sync_at": "2026-11-11T02:00:00Z",
+      "health": "passed",
+      "status_detail": null,
+      "repositories": [],
+      "library_label": "josua-silalahi · My Library",
+      "collections": [
+        {
+          "key": "ZC7K2RAG",
+          "name": "RAG Comparison",
+          "item_count": 18
+        }
+      ],
+      "grant": {
+        "id": "grant_zotero",
+        "connection_id": "conn_zotero",
+        "approval_policy": "every_write",
+        "granted_at": "2026-11-02T02:05:00Z",
+        "scopes": [
+          {
+            "kind": "read",
+            "label": "Read your items and their metadata",
+            "scope": "library:read"
+          },
+          {
+            "kind": "read",
+            "label": "Download attached PDFs",
+            "scope": "files:read"
+          },
+          {
+            "kind": "read",
+            "label": "Read your highlights and notes",
+            "scope": "notes:read"
+          },
+          {
+            "kind": "not_granted",
+            "label": "Change or delete anything in your Zotero library",
+            "scope": null
+          }
+        ]
+      }
+    },
+    {
       "id": "conn_github",
       "workspace_id": "ws_personal",
       "provider": "github",
@@ -63,11 +112,25 @@
   ],
   "catalog": [
     {
+      "provider": "zotero",
+      "name": "Zotero",
+      "tagline": "Import items, PDFs, and highlights from chosen collections (read only)",
+      "availability": "available",
+      "workaround": null
+    },
+    {
       "provider": "github",
       "name": "GitHub",
       "tagline": "Read repositories and issues; create issues after approval",
       "availability": "available",
       "workaround": null
+    },
+    {
+      "provider": "mcp",
+      "name": "Use ORIVANA in Claude / ChatGPT",
+      "tagline": "Ask about your papers and decisions from the AI assistants you already use",
+      "availability": "coming_later",
+      "workaround": "Actions requested from other apps will always wait for your approval here."
     },
     {
       "provider": "obsidian",
@@ -82,6 +145,13 @@
       "tagline": "Read PDFs and docs from chosen folders",
       "availability": "coming_later",
       "workaround": "Download files from Drive and upload them to Sources for now."
+    },
+    {
+      "provider": "notion",
+      "name": "Notion",
+      "tagline": "Read pages from chosen workspaces",
+      "availability": "coming_later",
+      "workaround": "Export pages as Markdown and upload them to Sources for now."
     }
   ]
 }

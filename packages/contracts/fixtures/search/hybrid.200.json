@@ -2,7 +2,7 @@
   "_note": "POST /api/v1/search {\"query\":\"hybrid\"}",
   "query": "hybrid",
   "scope_label": "Searching all of Personal workspace",
-  "total": 7,
+  "total": 8,
   "groups": [
     {
       "key": "sources",
@@ -65,9 +65,25 @@
           "type": "decision",
           "type_label": "Decision",
           "icon": "decision",
-          "title": "D-04 Use hybrid retrieval as the default retriever",
-          "subtitle": "RAG Comparison · confirmed",
+          "title": "D-04 Use hybrid retrieval for thesis experiments",
+          "subtitle": "RAG Comparison · confirmed · needs review",
           "updated_at": "2026-11-06T03:00:00Z",
+          "page": null
+        }
+      ]
+    },
+    {
+      "key": "claims",
+      "label": "Claims",
+      "results": [
+        {
+          "id": "ent_c_hybridbeats",
+          "type": "claim",
+          "type_label": "Claim",
+          "icon": "claim",
+          "title": "Hybrid retrieval outperforms dense-only retrieval on open-domain QA",
+          "subtitle": "RAG Comparison · 2 supports · 1 contradicts",
+          "updated_at": "2026-11-10T09:44:00Z",
           "page": null
         }
       ]

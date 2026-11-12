@@ -21,6 +21,14 @@ function memory(id, fields) {
     valid_to: null,
     updated_at: fields.created_at,
     decision: null,
+    kind: { project: 'fact', semantic: 'fact', episodic: 'event', procedural: 'preference' }[fields.memory_type] ?? 'fact',
+    title: null,
+    rationale: null,
+    review_state: 'ok',
+    dependencies: [],
+    decided_at: null,
+    history: [],
+    open_alert_id: null,
     ...fields,
   };
 }
@@ -39,24 +47,48 @@ export const MEMORIES = [
   memory('mem_prefers_graphrag', { memory_type: 'episodic', content: 'You prefer GraphRAG for every project.', origin: 'model_proposed', status: 'rejected', confidence: 0.33, evidence: conv('conv_readinglist', 'Conversation · Reading list for retrieval eval'), created_at: t('16:05', 2) }),
 ];
 
+const dep = (claim_id, statement, supports_count, contradicts_count) => ({ claim_id, statement, supports_count, contradicts_count, note: null });
+const HYBRID_BEATS = dep('ent_c_hybridbeats', 'Hybrid retrieval outperforms dense-only retrieval on open-domain QA', 2, 1);
+const LEXICAL = dep('ent_c_lexicalaids', 'Lexical matching helps most for questions with rare entity names', 1, 0);
+const GAP_CLOSES = dep('ent_c_gapcloses', 'The hybrid advantage disappears on multi-hop questions', 1, 0);
+
+function history(fields) {
+  const h = [{ at: fields.created_at, kind: 'created', text: fields.origin === 'model_proposed' ? 'Proposed by ORIVANA' : 'Recorded by you', link: null }];
+  if (fields.status === 'confirmed' || fields.status === 'superseded') h.push({ at: fields.created_at, kind: 'confirmed', text: 'Confirmed by you', link: null });
+  if (fields.supersedes_id) h.push({ at: fields.created_at, kind: 'superseded', text: 'Replaced an earlier decision', link: { target_type: 'memory', target_id: fields.supersedes_id } });
+  if (fields.status === 'superseded') h.push({ at: fields.valid_to, kind: 'superseded', text: 'Superseded by a newer decision', link: { target_type: 'memory', target_id: fields.superseded_by_id } });
+  return [...h, ...(fields.extra_history ?? [])];
+}
+
 function decision(id, code, title, fields) {
+  const { extra_history, statement, ...rest } = fields;
   return memory(id, {
     memory_type: 'project',
-    content: title,
+    content: statement ?? title,
     decision: { code, title, rationale: fields.rationale ?? null, evidence: fields.evidence ?? [] },
-    ...fields,
+    kind: 'decision',
+    title,
+    decided_at: fields.status === 'proposed' ? null : fields.created_at,
+    history: history(fields),
+    ...rest,
   });
 }
 
 export const DECISIONS = [
   decision('dec_rag_05', 'D-05', 'Add the HotpotQA multi-hop split to the evaluation', {
-    ...RAG, origin: 'model_proposed', status: 'candidate', confidence: 0.7, created_at: t('09:40'),
+    ...RAG, origin: 'model_proposed', status: 'proposed', confidence: 0.7, created_at: t('09:40'), dependencies: [GAP_CLOSES],
     rationale: 'one source finds the hybrid advantage disappears on multi-hop questions; our set has none.',
     evidence: [{ source_id: 'src_varga2024', label: 'Varga & Chen 2024', page: 9 }],
     evidence_ref: undefined,
   }),
-  decision('dec_rag_04', 'D-04', 'Use hybrid retrieval (BM25 + dense, RRF k = 60) as the default retriever', {
+  decision('dec_rag_04', 'D-04', 'Use hybrid retrieval for thesis experiments', {
     ...RAG, origin: 'user', status: 'confirmed', supersedes_id: 'dec_rag_02', created_at: t('10:00', 6),
+    statement: 'Use hybrid retrieval (BM25 + dense, RRF k = 60) for every thesis experiment.',
+    review_state: 'needs_review', open_alert_id: 'alert_01JCD04VRG', dependencies: [HYBRID_BEATS, LEXICAL],
+    extra_history: [
+      { at: t('10:02', 6), kind: 'dependencies_changed', text: 'Linked to 2 claims', link: null },
+      { at: t('16:45', 10), kind: 'alert_raised', text: 'Needs review: Varga & Chen 2024 (p. 9) contradicts a claim this decision depends on', link: { target_type: 'decision_alert', target_id: 'alert_01JCD04VRG' } },
+    ],
     rationale: 'two papers report consistent gains over dense-only on NQ and TriviaQA, largest under distribution shift.',
     evidence: [{ source_id: 'src_okafor2025', label: 'Okafor et al. 2025', page: 6 }, { source_id: 'src_santos2025', label: 'Santos & Lee 2025', page: 4 }],
   }),
@@ -66,7 +98,7 @@ export const DECISIONS = [
   decision('dec_thesis_02', 'D-02', 'Use the RAG Comparison results as the Chapter 4 baseline', { ...THESIS, origin: 'user', status: 'confirmed', created_at: t('19:52', 8) }),
   decision('dec_thesis_01', 'D-01', 'Focus the thesis on graph-aware retrieval (Q1)', { ...THESIS, origin: 'user', status: 'confirmed', created_at: t('14:30', 4) }),
 ].map((d) => {
-  const { evidence_ref, ...rest } = d;
+  const { evidence_ref, extra_history, statement, ...rest } = d;
   const ev = rest.decision.evidence[0];
   return {
     ...rest,
@@ -75,7 +107,7 @@ export const DECISIONS = [
 });
 
 function counts(list) {
-  const c = { candidate: 0, confirmed: 0, superseded: 0, rejected: 0 };
+  const c = { candidate: 0, proposed: 0, confirmed: 0, superseded: 0, rejected: 0 };
   for (const m of list) c[m.status] += 1;
   return c;
 }
@@ -91,4 +123,6 @@ export function generateMemories() {
   write('memories/patch.422-invalid.json', error('VALIDATION_FAILED', 'Choose a confirmed memory to supersede this one.', 'req_6a7b8c9d', { field: 'superseded_by_id' }));
   write('memories/delete.200.json', { ok: true });
   write('memories/delete-candidates.200.json', { deleted: 3 });
+  write('memories/dependencies.put.200.json', { ...DECISIONS.find((d) => d.id === 'dec_rag_04'), dependencies: [HYBRID_BEATS], updated_at: t('15:10') });
+  write('memories/decisions.needs-review.200.json', { _note: 'GET /api/v1/memories?decisions_only=true&review_state=needs_review', items: DECISIONS.filter((d) => d.review_state === 'needs_review'), next_cursor: null, total: 1, counts: counts(DECISIONS) });
 }

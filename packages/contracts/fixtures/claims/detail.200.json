@@ -1,0 +1,517 @@
+{
+  "_note": "GET /api/v1/claims/{id} keyed by id.",
+  "items": {
+    "ent_c_hybridbeats": {
+      "id": "ent_c_hybridbeats",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "statement": "Hybrid retrieval outperforms dense-only retrieval on open-domain QA",
+      "short_name": "Hybrid beats dense-only",
+      "status": "confirmed",
+      "supports_count": 2,
+      "contradicts_count": 1,
+      "mentions_count": 3,
+      "used_by_decisions": [
+        {
+          "id": "dec_rag_04",
+          "code": "D-04",
+          "title": "Use hybrid retrieval for thesis experiments",
+          "review_state": "needs_review"
+        }
+      ],
+      "has_new_contradiction": true,
+      "created_at": "2026-11-01T03:00:00Z",
+      "updated_at": "2026-11-10T09:44:00Z",
+      "evidence": [
+        {
+          "relationship_id": "rel_santos_hybridbeats",
+          "stance": "supports",
+          "status": "confirmed",
+          "confidence": 0.87,
+          "source_id": "src_santos2025",
+          "source_label": "Santos & Lee 2025",
+          "source_title": "Fusion Retrieval Revisited: BM25 + Dense on Open-Domain QA",
+          "imported_at": null,
+          "evidence": [
+            {
+              "id": "ev_santos_hybridbeats_1",
+              "relationship_id": "rel_santos_hybridbeats",
+              "memory_id": null,
+              "chunk_id": "chk_santos_0401",
+              "source_id": "src_santos2025",
+              "source_label": "Santos & Lee 2025",
+              "page": 4,
+              "section": "3.1 Main results",
+              "passage": "Table 2 reports the main results on Natural Questions. With reciprocal rank fusion (k = 60), the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5, a gain of 4.1 points over the dense-only baseline.",
+              "quote": "the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5",
+              "char_start": 93,
+              "char_end": 163
+            }
+          ]
+        },
+        {
+          "relationship_id": "rel_okafor_hybridbeats",
+          "stance": "supports",
+          "status": "confirmed",
+          "confidence": 0.88,
+          "source_id": "src_okafor2025",
+          "source_label": "Okafor et al. 2025",
+          "source_title": "Hybrid Retrieval Under Distribution Shift",
+          "imported_at": null,
+          "evidence": [
+            {
+              "id": "ev_okafor_hybridbeats_1",
+              "relationship_id": "rel_okafor_hybridbeats",
+              "memory_id": null,
+              "chunk_id": "chk_okafor_0601",
+              "source_id": "src_okafor2025",
+              "source_label": "Okafor et al. 2025",
+              "page": 6,
+              "section": "4.2 Results",
+              "passage": "Table 3 summarises retrieval accuracy on in-domain and shifted test sets. Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets. We attribute most of this gain to lexical matching of rare entity names that the dense encoder under-represents.",
+              "quote": "Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets.",
+              "char_start": 74,
+              "char_end": 273
+            },
+            {
+              "id": "ev_okafor_hybridbeats_2",
+              "relationship_id": "rel_okafor_hybridbeats",
+              "memory_id": null,
+              "chunk_id": "chk_okafor_1001",
+              "source_id": "src_okafor2025",
+              "source_label": "Okafor et al. 2025",
+              "page": 10,
+              "section": "5 Discussion",
+              "passage": "Lexical matching helps most when questions mention rare entity names, such as chemical compounds or people who appear only a handful of times in the training corpus.",
+              "quote": "Lexical matching helps most when questions mention rare entity names",
+              "char_start": 0,
+              "char_end": 68
+            }
+          ]
+        },
+        {
+          "relationship_id": "rel_varga_contradicts",
+          "stance": "contradicts",
+          "status": "candidate",
+          "confidence": 0.64,
+          "source_id": "src_varga2024",
+          "source_label": "Varga & Chen 2024",
+          "source_title": "Dense-Only Baselines for Multi-hop QA",
+          "imported_at": "2026-11-10T09:40:00Z",
+          "evidence": [
+            {
+              "id": "ev_varga_contradicts_1",
+              "relationship_id": "rel_varga_contradicts",
+              "memory_id": null,
+              "chunk_id": "chk_varga_0901",
+              "source_id": "src_varga2024",
+              "source_label": "Varga & Chen 2024",
+              "page": 9,
+              "section": "5 Discussion",
+              "passage": "The hybrid configuration from Section 2.2 does not improve over our tuned dense retriever on HotpotQA, suggesting lexical signals matter less for multi-hop questions. Overall, on HotpotQA our tuned dense retriever is within 0.5 points of the hybrid configuration across all retrieval budgets.",
+              "quote": "The hybrid configuration from Section 2.2 does not improve over our tuned dense retriever on HotpotQA",
+              "char_start": 0,
+              "char_end": 101
+            }
+          ]
+        },
+        {
+          "relationship_id": "rel_cl_kowalski_hb",
+          "stance": "mentions",
+          "status": "confirmed",
+          "confidence": 0.81,
+          "source_id": "src_kowalski2024",
+          "source_label": "Kowalski 2024",
+          "source_title": "Reciprocal Rank Fusion for Neural Retrievers",
+          "imported_at": "2026-10-30T03:00:00Z",
+          "evidence": [
+            {
+              "id": "ev_cl_kowalski_hb_1",
+              "relationship_id": "rel_cl_kowalski_hb",
+              "memory_id": null,
+              "chunk_id": "chk_kowalski2024_2e",
+              "source_id": "src_kowalski2024",
+              "source_label": "Kowalski 2024",
+              "page": 2,
+              "section": "2 Background",
+              "passage": "Several recent systems fuse lexical and dense rankings and report gains over a single dense retriever on open-domain QA benchmarks.",
+              "quote": "fuse lexical and dense rankings and report gains over a single dense retriever",
+              "char_start": 23,
+              "char_end": 101
+            }
+          ]
+        },
+        {
+          "relationship_id": "rel_cl_nakamura_hb",
+          "stance": "mentions",
+          "status": "confirmed",
+          "confidence": 0.77,
+          "source_id": "src_nakamura2025",
+          "source_label": "Nakamura 2025",
+          "source_title": "Sparse–Dense Hybrids in Low-Resource Domains",
+          "imported_at": "2026-10-25T02:10:00Z",
+          "evidence": [
+            {
+              "id": "ev_cl_nakamura_hb_1",
+              "relationship_id": "rel_cl_nakamura_hb",
+              "memory_id": null,
+              "chunk_id": "chk_nakamura2025_1e",
+              "source_id": "src_nakamura2025",
+              "source_label": "Nakamura 2025",
+              "page": 1,
+              "section": "1 Introduction",
+              "passage": "Sparse–dense hybrids are widely reported to beat dense-only retrievers on English open-domain QA; we ask whether this holds in low-resource domains.",
+              "quote": "Sparse–dense hybrids are widely reported to beat dense-only retrievers",
+              "char_start": 0,
+              "char_end": 70
+            }
+          ]
+        },
+        {
+          "relationship_id": "rel_cl_costa_hb",
+          "stance": "mentions",
+          "status": "candidate",
+          "confidence": 0.69,
+          "source_id": "src_costa2024",
+          "source_label": "Costa 2024",
+          "source_title": "Benchmarking Hybrid Search Engines",
+          "imported_at": null,
+          "evidence": [
+            {
+              "id": "ev_cl_costa_hb_1",
+              "relationship_id": "rel_cl_costa_hb",
+              "memory_id": null,
+              "chunk_id": "chk_costa2024_3e",
+              "source_id": "src_costa2024",
+              "source_label": "Costa 2024",
+              "page": 3,
+              "section": "2 Related work",
+              "passage": "Hybrid search engines combine an inverted index with a vector index; open-domain QA results generally favour the combination.",
+              "quote": "open-domain QA results generally favour the combination",
+              "char_start": 69,
+              "char_end": 124
+            }
+          ]
+        }
+      ],
+      "context_note": {
+        "text": "The contradiction is specific to multi-hop questions (HotpotQA). Both supporting papers evaluate single-hop open-domain QA (Natural Questions, TriviaQA, BEIR).",
+        "generated_by": "model"
+      },
+      "merge_suggestions": [
+        {
+          "id": "ent_c_fusionnq",
+          "statement": "BM25 + dense fusion improves top-20 accuracy on Natural Questions"
+        }
+      ]
+    },
+    "ent_c_gapcloses": {
+      "id": "ent_c_gapcloses",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "statement": "The hybrid advantage disappears on multi-hop questions",
+      "short_name": "Gap closes on multi-hop",
+      "status": "candidate",
+      "supports_count": 1,
+      "contradicts_count": 0,
+      "mentions_count": 1,
+      "used_by_decisions": [
+        {
+          "id": "dec_rag_05",
+          "code": "D-05",
+          "title": "Add the HotpotQA multi-hop split to the evaluation",
+          "review_state": "ok"
+        }
+      ],
+      "has_new_contradiction": false,
+      "created_at": "2026-11-10T09:44:00Z",
+      "updated_at": "2026-11-10T09:44:00Z",
+      "evidence": [
+        {
+          "relationship_id": "rel_cl_varga_gapcloses",
+          "stance": "supports",
+          "status": "candidate",
+          "confidence": 0.71,
+          "source_id": "src_varga2024",
+          "source_label": "Varga & Chen 2024",
+          "source_title": "Dense-Only Baselines for Multi-hop QA",
+          "imported_at": "2026-11-10T09:40:00Z",
+          "evidence": [
+            {
+              "id": "ev_cl_varga_gapcloses_1",
+              "relationship_id": "rel_cl_varga_gapcloses",
+              "memory_id": null,
+              "chunk_id": "chk_varga_0901",
+              "source_id": "src_varga2024",
+              "source_label": "Varga & Chen 2024",
+              "page": 9,
+              "section": "5 Discussion",
+              "passage": "The hybrid configuration from Section 2.2 does not improve over our tuned dense retriever on HotpotQA, suggesting lexical signals matter less for multi-hop questions. Overall, on HotpotQA our tuned dense retriever is within 0.5 points of the hybrid configuration across all retrieval budgets.",
+              "quote": "on HotpotQA our tuned dense retriever is within 0.5 points of the hybrid configuration",
+              "char_start": 176,
+              "char_end": 262
+            }
+          ]
+        },
+        {
+          "relationship_id": "rel_cl_fischer_gapcloses",
+          "stance": "mentions",
+          "status": "confirmed",
+          "confidence": 0.74,
+          "source_id": "src_fischer2024",
+          "source_label": "Fischer 2024",
+          "source_title": "Query Rewriting for Multi-hop Retrieval",
+          "imported_at": null,
+          "evidence": [
+            {
+              "id": "ev_cl_fischer_gapcloses_1",
+              "relationship_id": "rel_cl_fischer_gapcloses",
+              "memory_id": null,
+              "chunk_id": "chk_fischer2024_2e",
+              "source_id": "src_fischer2024",
+              "source_label": "Fischer 2024",
+              "page": 2,
+              "section": "1 Introduction",
+              "passage": "Multi-hop questions need evidence from several documents, so lexical overlap with the question is a weaker signal than in single-hop QA.",
+              "quote": "lexical overlap with the question is a weaker signal than in single-hop QA",
+              "char_start": 61,
+              "char_end": 135
+            }
+          ]
+        }
+      ],
+      "context_note": null,
+      "merge_suggestions": []
+    },
+    "ent_c_lexicalaids": {
+      "id": "ent_c_lexicalaids",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "statement": "Lexical matching helps most for questions with rare entity names",
+      "short_name": "Lexical aids rare names",
+      "status": "confirmed",
+      "supports_count": 1,
+      "contradicts_count": 0,
+      "mentions_count": 1,
+      "used_by_decisions": [
+        {
+          "id": "dec_rag_04",
+          "code": "D-04",
+          "title": "Use hybrid retrieval for thesis experiments",
+          "review_state": "needs_review"
+        }
+      ],
+      "has_new_contradiction": false,
+      "created_at": "2026-11-03T02:15:00Z",
+      "updated_at": "2026-11-03T02:15:00Z",
+      "evidence": [
+        {
+          "relationship_id": "rel_okafor_lexical",
+          "stance": "supports",
+          "status": "confirmed",
+          "confidence": 0.9,
+          "source_id": "src_okafor2025",
+          "source_label": "Okafor et al. 2025",
+          "source_title": "Hybrid Retrieval Under Distribution Shift",
+          "imported_at": null,
+          "evidence": [
+            {
+              "id": "ev_okafor_lexical_1",
+              "relationship_id": "rel_okafor_lexical",
+              "memory_id": null,
+              "chunk_id": "chk_okafor_0601",
+              "source_id": "src_okafor2025",
+              "source_label": "Okafor et al. 2025",
+              "page": 6,
+              "section": "4.2 Results",
+              "passage": "Table 3 summarises retrieval accuracy on in-domain and shifted test sets. Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets. We attribute most of this gain to lexical matching of rare entity names that the dense encoder under-represents.",
+              "quote": "Combining BM25 with the dense retriever improves top-20 accuracy over the dense-only baseline on both Natural Questions (+3.6) and TriviaQA (+2.9), with the largest gains on the shifted BEIR subsets.",
+              "char_start": 74,
+              "char_end": 273
+            },
+            {
+              "id": "ev_okafor_lexical_2",
+              "relationship_id": "rel_okafor_lexical",
+              "memory_id": null,
+              "chunk_id": "chk_okafor_1001",
+              "source_id": "src_okafor2025",
+              "source_label": "Okafor et al. 2025",
+              "page": 10,
+              "section": "5 Discussion",
+              "passage": "Lexical matching helps most when questions mention rare entity names, such as chemical compounds or people who appear only a handful of times in the training corpus.",
+              "quote": "Lexical matching helps most when questions mention rare entity names",
+              "char_start": 0,
+              "char_end": 68
+            }
+          ]
+        },
+        {
+          "relationship_id": "rel_cl_osei_lexical",
+          "stance": "mentions",
+          "status": "confirmed",
+          "confidence": 0.83,
+          "source_id": "src_osei2025",
+          "source_label": "Osei & Park 2025",
+          "source_title": "Entity-Aware Retrieval for Long-Tail Questions",
+          "imported_at": null,
+          "evidence": [
+            {
+              "id": "ev_cl_osei_lexical_1",
+              "relationship_id": "rel_cl_osei_lexical",
+              "memory_id": null,
+              "chunk_id": "chk_osei2025_4e",
+              "source_id": "src_osei2025",
+              "source_label": "Osei & Park 2025",
+              "page": 4,
+              "section": "3 Method",
+              "passage": "Long-tail entities are often split into rare sub-word tokens, which exact-match retrieval handles better than dense embeddings.",
+              "quote": "exact-match retrieval handles better than dense embeddings",
+              "char_start": 68,
+              "char_end": 126
+            }
+          ]
+        }
+      ],
+      "context_note": null,
+      "merge_suggestions": []
+    },
+    "ent_c_longchunks": {
+      "id": "ent_c_longchunks",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "statement": "Long chunks hurt retrieval recall",
+      "short_name": "Long chunks hurt recall",
+      "status": "candidate",
+      "supports_count": 1,
+      "contradicts_count": 1,
+      "mentions_count": 0,
+      "used_by_decisions": [],
+      "has_new_contradiction": false,
+      "created_at": "2026-11-11T06:58:00Z",
+      "updated_at": "2026-11-11T06:58:00Z",
+      "evidence": [
+        {
+          "relationship_id": "rel_daly_longchunks",
+          "stance": "supports",
+          "status": "candidate",
+          "confidence": 0.77,
+          "source_id": "src_daly2025",
+          "source_label": "Daly 2025",
+          "source_title": "Chunking Strategies for Dense Retrieval",
+          "imported_at": null,
+          "evidence": [
+            {
+              "id": "ev_daly_longchunks_1",
+              "relationship_id": "rel_daly_longchunks",
+              "memory_id": null,
+              "chunk_id": "chk_daly_0701",
+              "source_id": "src_daly2025",
+              "source_label": "Daly 2025",
+              "page": 7,
+              "section": "4.3 Chunk length",
+              "passage": "Recall@20 drops from 71.2 to 64.8 when chunks grow from 384 to 1,024 tokens on Natural Questions, while a 64-token overlap recovers about one point at every length.",
+              "quote": "Recall@20 drops from 71.2 to 64.8 when chunks grow from 384 to 1,024 tokens",
+              "char_start": 0,
+              "char_end": 75
+            },
+            {
+              "id": "ev_daly_longchunks_2",
+              "relationship_id": "rel_daly_longchunks",
+              "memory_id": null,
+              "chunk_id": "chk_daly2025_12e",
+              "source_id": "src_daly2025",
+              "source_label": "Daly 2025",
+              "page": 12,
+              "section": "5 Discussion",
+              "passage": "Shorter chunks consistently retrieve the answer-bearing sentence more often than long ones.",
+              "quote": "Shorter chunks consistently retrieve the answer-bearing sentence more often",
+              "char_start": 0,
+              "char_end": 75
+            }
+          ]
+        },
+        {
+          "relationship_id": "rel_cl_meyer_longchunks",
+          "stance": "contradicts",
+          "status": "candidate",
+          "confidence": 0.66,
+          "source_id": "src_meyer2024",
+          "source_label": "Meyer 2024",
+          "source_title": "Late Interaction Retrieval at Scale",
+          "imported_at": null,
+          "evidence": [
+            {
+              "id": "ev_cl_meyer_longchunks_1",
+              "relationship_id": "rel_cl_meyer_longchunks",
+              "memory_id": null,
+              "chunk_id": "chk_meyer_1101",
+              "source_id": "src_meyer2024",
+              "source_label": "Meyer 2024",
+              "page": 11,
+              "section": "6.1 Chunk length",
+              "passage": "Chunk length between 256 and 1,024 tokens had no significant effect on nDCG@10 for the late-interaction retriever, because token-level matching already localises the relevant span.",
+              "quote": "Chunk length between 256 and 1,024 tokens had no significant effect on nDCG@10",
+              "char_start": 0,
+              "char_end": 78
+            }
+          ]
+        }
+      ],
+      "context_note": {
+        "text": "Meyer 2024 uses a late-interaction retriever, which localises the relevant span by token; Daly 2025 uses a single-vector dense retriever.",
+        "generated_by": "model"
+      },
+      "merge_suggestions": []
+    },
+    "ent_c_fusionnq": {
+      "id": "ent_c_fusionnq",
+      "project_id": "prj_rag",
+      "project_name": "RAG Comparison",
+      "statement": "BM25 + dense fusion improves top-20 accuracy on Natural Questions",
+      "short_name": "Fusion improves NQ",
+      "status": "candidate",
+      "supports_count": 1,
+      "contradicts_count": 0,
+      "mentions_count": 0,
+      "used_by_decisions": [],
+      "has_new_contradiction": false,
+      "created_at": "2026-11-01T08:30:00Z",
+      "updated_at": "2026-11-01T08:30:00Z",
+      "evidence": [
+        {
+          "relationship_id": "rel_cl_santos_fusionnq",
+          "stance": "supports",
+          "status": "candidate",
+          "confidence": 0.79,
+          "source_id": "src_santos2025",
+          "source_label": "Santos & Lee 2025",
+          "source_title": "Fusion Retrieval Revisited: BM25 + Dense on Open-Domain QA",
+          "imported_at": null,
+          "evidence": [
+            {
+              "id": "ev_cl_santos_fusionnq_1",
+              "relationship_id": "rel_cl_santos_fusionnq",
+              "memory_id": null,
+              "chunk_id": "chk_santos_0401",
+              "source_id": "src_santos2025",
+              "source_label": "Santos & Lee 2025",
+              "page": 4,
+              "section": "3.1 Main results",
+              "passage": "Table 2 reports the main results on Natural Questions. With reciprocal rank fusion (k = 60), the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5, a gain of 4.1 points over the dense-only baseline.",
+              "quote": "the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5",
+              "char_start": 93,
+              "char_end": 163
+            }
+          ]
+        }
+      ],
+      "context_note": null,
+      "merge_suggestions": [
+        {
+          "id": "ent_c_hybridbeats",
+          "statement": "Hybrid retrieval outperforms dense-only retrieval on open-domain QA"
+        }
+      ]
+    }
+  }
+}

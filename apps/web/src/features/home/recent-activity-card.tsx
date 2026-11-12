@@ -1,3 +1,4 @@
+import type { ActorType } from '@contracts/types';
 import type { AuditEvent } from '@contracts/types';
 import { formatTime } from '@/lib/format';
 import { useAuditEvents } from '@/hooks/use-data';
@@ -5,7 +6,7 @@ import { AuditSummary } from '@/components/common/audit-summary';
 import { LoadingSkeleton, ErrorState } from '@/components/common/states';
 import { HomeCard } from './home-card';
 
-const ACTOR = { user: 'You', agent: 'Agent', system: 'System' } as const;
+const ACTOR: Record<ActorType, string> = { user: 'You', agent: 'Agent', system: 'System', external_client: 'External client' };
 
 function lowerFirst(text: string) {
   return text.charAt(0).toLowerCase() + text.slice(1);

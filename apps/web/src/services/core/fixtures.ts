@@ -33,6 +33,17 @@ import type {
   Page,
   Memory,
   Project,
+  MatrixResponse,
+  MatrixCellDetail,
+  ClaimDetail,
+  ClaimListResponse,
+  DecisionAlert,
+  DecisionAlertListResponse,
+  ModelsResponse,
+  ZoteroCollectionsResponse,
+  ZoteroSyncResponse,
+  StartConnectionResponse,
+  ToolConnection,
 } from '@contracts/types';
 
 import testAccounts from '@contracts/fixtures/auth/_test-accounts.json';
@@ -92,6 +103,20 @@ import deletionPreview from '@contracts/fixtures/workspaces/deletion-preview.200
 import deleteConfirmation from '@contracts/fixtures/workspaces/delete-data.422-confirmation.json';
 import suggestions from '@contracts/fixtures/home/suggestions.200.json';
 import internalError from '@contracts/fixtures/_errors/500-internal.json';
+import matrixRag from '@contracts/fixtures/knowledge/matrix.prj_rag.200.json';
+import matrixCells from '@contracts/fixtures/knowledge/matrix-cells.200.json';
+import claimsList from '@contracts/fixtures/claims/list.200.json';
+import claimsDetail from '@contracts/fixtures/claims/detail.200.json';
+import claimConflict from '@contracts/fixtures/claims/patch.409-already-decided.json';
+import alertsOpen from '@contracts/fixtures/decision-alerts/list.open.200.json';
+import alertNoteRequired from '@contracts/fixtures/decision-alerts/patch.422-note-required.json';
+import alertProposal from '@contracts/fixtures/action-proposals/get.prop_01JCD04ALT.200.json';
+import models from '@contracts/fixtures/models/list.200.json';
+import zoteroCollections from '@contracts/fixtures/connections/zotero.collections.200.json';
+import zoteroSync from '@contracts/fixtures/connections/zotero.sync.202.json';
+import zoteroSyncRunning from '@contracts/fixtures/connections/zotero.sync.409-running.json';
+import zoteroStart from '@contracts/fixtures/connections/zotero.start.200.json';
+import zoteroCallback from '@contracts/fixtures/connections/zotero.callback.200.json';
 
 /** JSON imports widen string unions to `string`; this cast restores the contract type. */
 function as<T>(value: unknown): T {
@@ -177,6 +202,29 @@ export const fixtures = {
   workspace: { deletionPreview: as<DeletionPreview>(deletionPreview), deleteConfirmation: as<ErrorResponse>(deleteConfirmation) },
   home: { suggestions: as<SuggestionsResponse>(suggestions) },
   errors: { internal: as<ErrorResponse>(internalError) },
+  /* v2 */
+  knowledge: {
+    matrix: as<MatrixResponse>(matrixRag),
+    cells: as<{ items: MatrixCellDetail[] }>(matrixCells),
+  },
+  claims: {
+    list: as<ClaimListResponse>(claimsList),
+    detail: as<{ items: Record<string, ClaimDetail> }>(claimsDetail),
+    conflict: as<ErrorResponse>(claimConflict),
+  },
+  alerts: {
+    open: as<DecisionAlertListResponse & { items: DecisionAlert[] }>(alertsOpen),
+    noteRequired: as<ErrorResponse>(alertNoteRequired),
+    proposal: as<ActionProposal>(alertProposal),
+  },
+  models: as<ModelsResponse>(models),
+  zotero: {
+    collections: as<ZoteroCollectionsResponse>(zoteroCollections),
+    sync: as<ZoteroSyncResponse>(zoteroSync),
+    syncRunning: as<ErrorResponse>(zoteroSyncRunning),
+    start: as<StartConnectionResponse>(zoteroStart),
+    callback: as<ToolConnection>(zoteroCallback),
+  },
 };
 
 // Page content and SSE recordings are loaded on demand to keep the main bundle small.

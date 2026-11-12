@@ -4,7 +4,7 @@ import type { Id } from './common';
 export interface Suggestion {
   id: Id;
   text: string;
-  target: { kind: 'graph_candidates' | 'memory_review' | 'source_failed'; project_id: Id | null };
+  target: { kind: 'graph_candidates' | 'memory_review' | 'source_failed' | 'decision_review'; project_id: Id | null };
 }
 
 export interface SuggestionsResponse {

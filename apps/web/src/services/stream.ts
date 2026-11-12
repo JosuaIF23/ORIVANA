@@ -10,6 +10,7 @@ import { delay, nextRequestId, simulate } from './core/http';
 import { requireDb } from './core/session';
 import { finishPendingStream, getPendingStream, storeAssistantMessage } from './conversations';
 import { ensureProposalFromChat } from './proposals';
+import { answerModelFor } from './models';
 
 export interface StreamHandle {
   close(): void;
@@ -48,6 +49,8 @@ export function openMessageStream(conversationId: string, messageId: string, onE
     let content = '';
     const citations: MessageCitation[] = [];
     const startedAt = nowIso();
+    // The answer model is chosen per user; it is recorded on every message (PRD §8.3).
+    const model = answerModelFor(db);
 
     controller.finish = () => {
       const base = recording.events.find((e) => e.event === 'done');
@@ -67,6 +70,8 @@ export function openMessageStream(conversationId: string, messageId: string, onE
         limitations: null,
         cancelled_at: nowIso(),
         error: null,
+        model: model.id,
+        model_name: model.name,
       };
       storeAssistantMessage(conversationId, cancelled);
       finishPendingStream(messageId);
@@ -102,6 +107,8 @@ export function openMessageStream(conversationId: string, messageId: string, onE
             conversation_id: conversationId,
             created_at: startedAt,
             citations: event.data.message.citations.map((c) => rewriteCitation(c, messageId)),
+            model: model.id,
+            model_name: model.name,
           };
           if (message.proposal_id) message.proposal_id = ensureProposalFromChat(db, conversationId, pending.question);
           storeAssistantMessage(conversationId, message);

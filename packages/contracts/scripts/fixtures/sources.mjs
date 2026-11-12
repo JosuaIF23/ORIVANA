@@ -43,6 +43,20 @@ const CATALOG = [
 
 const FALLBACK_PAGES = { src_ito2025: 12 };
 
+// v2: items imported read-only from Zotero (PRD §8.2). Varga & Chen 2024 is the
+// flagship "new contradicting paper", synced on 10 Nov 16:40 (SCREENS.md #23).
+export const ZOTERO_LIBRARY = { id: 'zlib_4417302', label: 'josua-silalahi · My Library' };
+export const ZOTERO_LAST_SYNC = t('09:00');
+const ZC_RAG = ['ZC7K2RAG', 'RAG Comparison'];
+const ZOTERO_ITEMS = {
+  src_varga2024: [ZC_RAG, 'VRG24CHN', 412, 3],
+  src_kowalski2024: [ZC_RAG, 'KWL24RRF', 377, 0],
+  src_lindqvist2024: [ZC_RAG, 'LDQ24BEI', 371, 5],
+  src_haddad2025: [ZC_RAG, 'HDD25COL', 366, 1],
+  src_nakamura2025: [ZC_RAG, 'NKM25SDH', 352, 0],
+};
+const REMOVED_IN_ZOTERO = new Set(['src_nakamura2025']);
+
 const MD_SECTIONS = { src_labnotes: 6, src_thesisoutline: 5, src_supervisornotes: 3, src_readinglist: 4 };
 
 function jobFor(id, status, pages, created) {
@@ -105,8 +119,27 @@ export const SOURCES = CATALOG.map(([id, title, authors, short, year, type, [pro
     created_at: created,
     updated_at: status === 'failed' ? t('11:12') : created,
     job: jobFor(id, status, pages, created),
+    zotero: null,
   };
 });
+
+for (const source of SOURCES) {
+  const z = ZOTERO_ITEMS[source.id];
+  if (!z) continue;
+  const [[collection_key, collection_name], item_key, item_version, annotation_count] = z;
+  source.type = 'zotero';
+  source.zotero = {
+    library_id: ZOTERO_LIBRARY.id,
+    item_key,
+    item_version,
+    collection_key,
+    collection_name,
+    last_synced_at: ZOTERO_LAST_SYNC,
+    has_pdf: true,
+    annotation_count,
+    removed_in_zotero: REMOVED_IN_ZOTERO.has(source.id),
+  };
+}
 
 // Real checksum shape for the source shown in the document viewer.
 SOURCES.find((s) => s.id === 'src_okafor2025').checksum = 'sha256:9c41…e07b';
@@ -143,7 +176,7 @@ const GENERIC = ['Introduction', 'Related work', 'Method', 'Experiments', 'Resul
 function sectionsFor(source) {
   const custom = CUSTOM_SECTIONS[source.id];
   if (custom) return custom.map(([number, title, page, level], i) => ({ id: `sec_${source.id.slice(4)}_${i + 1}`, number, title, page, level }));
-  if (source.type !== 'pdf') {
+  if (source.type === 'markdown' || source.type === 'txt') {
     const n = MD_SECTIONS[source.id] ?? 3;
     const names = ['Summary', 'Experiments this week', 'Open questions', 'Decisions', 'Next steps', 'Links'];
     return names.slice(0, n).map((title, i) => ({ id: `sec_${source.id.slice(4)}_${i + 1}`, number: null, title, page: 1, level: 1 }));
@@ -341,7 +374,7 @@ export function generateSources() {
   });
   write('sources/list.recent.200.json', {
     _note: 'GET /api/v1/sources?view=home&limit=4 — the Home "Recently added sources" card.',
-    items: ['src_okafor2025', 'src_daly2025', 'src_labnotes', 'src_survey2019'].map((id) => byId[id]),
+    items: ['src_daly2025', 'src_survey2019', 'src_varga2024', 'src_okafor2025'].map((id) => byId[id]),
     next_cursor: null,
     total: 4,
     workspace_total: SOURCES.length,
@@ -376,6 +409,7 @@ export function generateSources() {
     created_at: NOW,
     updated_at: NOW,
     job: null,
+    zotero: null,
   };
   const uploadJob = {
     id: 'job_01JCA2UP',

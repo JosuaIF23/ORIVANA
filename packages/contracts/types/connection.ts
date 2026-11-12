@@ -1,4 +1,5 @@
 import type { Id, ISODateTime } from './common';
+import type { ZoteroCollection } from './zotero';
 
 export type ConnectionStatus = 'connected' | 'needs_reconnect' | 'revoked';
 
@@ -28,7 +29,8 @@ export interface Repository {
 export interface ToolConnection {
   id: Id;
   workspace_id: Id;
-  provider: 'github';
+  /** v2 adds `zotero` (read only). */
+  provider: 'github' | 'zotero';
   account_label: string;
   status: ConnectionStatus;
   connected_at: ISODateTime;
@@ -38,11 +40,14 @@ export interface ToolConnection {
   status_detail: string | null;
   repositories: Repository[];
   grant: PermissionGrant;
+  /** v2: Zotero collections being synced. */
+  collections?: Array<Pick<ZoteroCollection, 'key' | 'name' | 'item_count'>>;
+  library_label?: string | null;
 }
 
 /** Providers that are listed but not yet connectable. */
 export interface ProviderCatalogItem {
-  provider: 'github' | 'obsidian' | 'google_drive';
+  provider: 'github' | 'obsidian' | 'google_drive' | 'zotero' | 'notion' | 'mcp';
   name: string;
   tagline: string;
   availability: 'available' | 'coming_later';
@@ -56,7 +61,7 @@ export interface ConnectionsResponse {
 
 /** POST /api/v1/connections → redirect target for OAuth. */
 export interface StartConnectionResponse {
-  provider: 'github';
+  provider: 'github' | 'zotero';
   authorize_url: string;
   requested_scopes: string[];
 }

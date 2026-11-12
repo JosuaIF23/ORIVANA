@@ -9,6 +9,8 @@ export type RelationType =
   | 'evaluates_on'
   | 'supports'
   | 'contradicts'
+  /** v2: Paper → Concept / Claim (PRD §12.2). */
+  | 'mentions'
   | 'supersedes'
   | 'derived_from'
   | 'contains';

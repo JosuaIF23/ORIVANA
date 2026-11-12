@@ -351,10 +351,10 @@
         "source_meta": "Santos & Lee, 2025",
         "page": 4,
         "section": "3.1 Main results",
-        "passage": "Table 2 reports the main results. Across both datasets, the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5, a gain of 4.1 points, and improves TriviaQA by 2.2 points with reciprocal rank fusion (k = 60).",
+        "passage": "Table 2 reports the main results on Natural Questions. With reciprocal rank fusion (k = 60), the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5, a gain of 4.1 points over the dense-only baseline.",
         "quote": "the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5",
-        "char_start": 56,
-        "char_end": 126
+        "char_start": 93,
+        "char_end": 163
       }
     },
     {
@@ -408,6 +408,8 @@
           "content": "Two sources report that hybrid retrieval (BM25 + dense) beats dense-only retrieval:\n\n- **Santos & Lee (2025)** — hybrid improves top-20 accuracy on **Natural Questions** by 4.1 points [1]\n- **Okafor et al. (2025)** — gains on **Natural Questions** (+3.6) and **TriviaQA** (+2.9), largest on the shifted BEIR subsets [2]\n\nOne source points the other way for multi-hop questions: on **HotpotQA**, a tuned dense-only retriever matches hybrid within 0.5 points [3].",
           "status": "complete",
           "created_at": "2026-11-11T08:10:00Z",
+          "model": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
           "answer_kind": "answer",
           "sources_used": 3,
           "sources_searched": 14,
@@ -444,10 +446,10 @@
               "source_meta": "Santos & Lee, 2025",
               "page": 4,
               "section": "3.1 Main results",
-              "passage": "Table 2 reports the main results. Across both datasets, the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5, a gain of 4.1 points, and improves TriviaQA by 2.2 points with reciprocal rank fusion (k = 60).",
+              "passage": "Table 2 reports the main results on Natural Questions. With reciprocal rank fusion (k = 60), the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5, a gain of 4.1 points over the dense-only baseline.",
               "quote": "the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5",
-              "char_start": 56,
-              "char_end": 126
+              "char_start": 93,
+              "char_end": 163
             },
             {
               "id": "cit_stream_answer_2",

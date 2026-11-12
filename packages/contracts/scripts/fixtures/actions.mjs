@@ -46,6 +46,10 @@ function proposal(id, fields) {
     changes_since_proposal: [],
     latest_run: null,
     audit_event_id: null,
+    origin: fields.conversation_id
+      ? { type: 'assistant', id: fields.conversation_id, label: `From conversation: ${fields.conversation_title}` }
+      : { type: 'assistant', id: null, label: 'From the Assistant' },
+    linked_decision: null,
     ...fields,
   };
 }
@@ -87,6 +91,47 @@ export const HOTPOTQA = proposal('prop_01JC8R2D1H', {
     assignees: [],
   },
   citations: [{ ordinal: 1, source_id: 'src_varga2024', source_title: 'Dense-Only Baselines for Multi-hop QA', page: 9, section: '5' }],
+});
+
+// v2: created by "Propose action" on the D-04 Decision Impact alert (UI.md §13).
+const ALERT_BODY = [
+  '## Why',
+  'ORIVANA flagged decision **D-04 · Use hybrid retrieval for thesis experiments** for review.',
+  'It depends on the claim "Hybrid retrieval outperforms dense-only retrieval on open-domain QA".',
+  '',
+  '- New: Varga & Chen 2024 — no gain over a tuned dense retriever on HotpotQA (p. 9, §5)',
+  '- Supports: Santos & Lee 2025 — +4.1 top-20 on NQ (p. 4)',
+  '- Supports: Okafor et al. 2025 — +3.6 NQ, +2.9 TriviaQA (p. 6)',
+  '',
+  '## Task',
+  '- [ ] Run hybrid and dense-only on the HotpotQA multi-hop split',
+  '- [ ] Compare top-20 accuracy and nDCG@10 per question type',
+  '- [ ] Update D-04 in ORIVANA with the result',
+  '',
+  'Decision: ORIVANA · RAG Comparison · D-04',
+].join('\n');
+
+export const ALERT_PROPOSAL = proposal('prop_01JCD04ALT', {
+  title: 'Create issue: Re-evaluate retrieval choice for multi-hop questions',
+  status: 'awaiting_approval',
+  proposed_by: 'agent',
+  created_at: t('15:10'),
+  expires_at: t('15:10', 18),
+  original_request: { text: 'Decision Impact alert: Varga & Chen 2024 (p. 9) contradicts a claim that D-04 depends on.', at: t('15:10') },
+  arguments: {
+    repository: 'lab/rag-experiments',
+    title: 'Re-evaluate retrieval choice for multi-hop questions',
+    body: ALERT_BODY,
+    labels: ['evaluation', 'retrieval'],
+    assignees: [],
+  },
+  citations: [
+    { ordinal: 1, source_id: 'src_varga2024', source_title: 'Dense-Only Baselines for Multi-hop QA', page: 9, section: '5' },
+    { ordinal: 2, source_id: 'src_santos2025', source_title: 'Fusion Retrieval Revisited: BM25 + Dense on Open-Domain QA', page: 4, section: '3.1' },
+    { ordinal: 3, source_id: 'src_okafor2025', source_title: 'Hybrid Retrieval Under Distribution Shift', page: 6, section: '4.2' },
+  ],
+  origin: { type: 'decision_alert', id: 'alert_01JCD04VRG', label: 'From Decision Impact alert: Use hybrid retrieval for thesis experiments' },
+  linked_decision: { id: 'dec_rag_04', code: 'D-04', title: 'Use hybrid retrieval for thesis experiments' },
 });
 
 // Decided history (14).
@@ -136,6 +181,7 @@ export const DECIDED = DECIDED_ROWS.map(([id, title, status, at, reason, issue])
     decided_at: at,
     reject_reason: reason ?? null,
     original_request: { text: title.replace('Create issue: ', 'Create an issue to ').toLowerCase(), at },
+    origin: { type: 'manual', id: null, label: 'Created by you' },
     arguments: { repository: 'lab/rag-experiments', title: title.replace('Create issue: ', ''), body: '', labels: ['evaluation'], assignees: [] },
     latest_run: status === 'succeeded' ? run(`run_${id.slice(5, 13)}`, id, 1, 'succeeded', at, issue) : null,
   }),
@@ -185,6 +231,7 @@ export function generateActions() {
   write('action-proposals/list.decided.200.json', { items: DECIDED, next_cursor: null, total: DECIDED.length, counts: { pending: 2, decided: DECIDED.length } });
   write('action-proposals/get.prop_01JC9X4M7Q.200.json', RERUN);
   write('action-proposals/create.201.json', RERUN);
+  write('action-proposals/get.prop_01JCD04ALT.200.json', ALERT_PROPOSAL);
   const editedArgs = {
     ...RERUN.arguments,
     title: 'Re-run eval with hybrid retrieval (BM25 + dense) and add HotpotQA split',

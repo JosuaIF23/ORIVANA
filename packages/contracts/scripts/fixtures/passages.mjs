@@ -49,7 +49,7 @@ export const PASSAGES = {
     page: 4,
     section: '3.1 Main results',
     ...span(
-      'Table 2 reports the main results. Across both datasets, the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5, a gain of 4.1 points, and improves TriviaQA by 2.2 points with reciprocal rank fusion (k = 60).',
+      'Table 2 reports the main results on Natural Questions. With reciprocal rank fusion (k = 60), the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5, a gain of 4.1 points over the dense-only baseline.',
       'the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5',
     ),
   },

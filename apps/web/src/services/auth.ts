@@ -109,6 +109,7 @@ export function getMe(): Promise<MeResponse> {
     db.me.counts.memories_needing_review = db.memories.filter((m) => m.status === 'candidate').length;
     db.me.counts.sources = db.sources.length;
     db.me.counts.projects = db.projects.length;
+    db.me.counts.decisions_needing_review = db.decisions.filter((d) => d.review_state === 'needs_review' && d.status !== 'superseded').length;
     return db.me;
   }, { ms: 200 });
 }

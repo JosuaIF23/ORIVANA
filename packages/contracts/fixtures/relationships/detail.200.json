@@ -11,7 +11,7 @@
       "status": "candidate",
       "origin": "model_proposed",
       "extraction_method": "model_section",
-      "extracted_at": "2026-11-05T03:00:00Z",
+      "extracted_at": "2026-11-10T09:44:00Z",
       "valid_from": null,
       "valid_to": null,
       "evidence_count": 2,
@@ -67,7 +67,7 @@
       "status": "candidate",
       "origin": "model_proposed",
       "extraction_method": "model_section",
-      "extracted_at": "2026-11-05T03:00:00Z",
+      "extracted_at": "2026-11-10T09:44:00Z",
       "valid_from": null,
       "valid_to": null,
       "evidence_count": 1,
@@ -456,10 +456,10 @@
           "source_label": "Santos & Lee 2025",
           "page": 4,
           "section": "3.1 Main results",
-          "passage": "Table 2 reports the main results. Across both datasets, the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5, a gain of 4.1 points, and improves TriviaQA by 2.2 points with reciprocal rank fusion (k = 60).",
+          "passage": "Table 2 reports the main results on Natural Questions. With reciprocal rank fusion (k = 60), the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5, a gain of 4.1 points over the dense-only baseline.",
           "quote": "the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5",
-          "char_start": 56,
-          "char_end": 126
+          "char_start": 93,
+          "char_end": 163
         },
         {
           "id": "ev_santos_nq_2",
@@ -494,7 +494,7 @@
       "source_count": 0,
       "from": {
         "id": "ent_dec_04",
-        "canonical_name": "D-04 Hybrid as default",
+        "canonical_name": "D-04 Hybrid for thesis experiments",
         "entity_type": "decision"
       },
       "to": {
@@ -521,7 +521,7 @@
       "source_count": 1,
       "from": {
         "id": "ent_dec_04",
-        "canonical_name": "D-04 Hybrid as default",
+        "canonical_name": "D-04 Hybrid for thesis experiments",
         "entity_type": "decision"
       },
       "to": {
@@ -748,10 +748,10 @@
           "source_label": "Santos & Lee 2025",
           "page": 4,
           "section": "3.1 Main results",
-          "passage": "Table 2 reports the main results. Across both datasets, the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5, a gain of 4.1 points, and improves TriviaQA by 2.2 points with reciprocal rank fusion (k = 60).",
+          "passage": "Table 2 reports the main results on Natural Questions. With reciprocal rank fusion (k = 60), the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5, a gain of 4.1 points over the dense-only baseline.",
           "quote": "the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5",
-          "char_start": 56,
-          "char_end": 126
+          "char_start": 93,
+          "char_end": 163
         }
       ]
     },
@@ -790,10 +790,10 @@
           "source_label": "Santos & Lee 2025",
           "page": 4,
           "section": "3.1 Main results",
-          "passage": "Table 2 reports the main results. Across both datasets, the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5, a gain of 4.1 points, and improves TriviaQA by 2.2 points with reciprocal rank fusion (k = 60).",
+          "passage": "Table 2 reports the main results on Natural Questions. With reciprocal rank fusion (k = 60), the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5, a gain of 4.1 points over the dense-only baseline.",
           "quote": "the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5",
-          "char_start": 56,
-          "char_end": 126
+          "char_start": 93,
+          "char_end": 163
         }
       ]
     },
@@ -832,10 +832,10 @@
           "source_label": "Santos & Lee 2025",
           "page": 4,
           "section": "3.1 Main results",
-          "passage": "Table 2 reports the main results. Across both datasets, the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5, a gain of 4.1 points, and improves TriviaQA by 2.2 points with reciprocal rank fusion (k = 60).",
+          "passage": "Table 2 reports the main results on Natural Questions. With reciprocal rank fusion (k = 60), the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5, a gain of 4.1 points over the dense-only baseline.",
           "quote": "the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5",
-          "char_start": 56,
-          "char_end": 126
+          "char_start": 93,
+          "char_end": 163
         }
       ]
     },
@@ -933,7 +933,7 @@
       "status": "confirmed",
       "origin": "model_proposed",
       "extraction_method": "model_section",
-      "extracted_at": "2026-11-10T03:00:00Z",
+      "extracted_at": "2026-11-10T09:44:00Z",
       "valid_from": null,
       "valid_to": null,
       "evidence_count": 1,
@@ -975,7 +975,7 @@
       "status": "confirmed",
       "origin": "model_proposed",
       "extraction_method": "model_section",
-      "extracted_at": "2026-11-10T03:00:00Z",
+      "extracted_at": "2026-11-10T09:44:00Z",
       "valid_from": null,
       "valid_to": null,
       "evidence_count": 1,
@@ -1024,7 +1024,7 @@
       "source_count": 1,
       "from": {
         "id": "ent_dec_04",
-        "canonical_name": "D-04 Hybrid as default",
+        "canonical_name": "D-04 Hybrid for thesis experiments",
         "entity_type": "decision"
       },
       "to": {
@@ -1042,42 +1042,42 @@
           "source_label": "Santos & Lee 2025",
           "page": 4,
           "section": "3.1 Main results",
-          "passage": "Table 2 reports the main results. Across both datasets, the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5, a gain of 4.1 points, and improves TriviaQA by 2.2 points with reciprocal rank fusion (k = 60).",
+          "passage": "Table 2 reports the main results on Natural Questions. With reciprocal rank fusion (k = 60), the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5, a gain of 4.1 points over the dense-only baseline.",
           "quote": "the BM25 + dense fusion raises top-20 accuracy on NQ from 78.4 to 82.5",
-          "char_start": 56,
-          "char_end": 126
+          "char_start": 93,
+          "char_end": 163
         }
       ]
     },
-    "rel_dec02_varga": {
-      "id": "rel_dec02_varga",
+    "rel_varga_multihop": {
+      "id": "rel_varga_multihop",
       "workspace_id": "ws_personal",
-      "from_entity_id": "ent_dec_02",
-      "to_entity_id": "ent_p_varga",
-      "relation_type": "derived_from",
-      "confidence": null,
+      "from_entity_id": "ent_p_varga",
+      "to_entity_id": "ent_k_multihop",
+      "relation_type": "mentions",
+      "confidence": 0.9,
       "status": "confirmed",
-      "origin": "user",
-      "extraction_method": "user",
-      "extracted_at": "2026-11-10T03:00:00Z",
+      "origin": "model_proposed",
+      "extraction_method": "model_section",
+      "extracted_at": "2026-11-10T09:44:00Z",
       "valid_from": null,
       "valid_to": null,
       "evidence_count": 1,
       "source_count": 1,
       "from": {
-        "id": "ent_dec_02",
-        "canonical_name": "D-02 Dense-only default",
-        "entity_type": "decision"
-      },
-      "to": {
         "id": "ent_p_varga",
         "canonical_name": "Varga & Chen 2024",
         "entity_type": "paper"
       },
+      "to": {
+        "id": "ent_k_multihop",
+        "canonical_name": "Multi-hop reasoning",
+        "entity_type": "concept"
+      },
       "evidence": [
         {
-          "id": "ev_dec02_varga_1",
-          "relationship_id": "rel_dec02_varga",
+          "id": "ev_varga_multihop_1",
+          "relationship_id": "rel_varga_multihop",
           "memory_id": null,
           "chunk_id": "chk_varga_0901",
           "source_id": "src_varga2024",

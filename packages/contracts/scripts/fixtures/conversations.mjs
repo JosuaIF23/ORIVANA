@@ -1,6 +1,7 @@
 // Conversations, messages with citations, and recorded SSE streams.
 import { PASSAGES } from './passages.mjs';
 import { t, write, error } from './lib.mjs';
+import { DEFAULT_MODEL } from './models-zotero.mjs';
 
 const SOURCE_INFO = {
   src_santos2025: { title: 'Fusion Retrieval Revisited: BM25 + Dense on Open-Domain QA', label: 'Santos & Lee 2025', meta: 'Santos & Lee, 2025' },
@@ -54,6 +55,8 @@ function base(id, conversation_id, role, content, created_at) {
     content,
     status: 'complete',
     created_at,
+    model: role === 'assistant' ? DEFAULT_MODEL.id : null,
+    model_name: role === 'assistant' ? DEFAULT_MODEL.name : null,
     answer_kind: null,
     sources_used: null,
     sources_searched: null,

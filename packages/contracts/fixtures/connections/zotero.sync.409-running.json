@@ -1,0 +1,10 @@
+{
+  "error": {
+    "code": "CONFLICT",
+    "message": "A Zotero sync is already running. Wait for it to finish.",
+    "details": {
+      "sync_id": "zsync_01JCE7"
+    },
+    "request_id": "req_2a3b4c5d"
+  }
+}

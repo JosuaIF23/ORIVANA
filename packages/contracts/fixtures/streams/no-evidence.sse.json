@@ -204,6 +204,8 @@
           "content": "I couldn’t find a fine-tuning learning rate for GraphRAG in the 14 sources of RAG Comparison, so I’m not going to guess one.",
           "status": "complete",
           "created_at": "2026-11-11T08:10:00Z",
+          "model": "claude-sonnet-5-5",
+          "model_name": "Claude Sonnet 5.5",
           "answer_kind": "no_evidence",
           "sources_used": 0,
           "sources_searched": 14,

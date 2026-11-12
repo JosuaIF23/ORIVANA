@@ -1,0 +1,51 @@
+{
+  "_note": "POST /api/v1/connections/zotero/sync — returned while running; the mock advances it to succeeded.",
+  "sync_id": "zsync_01JCE7",
+  "status": "running",
+  "project_id": "prj_rag",
+  "collection_keys": [
+    "ZC7K2RAG"
+  ],
+  "counts": {
+    "items": 18,
+    "with_pdf": 17,
+    "new": 0,
+    "updated": 0,
+    "unchanged": 17,
+    "removed": 1
+  },
+  "items": [
+    {
+      "item_key": "VRG24CHN",
+      "title": "Dense-Only Baselines for Multi-hop QA",
+      "source_id": "src_varga2024",
+      "state": "unchanged"
+    },
+    {
+      "item_key": "KWL24RRF",
+      "title": "Reciprocal Rank Fusion for Neural Retrievers",
+      "source_id": "src_kowalski2024",
+      "state": "unchanged"
+    },
+    {
+      "item_key": "LDQ24BEI",
+      "title": "BEIR Revisited: Zero-Shot Retrieval Benchmarks",
+      "source_id": "src_lindqvist2024",
+      "state": "unchanged"
+    },
+    {
+      "item_key": "HDD25COL",
+      "title": "ColBERT-Style Late Interaction for Scientific QA",
+      "source_id": "src_haddad2025",
+      "state": "unchanged"
+    },
+    {
+      "item_key": "NKM25SDH",
+      "title": "Sparse–Dense Hybrids in Low-Resource Domains",
+      "source_id": "src_nakamura2025",
+      "state": "removed"
+    }
+  ],
+  "started_at": "2026-11-11T08:10:00Z",
+  "finished_at": null
+}
