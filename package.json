@@ -1,0 +1,16 @@
+{
+  "name": "orivana",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @orivana/web",
+    "build": "npm run build -w @orivana/web",
+    "typecheck": "npm run typecheck -w @orivana/contracts && npm run typecheck -w @orivana/web",
+    "test": "npm run test -w @orivana/web",
+    "lint": "npm run lint -w @orivana/web"
+  }
+}
