@@ -1,0 +1,9 @@
+# Installed agent skills (restore with: npx skills experimental_install, from skills-lock.json)
+.agents/
+.claude/skills/
+
+# Dependencies and builds
+node_modules/
+dist/
+*.log
+.DS_Store
