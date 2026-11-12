@@ -78,6 +78,8 @@ export interface SourceDetail extends Source {
   }>;
   relationship_count: number;
   ingestion_history: IngestionStep[];
+  /** Questions suggested from the paper's content (onboarding step 3). */
+  suggested_questions: string[];
 }
 
 /** chunks (PRD §10). Offsets are character offsets within the parsed document. */

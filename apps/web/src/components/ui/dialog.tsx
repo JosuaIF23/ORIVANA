@@ -36,7 +36,7 @@ export function Dialog({ open, onOpenChange, title, description, icon, children,
               <X className="size-5" aria-hidden="true" />
             </DialogPrimitive.Close>
           </div>
-          <div className="min-h-0 overflow-y-auto px-6 py-5">{children}</div>
+          <div className="min-h-0 overflow-y-auto overscroll-contain px-6 py-5">{children}</div>
           {footer ? <div className="flex justify-end gap-3 border-t border-subtle px-6 py-4">{footer}</div> : null}
         </DialogPrimitive.Content>
       </DialogPrimitive.Portal>

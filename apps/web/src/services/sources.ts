@@ -92,9 +92,9 @@ function patchJob(source: SourceDetail, patch: Partial<Job>) {
 }
 
 /** Moves a job through queued → parsing → indexing → ready in the background. */
-async function runIngestion(db: MockDb, source: SourceDetail, opts: { failWith?: { code: string; message: string } } = {}) {
+async function runIngestion(db: MockDb, source: SourceDetail, opts: { failWith?: { code: string; message: string }; chunks?: number } = {}) {
   const pages = source.page_count ?? 12;
-  const chunks = Math.round(pages * 6.2);
+  const chunks = opts.chunks ?? Math.round(pages * 6.2);
   await delay(900);
   patchJob(source, { status: 'running', stage: 'parsing', started_at: nowIso(), progress: { current: 0, total: pages, unit: 'pages' }, eta_seconds: 40 });
   source.ingestion_history = [{ label: 'Uploaded & checksum verified', status: 'done', at: nowIso() }];
@@ -153,6 +153,7 @@ export function uploadSource(request: UploadSourceRequest): Promise<UploadSource
         entity_count: 0,
         relationships: [],
         relationship_count: 0,
+        suggested_questions: [],
         type: ext === 'pdf' ? 'pdf' : ext === 'txt' ? 'txt' : 'markdown',
         page_count: ext === 'pdf' ? 12 : null,
       }),
@@ -172,7 +173,7 @@ export function uploadSource(request: UploadSourceRequest): Promise<UploadSource
     db.recentSourceIds.unshift(source.id);
     if (project) project.counts.sources += 1;
     recordAudit(db, { actor_type: 'user', category: 'ingestion', event_type: 'source.uploaded', target_type: 'source', target_id: id, summary: 'Uploaded {link}', link: { label: source.title, target_type: 'source', target_id: id }, result: 'in_progress' });
-    void runIngestion(db, source);
+    void runIngestion(db, source, { chunks: base?.chunk_count ?? undefined });
     return { source: summary(source), job };
   }, { ms: 800 });
 }

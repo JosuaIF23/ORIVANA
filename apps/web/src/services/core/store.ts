@@ -76,7 +76,7 @@ function seed(scenario: Scenario): MockDb {
     preferences: f.me.preferences,
     sessions: f.me.sessions.items,
     projects: Object.values(f.projects.detail.items),
-    sources: f.sources.list.items.map((s) => f.sources.detail.items[s.id] ?? { ...s, sections: [], entities: [], entity_count: 0, relationships: [], relationship_count: 0, ingestion_history: [] }),
+    sources: f.sources.list.items.map((s) => f.sources.detail.items[s.id] ?? { ...s, sections: [], entities: [], entity_count: 0, relationships: [], relationship_count: 0, ingestion_history: [], suggested_questions: [] }),
     recentSourceIds: f.sources.recent.items.map((s) => s.id),
     conversations: f.conversations.list.items.map((c) => f.conversations.detail.items[c.id]),
     entities: f.graph.subgraph.nodes,

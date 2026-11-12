@@ -12,7 +12,13 @@ export default defineConfig({
       '@contracts': fileURLToPath(new URL('../../packages/contracts', import.meta.url)),
     },
   },
-  server: { port: 5173, strictPort: true },
+  server: {
+    port: 5173,
+    strictPort: true,
+    // Fixtures live in packages/contracts (outside this app's root).
+    fs: { allow: ['../..'] },
+    watch: { ignored: ['!**/packages/contracts/**'] },
+  },
   build: {
     chunkSizeWarningLimit: 900,
   },

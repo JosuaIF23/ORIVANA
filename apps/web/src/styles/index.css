@@ -74,6 +74,14 @@
 @layer base {
   html {
     scroll-padding-top: calc(var(--topbar-height) + 16px);
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
   }
 
   body {

@@ -17,7 +17,7 @@ export function Logo({ className, compact = false }: { className?: string; compa
   return (
     <span className={cn('inline-flex items-center gap-3', className)}>
       <LogoMark />
-      {compact ? <span className="sr-only">ORIVANA</span> : <span className="text-base font-semibold tracking-[0.22em] text-fg">ORIVANA</span>}
+      {compact ? <span className="sr-only">ORIVANA</span> : <span translate="no" className="text-base font-semibold tracking-[0.22em] text-fg">ORIVANA</span>}
     </span>
   );
 }

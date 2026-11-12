@@ -54,7 +54,7 @@ export function Field({ label, labelSuffix, hint, error, action, className, chil
       </div>
       {children({ id, describedBy, invalid: Boolean(error) })}
       {error ? (
-        <p id={errorId} className="text-sm text-danger">
+        <p id={errorId} aria-live="polite" className="text-sm text-danger">
           {error}
         </p>
       ) : null}

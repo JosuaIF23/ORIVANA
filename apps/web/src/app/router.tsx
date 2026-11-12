@@ -1,4 +1,4 @@
-import { createBrowserRouter, Navigate } from 'react-router';
+import { createBrowserRouter, Navigate, Outlet, ScrollRestoration } from 'react-router';
 import { AppShell, type RouteHandle } from '@/components/shell/app-shell';
 import { RouteError } from './route-error';
 
@@ -14,6 +14,12 @@ const bleed: RouteHandle = { bleed: true };
 
 export const router = createBrowserRouter([
   {
+    element: (
+      <>
+        <ScrollRestoration />
+        <Outlet />
+      </>
+    ),
     errorElement: <RouteError />,
     hydrateFallbackElement: <div role="status" className="sr-only">Loading ORIVANA…</div>,
     children: [
@@ -24,11 +30,11 @@ export const router = createBrowserRouter([
       { path: '/reset-password', lazy: page(() => import('@/features/auth/reset-request-page')) },
       { path: '/reset-password/sent', lazy: page(() => import('@/features/auth/reset-sent-page')) },
       { path: '/reset-password/new', lazy: page(() => import('@/features/auth/reset-new-page')) },
+      { path: '/onboarding/:step', lazy: page(() => import('@/features/onboarding/onboarding-page')) },
       {
         element: <AppShell />,
         children: [
           { index: true, element: <Navigate to="/home" replace /> },
-          { path: '/onboarding/:step', lazy: page(() => import('@/features/onboarding/onboarding-page')), handle: { bleed: true } },
           { path: '/home', lazy: page(() => import('@/features/home/home-page')) },
           { path: '/assistant', lazy: page(() => import('@/features/assistant/assistant-page')), handle: rail },
           { path: '/assistant/:conversationId', lazy: page(() => import('@/features/assistant/assistant-page')), handle: rail },

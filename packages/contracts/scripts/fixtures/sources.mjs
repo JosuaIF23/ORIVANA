@@ -280,6 +280,14 @@ const ENTITY_SETS = {
   },
 };
 
+const SUGGESTED = {
+  src_okafor2025: [
+    'How much does hybrid retrieval improve over dense-only, and on which datasets?',
+    'Which BEIR subsets do the authors use to test distribution shift?',
+    'What limitations do the authors mention?',
+  ],
+};
+
 function historyFor(source) {
   const s = source;
   if (s.status === 'failed') {
@@ -319,6 +327,7 @@ export function detailFor(source) {
     relationships,
     relationship_count: set ? 6 : 0,
     ingestion_history: historyFor(source),
+    suggested_questions: SUGGESTED[source.id] ?? [],
   };
 }
 
