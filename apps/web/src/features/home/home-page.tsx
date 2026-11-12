@@ -1,6 +1,50 @@
+import { Plus } from 'lucide-react';
+import { now } from '@/lib/clock';
+import { formatLongDate, greeting } from '@/lib/format';
+import { useMe } from '@/hooks/use-session';
+import { ButtonLink } from '@/components/ui/button';
 import { PageHeader } from '@/components/common/page-header';
+import { AskCard } from './ask-card';
+import { ProjectsRow } from './projects-row';
+import { RecentSourcesCard } from './recent-sources-card';
+import { PendingApprovalsCard } from './pending-approvals-card';
+import { SuggestionsCard } from './suggestions-card';
+import { RecentActivityCard } from './recent-activity-card';
+import { ConnectorHealthCard } from './connector-health-card';
+import { HomeEmpty } from './home-empty';
 
-/** Placeholder until this screen is built in its phase. */
+/** Home / Command Center (UI.md §4.4). */
 export default function HomePage() {
-  return <PageHeader title="Home" />;
+  const { data: me } = useMe();
+  if (!me) return null;
+  const firstName = me.user.name?.split(' ')[0];
+  if (me.counts.sources === 0) return <HomeEmpty firstName={firstName ?? null} />;
+
+  return (
+    <div className="mx-auto flex max-w-[1180px] flex-col gap-8">
+      <PageHeader
+        title={`${greeting(now())}${firstName ? `, ${firstName}` : ''}`}
+        description={`${formatLongDate(now())} · ${me.workspace.name}`}
+        actions={
+          <ButtonLink to="/knowledge/sources?upload=1" size="lg">
+            <Plus aria-hidden="true" />
+            Add a source
+          </ButtonLink>
+        }
+      />
+      <AskCard />
+      <ProjectsRow />
+      <div className="grid items-start gap-6 lg:grid-cols-2">
+        <div className="flex flex-col gap-6">
+          <RecentSourcesCard />
+          <RecentActivityCard />
+        </div>
+        <div className="flex flex-col gap-6">
+          <PendingApprovalsCard />
+          <SuggestionsCard />
+          <ConnectorHealthCard />
+        </div>
+      </div>
+    </div>
+  );
 }
