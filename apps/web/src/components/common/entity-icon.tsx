@@ -1,4 +1,4 @@
-import { Circle, Database, Diamond, FileText, Flag, Folder, Hexagon, MessageSquare, ShieldCheck, FileCode, type LucideIcon } from 'lucide-react';
+import { Library, Circle, Database, Diamond, FileText, Flag, Folder, Hexagon, MessageSquare, ShieldCheck, FileCode, type LucideIcon } from 'lucide-react';
 import type { EntityType } from '@contracts/types';
 import { cn } from '@/lib/cn';
 
@@ -21,6 +21,7 @@ export function EntityTypeIcon({ type, className }: { type: EntityType; classNam
 const RESULT_ICON: Record<string, { icon: LucideIcon; color: string }> = {
   pdf: { icon: FileText, color: 'text-accent' },
   markdown: { icon: FileCode, color: 'text-accent' },
+  zotero: { icon: Library, color: 'text-knowledge' },
   conversation: { icon: MessageSquare, color: 'text-fg-secondary' },
   action: { icon: ShieldCheck, color: 'text-warning' },
 };

@@ -7,12 +7,13 @@ import { InlineAlert } from '@/components/common/states';
 import { useSource, useUploadSource } from '@/features/sources/use-sources';
 import { IngestionCard } from './ingestion-card';
 import { PrivacyCard } from './privacy-card';
+import { ZoteroFirstCard } from './zotero-first-card';
 import { usePreferences, useProjects } from './use-onboarding';
 
 const EXTRACTS = [
   { title: 'Text with locations', body: 'Page, section, and offsets, so citations land on the right passage.' },
   { title: 'Search index', body: 'Keyword and semantic search across all your sources.' },
-  { title: 'Candidate entities', body: 'Methods, datasets, and claims — unconfirmed until you review them.' },
+  { title: 'Methods, datasets, and claims', body: 'Extracted as candidates — they fill the Matrix and Claims once you review them.' },
 ];
 
 export function StepSource() {
@@ -37,9 +38,9 @@ export function StepSource() {
   return (
     <div>
       <p className="text-sm font-medium text-fg-secondary">Step 2 of 3</p>
-      <h1 className="mt-3 text-2xl font-semibold text-fg">Add your first paper</h1>
+      <h1 className="mt-3 text-2xl font-semibold text-fg">Add your sources</h1>
       <p className="mt-3 text-lg text-fg-secondary">
-        Upload a PDF, Markdown, or TXT file.
+        Connect Zotero, or upload a PDF, Markdown, or TXT file. Both are optional.
         {project ? (
           <>
             {' '}
@@ -48,7 +49,11 @@ export function StepSource() {
         ) : null}
       </p>
 
-      <UploadDropzone className="mt-8" onFile={onFile} disabled={upload.isPending}>
+      <div className="mt-8">
+        <ZoteroFirstCard projectId={project?.id ?? null} />
+      </div>
+      <h2 className="mt-8 text-base font-semibold text-fg">Or upload PDFs</h2>
+      <UploadDropzone className="mt-3" onFile={onFile} disabled={upload.isPending}>
         <span>
           <strong className="font-semibold text-fg">{source ? 'Drop another file' : 'Drop a file'}</strong> or click to browse
         </span>

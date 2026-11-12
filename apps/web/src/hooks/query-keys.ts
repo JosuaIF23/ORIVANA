@@ -42,5 +42,6 @@ export const qk = {
   memory: (id: string) => ['memories', 'detail', id] as const,
   models: ['models'] as const,
   zoteroCollections: ['connections', 'zotero', 'collections'] as const,
-  zoteroSync: (id: string) => ['connections', 'zotero', 'sync', id] as const,
+  /* Outside the 'connections' prefix so invalidating connections never cancels a running sync poll. */
+  zoteroSync: (id: string) => ['zotero-sync', id] as const,
 };

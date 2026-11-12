@@ -3,7 +3,6 @@ import { Bookmark, CircleAlert, ExternalLink, FilePen, Library, ScanSearch, Sear
 import type { AuditCategory } from '@contracts/types';
 import { cn } from '@/lib/cn';
 
-/** Order follows UI.md §4.15; Tool calls (v1) stays last before Errors. */
 export const CATEGORY: Record<AuditCategory, { label: string; icon: ReactNode }> = {
   ingestion: { label: 'Ingestion', icon: <Upload /> },
   zotero_sync: { label: 'Zotero sync', icon: <Library /> },
@@ -18,7 +17,8 @@ export const CATEGORY: Record<AuditCategory, { label: string; icon: ReactNode }>
   errors: { label: 'Errors', icon: <TriangleAlert className="text-danger" /> },
 };
 
-const ORDER = Object.keys(CATEGORY) as AuditCategory[];
+/** UI.md v2 §4.15 order; Tool calls (v1) sits before Errors and only shows when it has events. */
+const ORDER: AuditCategory[] = ['ingestion', 'zotero_sync', 'retrieval', 'extraction', 'memory', 'decision_alerts', 'proposals', 'approvals', 'external_actions', 'tool_calls', 'errors'];
 
 /** Toggle chips; none selected = all categories. */
 export function CategoryChips({ selected, counts, onChange }: { selected: AuditCategory[]; counts?: Record<AuditCategory, number>; onChange: (next: AuditCategory[]) => void }) {
@@ -26,6 +26,7 @@ export function CategoryChips({ selected, counts, onChange }: { selected: AuditC
     <div role="group" aria-label="Filter by category" className="flex flex-wrap gap-3">
       {ORDER.map((c) => {
         const on = selected.includes(c);
+        if (c === 'tool_calls' && counts && counts[c] === 0 && !on) return null;
         return (
           <button
             key={c}

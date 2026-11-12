@@ -6,13 +6,14 @@ import { InlineAlert } from '@/components/common/states';
 import { TextLinkInline } from './text-link-inline';
 import { useUploadSource } from '@/features/sources/use-sources';
 import { usePreferences } from '@/features/onboarding/use-onboarding';
+import { ZoteroFirstCard } from '@/features/onboarding/zotero-first-card';
 
 const NEXT = [
   'We extract the text with page numbers and section headings, so every answer can point to its source.',
   'We index it for keyword and semantic search. You will see the status while this runs.',
 ];
 
-/** Home for a new user: one card, "Upload your first paper" (UI.md §4.4). */
+/** Home for a new user (UI.md v2 §4.4): "Connect Zotero or upload your first paper", with both actions. */
 export function HomeEmpty({ firstName }: { firstName: string | null }) {
   const navigate = useNavigate();
   const upload = useUploadSource();
@@ -20,9 +21,12 @@ export function HomeEmpty({ firstName }: { firstName: string | null }) {
   return (
     <div className="mx-auto max-w-[760px] py-4">
       <h1 className="text-2xl font-semibold text-fg">Welcome to ORIVANA{firstName ? `, ${firstName}` : ''}</h1>
-      <p className="mt-3 text-lg text-fg-secondary">Your workspace is empty. Add one paper and you can ask questions about it with page-level citations.</p>
-      <Card className="mt-10 p-8">
-        <h2 className="text-xl font-semibold text-fg">Upload your first paper</h2>
+      <p className="mt-3 text-lg text-fg-secondary">Your workspace is empty. Connect Zotero or upload your first paper, then ask questions with page-level citations.</p>
+      <div className="mt-10">
+        <ZoteroFirstCard projectId={prefs?.default_project_id ?? null} />
+      </div>
+      <Card className="mt-6 p-8">
+        <h2 className="text-xl font-semibold text-fg">Or upload your first paper</h2>
         <p className="mt-3 text-base text-fg-secondary">PDF, Markdown, or TXT. Obsidian notes work as Markdown files.</p>
         <UploadDropzone
           size="large"

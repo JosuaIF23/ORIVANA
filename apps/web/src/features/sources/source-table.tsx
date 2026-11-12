@@ -5,7 +5,9 @@ import type { Source } from '@contracts/types';
 import { cn } from '@/lib/cn';
 import { formatAdded, formatTime } from '@/lib/format';
 import { Button } from '@/components/ui/button';
-import { ResultIcon } from '@/components/common/entity-icon';
+import { SourceTypeBadge } from '@/components/common/source-type-badge';
+import { formatAgo } from '@/lib/format';
+import { RemovedInZotero } from './removed-in-zotero';
 import { StatusBadge } from '@/components/common/status-badge';
 import { DeleteSourceDialog } from './delete-source-dialog';
 import { SourceRowMenu } from './source-row-menu';
@@ -19,6 +21,7 @@ export function statusDetail(s: Source): string | null {
 }
 
 export function bylineOf(s: Source): string {
+  if (s.zotero) return [s.authors, s.year, s.zotero.collection_name, `last synced ${formatAgo(s.zotero.last_synced_at)}`].filter(Boolean).join(' · ');
   if (s.authors) return [s.authors, s.year].filter(Boolean).join(' · ');
   if (s.section_count) return `${s.section_count} sections`;
   return s.type.toUpperCase();
@@ -29,12 +32,10 @@ export function SourceTable({ sources, highlight }: { sources: Source[]; highlig
   const [deleting, setDeleting] = useState<Source | null>(null);
   return (
     <div className="overflow-x-auto rounded-card border border-subtle">
-      <table className="w-full min-w-[880px] border-collapse text-left">
+      <table className="w-full min-w-[920px] border-collapse text-left">
         <thead>
           <tr className="border-b border-subtle bg-surface text-sm text-fg-secondary">
-            <th scope="col" className="w-14 px-4 py-3">
-              <span className="sr-only">Type</span>
-            </th>
+            <th scope="col" className="w-28 px-4 py-3 font-medium">Type</th>
             <th scope="col" className="px-2 py-3 font-medium">Title</th>
             <th scope="col" className="px-4 py-3 font-medium">Project</th>
             <th scope="col" className="px-4 py-3 font-medium">Status</th>
@@ -62,9 +63,9 @@ function SourceRow({ source: s, highlighted, onDelete }: { source: Source; highl
   const detail = statusDetail(s);
   const exhausted = failed && s.job && s.job.attempts >= s.job.max_attempts;
   return (
-    <tr className={cn('border-b border-subtle last:border-b-0', failed ? 'bg-danger/5' : 'bg-app hover:bg-surface/60', highlighted && 'outline outline-1 -outline-offset-1 outline-accent')}>
+    <tr className={cn('border-b border-subtle last:border-b-0', failed ? 'bg-danger/5' : s.zotero?.removed_in_zotero ? 'bg-warning/5' : 'bg-app hover:bg-surface/60', highlighted && 'outline outline-1 -outline-offset-1 outline-accent')}>
       <td className="px-4 py-4 align-top">
-        <ResultIcon icon={s.type === 'pdf' ? 'pdf' : 'markdown'} className="mt-0.5 text-fg-secondary" />
+        <SourceTypeBadge type={s.type} />
       </td>
       <td className="px-2 py-4 align-top">
         <Link to={`/knowledge/sources/${s.id}`} className="text-base font-medium text-fg hover:underline hover:underline-offset-4">
@@ -80,6 +81,7 @@ function SourceRow({ source: s, highlighted, onDelete }: { source: Source; highl
         ) : (
           <p className="mt-0.5 text-sm text-fg-secondary">{bylineOf(s)}</p>
         )}
+        {s.zotero?.removed_in_zotero ? <RemovedInZotero source={s} onDelete={onDelete} /> : null}
       </td>
       <td className="px-4 py-4 align-top text-sm whitespace-nowrap text-fg-secondary">{s.project_name ?? '—'}</td>
       <td className="px-4 py-4 align-top">

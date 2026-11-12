@@ -45,7 +45,7 @@ const FALLBACK_PAGES = { src_ito2025: 12 };
 
 // v2: items imported read-only from Zotero (PRD §8.2). Varga & Chen 2024 is the
 // flagship "new contradicting paper", synced on 10 Nov 16:40 (SCREENS.md #23).
-export const ZOTERO_LIBRARY = { id: 'zlib_4417302', label: 'josua-silalahi · My Library' };
+export const ZOTERO_LIBRARY = { id: 'zlib_4417302', label: 'My Library' };
 export const ZOTERO_LAST_SYNC = t('09:00');
 const ZC_RAG = ['ZC7K2RAG', 'RAG Comparison'];
 const ZOTERO_ITEMS = {

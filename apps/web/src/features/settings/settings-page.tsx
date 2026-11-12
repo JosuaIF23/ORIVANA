@@ -4,13 +4,14 @@ import { cn } from '@/lib/cn';
 import { MemoryControls } from './memory-controls';
 import { DataExport } from './data-export';
 import { DataDeletion } from './data-deletion';
-import { ProfileSection, SecuritySection, ConnectedAppsSection, ModelSection, NotificationsSection, AppearanceSection } from './other-sections';
+import { ProfileSection, SecuritySection, ConnectedAppsSection, NotificationsSection, AppearanceSection } from './other-sections';
+import { ModelPreferences } from './model-preferences';
 
 const SECTIONS = [
   { key: 'profile', label: 'Profile', Component: ProfileSection },
   { key: 'security', label: 'Security & sessions', Component: SecuritySection },
   { key: 'connected-apps', label: 'Connected applications', Component: ConnectedAppsSection },
-  { key: 'model', label: 'Model preferences', Component: ModelSection },
+  { key: 'model', label: 'Model preferences', Component: ModelPreferences },
   { key: 'memory', label: 'Memory controls', Component: MemoryControls },
   { key: 'export', label: 'Data export', Component: DataExport },
   { key: 'deletion', label: 'Data deletion', Component: DataDeletion },

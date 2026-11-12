@@ -5,20 +5,21 @@ import { formatBytes, plural } from '@/lib/format';
 import { Spinner } from '@/components/ui/spinner';
 import { StatusBadge } from '@/components/common/status-badge';
 
-const ORDER = ['queued', 'parsing', 'indexing', 'ready'] as const;
+/** Parsing → Indexing → Extracting (UI.md v2 §4.3). */
+const ORDER = ['queued', 'parsing', 'indexing', 'extracting', 'ready'] as const;
 
 /** Upload progress with stage checklist (design: Onboarding 2). */
 export function IngestionCard({ source }: { source: Source }) {
   const job = source.job;
   const stageIndex = source.status === 'failed' ? -1 : ORDER.indexOf(source.status as (typeof ORDER)[number]);
   const ratio = job?.progress ? job.progress.current / Math.max(1, job.progress.total) : 0;
-  // Overall progress across stages: parsing 0–40 %, indexing 40–95 %, ready 100 %.
-  const progress = Math.round(source.status === 'ready' ? 100 : source.status === 'indexing' ? 40 + ratio * 55 : source.status === 'parsing' ? ratio * 40 : 2);
+  // Overall progress across stages: parsing 0–40 %, indexing 40–90 %, extracting 95 %, ready 100 %.
+  const progress = Math.round(source.status === 'ready' ? 100 : source.status === 'extracting' ? 95 : source.status === 'indexing' ? 40 + ratio * 50 : source.status === 'parsing' ? ratio * 40 : 2);
   const steps = [
     { label: 'Uploaded', state: 'done' as const },
     { label: source.page_count && stageIndex > 1 ? `Parsed ${plural(source.page_count, 'page')}` : 'Parsing pages', state: stageIndex > 1 ? ('done' as const) : stageIndex === 1 ? ('active' as const) : ('pending' as const) },
     { label: 'Indexing', state: stageIndex > 2 ? ('done' as const) : stageIndex === 2 ? ('active' as const) : ('pending' as const) },
-    { label: 'Finding entities', state: stageIndex >= 3 ? ('done' as const) : ('pending' as const) },
+    { label: 'Extracting methods, datasets, and claims', state: stageIndex > 3 ? ('done' as const) : stageIndex === 3 ? ('active' as const) : ('pending' as const) },
   ];
   const detail =
     job?.progress && source.status === 'indexing'

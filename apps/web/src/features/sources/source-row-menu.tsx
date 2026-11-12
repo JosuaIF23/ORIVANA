@@ -5,7 +5,7 @@ import { Menu } from '@/components/ui/menu';
 
 export function SourceRowMenu({ source, onDelete, onReprocess }: { source: Source; onDelete: () => void; onReprocess: () => void }) {
   const navigate = useNavigate();
-  const processing = ['queued', 'parsing', 'indexing'].includes(source.status);
+  const processing = ['queued', 'parsing', 'indexing', 'extracting'].includes(source.status);
   return (
     <Menu
       trigger={

@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router';
-import { Upload } from 'lucide-react';
+import { Library, Upload } from 'lucide-react';
 import type { SourceListQuery, SourceStatus, SourceType } from '@contracts/types';
 import { SOURCES_PAGE_SIZE } from '@/services/sources';
 import { useProjectsList } from '@/hooks/use-data';
@@ -12,6 +12,8 @@ import { SourceFilters } from './source-filters';
 import { SourceTable } from './source-table';
 import { SourceCards } from './source-cards';
 import { useSources, useUploadSource } from './use-sources';
+import { ZoteroImportDialog } from '@/features/zotero/zotero-import-dialog';
+import { useZoteroConnection } from '@/features/zotero/use-zotero';
 
 /** Knowledge → Sources library (UI.md §4.7). Filters, view and page live in the URL. */
 export default function SourcesPage() {
@@ -30,6 +32,8 @@ export default function SourcesPage() {
   const view = params.get('view') === 'list' ? 'list' : 'table';
   const { data, isPending, error, refetch, isPlaceholderData } = useSources(query);
   const upload = useUploadSource();
+  const { connection: zotero } = useZoteroConnection();
+  const [importing, setImporting] = useState(params.get('import') === 'zotero');
   const project = projects.find((p) => p.id === projectId);
   const uploadProject = project ?? null;
 
@@ -57,10 +61,17 @@ export default function SourcesPage() {
           <h2 className="text-xl font-semibold text-fg">
             Sources <span className="ml-3 text-sm font-normal text-fg-secondary">{data ? `${data.workspace_total} in workspace${ragCount}` : ''}</span>
           </h2>
-          <Button variant="primary" size="lg" onClick={() => zoneRef.current?.querySelector('button')?.click()}>
-            <Upload aria-hidden="true" />
-            Upload
-          </Button>
+          <div className="flex flex-wrap gap-3">
+            {/* Import from Zotero is primary once Zotero is connected (UI.md §4.6). */}
+            <Button variant={zotero ? 'primary' : 'secondary'} size="lg" onClick={() => setImporting(true)}>
+              <Library aria-hidden="true" />
+              Import from Zotero
+            </Button>
+            <Button variant={zotero ? 'secondary' : 'primary'} size="lg" onClick={() => zoneRef.current?.querySelector('button')?.click()}>
+              <Upload aria-hidden="true" />
+              Upload
+            </Button>
+          </div>
         </div>
         <div ref={zoneRef}>
           <UploadDropzone onFile={(file) => upload.mutate({ file_name: file.name, size_bytes: file.size, project_id: uploadProject?.id ?? null })} disabled={upload.isPending}>
@@ -79,6 +90,7 @@ export default function SourcesPage() {
             {upload.data.source.title} uploaded — processing has started.
           </p>
         ) : null}
+        {zotero ? <p className="-mt-3 text-sm text-fg-secondary">Zotero is read only: ORIVANA imports and syncs your items but never changes your Zotero library.</p> : null}
         <SourceFilters params={params} projects={projects} view={view} onChange={update} />
         {isPending ? (
           <LoadingSkeleton rows={6} label="Loading sources…" />
@@ -105,6 +117,7 @@ export default function SourcesPage() {
           </div>
         )}
       </div>
+      {importing ? <ZoteroImportDialog open onOpenChange={setImporting} defaultProjectId={projectId || null} /> : null}
     </div>
   );
 }

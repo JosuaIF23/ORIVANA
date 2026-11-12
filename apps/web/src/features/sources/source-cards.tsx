@@ -1,7 +1,7 @@
 import { Link } from 'react-router';
 import type { Source } from '@contracts/types';
 import { formatAdded, plural } from '@/lib/format';
-import { ResultIcon } from '@/components/common/entity-icon';
+import { SourceTypeBadge } from '@/components/common/source-type-badge';
 import { StatusBadge } from '@/components/common/status-badge';
 import { bylineOf, statusDetail } from './source-table';
 
@@ -12,7 +12,7 @@ export function SourceCards({ sources }: { sources: Source[] }) {
       {sources.map((s) => (
         <li key={s.id}>
           <Link to={`/knowledge/sources/${s.id}`} className="flex h-full gap-4 rounded-card border border-subtle bg-surface p-5 hover:border-control">
-            <ResultIcon icon={s.type === 'pdf' ? 'pdf' : 'markdown'} className="mt-1" />
+            <SourceTypeBadge type={s.type} className="mt-0.5" />
             <div className="min-w-0 flex-1">
               <p className="truncate text-base font-medium text-fg">{s.title}</p>
               <p className="text-sm text-fg-secondary">{bylineOf(s)}</p>

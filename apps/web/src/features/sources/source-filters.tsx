@@ -45,6 +45,7 @@ export function SourceFilters({ params, projects, view, onChange }: Props) {
             <option value="queued">Queued</option>
             <option value="parsing">Parsing</option>
             <option value="indexing">Indexing</option>
+            <option value="extracting">Extracting</option>
             <option value="ready">Ready</option>
             <option value="failed">Failed</option>
           </Select>
@@ -57,6 +58,7 @@ export function SourceFilters({ params, projects, view, onChange }: Props) {
             <option value="pdf">PDF</option>
             <option value="markdown">Markdown</option>
             <option value="txt">TXT</option>
+            <option value="zotero">Zotero</option>
           </Select>
         )}
       </Field>

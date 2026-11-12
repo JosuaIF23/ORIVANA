@@ -49,18 +49,14 @@ export function ConnectedAppsSection() {
   const { data } = useConnectionsList();
   return (
     <Card className="mt-6 flex flex-wrap items-center justify-between gap-4 p-5">
-      <p className="text-base text-fg-secondary">{data?.connections.length ? `GitHub · ${data.connections[0].account_label}` : 'No apps connected.'} Manage scopes and revoke access in Integrations.</p>
+      <p className="text-base text-fg-secondary">{data?.connections.length ? data.connections.map((c) => `${c.provider === 'zotero' ? 'Zotero (read only)' : 'GitHub'} · ${c.account_label}`).join(' · ') + '.' : 'No apps connected.'} Manage scopes and revoke access in Integrations.</p>
       <ButtonLink to="/integrations">Open Integrations</ButtonLink>
     </Card>
   );
 }
 
-export function ModelSection() {
-  return <p className="mt-4 text-base text-fg-secondary">The MVP uses one hosted model and one embedding model, chosen for answer quality on the evaluation set. Answers always cite your sources and abstain when evidence is missing.</p>;
-}
-
 export function NotificationsSection() {
-  return <p className="mt-4 text-base text-fg-secondary">ORIVANA emails you when an export is ready and when a connected app needs to be reconnected. In-app notifications appear under the bell in the top bar.</p>;
+  return <p className="mt-4 text-base text-fg-secondary">ORIVANA emails you when a decision needs review, when an export is ready, and when a connected app needs to be reconnected. In-app notifications appear under the bell in the top bar.</p>;
 }
 
 export function AppearanceSection() {

@@ -33,7 +33,12 @@ export function SourcePanel({ source: s, className }: { source: SourceDetail; cl
             ['Year', s.year ?? '—'],
             ['File', [TYPE[s.type], s.page_count ? `${s.page_count} pages` : null, formatBytes(s.size_bytes)].filter(Boolean).join(' · ')],
             ['Project', s.project_id ? <Link to={`/projects/${s.project_id}`} className="text-accent underline underline-offset-4">{s.project_name}</Link> : '—'],
-            ['Added', formatDate(s.created_at)],
+            ...(s.zotero
+              ? ([
+                  ['Zotero', <span key="z">{s.zotero.collection_name} · read only · last synced {formatDate(s.zotero.last_synced_at)}{s.zotero.annotation_count ? ` · ${s.zotero.annotation_count} highlights` : ''}</span>],
+                ] as Array<[string, React.ReactNode]>)
+              : []),
+            [s.zotero ? 'Imported' : 'Added', formatDate(s.created_at)],
             ['Checksum', <span className="font-mono text-xs break-all">{s.checksum}</span>],
           ]}
         />
