@@ -17,7 +17,6 @@ export default defineConfig({
     strictPort: true,
     // Fixtures live in packages/contracts (outside this app's root).
     fs: { allow: ['../..'] },
-    watch: { ignored: ['!**/packages/contracts/**'] },
   },
   build: {
     chunkSizeWarningLimit: 900,

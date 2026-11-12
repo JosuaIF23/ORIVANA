@@ -232,6 +232,30 @@
       "metadata": {}
     },
     {
+      "id": "evt_6g1",
+      "workspace_id": "ws_personal",
+      "actor_type": "system",
+      "actor_id": "system",
+      "event_type": "ingestion.extraction_timeout",
+      "category": "errors",
+      "target_type": "source",
+      "target_id": "src_varga2024",
+      "summary": "Entity extraction timed out for {link}",
+      "link": {
+        "label": "Dense-Only Baselines for Multi-hop QA",
+        "target_type": "source",
+        "target_id": "src_varga2024"
+      },
+      "result": "failed",
+      "request_id": "req_5b9771b6",
+      "created_at": "2026-11-10T09:42:00Z",
+      "metadata": {
+        "error_code": "MODEL_TIMEOUT",
+        "error_message": "The model gateway did not respond within 60 s. Attempt 2 succeeded at 16:44.",
+        "job": "job_varga202 · extract · attempt 1 of 3"
+      }
+    },
+    {
       "id": "evt_7f3a09",
       "workspace_id": "ws_personal",
       "actor_type": "user",
@@ -312,26 +336,6 @@
       "metadata": {}
     },
     {
-      "id": "evt_6a00",
-      "workspace_id": "ws_personal",
-      "actor_type": "user",
-      "actor_id": "usr_josua",
-      "event_type": "source.uploaded",
-      "category": "ingestion",
-      "target_type": "source",
-      "target_id": "src_labnotes",
-      "summary": "Uploaded {link}",
-      "link": {
-        "label": "lab-notes-november.md",
-        "target_type": "source",
-        "target_id": "src_labnotes"
-      },
-      "result": "ready",
-      "request_id": "req_5b933709",
-      "created_at": "2026-11-10T03:05:00Z",
-      "metadata": {}
-    },
-    {
       "id": "evt_6b1",
       "workspace_id": "ws_personal",
       "actor_type": "system",
@@ -409,6 +413,46 @@
       "result": "succeeded",
       "request_id": "req_5b95070a",
       "created_at": "2026-11-09T07:40:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6a04",
+      "workspace_id": "ws_personal",
+      "actor_type": "system",
+      "actor_id": "system",
+      "event_type": "ingestion.reindexed",
+      "category": "ingestion",
+      "target_type": "source",
+      "target_id": "src_alvarez2025",
+      "summary": "Re-indexed {link} with the updated embedding model",
+      "link": {
+        "label": "Temporal Knowledge in RAG Systems",
+        "target_type": "source",
+        "target_id": "src_alvarez2025"
+      },
+      "result": "ready",
+      "request_id": "req_5b93b2c5",
+      "created_at": "2026-11-09T06:14:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6a09",
+      "workspace_id": "ws_personal",
+      "actor_type": "system",
+      "actor_id": "system",
+      "event_type": "ingestion.reindexed",
+      "category": "ingestion",
+      "target_type": "source",
+      "target_id": "src_lindqvist2024",
+      "summary": "Re-indexed {link} with the updated embedding model",
+      "link": {
+        "label": "BEIR Revisited: Zero-Shot Retrieval Benchmarks",
+        "target_type": "source",
+        "target_id": "src_lindqvist2024"
+      },
+      "result": "ready",
+      "request_id": "req_5b944d70",
+      "created_at": "2026-11-09T05:19:00Z",
       "metadata": {}
     },
     {
@@ -576,26 +620,6 @@
       "metadata": {}
     },
     {
-      "id": "evt_6a01",
-      "workspace_id": "ws_personal",
-      "actor_type": "user",
-      "actor_id": "usr_josua",
-      "event_type": "source.uploaded",
-      "category": "ingestion",
-      "target_type": "source",
-      "target_id": "src_rao2025",
-      "summary": "Uploaded {link}",
-      "link": {
-        "label": "Graph-Aware Retrieval for Scientific Literature",
-        "target_type": "source",
-        "target_id": "src_rao2025"
-      },
-      "result": "ready",
-      "request_id": "req_5b9355f8",
-      "created_at": "2026-11-08T13:15:00Z",
-      "metadata": {}
-    },
-    {
       "id": "evt_6b5",
       "workspace_id": "ws_personal",
       "actor_type": "system",
@@ -616,35 +640,35 @@
       "metadata": {}
     },
     {
-      "id": "evt_6a02",
+      "id": "evt_6b6",
       "workspace_id": "ws_personal",
-      "actor_type": "user",
-      "actor_id": "usr_josua",
-      "event_type": "source.uploaded",
-      "category": "ingestion",
-      "target_type": "source",
-      "target_id": "src_thesisoutline",
-      "summary": "Uploaded {link}",
+      "actor_type": "system",
+      "actor_id": "system",
+      "event_type": "retrieval.completed",
+      "category": "retrieval",
+      "target_type": "conversation",
+      "target_id": "conv_thesisoutline",
+      "summary": "Retrieved 8 passages; 2 cited in {link}",
       "link": {
-        "label": "thesis-outline-v2.md",
-        "target_type": "source",
-        "target_id": "src_thesisoutline"
+        "label": "Thesis proposal outline",
+        "target_type": "conversation",
+        "target_id": "conv_thesisoutline"
       },
-      "result": "ready",
-      "request_id": "req_5b9374e7",
+      "result": "succeeded",
+      "request_id": "req_5b9563d7",
       "created_at": "2026-11-08T12:40:00Z",
       "metadata": {}
     },
     {
       "id": "evt_6a03",
       "workspace_id": "ws_personal",
-      "actor_type": "user",
-      "actor_id": "usr_josua",
-      "event_type": "source.uploaded",
+      "actor_type": "system",
+      "actor_id": "system",
+      "event_type": "ingestion.reindexed",
       "category": "ingestion",
       "target_type": "source",
       "target_id": "src_weber2024",
-      "summary": "Uploaded {link}",
+      "summary": "Re-indexed {link} with the updated embedding model",
       "link": {
         "label": "Knowledge Graphs Meet Dense Retrieval",
         "target_type": "source",
@@ -652,7 +676,107 @@
       },
       "result": "ready",
       "request_id": "req_5b9393d6",
-      "created_at": "2026-11-06T04:00:00Z",
+      "created_at": "2026-11-08T05:13:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6a08",
+      "workspace_id": "ws_personal",
+      "actor_type": "system",
+      "actor_id": "system",
+      "event_type": "ingestion.reindexed",
+      "category": "ingestion",
+      "target_type": "source",
+      "target_id": "src_kowalski2024",
+      "summary": "Re-indexed {link} with the updated embedding model",
+      "link": {
+        "label": "Reciprocal Rank Fusion for Neural Retrievers",
+        "target_type": "source",
+        "target_id": "src_kowalski2024"
+      },
+      "result": "ready",
+      "request_id": "req_5b942e81",
+      "created_at": "2026-11-08T04:18:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6a02",
+      "workspace_id": "ws_personal",
+      "actor_type": "system",
+      "actor_id": "system",
+      "event_type": "ingestion.reindexed",
+      "category": "ingestion",
+      "target_type": "source",
+      "target_id": "src_thesisoutline",
+      "summary": "Re-indexed {link} with the updated embedding model",
+      "link": {
+        "label": "thesis-outline-v2.md",
+        "target_type": "source",
+        "target_id": "src_thesisoutline"
+      },
+      "result": "ready",
+      "request_id": "req_5b9374e7",
+      "created_at": "2026-11-07T04:12:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6a07",
+      "workspace_id": "ws_personal",
+      "actor_type": "system",
+      "actor_id": "system",
+      "event_type": "ingestion.reindexed",
+      "category": "ingestion",
+      "target_type": "source",
+      "target_id": "src_santos2025",
+      "summary": "Re-indexed {link} with the updated embedding model",
+      "link": {
+        "label": "Fusion Retrieval Revisited: BM25 + Dense on Open-Domain QA",
+        "target_type": "source",
+        "target_id": "src_santos2025"
+      },
+      "result": "ready",
+      "request_id": "req_5b940f92",
+      "created_at": "2026-11-07T03:17:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6a11",
+      "workspace_id": "ws_personal",
+      "actor_type": "system",
+      "actor_id": "system",
+      "event_type": "ingestion.reindexed",
+      "category": "ingestion",
+      "target_type": "source",
+      "target_id": "src_nakamura2025",
+      "summary": "Re-indexed {link} with the updated embedding model",
+      "link": {
+        "label": "Sparse–Dense Hybrids in Low-Resource Domains",
+        "target_type": "source",
+        "target_id": "src_nakamura2025"
+      },
+      "result": "ready",
+      "request_id": "req_5b948b4e",
+      "created_at": "2026-11-06T07:21:00Z",
+      "metadata": {}
+    },
+    {
+      "id": "evt_6a01",
+      "workspace_id": "ws_personal",
+      "actor_type": "system",
+      "actor_id": "system",
+      "event_type": "ingestion.reindexed",
+      "category": "ingestion",
+      "target_type": "source",
+      "target_id": "src_rao2025",
+      "summary": "Re-indexed {link} with the updated embedding model",
+      "link": {
+        "label": "Graph-Aware Retrieval for Scientific Literature",
+        "target_type": "source",
+        "target_id": "src_rao2025"
+      },
+      "result": "ready",
+      "request_id": "req_5b9355f8",
+      "created_at": "2026-11-06T03:11:00Z",
       "metadata": {}
     },
     {
@@ -716,23 +840,23 @@
       "metadata": {}
     },
     {
-      "id": "evt_6a04",
+      "id": "evt_6a06",
       "workspace_id": "ws_personal",
-      "actor_type": "user",
-      "actor_id": "usr_josua",
-      "event_type": "source.uploaded",
+      "actor_type": "system",
+      "actor_id": "system",
+      "event_type": "ingestion.reindexed",
       "category": "ingestion",
       "target_type": "source",
-      "target_id": "src_alvarez2025",
-      "summary": "Uploaded {link}",
+      "target_id": "src_okafor2025",
+      "summary": "Re-indexed {link} with the updated embedding model",
       "link": {
-        "label": "Temporal Knowledge in RAG Systems",
+        "label": "Hybrid Retrieval Under Distribution Shift",
         "target_type": "source",
-        "target_id": "src_alvarez2025"
+        "target_id": "src_okafor2025"
       },
       "result": "ready",
-      "request_id": "req_5b93b2c5",
-      "created_at": "2026-11-05T02:20:00Z",
+      "request_id": "req_5b93f0a3",
+      "created_at": "2026-11-06T02:16:00Z",
       "metadata": {}
     },
     {
@@ -752,19 +876,19 @@
       },
       "result": "confirmed",
       "request_id": "req_5b963c60",
-      "created_at": "2026-11-04T07:30:00Z",
+      "created_at": "2026-11-05T07:30:00Z",
       "metadata": {}
     },
     {
       "id": "evt_6a05",
       "workspace_id": "ws_personal",
-      "actor_type": "user",
-      "actor_id": "usr_josua",
-      "event_type": "source.uploaded",
+      "actor_type": "system",
+      "actor_id": "system",
+      "event_type": "ingestion.reindexed",
       "category": "ingestion",
       "target_type": "source",
       "target_id": "src_supervisornotes",
-      "summary": "Uploaded {link}",
+      "summary": "Re-indexed {link} with the updated embedding model",
       "link": {
         "label": "supervisor-notes-oct.md",
         "target_type": "source",
@@ -772,143 +896,19 @@
       },
       "result": "ready",
       "request_id": "req_5b93d1b4",
-      "created_at": "2026-11-04T07:10:00Z",
-      "metadata": {}
-    },
-    {
-      "id": "evt_6g1",
-      "workspace_id": "ws_personal",
-      "actor_type": "system",
-      "actor_id": "system",
-      "event_type": "ingestion.extraction_timeout",
-      "category": "errors",
-      "target_type": "source",
-      "target_id": "src_okafor2025",
-      "summary": "Entity extraction timed out for {link}",
-      "link": {
-        "label": "Hybrid Retrieval Under Distribution Shift",
-        "target_type": "source",
-        "target_id": "src_okafor2025"
-      },
-      "result": "failed",
-      "request_id": "req_5b9771b6",
-      "created_at": "2026-11-03T02:14:00Z",
-      "metadata": {
-        "error_code": "MODEL_TIMEOUT",
-        "error_message": "The model gateway did not respond within 60 s. Attempt 2 succeeded at 09:15.",
-        "job": "job_okafor20 · extract · attempt 1 of 3"
-      }
-    },
-    {
-      "id": "evt_6a06",
-      "workspace_id": "ws_personal",
-      "actor_type": "user",
-      "actor_id": "usr_josua",
-      "event_type": "source.uploaded",
-      "category": "ingestion",
-      "target_type": "source",
-      "target_id": "src_okafor2025",
-      "summary": "Uploaded {link}",
-      "link": {
-        "label": "Hybrid Retrieval Under Distribution Shift",
-        "target_type": "source",
-        "target_id": "src_okafor2025"
-      },
-      "result": "ready",
-      "request_id": "req_5b93f0a3",
-      "created_at": "2026-11-03T02:12:00Z",
-      "metadata": {}
-    },
-    {
-      "id": "evt_6b6",
-      "workspace_id": "ws_personal",
-      "actor_type": "system",
-      "actor_id": "system",
-      "event_type": "retrieval.completed",
-      "category": "retrieval",
-      "target_type": "conversation",
-      "target_id": "conv_readinglist",
-      "summary": "Retrieved 8 passages; 2 cited in {link}",
-      "link": {
-        "label": "Reading list for retrieval eval",
-        "target_type": "conversation",
-        "target_id": "conv_readinglist"
-      },
-      "result": "succeeded",
-      "request_id": "req_5b9563d7",
-      "created_at": "2026-11-02T09:00:00Z",
-      "metadata": {}
-    },
-    {
-      "id": "evt_6a07",
-      "workspace_id": "ws_personal",
-      "actor_type": "user",
-      "actor_id": "usr_josua",
-      "event_type": "source.uploaded",
-      "category": "ingestion",
-      "target_type": "source",
-      "target_id": "src_santos2025",
-      "summary": "Uploaded {link}",
-      "link": {
-        "label": "Fusion Retrieval Revisited: BM25 + Dense on Open-Domain QA",
-        "target_type": "source",
-        "target_id": "src_santos2025"
-      },
-      "result": "ready",
-      "request_id": "req_5b940f92",
-      "created_at": "2026-11-01T08:30:00Z",
-      "metadata": {}
-    },
-    {
-      "id": "evt_6a08",
-      "workspace_id": "ws_personal",
-      "actor_type": "user",
-      "actor_id": "usr_josua",
-      "event_type": "source.uploaded",
-      "category": "ingestion",
-      "target_type": "source",
-      "target_id": "src_kowalski2024",
-      "summary": "Uploaded {link}",
-      "link": {
-        "label": "Reciprocal Rank Fusion for Neural Retrievers",
-        "target_type": "source",
-        "target_id": "src_kowalski2024"
-      },
-      "result": "ready",
-      "request_id": "req_5b942e81",
-      "created_at": "2026-10-30T03:00:00Z",
-      "metadata": {}
-    },
-    {
-      "id": "evt_6a09",
-      "workspace_id": "ws_personal",
-      "actor_type": "user",
-      "actor_id": "usr_josua",
-      "event_type": "source.uploaded",
-      "category": "ingestion",
-      "target_type": "source",
-      "target_id": "src_lindqvist2024",
-      "summary": "Uploaded {link}",
-      "link": {
-        "label": "BEIR Revisited: Zero-Shot Retrieval Benchmarks",
-        "target_type": "source",
-        "target_id": "src_lindqvist2024"
-      },
-      "result": "ready",
-      "request_id": "req_5b944d70",
-      "created_at": "2026-10-28T09:20:00Z",
+      "created_at": "2026-11-05T07:15:00Z",
       "metadata": {}
     },
     {
       "id": "evt_6a10",
       "workspace_id": "ws_personal",
-      "actor_type": "user",
-      "actor_id": "usr_josua",
-      "event_type": "source.uploaded",
+      "actor_type": "system",
+      "actor_id": "system",
+      "event_type": "ingestion.reindexed",
       "category": "ingestion",
       "target_type": "source",
       "target_id": "src_haddad2025",
-      "summary": "Uploaded {link}",
+      "summary": "Re-indexed {link} with the updated embedding model",
       "link": {
         "label": "ColBERT-Style Late Interaction for Scientific QA",
         "target_type": "source",
@@ -916,27 +916,27 @@
       },
       "result": "ready",
       "request_id": "req_5b946c5f",
-      "created_at": "2026-10-27T06:45:00Z",
+      "created_at": "2026-11-05T06:20:00Z",
       "metadata": {}
     },
     {
-      "id": "evt_6a11",
+      "id": "evt_6a00",
       "workspace_id": "ws_personal",
-      "actor_type": "user",
-      "actor_id": "usr_josua",
-      "event_type": "source.uploaded",
+      "actor_type": "system",
+      "actor_id": "system",
+      "event_type": "ingestion.reindexed",
       "category": "ingestion",
       "target_type": "source",
-      "target_id": "src_nakamura2025",
-      "summary": "Uploaded {link}",
+      "target_id": "src_labnotes",
+      "summary": "Re-indexed {link} with the updated embedding model",
       "link": {
-        "label": "Sparse–Dense Hybrids in Low-Resource Domains",
+        "label": "lab-notes-november.md",
         "target_type": "source",
-        "target_id": "src_nakamura2025"
+        "target_id": "src_labnotes"
       },
       "result": "ready",
-      "request_id": "req_5b948b4e",
-      "created_at": "2026-10-25T02:10:00Z",
+      "request_id": "req_5b933709",
+      "created_at": "2026-11-05T02:10:00Z",
       "metadata": {}
     }
   ],

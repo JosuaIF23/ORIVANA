@@ -52,8 +52,11 @@ const VISIBLE = [
 function older() {
   const out = [];
   // Ingestion: 12 more uploads (ready sources, excluding ones already shown).
+  // Re-index after the embedding model update (5–10 Nov), so all 46 events fall in the last 7 days.
   const uploads = SOURCES.filter((s) => s.status === 'ready' && s.id !== 'src_varga2024').slice(0, 12);
-  uploads.forEach((s, i) => out.push(evt(`evt_6a${String(i).padStart(2, '0')}`, s.created_at, 'user', 'ingestion', 'source.uploaded', 'Uploaded {link}', srcLink(s.id, s.title), 'ready')));
+  uploads.forEach((s, i) =>
+    out.push(evt(`evt_6a${String(i).padStart(2, '0')}`, t(`${String(9 + (i % 6)).padStart(2, '0')}:${String(10 + i).padStart(2, '0')}`, 5 + (i % 5)), 'system', 'ingestion', 'ingestion.reindexed', 'Re-indexed {link} with the updated embedding model', srcLink(s.id, s.title), 'ready')),
+  );
   // Retrieval: 10.
   const convs = [
     ['conv_datasets', 'Datasets used across papers', t('11:05'), 9, 3],
@@ -62,7 +65,7 @@ function older() {
     ['conv_graphrag', 'GraphRAG community summaries', t('14:40', 9), 5, 1],
     ['conv_evalplan', 'Eval plan for chunk sizes', t('10:30', 9), 4, 1],
     ['conv_thesisoutline', 'Thesis proposal outline', t('19:50', 8), 7, 1],
-    ['conv_readinglist', 'Reading list for retrieval eval', t('16:00', 2), 8, 2],
+    ['conv_thesisoutline', 'Thesis proposal outline', t('19:40', 8), 8, 2],
     ['conv_hybrid', 'Hybrid vs dense-only results', t('14:33'), 5, 2],
     ['conv_datasets', 'Datasets used across papers', t('10:58'), 10, 3],
     ['conv_evalplan', 'Eval plan for chunk sizes', t('10:20', 9), 6, 2],
@@ -74,7 +77,7 @@ function older() {
   out.push(evt('evt_6c0', t('14:46', 9), 'user', 'memory', 'memory.rejected', 'Rejected memory {link}', { label: 'Dense retrieval always outperforms BM25.', target_type: 'memory', target_id: 'mem_dense_always' }, 'rejected'));
   out.push(evt('evt_6c1', t('10:42', 9), 'agent', 'memory', 'memory.suggested', 'Suggested 1 memory from {link}', { label: 'Eval plan for chunk sizes', target_type: 'conversation', target_id: 'conv_evalplan' }, 'candidate'));
   out.push(evt('evt_6c2', t('10:00', 6), 'user', 'memory', 'memory.superseded', 'Marked {link} superseded by D-04', { label: 'D-02 Dense-only default', target_type: 'memory', target_id: 'dec_rag_02' }, 'confirmed'));
-  out.push(evt('evt_6c3', t('14:30', 4), 'user', 'memory', 'memory.created', 'Added memory {link}', { label: 'Supervisor meeting: focus the thesis on graph-aware retrieval', target_type: 'memory', target_id: 'mem_supervisor_q1' }, 'confirmed'));
+  out.push(evt('evt_6c3', t('14:30', 5), 'user', 'memory', 'memory.created', 'Added memory {link}', { label: 'Supervisor meeting: focus the thesis on graph-aware retrieval', target_type: 'memory', target_id: 'mem_supervisor_q1' }, 'confirmed'));
   // Tool calls: 4.
   out.push(evt('evt_6d0', t('16:05', 10), 'agent', 'tool_calls', 'tool.github.get_issue', 'Verified issue {link} (github.get_issue)', { label: 'lab/rag-experiments#41', target_type: 'issue', target_id: 'lab/rag-experiments#41' }, 'succeeded'));
   out.push(evt('evt_6d1', t('11:15', 9), 'agent', 'tool_calls', 'tool.github.list_labels', 'Read labels (github.list_labels) in {link}', repo, 'succeeded'));
@@ -90,8 +93,8 @@ function older() {
   out.push(evt('evt_6g0', t('11:12', 9), 'system', 'errors', 'tool.rate_limited', 'GitHub rate limit while reading {link}; retried after 30 s', repo, 'failed', {
     metadata: { error_code: 'RATE_LIMITED', error_message: 'GitHub returned 403 secondary rate limit. The call was retried once and succeeded.', job: 'tool_call · github.list_issues · attempt 1 of 2' },
   }));
-  out.push(evt('evt_6g1', t('09:14', 3), 'system', 'errors', 'ingestion.extraction_timeout', 'Entity extraction timed out for {link}', srcLink('src_okafor2025', 'Hybrid Retrieval Under Distribution Shift'), 'failed', {
-    metadata: { error_code: 'MODEL_TIMEOUT', error_message: 'The model gateway did not respond within 60 s. Attempt 2 succeeded at 09:15.', job: 'job_okafor20 · extract · attempt 1 of 3' },
+  out.push(evt('evt_6g1', t('16:42', 10), 'system', 'errors', 'ingestion.extraction_timeout', 'Entity extraction timed out for {link}', srcLink('src_varga2024', 'Dense-Only Baselines for Multi-hop QA'), 'failed', {
+    metadata: { error_code: 'MODEL_TIMEOUT', error_message: 'The model gateway did not respond within 60 s. Attempt 2 succeeded at 16:44.', job: 'job_varga202 · extract · attempt 1 of 3' },
   }));
   return out;
 }
