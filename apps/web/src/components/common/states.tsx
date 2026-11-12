@@ -8,7 +8,7 @@ import { Skeleton } from '@/components/ui/primitives';
 export function EmptyState({ icon, title, description, action, className }: { icon?: ReactNode; title: ReactNode; description?: ReactNode; action?: ReactNode; className?: string }) {
   return (
     <div role="status" className={cn('flex flex-col items-center px-6 py-12 text-center', className)}>
-      {icon ? <div className="mb-4 text-knowledge [&_svg]:size-8">{icon}</div> : null}
+      {icon ? <div aria-hidden="true" className="mb-4 text-knowledge [&_svg]:size-8">{icon}</div> : null}
       <h2 className="text-lg font-semibold text-fg">{title}</h2>
       {description ? <p className="mt-2 max-w-md text-base text-fg-secondary">{description}</p> : null}
       {action ? <div className="mt-6">{action}</div> : null}

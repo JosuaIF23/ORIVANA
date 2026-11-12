@@ -7,7 +7,7 @@ export function ModelLabel({ name, className }: { name: string | null | undefine
   return (
     <p className={cn('flex items-center gap-1.5 text-xs text-fg-muted', className)}>
       <Cpu aria-hidden="true" className="size-3.5" />
-      Answered with <span className="text-fg-secondary">{name}</span>
+      Answered with <span translate="no" className="text-fg-secondary">{name}</span>
     </p>
   );
 }

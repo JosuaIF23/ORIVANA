@@ -39,7 +39,7 @@ export function ModelPreferences() {
                 <input type="radio" name={name} value={m.id} checked={checked} disabled={update.isPending} onChange={() => choose(m.id, m.name)} className="mt-1 accent-accent" />
                 <span className="min-w-0">
                   <span className="flex flex-wrap items-center gap-2 text-base font-medium text-fg">
-                    {m.name}
+                    <span translate="no">{m.name}</span>
                     <span className="rounded-badge border border-control px-1.5 text-xs font-normal text-fg-secondary">{m.tier === 'fast' ? 'Fast' : 'Strong'}</span>
                     {m.is_default ? <span className="text-xs font-normal text-fg-muted">Default</span> : null}
                     {pendingId === m.id ? <span className="text-xs font-normal text-accent">Saving…</span> : null}

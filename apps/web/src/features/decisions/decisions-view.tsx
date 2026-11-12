@@ -66,7 +66,7 @@ export function DecisionsView({ filter, projectId, q, projects, onChange, onOpen
             </option>
           ))}
         </Select>
-        <Input type="search" aria-label="Search decisions" autoComplete="off" placeholder="Search decisions…" value={q} onChange={(e) => onChange('q', e.target.value || null)} className="max-w-72 flex-1" />
+        <Input type="search" name="decisions-search" aria-label="Search decisions" autoComplete="off" placeholder="Search decisions…" value={q} onChange={(e) => onChange('q', e.target.value || null)} className="max-w-72 flex-1" />
       </div>
       {isPending ? (
         <LoadingSkeleton rows={5} label="Loading decisions…" />

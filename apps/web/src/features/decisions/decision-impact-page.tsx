@@ -40,7 +40,7 @@ export default function DecisionImpactPage() {
   }
 
   return (
-    <div className="mx-auto flex max-w-[1200px] flex-col gap-6">
+    <div className="mx-auto flex max-w-[1200px] flex-col gap-6 [&_a]:scroll-mb-28 [&_button]:scroll-mb-28">
       <nav aria-label="Breadcrumb" className="text-sm">
         <ol className="flex flex-wrap items-center gap-2 text-fg-secondary">
           <li><Link to="/knowledge/memory" className="underline underline-offset-4 hover:text-fg">Decisions</Link></li>

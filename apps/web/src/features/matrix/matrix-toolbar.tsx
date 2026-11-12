@@ -58,7 +58,7 @@ export function MatrixToolbar({ projects, state, set, onExport, canExport }: Mat
       </div>
       <div className="relative min-w-48 flex-1 md:max-w-72">
         <Search aria-hidden="true" className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-fg-muted" />
-        <Input type="search" aria-label="Search methods and datasets" placeholder="Search methods or datasets…" value={state.q} onChange={(e) => set({ q: e.target.value })} className="pl-9" />
+        <Input type="search" name="matrix-search" autoComplete="off" aria-label="Search methods and datasets" placeholder="Search methods or datasets…" value={state.q} onChange={(e) => set({ q: e.target.value })} className="pl-9" />
       </div>
       <Button onClick={onExport} disabled={!canExport} className="ml-auto">
         <Download aria-hidden="true" />

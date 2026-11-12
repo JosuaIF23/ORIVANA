@@ -1,4 +1,4 @@
-# ORIVANA prototype — audit (Phase 7)
+# ORIVANA prototype — audit (Phase 7 and Phase 8)
 
 Scope: everything under `apps/web/src`. Method: the Vercel Web Interface Guidelines (via the `web-design-guidelines` skill), automated greps, keyboard and screen-reader spot checks in the browser, a 1440 × 900 and 375 × 812 visual pass, and a side-by-side comparison with every image in `docs/design/screens/`.
 
@@ -90,3 +90,59 @@ Every screen was opened at 1440 × 900 (Graph mobile at 375 × 812) next to its 
 | 6 | Activity showed "10 of 36" for "Last 7 days" | Fixture keeps all 46 events in the 7-day window |
 | 6 | Unsaved-changes guard fired after a successful save | Guard skipped once the save is confirmed |
 | 7 | Asking from Home stuck on "Retrieving sources…" (StrictMode remount consumed the stream) | Streams stay open until finished, like an SSE reconnect; regression test added |
+
+---
+
+# Phase 8 (v2.0) audit
+
+## 5. Web Interface Guidelines — v2 files
+
+Rules: vercel-labs/web-interface-guidelines `command.md`, fetched again for this phase. Files reviewed: `features/{matrix,claims,decisions,zotero}/*`, `features/integrations/{zotero-card,integrations-page}.tsx`, `features/settings/model-preferences.tsx`, `features/assistant/{save-decision-sheet,review-notice,message-actions}.tsx`, `features/home/decisions-review-card.tsx`, `features/projects/project-knowledge.tsx`, `features/onboarding/zotero-first-card.tsx`, `features/sources/removed-in-zotero.tsx`, `components/common/{evidence-compare,review-state-badge,source-type-badge,model-label}.tsx`, `components/ui/sheet.tsx`, `components/shell/mobile-nav.tsx`, `features/approvals/proposal-origin.tsx`.
+
+| Finding | Fix |
+|---|---|
+| `EmptyState` icon wrapper was announced to screen readers | `aria-hidden="true"` on the wrapper (`components/common/states.tsx`) |
+| Search inputs in Matrix, Claims, and Decisions had no `name` / `autocomplete` | `name` + `autoComplete="off"` |
+| Sticky Decision Impact action bar could cover the focused link or button | `scroll-margin-bottom` on links and buttons in that page |
+| Model names could be machine-translated | `translate="no"` on model names (ModelLabel, ModelPicker) |
+| Placeholders without an ellipsis | "Search methods or datasets…", "Search claims…" |
+| Knowledge tab strip showed a vertical scrollbar on desktop (`-mb-px` + `overflow-x-auto`) | Overflow only below `md` |
+| Side sheet entrance animated opacity, so a paused or background tab showed it faded | Transform-only keyframe, behind `motion-safe` |
+
+Checked and passing: icon-only buttons have labels; decorative icons are `aria-hidden` (EvidenceCompare, InlineAlert, and menu icons sit inside hidden wrappers); actions are `<button>` and navigation is `Link`; no `transition-all` or `outline-none`; dates use `Intl.DateTimeFormat`; counts use tabular numbers; sheets and dialogs use `overscroll-behavior: contain`; destructive actions (Revoke Zotero, Delete from ORIVANA, Delete decision) confirm first; filters, the selected cell or claim, and the open decision live in the URL.
+
+Not applied, on purpose: the guideline's Title Case for headings and buttons. UI.md and the existing screens use sentence case, and CLAUDE.md makes the documents the source of truth.
+
+## 6. UI acceptance checklist (UI.md v2 §12)
+
+| # | Item | Result | Where / how verified |
+|---|---|---|---|
+| 1 | Navigation matches §3.2; Knowledge tabs are Sources · Matrix · Claims · Map · Memory | Pass | Sidebar, `KnowledgeHeader`; `/knowledge/graph` redirects to `/knowledge/map` |
+| 2 | Tagline and category match PRD exactly | Pass | Unchanged from Phase 7 (sign-in, README) |
+| 3 | Current workspace and project are always identifiable | Pass | Workspace switcher; project selectors on Matrix and Claims; project on every decision row |
+| 4 | Search results show type and source | Pass | New Claims group; Zotero sources labelled "Source · Zotero" |
+| 5 | Every citation opens the right page and passage | Pass | Citations as before; Matrix, Claims, and Decision Impact evidence open the viewer with `hl=` highlight and a Back banner |
+| 6 | Matrix shows filled, candidate, and gap cells without colour alone | Pass | Count + chips / dashed border + "Candidate" / dashed "—" + "Gap · No evidence"; legend; cell `aria-label` |
+| 7 | Every Matrix cell and Claim opens its evidence | Pass | MatrixInspector (gaps explain why, candidates listed separately); ClaimInspector |
+| 8 | Supports / Contradicts / Candidate / Needs review follow §2.3 | Pass | ✓ / ✕ icons + text, dashed candidates, ReviewStateBadge with alert icon, superseded struck through (StatusBadge) |
+| 9 | Decisions show status, review state, rationale, dependencies, history | Pass | Memory → Decisions rows and the decision sheet |
+| 10 | Decision Impact review shows old vs new evidence and the three actions | Pass | `/decision-alerts/:id`: EvidenceCompare + Keep / Revise / Propose action |
+| 11 | A decision alert can produce a proposal that appears in Approvals with its origin | Pass | Browser run: Propose action → Approvals (3 pending) → "Origin: From Decision Impact alert…" |
+| 12 | Action preview shows exact target and side effects; no success before confirmation | Pass | Unchanged review screen; Executing → Succeeded + Verified only after `verified_at`; then "Linked to decision D-04" |
+| 13 | Zotero is clearly read-only | Pass | Import dialog, Sources header note, Integrations card ("Not granted: change or delete…"), onboarding, Home |
+| 14 | Model used is visible on answers; model preference is changeable | Pass | "Answered with Claude Sonnet 5.5"; Settings → Model preferences; test: preference change → `model_name` on the next answer |
+| 15 | Integration scopes are understandable | Pass | Plain-language scope lists on the Zotero and GitHub cards |
+| 16 | Empty, loading, and error states for every new screen | Pass | Matrix, Claims, decisions view, decision sheet, Decision Impact (loading, resolved read-only, source deleted), import dialog, Model preferences |
+| 17 | Keyboard navigation works, including Matrix cells | Pass | Roving tab stop; arrow keys, Home, End (browser check: ArrowLeft moved focus) |
+| 18 | Contrast: text ≥ 4.5:1, controls ≥ 3:1 | Pass | Only existing tokens; warning and danger text on their 5–15 % tints, as in Phase 7 |
+| 19 | Assistant never shows four full columns with the expanded sidebar | Pass | Unchanged; Matrix, Claims, and Map also use the rail |
+| 20 | Mobile never forces a dense graph or a wide table | Pass | 375 px: Matrix becomes a list grouped by method (no horizontal scroll), Claims are cards, Map is a list, Decision Impact stacks |
+
+## 7. Bugs found while testing Phase 8
+
+| Bug | Fix |
+|---|---|
+| The Zotero import progress never left "Importing…": the poll invalidated the `connections` key prefix, which also matched its own key, cancelling itself in a loop | Sync key moved to `['zotero-sync', id]`; invalidation runs once in an effect after the sync finishes |
+| Matrix inspector said "1 paper tested Hybrid on HotpotQA" for a cell shown as a gap | Candidate papers are listed under "Candidate evidence · not counted yet" unless Include candidates is on |
+| Zotero library label repeated the account name | Fixture label is "My Library" |
+| Decision edit overwrote the statement with the title | Editing a decision changes its title only |

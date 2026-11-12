@@ -90,6 +90,10 @@ Sumber kebenaran: gambar = layout, susunan, teks, komponen · `UI.md` §2 = warn
 | 23 | Varga & Chen 2024 must be a Zotero import that newly contradicts the claim; v1 shows it as an upload on 10 Nov 16:40 and as evidence for D-02. | Varga becomes `type: zotero`, synced on 10 Nov 16:40 (same time, so v1 conversations that cite it still make sense). Activity: Zotero sync → extraction (the existing 16:42 timeout + retry) → decision alert 16:45. D-02's evidence moves to another paper. |
 | 24 | Mobile bottom nav: v1 artboard Projects · Assistant · Upload · Approvals · Activity; UI.md v2 §7 Home · Assistant · Knowledge · Approvals · More. | Follow the document (replaces #10). Upload stays reachable from Knowledge → Sources; Projects, Activity, Integrations, Settings go under More. |
 | 25 | Activity v1 chips include `tool_calls`; the v2 filter list has Proposals and no Tool calls. | Additive: categories `zotero_sync`, `extraction`, `decision_alerts`, `proposals` are added; `tool_calls` stays and its chip shows only when it has events. |
+| 26 | v1 Home has a "Suggested next steps" card; UI.md v2 §4.4 lists seven Home cards without it. | Follow v2: the card is no longer on Home (the extension endpoint stays). Its jobs moved to the Decisions needing review card and the Matrix/Claims candidate review. |
+| 27 | Plan §4.3 named the route `/settings/models`; v1 already had the section key `model`. | Kept `/settings/model` so existing links keep working. |
+| 28 | UI.md v2 §4.12 lists a Matrix tab per project but no layout for it. | The project tab embeds the same MatrixGrid (confirmed only); a cell opens Knowledge → Matrix with that cell selected. |
+| 29 | Decision Impact review is "a full-width page with sidebar"; its actions need to stay reachable on long pages. | A sticky action bar at the bottom of the page (above the mobile bottom navigation). |
 
 ## 4. Fase 8 — rencana v2.0 (8.0, belum ada kode)
 
@@ -162,7 +166,7 @@ Cerita flagship di fixtures:
 |---|---|
 | services | `matrix.ts`, `claims.ts`, `decision-alerts.ts`, `models.ts`, `zotero.ts`; perluas `memories`, `sources`, `proposals`, `workspace`, `stream` (message.model), `audit`, `search` |
 | hooks | hook per fitur + query keys baru; mutasi meng-invalidasi badge Home/Approvals |
-| routes | `/knowledge/matrix` (rail), `/knowledge/claims` (rail, `?claim=`), `/knowledge/map` (rail; `/knowledge/graph` → redirect dengan query), `/knowledge/memory?decision=` (sheet), `/decision-alerts/:alertId` (sidebar penuh), `/settings/models`; tab project lama `graph` → `/knowledge/map`, `memories` → `decisions`, `timeline` → `activity` |
+| routes | `/knowledge/matrix` (rail), `/knowledge/claims` (rail, `?claim=`), `/knowledge/map` (rail; `/knowledge/graph` → redirect dengan query), `/knowledge/memory?decision=` (sheet), `/decision-alerts/:alertId` (sidebar penuh), `/settings/model` (lihat #27); tab project lama `graph` → `/knowledge/map`, `memories` → `decisions`, `timeline` → `activity` |
 
 ### 4.4 Komponen
 

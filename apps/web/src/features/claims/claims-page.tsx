@@ -78,7 +78,7 @@ export default function ClaimsPage() {
             </label>
             <div className="relative min-w-48 flex-1">
               <Search aria-hidden="true" className="pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-fg-muted" />
-              <Input type="search" aria-label="Search claims" placeholder="Search claims…" value={q} onChange={(e) => set({ q: e.target.value || null })} className="pl-9" />
+              <Input type="search" name="claims-search" autoComplete="off" aria-label="Search claims" placeholder="Search claims…" value={q} onChange={(e) => set({ q: e.target.value || null })} className="pl-9" />
             </div>
           </div>
           <div className="mt-6">
