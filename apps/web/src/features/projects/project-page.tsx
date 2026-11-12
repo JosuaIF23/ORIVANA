@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, useParams } from 'react-router';
+import { Link, Navigate, useParams } from 'react-router';
 import { cn } from '@/lib/cn';
 import { useProject } from '@/hooks/use-data';
 import { Button, ButtonLink } from '@/components/ui/button';
@@ -9,26 +9,34 @@ import { ProjectOverview } from './project-overview';
 import { ProjectTabContent } from './project-tabs';
 import { EditProjectDialog } from './edit-project-dialog';
 
+/** UI.md v2 §4.12 tabs. */
 const TABS = [
   { key: 'overview', label: 'Overview' },
   { key: 'sources', label: 'Sources' },
-  { key: 'graph', label: 'Graph' },
-  { key: 'memories', label: 'Memories & decisions' },
+  { key: 'matrix', label: 'Matrix' },
+  { key: 'claims', label: 'Claims' },
+  { key: 'decisions', label: 'Decisions' },
   { key: 'conversations', label: 'Conversations' },
   { key: 'actions', label: 'Actions' },
-  { key: 'timeline', label: 'Timeline' },
+  { key: 'activity', label: 'Activity' },
 ] as const;
 
-/** Project workspace (UI.md §4.9). Tabs are routes: /projects/:id/:tab. */
+/** v1 tab keys keep working (CLAUDE.md: renamed routes keep a redirect). */
+const LEGACY_TABS: Record<string, string> = { graph: 'matrix', memories: 'decisions', timeline: 'activity' };
+
+/** Project workspace (UI.md v2 §4.12). Tabs are routes: /projects/:id/:tab. */
 export default function ProjectPage() {
   const { projectId = '', tab = 'overview' } = useParams();
   const { data: project, isPending, error, refetch } = useProject(projectId);
   const [editing, setEditing] = useState(false);
+  if (LEGACY_TABS[tab]) return <Navigate to={`/projects/${projectId}/${LEGACY_TABS[tab]}`} replace />;
   if (isPending) return <LoadingSkeleton rows={6} label="Loading project…" />;
   if (error) return <ErrorState error={error} title="Project not available" onRetry={() => refetch()} />;
 
   const counts: Record<string, string | null> = {
     sources: String(project.counts.sources),
+    claims: project.counts.claims ? String(project.counts.claims) : null,
+    decisions: project.counts.decisions_needing_review ? `${project.counts.decisions_needing_review} to review` : String(project.counts.decisions),
     conversations: String(project.counts.conversations),
     actions: project.counts.pending_actions ? `${project.counts.pending_actions} pending` : null,
   };
@@ -67,7 +75,7 @@ export default function ProjectPage() {
                 className={cn('-mb-px inline-flex items-baseline gap-2 border-b-2 pb-3 text-base', tab === t.key ? 'border-accent font-medium text-fg' : 'border-transparent text-fg-secondary hover:text-fg')}
               >
                 {t.label}
-                {counts[t.key] ? <span className="text-sm text-fg-muted tabular">{counts[t.key]}</span> : null}
+                {counts[t.key] ? <span className={cn('text-sm tabular', t.key === 'decisions' && project.counts.decisions_needing_review ? 'text-warning' : 'text-fg-muted')}>{counts[t.key]}</span> : null}
               </Link>
             </li>
           ))}

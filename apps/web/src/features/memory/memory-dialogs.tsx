@@ -13,7 +13,8 @@ export function MemoryFormDialog({ memory, open, onOpenChange }: { memory?: Memo
   const create = useCreateMemory();
   const update = useUpdateMemory();
   const toast = useToast();
-  const [content, setContent] = useState(memory?.content ?? '');
+  const isDecision = memory?.kind === 'decision';
+  const [content, setContent] = useState((isDecision ? memory?.title : memory?.content) ?? memory?.content ?? '');
   const [type, setType] = useState<MemoryType>(memory?.memory_type ?? 'procedural');
   const [project, setProject] = useState(memory?.project_id ?? projects[0]?.id ?? '');
   const pending = create.isPending || update.isPending;
@@ -24,7 +25,7 @@ export function MemoryFormDialog({ memory, open, onOpenChange }: { memory?: Memo
       onOpenChange(false);
       toast.success(msg);
     };
-    if (memory) update.mutate({ id: memory.id, request: { op: 'edit', content, memory_type: type } }, { onSuccess: done('Memory updated') });
+    if (memory) update.mutate({ id: memory.id, request: { op: 'edit', content, memory_type: isDecision ? undefined : type } }, { onSuccess: done(isDecision ? 'Decision updated' : 'Memory updated') });
     else create.mutate({ content, memory_type: type, project_id: project || null }, { onSuccess: done('Memory added') });
   }
 
@@ -32,7 +33,7 @@ export function MemoryFormDialog({ memory, open, onOpenChange }: { memory?: Memo
     <Dialog
       open={open}
       onOpenChange={onOpenChange}
-      title={memory ? 'Edit memory' : 'Add memory'}
+      title={isDecision ? 'Edit decision' : memory ? 'Edit memory' : 'Add memory'}
       description={memory ? 'Edits are saved as yours (origin: user-created).' : 'Memories you add are confirmed immediately.'}
       footer={
         <>
@@ -44,20 +45,22 @@ export function MemoryFormDialog({ memory, open, onOpenChange }: { memory?: Memo
       }
     >
       <div className="flex flex-col gap-4">
-        <Field label="What should ORIVANA remember?" error={error?.message}>
+        <Field label={isDecision ? 'Decision title' : 'What should ORIVANA remember?'} error={error?.message}>
           {({ id, describedBy, invalid }) => <Textarea id={id} name="memory" autoComplete="off" value={content} onChange={(e) => setContent(e.target.value)} aria-describedby={describedBy} aria-invalid={invalid} placeholder="e.g. Use a fixed random seed for every evaluation run…" />}
         </Field>
         <div className="grid gap-4 sm:grid-cols-2">
-          <Field label="Type">
-            {({ id }) => (
-              <Select id={id} value={type} onChange={(e) => setType(e.target.value as MemoryType)}>
-                <option value="episodic">Episodic</option>
-                <option value="semantic">Semantic</option>
-                <option value="procedural">Procedural</option>
-                <option value="project">Project</option>
-              </Select>
-            )}
-          </Field>
+          {!isDecision ? (
+            <Field label="Type">
+              {({ id }) => (
+                <Select id={id} value={type} onChange={(e) => setType(e.target.value as MemoryType)}>
+                  <option value="episodic">Episodic</option>
+                  <option value="semantic">Semantic</option>
+                  <option value="procedural">Procedural</option>
+                  <option value="project">Project</option>
+                </Select>
+              )}
+            </Field>
+          ) : null}
           {!memory ? (
             <Field label="Project">
               {({ id }) => (
@@ -80,7 +83,8 @@ export function MemoryFormDialog({ memory, open, onOpenChange }: { memory?: Memo
 
 /** Choose the confirmed memory that replaces this one. */
 export function SupersedeDialog({ memory, open, onOpenChange }: { memory: Memory; open: boolean; onOpenChange: (open: boolean) => void }) {
-  const { data } = useMemories({ status: 'confirmed', project_id: memory.project_id ?? undefined });
+  const isDecision = memory.kind === 'decision';
+  const { data } = useMemories({ status: 'confirmed', project_id: memory.project_id ?? undefined, decisions_only: isDecision || undefined });
   const options = (data?.items ?? []).filter((m) => m.id !== memory.id);
   const [target, setTarget] = useState('');
   const update = useUpdateMemory();
@@ -90,7 +94,7 @@ export function SupersedeDialog({ memory, open, onOpenChange }: { memory: Memory
       open={open}
       onOpenChange={onOpenChange}
       title="Mark superseded"
-      description={`“${memory.content}” stays in history but is no longer used as a current fact.`}
+      description={`“${memory.title ?? memory.content}” stays in history but is no longer used as a current ${isDecision ? 'decision' : 'fact'}.`}
       footer={
         <>
           <Button onClick={() => onOpenChange(false)}>Cancel</Button>
@@ -106,13 +110,13 @@ export function SupersedeDialog({ memory, open, onOpenChange }: { memory: Memory
         </>
       }
     >
-      <Field label="Replaced by" error={update.error?.message} hint={options.length ? undefined : 'Add or confirm the newer memory first.'}>
+      <Field label="Replaced by" error={update.error?.message} hint={options.length ? undefined : `Add or confirm the newer ${isDecision ? 'decision' : 'memory'} first.`}>
         {({ id, describedBy }) => (
           <Select id={id} value={target} onChange={(e) => setTarget(e.target.value)} aria-describedby={describedBy}>
-            <option value="">Choose a confirmed memory…</option>
+            <option value="">{isDecision ? 'Choose a confirmed decision…' : 'Choose a confirmed memory…'}</option>
             {options.map((m) => (
               <option key={m.id} value={m.id}>
-                {m.content}
+                {m.decision ? `${m.decision.code} ${m.title ?? m.content}` : m.content}
               </option>
             ))}
           </Select>

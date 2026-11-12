@@ -47,6 +47,7 @@ export const router = createBrowserRouter([
           { path: '/knowledge/map', lazy: page(() => import('@/features/graph/graph-page')), handle: rail },
           { path: '/knowledge/graph', element: <RedirectKeepingQuery to="/knowledge/map" /> },
           { path: '/knowledge/memory', lazy: page(() => import('@/features/memory/memory-page')), handle: bleed },
+          { path: '/decision-alerts/:alertId', lazy: page(() => import('@/features/decisions/decision-impact-page')) },
           { path: '/projects', lazy: page(() => import('@/features/projects/projects-page')) },
           { path: '/projects/:projectId/:tab?', lazy: page(() => import('@/features/projects/project-page')) },
           { path: '/approvals', lazy: page(() => import('@/features/approvals/approvals-page')), handle: bleed },

@@ -1,14 +1,11 @@
 import { Link } from 'react-router';
 import type { Source } from '@contracts/types';
 import { formatRelativeDay, plural } from '@/lib/format';
-import { ResultIcon } from '@/components/common/entity-icon';
+import { SourceTypeBadge } from '@/components/common/source-type-badge';
 import { StatusBadge } from '@/components/common/status-badge';
 import { LoadingSkeleton, ErrorState } from '@/components/common/states';
 import { useRecentSources, useReprocessSource } from '@/features/sources/use-sources';
 import { HomeCard } from './home-card';
-import { SOURCE_TYPE_LABEL } from '@/lib/labels';
-
-const TYPE_LABEL = SOURCE_TYPE_LABEL;
 
 export function RecentSourcesCard() {
   const { data, isPending, error, refetch } = useRecentSources();
@@ -27,10 +24,10 @@ export function RecentSourcesCard() {
 
 function SourceRow({ source }: { source: Source }) {
   const reprocess = useReprocessSource();
-  const meta = [TYPE_LABEL[source.type], source.page_count ? plural(source.page_count, 'page') : null, formatRelativeDay(source.created_at)].filter(Boolean).join(' · ');
+  const meta = [source.zotero ? source.zotero.collection_name : null, source.page_count ? plural(source.page_count, 'page') : null, formatRelativeDay(source.created_at)].filter(Boolean).join(' · ');
   return (
     <li className="flex items-center gap-4 py-3">
-      <ResultIcon icon={source.type === 'pdf' ? 'pdf' : 'markdown'} className="text-fg-secondary" />
+      <SourceTypeBadge type={source.type} className="w-24 justify-center" />
       <div className="min-w-0 flex-1">
         <Link to={`/knowledge/sources/${source.id}`} className="block truncate text-base text-fg hover:underline hover:underline-offset-4">
           {source.title}

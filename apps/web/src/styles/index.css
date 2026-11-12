@@ -162,3 +162,13 @@
 .orivana-flow .react-flow__node {
   cursor: pointer;
 }
+
+/* v2: side sheet entrance (reduced motion disables it via motion-safe). */
+@keyframes sheet-in {
+  from {
+    transform: translateX(24px);
+  }
+  to {
+    transform: none;
+  }
+}

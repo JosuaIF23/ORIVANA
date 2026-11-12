@@ -8,6 +8,7 @@ import { Spinner } from '@/components/ui/spinner';
 import { MetaList } from '@/components/ui/primitives';
 import { StatusBadge } from '@/components/common/status-badge';
 import { InlineAlert } from '@/components/common/states';
+import { LinkedDecisionChip } from './proposal-origin';
 
 function Title({ p, children }: { p: ActionProposal; children?: React.ReactNode }) {
   return (
@@ -87,6 +88,7 @@ export function SucceededView({ proposal: p }: { proposal: ActionProposal }) {
               </a>
             ) : null}
             <ButtonLink to="/approvals" size="lg">Back to Approvals</ButtonLink>
+            <LinkedDecisionChip proposal={p} />
           </div>
         </div>
       </div>
@@ -110,6 +112,8 @@ export function SucceededView({ proposal: p }: { proposal: ActionProposal }) {
           rows={[
             ['Project', p.project_id ? <><Link to={`/projects/${p.project_id}/actions`} className="text-accent underline underline-offset-4">{p.project_name}</Link> · added to Actions</> : '—'],
             ['Evidence', p.citations.map((c) => `${c.source_title.split(':')[0]} p. ${c.page}`).join(' · ') || '—'],
+            ...(p.linked_decision ? [['Decision', <Link key="d" to={`/knowledge/memory?decision=${p.linked_decision.id}`} className="text-accent underline underline-offset-4">{p.linked_decision.code} {p.linked_decision.title}</Link>] as [string, React.ReactNode]] : []),
+            ...(p.origin?.type === 'decision_alert' && p.origin.id ? [['Decision alert', <Link key="a" to={`/decision-alerts/${p.origin.id}`} className="text-accent underline underline-offset-4">Decision Impact review</Link>] as [string, React.ReactNode]] : []),
             ['Conversation', p.conversation_id ? <Link to={`/assistant/${p.conversation_id}`} className="text-accent underline underline-offset-4">{p.conversation_title}</Link> : '—'],
             ['Audit event', run.audit_event_id ? <Link to={`/activity?q=${run.audit_event_id}`} className="font-mono text-sm text-accent underline underline-offset-4">{run.audit_event_id} · external_action.succeeded</Link> : '—'],
           ]}

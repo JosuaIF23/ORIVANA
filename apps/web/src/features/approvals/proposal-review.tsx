@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 import { Check, Pencil, X } from 'lucide-react';
 import type { ActionProposal } from '@contracts/types';
 import { formatDate, formatRelativeDay, formatTime } from '@/lib/format';
@@ -10,6 +10,7 @@ import { useToast } from '@/components/common/toast';
 import { RejectDialog } from './reject-dialog';
 import { EvidenceUsed, FactsGrid, IssuePreview, RawFields, SideEffects } from './review-sections';
 import { useApprove, useStartEditing } from './use-approvals';
+import { ProposalOrigin } from './proposal-origin';
 
 /** Review view: request, target, scope, exact content, evidence, side effects (UI.md §4.10). */
 export function ProposalReview({ proposal: p }: { proposal: ActionProposal }) {
@@ -19,6 +20,7 @@ export function ProposalReview({ proposal: p }: { proposal: ActionProposal }) {
   const toast = useToast();
   const [rejecting, setRejecting] = useState(false);
   const draft = p.status === 'draft';
+  const fromAlert = p.origin?.type === 'decision_alert';
 
   return (
     <div className="flex min-h-full flex-col">
@@ -31,16 +33,10 @@ export function ProposalReview({ proposal: p }: { proposal: ActionProposal }) {
             <StatusBadge status={p.status} size="md" />
           </div>
           <p className="mt-2 text-sm text-fg-secondary">
-            Proposed by ORIVANA · {formatRelativeDay(p.created_at)} {formatTime(p.created_at)}
-            {p.conversation_id ? (
-              <>
-                {' '}· from{' '}
-                <Link to={`/assistant/${p.conversation_id}`} className="text-accent underline underline-offset-4 hover:text-fg">
-                  {p.conversation_title}
-                </Link>
-              </>
-            ) : null}{' '}
-            · expires {formatDate(p.expires_at)}
+            Proposed by ORIVANA · {formatRelativeDay(p.created_at)} {formatTime(p.created_at)} · expires {formatDate(p.expires_at)}
+          </p>
+          <p className="mt-2 text-sm">
+            <ProposalOrigin proposal={p} />
           </p>
         </header>
         {draft ? (
@@ -50,10 +46,10 @@ export function ProposalReview({ proposal: p }: { proposal: ActionProposal }) {
         ) : null}
         <FactsGrid proposal={p} />
         <section aria-labelledby="original-request">
-          <h3 id="original-request" className="text-sm font-medium text-fg-secondary">Your original request</h3>
+          <h3 id="original-request" className="text-sm font-medium text-fg-secondary">{fromAlert ? 'Alert that led to this proposal' : 'Your original request'}</h3>
           <blockquote className="mt-3 rounded-card border border-subtle bg-surface p-5">
             <p className="text-base text-fg">“{p.original_request.text}”</p>
-            <footer className="mt-2 text-sm text-fg-secondary">You · {formatRelativeDay(p.original_request.at)} {formatTime(p.original_request.at)}</footer>
+            <footer className="mt-2 text-sm text-fg-secondary">{fromAlert ? 'Decision Impact' : 'You'} · {formatRelativeDay(p.original_request.at)} {formatTime(p.original_request.at)}</footer>
           </blockquote>
         </section>
         <IssuePreview args={p.arguments} />

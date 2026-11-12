@@ -5,7 +5,7 @@ import { MemoryRow } from './memory-row';
 import { DeleteMemoryDialog, MemoryFormDialog, SupersedeDialog } from './memory-dialogs';
 
 const GROUP: Record<MemoryStatus, { label: string; cls: string }> = {
-  candidate: { label: 'Needs review', cls: 'text-warning' },
+  candidate: { label: 'Candidates to review', cls: 'text-warning' },
   proposed: { label: 'Proposed', cls: 'text-warning' },
   confirmed: { label: 'Confirmed', cls: 'text-knowledge' },
   superseded: { label: 'Superseded', cls: 'text-fg-secondary' },

@@ -5,7 +5,7 @@ import { Input, Select } from '@/components/ui/field';
 import type { MemoryTab } from './memory-page';
 
 const TABS: Array<{ key: MemoryTab; label: string; count: (c: Record<MemoryStatus, number>) => number }> = [
-  { key: 'needs_review', label: 'Needs review', count: (c) => c.candidate },
+  { key: 'needs_review', label: 'Candidates', count: (c) => c.candidate },
   { key: 'confirmed', label: 'Confirmed', count: (c) => c.confirmed },
   { key: 'superseded', label: 'Superseded', count: (c) => c.superseded },
   { key: 'rejected', label: 'Rejected', count: (c) => c.rejected },

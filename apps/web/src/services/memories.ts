@@ -204,12 +204,14 @@ export function updateMemory(id: string, request: UpdateMemoryRequest): Promise<
         break;
       case 'edit':
         if (!request.content.trim()) failWith('VALIDATION_FAILED', 'Memory text can’t be empty.', { field: 'content' });
-        memory.content = request.content.trim();
         if (request.memory_type) memory.memory_type = request.memory_type;
-        if (memory.decision) memory.decision.title = memory.content;
         if (isDecision) {
-          memory.title = memory.content;
+          // For decisions the edit changes the title; the statement keeps its own text.
+          memory.title = request.content.trim();
+          if (memory.decision) memory.decision.title = memory.title;
           memory.history = [...(memory.history ?? []), { at, kind: 'edited', text: 'Edited by you', link: null }];
+        } else {
+          memory.content = request.content.trim();
         }
         memory.origin = 'user';
         break;

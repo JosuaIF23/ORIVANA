@@ -3,6 +3,7 @@ import type { ActionProposal } from '@contracts/types';
 import { cn } from '@/lib/cn';
 import { formatAge, formatDayMonth } from '@/lib/format';
 import { StatusBadge } from '@/components/common/status-badge';
+import { ProposalOrigin } from './proposal-origin';
 
 export function ProposalList({ items, activeId, tab }: { items: ActionProposal[]; activeId?: string; tab: 'pending' | 'decided' }) {
   return (
@@ -21,6 +22,9 @@ export function ProposalList({ items, activeId, tab }: { items: ActionProposal[]
               </span>
               <span className="mt-2 block text-sm text-fg-secondary">
                 <span className="font-mono text-xs">{p.target.repository}</span> · GitHub · {p.project_name}
+              </span>
+              <span className="mt-1 block">
+                <ProposalOrigin proposal={p} compact />
               </span>
               <span className="mt-3 flex flex-wrap gap-2">
                 <StatusBadge status={p.risk_level} />

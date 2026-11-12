@@ -7,6 +7,8 @@ import { NoEvidenceAnswer } from './no-evidence-answer';
 import { CancelledAnswer, FailedAnswer } from './failed-answer';
 import { MessageActions } from './message-actions';
 import { InlineProposal } from './inline-proposal';
+import { DecisionReviewNotice } from './review-notice';
+import { ModelLabel } from '@/components/common/model-label';
 
 interface Props {
   message: Message;
@@ -45,6 +47,8 @@ export function AssistantMessage({ message, sourceCount, selectedOrdinal, onSele
           {message.related_entities.length ? <RelatedEntities entities={message.related_entities} /> : null}
         </>
       )}
+      {message.answer_kind !== 'no_evidence' ? <DecisionReviewNotice message={message} /> : null}
+      <ModelLabel name={message.model_name} />
       {message.answer_kind !== 'no_evidence' ? <MessageActions message={message} /> : null}
     </article>
   );

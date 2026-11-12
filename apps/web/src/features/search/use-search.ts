@@ -23,7 +23,7 @@ export function resultHref(r: SearchResult): string {
     case 'project':
       return `/projects/${r.id}`;
     case 'decision':
-      return `/projects/prj_rag#${r.id}`;
+      return `/knowledge/memory?decision=${r.id}`;
     case 'memory':
       return `/knowledge/memory?status=all&q=${encodeURIComponent(r.title.slice(0, 30))}`;
     case 'claim':

@@ -15,6 +15,8 @@ function useInvalidate() {
     void queryClient.invalidateQueries({ queryKey: qk.suggestions });
     void queryClient.invalidateQueries({ queryKey: qk.auditAll });
     void queryClient.invalidateQueries({ queryKey: qk.projects });
+    void queryClient.invalidateQueries({ queryKey: qk.alertsAll });
+    void queryClient.invalidateQueries({ queryKey: qk.claimsAll });
   };
 }
 

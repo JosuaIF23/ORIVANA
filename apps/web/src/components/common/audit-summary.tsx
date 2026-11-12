@@ -11,7 +11,7 @@ export function auditHref(link: AuditLink): { href: string; external: boolean } 
     case 'proposal':
       return { href: `/approvals/${link.target_id}`, external: false };
     case 'memory':
-      return { href: `/knowledge/memory?q=${encodeURIComponent(link.label.slice(0, 24))}`, external: false };
+      return link.target_id.startsWith('dec_') ? { href: `/knowledge/memory?decision=${link.target_id}`, external: false } : { href: `/knowledge/memory?view=memories&status=all&q=${encodeURIComponent(link.label.slice(0, 24))}`, external: false };
     case 'project':
       return { href: `/projects/${link.target_id}`, external: false };
     case 'issue': {

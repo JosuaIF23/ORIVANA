@@ -1,17 +1,23 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router';
-import { Copy, FileText, Flag, Waypoints } from 'lucide-react';
+import { BookmarkPlus, Copy, FileText, Flag, Quote } from 'lucide-react';
 import type { Message } from '@contracts/types';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/common/toast';
-import { useFlagIncorrect } from './use-assistant';
+import { SaveAsDecisionSheet } from './save-decision-sheet';
+import { useConversation, useFlagIncorrect } from './use-assistant';
 
-/** Copy · Open source · Explore relationship · Flag incorrect (UI.md §4.5). */
+/** Copy · Open source · Explore in Claims · Save as decision · Flag incorrect (UI.md v2 §4.5). */
 export function MessageActions({ message }: { message: Message }) {
   const navigate = useNavigate();
   const toast = useToast();
   const flag = useFlagIncorrect();
+  const { data: conversation } = useConversation(message.conversation_id);
+  const [saving, setSaving] = useState(false);
   const first = message.citations[0];
-  const entity = message.related_entities[0];
+  const claim = message.related_entities.find((e) => e.entity_type === 'claim');
+  const topic = message.related_entities[0];
+  const claimsHref = claim ? `/knowledge/claims?claim=${claim.id}` : topic ? `/knowledge/claims?q=${encodeURIComponent(topic.name.split(' ')[0])}` : '/knowledge/claims';
 
   async function copy() {
     try {
@@ -32,9 +38,13 @@ export function MessageActions({ message }: { message: Message }) {
         <FileText aria-hidden="true" />
         Open source
       </Button>
-      <Button variant="ghost" size="sm" disabled={!entity} onClick={() => entity && navigate(`/knowledge/map?focus=${entity.id}&candidates=1`)}>
-        <Waypoints aria-hidden="true" />
-        Explore relationship
+      <Button variant="ghost" size="sm" onClick={() => navigate(claimsHref)}>
+        <Quote aria-hidden="true" />
+        Explore in Claims
+      </Button>
+      <Button variant="ghost" size="sm" disabled={!message.citations.length} onClick={() => setSaving(true)}>
+        <BookmarkPlus aria-hidden="true" />
+        Save as decision
       </Button>
       <Button
         variant="ghost"
@@ -47,6 +57,7 @@ export function MessageActions({ message }: { message: Message }) {
         <Flag aria-hidden="true" />
         {flag.isSuccess ? 'Flagged' : 'Flag incorrect'}
       </Button>
+      {saving ? <SaveAsDecisionSheet message={message} projectId={conversation?.project_id ?? null} open onOpenChange={setSaving} /> : null}
     </div>
   );
 }

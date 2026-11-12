@@ -16,12 +16,15 @@ export function ConnectorHealthCard() {
           {data.connections.map((c) => (
             <li key={c.id} className="flex items-center gap-4">
               <span aria-hidden="true" className="flex size-10 items-center justify-center rounded-control bg-elevated font-semibold text-fg">
-                G
+                {c.provider === 'zotero' ? 'Z' : 'G'}
               </span>
               <div className="min-w-0 flex-1">
-                <p className="text-base font-medium text-fg">GitHub</p>
+                <p className="text-base font-medium text-fg">
+                  {c.provider === 'zotero' ? 'Zotero' : 'GitHub'}
+                  <span className="ml-2 text-sm font-normal text-fg-secondary">{c.provider === 'zotero' ? 'Read only' : 'Read + create issues'}</span>
+                </p>
                 <p className="text-sm text-fg-secondary">
-                  {plural(c.repositories.length, 'repository', 'repositories')} · last sync {formatAgo(c.last_sync_at)}
+                  {c.provider === 'zotero' ? plural(c.collections?.length ?? 0, 'collection') : plural(c.repositories.length, 'repository', 'repositories')} · last sync {formatAgo(c.last_sync_at)}
                 </p>
               </div>
               <StatusBadge status={c.status} />
@@ -30,7 +33,7 @@ export function ConnectorHealthCard() {
         </ul>
       ) : (
         <div className="flex items-center justify-between gap-4">
-          <p className="text-base text-fg-secondary">No apps connected. GitHub is optional.</p>
+          <p className="text-base text-fg-secondary">No apps connected. Connect Zotero to import papers; GitHub is optional.</p>
           <ButtonLink to="/integrations" size="sm">
             Connect
           </ButtonLink>

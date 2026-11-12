@@ -8,12 +8,15 @@ import { AskCard } from './ask-card';
 import { ProjectsRow } from './projects-row';
 import { RecentSourcesCard } from './recent-sources-card';
 import { PendingApprovalsCard } from './pending-approvals-card';
-import { SuggestionsCard } from './suggestions-card';
 import { RecentActivityCard } from './recent-activity-card';
 import { ConnectorHealthCard } from './connector-health-card';
 import { HomeEmpty } from './home-empty';
+import { DecisionsReviewCard } from './decisions-review-card';
 
-/** Home / Command Center (UI.md §4.4). */
+/**
+ * Home / Command Center (UI.md v2 §4.4). Order: ask, decisions needing review,
+ * pending approvals, recent projects, recent sources, recent activity, connector health.
+ */
 export default function HomePage() {
   const { data: me } = useMe();
   if (!me) return null;
@@ -33,15 +36,13 @@ export default function HomePage() {
         }
       />
       <AskCard />
+      <DecisionsReviewCard />
+      <PendingApprovalsCard />
       <ProjectsRow />
       <div className="grid items-start gap-6 lg:grid-cols-2">
+        <RecentSourcesCard />
         <div className="flex flex-col gap-6">
-          <RecentSourcesCard />
           <RecentActivityCard />
-        </div>
-        <div className="flex flex-col gap-6">
-          <PendingApprovalsCard />
-          <SuggestionsCard />
           <ConnectorHealthCard />
         </div>
       </div>

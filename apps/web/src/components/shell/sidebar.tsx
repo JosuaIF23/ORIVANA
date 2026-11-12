@@ -3,7 +3,7 @@ import { ChevronDown, LogOut, PanelLeftClose, PanelLeftOpen } from 'lucide-react
 import { cn } from '@/lib/cn';
 import { useMe, useSignOut } from '@/hooks/use-session';
 import { Menu } from '@/components/ui/menu';
-import { PRIMARY_NAV, SETTINGS_NAV, isActive, type NavItem } from './nav';
+import { PRIMARY_NAV, SETTINGS_NAV, badgeFor, isActive, type NavItem } from './nav';
 
 interface SidebarProps {
   rail: boolean;
@@ -16,19 +16,18 @@ interface SidebarProps {
 export function Sidebar({ rail, onToggle, className }: SidebarProps) {
   const { pathname } = useLocation();
   const { data: me } = useMe();
-  const pending = me?.counts.pending_approvals ?? 0;
   return (
     <nav aria-label="Primary" className={cn('flex h-full flex-col border-r border-subtle bg-sidebar', rail ? 'w-[var(--rail-width)] items-center px-2 py-4' : 'w-[var(--sidebar-width)] p-4', className)}>
       <WorkspaceSwitcher rail={rail} />
       <ul className={cn('mt-6 flex w-full flex-col gap-1', rail && 'items-center')}>
         {PRIMARY_NAV.map((item) => (
           <li key={item.to} className="w-full">
-            <NavLink item={item} rail={rail} active={isActive(item, pathname)} badge={item.badge ? pending : 0} />
+            <NavLink item={item} rail={rail} active={isActive(item, pathname)} badge={badgeFor(item, me)} />
           </li>
         ))}
       </ul>
       <div className="mt-auto w-full border-t border-subtle pt-4">
-        <NavLink item={SETTINGS_NAV} rail={rail} active={isActive(SETTINGS_NAV, pathname)} badge={0} />
+        <NavLink item={SETTINGS_NAV} rail={rail} active={isActive(SETTINGS_NAV, pathname)} badge={{ count: 0, text: '' }} />
         {onToggle ? (
           <button
             type="button"
@@ -45,13 +44,13 @@ export function Sidebar({ rail, onToggle, className }: SidebarProps) {
   );
 }
 
-function NavLink({ item, rail, active, badge }: { item: NavItem; rail: boolean; active: boolean; badge: number }) {
+function NavLink({ item, rail, active, badge }: { item: NavItem; rail: boolean; active: boolean; badge: { count: number; text: string } }) {
   const Icon = item.icon;
   return (
     <Link
       to={item.to}
       aria-current={active ? 'page' : undefined}
-      aria-label={rail ? (badge ? `${item.label}, ${badge} pending` : item.label) : undefined}
+      aria-label={rail ? (badge.count ? `${item.label}, ${badge.text}` : item.label) : undefined}
       title={rail ? item.label : undefined}
       className={cn(
         'relative flex h-10 items-center gap-3 rounded-control text-base transition-colors',
@@ -61,13 +60,17 @@ function NavLink({ item, rail, active, badge }: { item: NavItem; rail: boolean; 
     >
       <Icon aria-hidden="true" className={cn('size-5 shrink-0', active && 'text-accent')} />
       {rail ? null : <span className="flex-1 truncate">{item.label}</span>}
-      {badge > 0 ? (
+      {badge.count > 0 ? (
         <span
           aria-hidden={rail ? true : undefined}
-          className={cn('flex h-5 min-w-5 items-center justify-center rounded-full bg-elevated px-1.5 text-xs font-semibold text-fg ring-1 ring-subtle tabular', rail && 'absolute -top-1 -right-1')}
+          className={cn(
+            'flex h-5 min-w-5 items-center justify-center rounded-full px-1.5 text-xs font-semibold tabular',
+            item.badge === 'decisions_needing_review' ? 'bg-warning/15 text-warning ring-1 ring-warning/50' : 'bg-elevated text-fg ring-1 ring-subtle',
+            rail && 'absolute -top-1 -right-1',
+          )}
         >
-          {badge}
-          {rail ? null : <span className="sr-only"> pending</span>}
+          <span aria-hidden="true">{badge.count}</span>
+          {rail ? null : <span className="sr-only">{badge.text}</span>}
         </span>
       ) : null}
     </Link>

@@ -8,6 +8,7 @@ import { LoadingSkeleton } from '@/components/common/states';
 import { useSources } from '@/features/sources/use-sources';
 import { useMemories } from '@/features/memory/use-memory';
 import { DecisionTimeline } from './decision-timeline';
+import { ProjectAlerts } from './project-knowledge';
 
 /** Overview: status, recent changes, key decisions, timeline, pending actions, sources. */
 export function ProjectOverview({ project }: { project: ProjectDetail }) {
@@ -37,6 +38,7 @@ export function ProjectOverview({ project }: { project: ProjectDetail }) {
             </ul>
           </Card>
         </div>
+        <ProjectAlerts projectId={project.id} />
         <DecisionTimeline decisions={decisions.data?.items ?? null} loading={decisions.isPending} />
       </div>
       <div className="flex flex-col gap-6">
@@ -47,7 +49,7 @@ export function ProjectOverview({ project }: { project: ProjectDetail }) {
               {key.map((d) => (
                 <li key={d.id} className="flex items-baseline gap-2 text-base text-fg">
                   <span className="shrink-0 font-mono text-xs whitespace-nowrap text-fg-secondary">{d.decision?.code}</span>
-                  {d.decision?.title}
+                  {d.title ?? d.decision?.title}
                 </li>
               ))}
             </ul>

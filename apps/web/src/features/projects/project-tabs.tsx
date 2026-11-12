@@ -3,7 +3,6 @@ import type { ProjectDetail } from '@contracts/types';
 import { formatListDate } from '@/lib/format';
 import { useAuditEvents, useConversations, useProposals } from '@/hooks/use-data';
 import { ButtonLink } from '@/components/ui/button';
-import { Card } from '@/components/ui/primitives';
 import { AuditSummary } from '@/components/common/audit-summary';
 import { StatusBadge } from '@/components/common/status-badge';
 import { EmptyState, LoadingSkeleton } from '@/components/common/states';
@@ -12,29 +11,24 @@ import { useSources } from '@/features/sources/use-sources';
 import { MemoryTable } from '@/features/memory/memory-table';
 import { useMemories } from '@/features/memory/use-memory';
 import { DecisionTimeline } from './decision-timeline';
+import { ProjectAlerts, ProjectClaims, ProjectMatrix } from './project-knowledge';
 
 /** Content of the non-overview project tabs, each scoped to the project. */
 export function ProjectTabContent({ tab, project }: { tab: string; project: ProjectDetail }) {
   switch (tab) {
     case 'sources':
       return <ProjectSources projectId={project.id} />;
-    case 'graph':
-      return (
-        <Card className="flex flex-wrap items-center justify-between gap-4 p-6">
-          <p className="text-base text-fg-secondary">Explore the papers, methods, datasets, and decisions in {project.name}, with candidate relationships to review.</p>
-          <div className="flex gap-3">
-            <ButtonLink to={`/knowledge/map?project=${project.id}&candidates=1`} variant="primary">Open map</ButtonLink>
-            <ButtonLink to={`/knowledge/map?project=${project.id}&view=list&candidates=1`}>List view</ButtonLink>
-          </div>
-        </Card>
-      );
-    case 'memories':
+    case 'matrix':
+      return <ProjectMatrix project={project} />;
+    case 'claims':
+      return <ProjectClaims projectId={project.id} />;
+    case 'decisions':
       return <ProjectMemories projectId={project.id} />;
     case 'conversations':
       return <ProjectConversations projectId={project.id} />;
     case 'actions':
       return <ProjectActions projectId={project.id} />;
-    case 'timeline':
+    case 'activity':
       return <ProjectTimeline projectId={project.id} />;
     default:
       return <EmptyState title="Unknown section" />;
@@ -52,6 +46,7 @@ function ProjectMemories({ projectId }: { projectId: string }) {
   const decisions = useMemories({ project_id: projectId, decisions_only: true });
   return (
     <div className="flex flex-col gap-8">
+      <ProjectAlerts projectId={projectId} />
       <DecisionTimeline decisions={decisions.data?.items ?? null} loading={decisions.isPending} />
       <section aria-label="Memories">
         <h2 className="mb-4 text-lg font-semibold text-fg">Memories</h2>
